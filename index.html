@@ -30,8 +30,7 @@
 
   <script>
     async function loadData() {
-    https://script.google.com/macros/s/AKfycbw_anr4HgwHLPhPGlsnxeHZ_DoIlLRS_2f7-Vec0vGKOEOVSYHeYkBv1FvrnyJ0H8GatQ/exec
-      // 👉 Dán link Apps Script thật của anh vào đây (dạng /exec)
+      const endpoint = "https://script.google.com/macros/s/AKfycbw_anr4HgwHLPhPGlsnxeHZ_DoIlLRS_2f7-Vec0vGKOEOVSYHeYkBv1FvrnyJ0H8GatQ/exec";
       try {
         const res = await fetch(endpoint);
         const data = await res.json();
