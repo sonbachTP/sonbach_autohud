@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Sơn Bạch AutoHub</title>
+  <title>Sơn Bạch AutoHub - Realtime Dashboard</title>
+  <meta name="description" content="Bảng hiển thị dữ liệu realtime: Giá vàng, USD, VN-Index, Bất động sản – Sơn Bạch AutoHub DynamicWave v3.7">
   <style>
     body {
       text-align: center;
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(180deg, #fff7d1, #f9e79f);
       color: #6a4c00;
+      margin: 0;
+      padding: 0;
     }
     h1 {
       margin-top: 100px;
@@ -20,11 +23,40 @@
     }
   </style>
 </head>
+
 <body>
   <h1>🌟 Sơn Bạch AutoHub đang hoạt động 🌟</h1>
   <p>Phiên bản Realtime DynamicWave v3.7</p>
+
+  <script>
+    async function loadData() {
+      const endpoint = "https://script.google.com/macros/s/AKfycbxxxxxxxxxxxxxxxxxxxx/exec"; 
+      // 👉 Dán link Apps Script thật của anh vào đây (dạng /exec)
+      try {
+        const res = await fetch(endpoint);
+        const data = await res.json();
+        document.body.insertAdjacentHTML('beforeend', `
+          <div style="margin-top:40px;background:#fff9e6;padding:20px;border-radius:10px;display:inline-block;text-align:left;">
+            <h3 style="color:#6a4c00;">📊 Dữ liệu Realtime:</h3>
+            <p>💰 <b>Giá vàng:</b> ${data.vang}</p>
+            <p>💵 <b>Tỷ giá USD:</b> ${data.usd}</p>
+            <p>📈 <b>VN-Index:</b> ${data.ck}</p>
+            <p>🏡 <b>BĐS:</b> ${data.bds}</p>
+          </div>
+        `);
+      } catch (e) {
+        document.body.insertAdjacentHTML('beforeend', `
+          <p style="color:red;">❌ Không tải được dữ liệu realtime</p>
+        `);
+      }
+    }
+
+    // 🚀 Gọi hàm ngay khi trang tải xong
+    loadData();
+  </script>
+
 </body>
-<!-- Update để GitHub rebuild -->
+
 <!-- Update để GitHub rebuild -->
 <!-- Update AutoHub realtime 10/10/2025 -->
 </html>
