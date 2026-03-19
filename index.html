@@ -7,165 +7,284 @@
   <style>
     :root{
       --bg:#050505;
-      --card:#0d0d0f;
-      --gold:#f5c542;
-      --gold2:#ffdf72;
-      --text:#f6f1dd;
-      --muted:#c9b98a;
-      --line:#2a2112;
-      --soft:#111214;
+      --card:#0f0f10;
+      --gold:#f4c542;
+      --gold2:#ffd86b;
+      --gold3:#ffefb0;
+      --text:#f7f1dd;
+      --muted:#d6c08a;
+      --line:#3b2b0b;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      background:radial-gradient(circle at top, #121212 0%, #050505 45%, #000 100%);
-      color:var(--text);
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-      line-height:1.65;
+      background:
+        radial-gradient(circle at top, rgba(255,202,60,.12), transparent 25%),
+        radial-gradient(circle at bottom right, rgba(255,185,40,.10), transparent 20%),
+        linear-gradient(180deg,#090909 0%, #030303 100%);
+      color:var(--text);
+      overflow-x:hidden;
     }
-    .wrap{
-      width:min(920px, 92%);
-      margin:0 auto;
-      padding:24px 0 80px;
+
+    .ticker-wrap{
+      width:100%;
+      overflow:hidden;
+      border-bottom:1px solid rgba(255,216,107,.18);
+      border-top:1px solid rgba(255,216,107,.12);
+      background:rgba(255,216,107,.05);
+      position:sticky;
+      top:0;
+      z-index:30;
+      backdrop-filter: blur(8px);
     }
-    .hero{
-      background:linear-gradient(180deg, rgba(255,215,106,0.08), rgba(255,215,106,0.02));
-      border:1px solid rgba(245,197,66,0.18);
-      border-radius:28px;
-      padding:34px 22px 30px;
-      text-align:center;
-      box-shadow:0 0 30px rgba(0,0,0,.35);
-    }
-    .mini{
-      color:var(--muted);
-      font-size:12px;
-      letter-spacing:2.8px;
-      text-transform:uppercase;
-    }
-    .brand{
-      margin:8px 0 2px;
-      font-size:clamp(28px, 5vw, 52px);
-      line-height:1.08;
-      font-weight:900;
-      color:var(--gold);
-      letter-spacing:.5px;
-    }
-    .sub1{
-      margin:12px 0 0;
-      font-size:clamp(16px, 3vw, 28px);
-      font-weight:800;
-      text-transform:uppercase;
-    }
-    .sub2{
-      margin:2px 0 0;
-      font-size:clamp(15px, 2.7vw, 24px);
-      font-weight:700;
-      text-transform:uppercase;
-      color:#fff;
-    }
-    .price{
-      margin:22px 0 4px;
-      font-size:clamp(44px, 8vw, 86px);
-      line-height:1;
-      font-weight:900;
+    .ticker{
+      display:inline-block;
+      white-space:nowrap;
+      padding:10px 0;
       color:var(--gold2);
-      text-shadow:0 0 18px rgba(245,197,66,.26);
-    }
-    .price-note{
-      color:var(--muted);
+      font-weight:800;
       font-size:13px;
-      font-weight:700;
       letter-spacing:1px;
       text-transform:uppercase;
+      animation:marquee 26s linear infinite;
+    }
+    @keyframes marquee{
+      0%{transform:translateX(100%)}
+      100%{transform:translateX(-100%)}
+    }
+
+    .watermark{
+      position:fixed;
+      inset:auto auto 8% -40px;
+      width:280px;
+      height:280px;
+      border-radius:50%;
+      border:2px solid rgba(255,216,107,.10);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:84px;
+      font-weight:900;
+      color:rgba(255,216,107,.08);
+      z-index:0;
+      transform-origin:center;
+      animation:spinSlow 22s linear infinite;
+      pointer-events:none;
+      box-shadow:0 0 50px rgba(255,216,107,.05) inset;
+    }
+    @keyframes spinSlow{
+      from{transform:rotate(0deg)}
+      to{transform:rotate(360deg)}
+    }
+
+    .wrap{
+      width:min(980px, 92%);
+      margin:0 auto;
+      position:relative;
+      z-index:1;
+      padding:28px 0 90px;
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      padding:34px 20px 28px;
+      border-radius:30px;
+      background:
+        linear-gradient(180deg, rgba(255,216,107,.08), rgba(255,216,107,.02)),
+        rgba(15,15,16,.95);
+      border:1px solid rgba(255,216,107,.16);
+      box-shadow:var(--shadow);
+      text-align:center;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:-120px auto auto -120px;
+      width:280px;
+      height:280px;
+      background:radial-gradient(circle, rgba(255,216,107,.18), transparent 65%);
+      pointer-events:none;
+    }
+
+    .channel{
+      color:var(--muted);
+      font-size:12px;
+      letter-spacing:4px;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+
+    .brand{
+      margin:0;
+      color:var(--gold2);
+      font-size:clamp(30px, 6vw, 56px);
+      line-height:1.05;
+      font-weight:900;
+      text-transform:uppercase;
+      text-shadow:0 0 18px rgba(255,216,107,.18);
+      animation:softGlow 2.4s ease-in-out infinite;
+    }
+
+    .sub{
+      margin:14px 0 0;
+      font-size:clamp(17px, 3.5vw, 30px);
+      font-weight:900;
+      text-transform:uppercase;
+      line-height:1.35;
+      color:#fff;
+      animation:softGlow 3s ease-in-out infinite;
+    }
+
+    .price{
+      margin:20px 0 6px;
+      font-size:clamp(48px, 10vw, 92px);
+      line-height:1;
+      font-weight:1000;
+      color:var(--gold2);
+      text-shadow:
+        0 0 10px rgba(255,216,107,.25),
+        0 0 26px rgba(255,216,107,.20);
+      animation:priceBlink 1.6s ease-in-out infinite;
+    }
+    @keyframes priceBlink{
+      0%,100%{
+        opacity:1;
+        text-shadow:0 0 10px rgba(255,216,107,.20),0 0 24px rgba(255,216,107,.16);
+        transform:scale(1);
+      }
+      50%{
+        opacity:.92;
+        text-shadow:0 0 20px rgba(255,216,107,.45),0 0 42px rgba(255,216,107,.28);
+        transform:scale(1.02);
+      }
+    }
+
+    .note{
+      color:var(--muted);
+      font-size:14px;
+      text-transform:uppercase;
+      font-weight:800;
+      letter-spacing:1px;
       margin-bottom:18px;
     }
+
     .facts{
       display:grid;
-      grid-template-columns:repeat(2, minmax(0,1fr));
+      grid-template-columns:repeat(2,minmax(0,1fr));
       gap:12px;
-      margin-top:18px;
       text-align:left;
+      margin-top:16px;
     }
+
     .fact{
       background:rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.06);
       border-radius:16px;
-      padding:14px 14px;
-      font-size:15px;
+      padding:14px 15px;
+      font-size:16px;
     }
     .fact b{color:var(--gold2)}
+
     .section{
       margin-top:22px;
       background:var(--card);
       border:1px solid rgba(255,255,255,.06);
-      border-radius:24px;
+      border-radius:26px;
       padding:24px 18px;
+      box-shadow:var(--shadow);
     }
+
     .title{
       margin:0 0 14px;
+      text-align:center;
       color:var(--gold2);
-      font-size:clamp(20px, 3vw, 30px);
+      font-size:clamp(22px,4vw,34px);
       line-height:1.2;
       font-weight:900;
       text-transform:uppercase;
-      text-align:center;
+      text-shadow:0 0 16px rgba(255,216,107,.16);
+      animation:softGlow 2.8s ease-in-out infinite;
     }
+
+    @keyframes softGlow{
+      0%,100%{opacity:1}
+      50%{opacity:.86}
+    }
+
     .desc{
-      color:#efe6c6;
+      color:#f3e9c8;
       font-size:16px;
+      line-height:1.75;
       margin:10px 0 0;
     }
+
     .imgbox{
       margin-top:16px;
       border-radius:18px;
       overflow:hidden;
-      border:1px solid rgba(255,255,255,.07);
-      background:#090909;
+      border:1px solid rgba(255,216,107,.10);
+      background:#111;
     }
     .imgbox img{
       width:100%;
       display:block;
       object-fit:cover;
-      max-height:560px;
+      max-height:700px;
       background:#111;
     }
     .imgcap{
       padding:12px 14px;
-      font-size:14px;
       color:var(--muted);
-      background:rgba(255,255,255,.02);
+      font-size:14px;
+      text-align:center;
+      background:rgba(255,216,107,.04);
+      font-weight:700;
     }
-    .bullets{
-      padding-left:18px;
+
+    ul.bullets{
       margin:10px 0 0;
+      padding-left:18px;
     }
-    .bullets li{
-      margin:8px 0;
-      color:#f2ead0;
+    ul.bullets li{
+      margin:9px 0;
+      color:#f3ead1;
+      line-height:1.7;
     }
+
     .nda-head{
-      text-align:center;
-      font-size:clamp(22px, 4vw, 34px);
-      font-weight:900;
-      color:#fff;
       margin:0 0 10px;
-    }
-    .nda-sub{
-      margin:0 auto 18px;
-      max-width:760px;
       text-align:center;
-      color:#eadfb8;
+      color:#fff;
+      font-size:clamp(22px,4vw,34px);
+      font-weight:900;
+      text-transform:uppercase;
+      text-shadow:0 0 14px rgba(255,216,107,.10);
+    }
+
+    .nda-sub{
+      margin:0 auto 16px;
+      max-width:780px;
+      color:#ebdfb9;
+      text-align:center;
+      line-height:1.75;
       font-size:15px;
     }
+
     form{
-      max-width:760px;
+      max-width:780px;
       margin:0 auto;
     }
+
     .field{
       width:100%;
+      padding:16px;
       margin:10px 0;
-      padding:16px 16px;
       border-radius:14px;
       border:1px solid rgba(255,255,255,.08);
       background:#f7f7f7;
@@ -173,122 +292,157 @@
       font-size:17px;
       outline:none;
     }
+
     .check{
       display:flex;
-      align-items:flex-start;
       gap:10px;
-      margin:14px 0 6px;
-      text-align:left;
-      color:#f0e7c9;
+      align-items:flex-start;
+      margin-top:12px;
+      color:#f1e7c8;
       font-size:14px;
+      line-height:1.6;
+      text-align:left;
     }
+
     .btn{
       width:100%;
       border:none;
       border-radius:16px;
-      padding:18px 18px;
+      padding:18px;
+      margin-top:16px;
+      background:linear-gradient(180deg,#ffe15d,#f1c500);
+      color:#fff;
       font-size:22px;
       font-weight:900;
       cursor:pointer;
-      background:linear-gradient(180deg,#ffd900,#f3c600);
-      color:#fff;
-      margin-top:16px;
-      box-shadow:0 8px 24px rgba(255,217,0,.14);
+      box-shadow:0 10px 24px rgba(255,216,107,.16);
+      animation:buttonGlow 1.8s ease-in-out infinite;
     }
-    .btn:hover{filter:brightness(1.03)}
+    @keyframes buttonGlow{
+      0%,100%{filter:brightness(1)}
+      50%{filter:brightness(1.08)}
+    }
+
+    .small-note{
+      margin-top:10px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
     .vip{
       display:none;
-      max-width:760px;
+      max-width:780px;
       margin:22px auto 0;
-      background:linear-gradient(180deg, rgba(255,215,106,.07), rgba(255,215,106,.03));
-      border:1px solid rgba(255,215,106,.22);
       border-radius:22px;
       padding:22px 18px;
+      background:linear-gradient(180deg, rgba(255,216,107,.08), rgba(255,216,107,.03));
+      border:1px solid rgba(255,216,107,.20);
       text-align:center;
     }
+
     .vip h3{
-      margin:0 0 10px;
+      margin:0 0 12px;
       color:var(--gold2);
       font-size:28px;
       text-transform:uppercase;
     }
+
     .vip p{
       margin:8px 0;
-      color:#f6edd0;
+      color:#f5ecd2;
+      line-height:1.7;
     }
+
     .hotline{
-      margin-top:14px;
-      font-size:34px;
-      font-weight:900;
       color:var(--gold2);
+      font-size:38px;
+      font-weight:1000;
+      margin-top:14px;
+      text-shadow:0 0 18px rgba(255,216,107,.18);
     }
+
     .call{
       display:inline-block;
-      margin-top:12px;
-      padding:13px 18px;
+      margin-top:14px;
+      padding:14px 18px;
       border-radius:14px;
       background:#fff;
       color:#111;
       text-decoration:none;
-      font-weight:800;
+      font-weight:900;
     }
-    .footer-note{
-      margin-top:14px;
-      color:#f2e8c7;
-      font-size:15px;
-    }
-    .sticky-call{
+
+    .floating{
       position:fixed;
-      right:16px;
+      right:14px;
       bottom:18px;
       z-index:50;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .fab{
       width:58px;
       height:58px;
       border-radius:50%;
       display:flex;
       align-items:center;
       justify-content:center;
-      background:linear-gradient(180deg,#ffd900,#f3c600);
-      color:#111;
       text-decoration:none;
-      font-size:26px;
+      box-shadow:0 10px 26px rgba(0,0,0,.34);
+      font-size:24px;
       font-weight:900;
-      box-shadow:0 10px 26px rgba(0,0,0,.38);
+      border:1px solid rgba(255,255,255,.15);
+      backdrop-filter:blur(8px);
     }
-    .small-note{
-      font-size:13px;
-      color:var(--muted);
-      text-align:center;
-      margin-top:10px;
-    }
-    @media (max-width:700px){
+    .fab.call{background:linear-gradient(180deg,#ffd900,#f0c500); color:#111}
+    .fab.zalo{background:#0a7cff; color:#fff}
+    .fab.fb{background:#1877f2; color:#fff}
+
+    @media (max-width:720px){
       .facts{grid-template-columns:1fr}
-      .wrap{width:min(94%, 94%)}
+      .wrap{width:min(94%,94%)}
       .hero,.section{padding:20px 14px}
       .btn{font-size:18px}
-      .hotline{font-size:28px}
+      .hotline{font-size:30px}
+      .watermark{
+        width:220px;
+        height:220px;
+        font-size:66px;
+        left:-25px;
+      }
     }
   </style>
 </head>
 <body>
 
+  <div class="ticker-wrap">
+    <div class="ticker">
+      SƠN BẠCH SIGNATURE • TÀI SẢN LÕI KHÔNG TÁI TẠO • TRUNG TÂM QUẬN 1 • QUỸ ĐẤT HIẾM DÀNH CHO NHÀ ĐẦU TƯ THỰC LỰC • HỒ SƠ KÍN – LÀM VIỆC RIÊNG – ƯU TIÊN KHÁCH THẬT •
+    </div>
+  </div>
+
+  <div class="watermark">SB</div>
+
   <div class="wrap">
 
     <section class="hero">
-      <div class="mini">SƠN BẠCH CINEMATIC CHANNEL</div>
+      <div class="channel">SƠN BẠCH CINEMATIC CHANNEL</div>
       <h1 class="brand">SƠN BẠCH SIGNATURE</h1>
-      <div class="sub1">TÀI SẢN LÕI KHÔNG TÁI TẠO</div>
-      <div class="sub2">TRUNG TÂM QUẬN 1</div>
+      <div class="sub">TÀI SẢN LÕI KHÔNG TÁI TẠO<br>TRUNG TÂM QUẬN 1</div>
 
       <div class="price">1.250 TỶ</div>
-      <div class="price-note">(THƯƠNG LƯỢNG)</div>
+      <div class="note">(THƯƠNG LƯỢNG)</div>
 
       <div class="facts">
         <div class="fact"><b>Diện tích:</b> 1.317,3 m²</div>
-        <div class="fact"><b>Mặt tiền:</b> 33m – <b>Chiều dài:</b> 39m</div>
+        <div class="fact"><b>Mặt tiền:</b> 33m</div>
+        <div class="fact"><b>Chiều dài:</b> 39m</div>
         <div class="fact"><b>Đường:</b> 20m</div>
         <div class="fact"><b>GPXD:</b> 16 tầng – 3 hầm</div>
-        <div class="fact" style="grid-column:1/-1"><b>Vị trí:</b> Somerset – TLSQ Hoa Kỳ – Sofitel</div>
+        <div class="fact"><b>Vị trí:</b> Somerset – TLSQ Hoa Kỳ – Sofitel</div>
       </div>
     </section>
 
@@ -299,7 +453,7 @@
       </p>
 
       <div class="imgbox">
-        <img src="PASTE_LINK_ANH_TUONG_LAI_O_DAY" alt="Hình tương lai của khu đất">
+        <img src="LINK_ANH_TUONG_LAI" alt="Hình tương lai của khu đất">
         <div class="imgcap">HÌNH TƯƠNG LAI</div>
       </div>
 
@@ -315,7 +469,7 @@
       </p>
 
       <div class="imgbox">
-        <img src="PASTE_LINK_ANH_HIEN_TAI_O_DAY" alt="Hình hiện tại của khu đất">
+        <img src="LINK_ANH_HIEN_TAI" alt="Hình hiện tại của khu đất">
         <div class="imgcap">HÌNH HIỆN TẠI</div>
       </div>
 
@@ -369,24 +523,20 @@
         </label>
 
         <button class="btn" type="submit">TÔI ĐỒNG Ý NDA – MỞ HỒ SƠ VIP</button>
-        <div class="small-note">Biểu mẫu này gửi dữ liệu qua Formspree để lọc khách thật trước khi xem hồ sơ.</div>
+        <div class="small-note">Biểu mẫu này dùng để lọc khách thật trước khi mở hồ sơ kín.</div>
       </form>
 
       <div class="vip" id="vipContent">
         <h3>HỒ SƠ VIP DÀNH CHO KHÁCH THẬT</h3>
         <p>Thông tin tổng quan tài sản lõi trung tâm.</p>
-        <p>Chỉ số diện tích – mặt tiền – GPXD.</p>
+        <p>Chỉ số diện tích – mặt tiền – chiều dài – GPXD.</p>
         <p>Góc nhìn hiện tại và định hướng phát triển tương lai.</p>
         <p>Nhận định vị thế tài sản theo chu kỳ 3–5 năm.</p>
         <p>Ưu tiên làm việc trực tiếp với khách thực và đơn vị có năng lực tài chính.</p>
 
         <div class="hotline">0858 999 934</div>
-        <p class="footer-note">
-          Tài sản lõi không dành cho số đông. Chỉ dành cho nhà đầu tư hiểu giá trị của vị trí, quy mô, độ hiếm và khả năng tăng giá trong tương lai.
-        </p>
-        <p class="footer-note">
-          Liên hệ trực tiếp Mr. Sơn Bạch để nhận hồ sơ kín và lịch xem riêng.
-        </p>
+        <p>Tài sản lõi không dành cho số đông. Chỉ dành cho nhà đầu tư hiểu giá trị của vị trí, quy mô, độ hiếm và khả năng tăng giá trong tương lai.</p>
+        <p>Liên hệ trực tiếp Mr. Sơn Bạch để nhận hồ sơ kín và lịch xem riêng.</p>
 
         <a class="call" href="tel:0858999934">GỌI NGAY MR. SƠN BẠCH</a>
       </div>
@@ -394,7 +544,11 @@
 
   </div>
 
-  <a class="sticky-call" href="tel:0858999934" aria-label="Gọi ngay">☎</a>
+  <div class="floating">
+    <a class="fab call" href="tel:0858999934" title="Gọi">☎</a>
+    <a class="fab zalo" href="https://zalo.me/" target="_blank" title="Zalo">Z</a>
+    <a class="fab fb" href="https://facebook.com/" target="_blank" title="Facebook">f</a>
+  </div>
 
   <script>
     const form = document.getElementById('ndaForm');
@@ -409,19 +563,17 @@
         const response = await fetch(form.action, {
           method: 'POST',
           body: data,
-          headers: {
-            'Accept': 'application/json'
-          }
+          headers: { 'Accept': 'application/json' }
         });
 
         if(response.ok){
           form.style.display = 'none';
           vipContent.style.display = 'block';
           vipContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }else{
-          alert('Gửi thông tin chưa thành công. Anh kiểm tra lại Formspree hoặc thử lại giúp em.');
+        } else {
+          alert('Gửi thông tin chưa thành công. Anh kiểm tra lại Formspree giúp em.');
         }
-      }catch(error){
+      } catch(error){
         alert('Không kết nối được biểu mẫu. Anh kiểm tra lại mạng hoặc link Formspree giúp em.');
       }
     });
