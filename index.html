@@ -1,428 +1,122 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sơn Bạch Signature</title>
-  <style>
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Arial,sans-serif;
-      background:#060606;
-      color:#f6f1dd;
-      line-height:1.6;
-    }
-    .ticker-wrap{
-      overflow:hidden;
-      white-space:nowrap;
-      background:#151008;
-      border-top:1px solid rgba(255,215,100,.25);
-      border-bottom:1px solid rgba(255,215,100,.25);
-      position:sticky;
-      top:0;
-      z-index:50;
-    }
-    .ticker{
-      display:inline-block;
-      padding:10px 0;
-      color:#ffd86b;
-      font-weight:700;
-      font-size:13px;
-      animation:marquee 22s linear infinite;
-    }
-    @keyframes marquee{
-      from{transform:translateX(100%)}
-      to{transform:translateX(-100%)}
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sơn Bạch Signature</title>
 
-    .watermark{
-      position:fixed;
-      left:-20px;
-      bottom:120px;
-      width:180px;
-      height:180px;
-      border:2px solid rgba(255,216,107,.08);
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:rgba(255,216,107,.08);
-      font-size:56px;
-      font-weight:900;
-      transform-origin:center;
-      animation:spin 18s linear infinite;
-      pointer-events:none;
-      z-index:0;
-    }
-    @keyframes spin{
-      from{transform:rotate(0deg)}
-      to{transform:rotate(360deg)}
-    }
+<style>
+body{margin:0;background:#000;color:#fff;font-family:Arial;text-align:center}
+.wrap{padding:20px}
+.gold{color:#ffd700}
+img{width:100%;border-radius:12px;margin-top:10px}
+.watermark{
+position:fixed;bottom:100px;left:-20px;
+font-size:60px;color:rgba(255,215,0,0.08);
+animation:spin 20s linear infinite}
+@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
 
-    .wrap{
-      width:min(950px,92%);
-      margin:0 auto;
-      padding:20px 0 90px;
-      position:relative;
-      z-index:1;
-    }
+.price{
+font-size:60px;color:#ffd700;
+animation:blink 1.5s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.7}}
 
-    .card{
-      background:#111;
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:22px;
-      padding:18px;
-      margin-top:18px;
-      box-shadow:0 10px 28px rgba(0,0,0,.25);
-    }
+.floating{
+position:fixed;right:10px;bottom:20px;
+display:flex;flex-direction:column;gap:10px}
+.btn{
+width:55px;height:55px;border-radius:50%;
+display:flex;align-items:center;justify-content:center;
+color:#fff;text-decoration:none;font-weight:bold}
+.phone{background:#ffd700;color:#000}
+.zalo{background:#0a7cff}
+.fb{background:#1877f2}
 
-    .hero{
-      text-align:center;
-      background:linear-gradient(180deg,rgba(255,216,107,.08),rgba(255,216,107,.02)),#111;
-    }
-    .channel{
-      color:#cdbb84;
-      font-size:12px;
-      letter-spacing:4px;
-      text-transform:uppercase;
-      margin-bottom:8px;
-    }
-    .brand{
-      margin:0;
-      color:#ffd86b;
-      font-size:clamp(30px,6vw,52px);
-      font-weight:900;
-      text-transform:uppercase;
-    }
-    .sub{
-      margin-top:10px;
-      font-size:clamp(18px,4vw,30px);
-      font-weight:900;
-      text-transform:uppercase;
-    }
-    .price{
-      margin-top:12px;
-      font-size:clamp(50px,10vw,90px);
-      color:#ffd86b;
-      font-weight:900;
-      animation:blink 1.6s ease-in-out infinite;
-    }
-    @keyframes blink{
-      0%,100%{opacity:1}
-      50%{opacity:.82}
-    }
-    .note{
-      color:#cdbb84;
-      font-size:14px;
-      font-weight:700;
-      text-transform:uppercase;
-    }
-
-    .poster img,
-    .imgbox img{
-      width:100%;
-      height:auto;
-      display:block;
-      border-radius:16px;
-    }
-
-    h2{
-      margin:0 0 12px;
-      color:#ffd86b;
-      text-align:center;
-      text-transform:uppercase;
-      font-size:clamp(22px,4vw,32px);
-    }
-
-    .desc{
-      margin:10px 0 0;
-      color:#f1e7c8;
-      font-size:16px;
-    }
-
-    .imgcap{
-      text-align:center;
-      color:#cdbb84;
-      font-size:13px;
-      margin-top:8px;
-      font-weight:700;
-    }
-
-    .score-grid{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:12px;
-    }
-    .score{
-      border:1px solid rgba(255,216,107,.12);
-      border-radius:16px;
-      padding:14px;
-      background:rgba(255,216,107,.03);
-    }
-    .score h3{
-      margin:0 0 8px;
-      color:#ffd86b;
-      font-size:18px;
-    }
-    .score p{
-      margin:0;
-      color:#f1e7c8;
-      font-size:15px;
-    }
-
-    ul{
-      padding-left:18px;
-      margin:0;
-    }
-    li{
-      margin:8px 0;
-      color:#f1e7c8;
-    }
-
-    .field{
-      width:100%;
-      padding:14px;
-      margin:10px 0;
-      border:none;
-      border-radius:12px;
-      font-size:16px;
-      background:#f7f7f7;
-      color:#111;
-    }
-
-    .check{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      color:#f1e7c8;
-      font-size:14px;
-      margin-top:10px;
-    }
-
-    .btn{
-      width:100%;
-      padding:16px;
-      border:none;
-      border-radius:14px;
-      background:#f1c500;
-      color:#fff;
-      font-size:20px;
-      font-weight:900;
-      margin-top:14px;
-    }
-
-    .vip{
-      display:none;
-      text-align:center;
-      margin-top:18px;
-      padding:18px;
-      border-radius:18px;
-      border:1px solid rgba(255,216,107,.18);
-      background:rgba(255,216,107,.04);
-    }
-    .vip h3{
-      color:#ffd86b;
-      margin-top:0;
-    }
-    .hotline{
-      color:#ffd86b;
-      font-size:34px;
-      font-weight:900;
-      margin:12px 0;
-    }
-
-    .floating{
-      position:fixed;
-      right:14px;
-      bottom:18px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      z-index:99;
-    }
-    .fab{
-      width:58px;
-      height:58px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-decoration:none;
-      color:#fff;
-      font-weight:900;
-      font-size:24px;
-      box-shadow:0 8px 24px rgba(0,0,0,.3);
-    }
-    .phone{background:#f1c500;color:#111}
-    .zalo{background:#0a7cff}
-    .fb{background:#1877f2}
-
-    @media(max-width:720px){
-      .score-grid{grid-template-columns:1fr}
-    }
-  </style>
+.hidden{display:none}
+.box{background:#111;padding:15px;border-radius:12px;margin-top:15px}
+input,select{width:100%;padding:12px;margin-top:10px;border-radius:6px;border:none}
+button{width:100%;padding:15px;background:#ffd700;border:none;font-weight:bold;margin-top:10px}
+</style>
 </head>
+
 <body>
 
-  <div class="ticker-wrap">
-    <div class="ticker">
-      SƠN BẠCH SIGNATURE • TÀI SẢN LÕI KHÔNG TÁI TẠO • TRUNG TÂM QUẬN 1 • HỒ SƠ KÍN – ƯU TIÊN KHÁCH THẬT • LỌC KHÁCH THEO NĂNG LỰC TÀI CHÍNH • NDA ĐIỆN TỬ •
-    </div>
-  </div>
+<div class="watermark">SB</div>
 
-  <div class="watermark">SB</div>
+<div class="wrap">
 
-  <div class="wrap">
+<h2 class="gold">SƠN BẠCH SIGNATURE</h2>
+<h3>TÀI SẢN LÕI KHÔNG TÁI TẠO</h3>
 
-    <div class="card hero">
-      <div class="channel">SƠN BẠCH CINEMATIC CHANNEL</div>
-      <h1 class="brand">SƠN BẠCH SIGNATURE</h1>
-      <div class="sub">TÀI SẢN LÕI KHÔNG TÁI TẠO<br>TRUNG TÂM QUẬN 1</div>
-      <div class="price">1.250 TỶ</div>
-      <div class="note">(THƯƠNG LƯỢNG)</div>
+<div class="price">1.250 TỶ</div>
 
-      <div class="poster" style="margin-top:16px;">
-        <img src="tuong-lai.jpg" alt="Poster tương lai">
-      </div>
-    </div>
+<!-- ẢNH TƯƠNG LAI -->
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
 
-    <div class="card">
-      <h2>HÌNH TƯƠNG LAI CỦA KHU ĐẤT</h2>
-      <div class="imgbox">
-        <img src="tuong-lai.jpg" alt="Hình tương lai">
-      </div>
-      <div class="imgcap">HÌNH TƯƠNG LAI</div>
-      <p class="desc">
-        Hình phối cảnh giúp nhà đầu tư nhìn ra ngay giá trị khai thác, khả năng nhận diện thương mại và vị thế biểu tượng của quỹ đất lõi trung tâm khi được phát triển đúng tầm.
-      </p>
-    </div>
+<!-- ẢNH HIỆN TẠI -->
+<img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa">
 
-    <div class="card">
-      <h2>HÌNH HIỆN TẠI CỦA KHU ĐẤT</h2>
-      <div class="imgbox">
-        <img src="hien-tai.jpg" alt="Hình hiện tại">
-      </div>
-      <div class="imgcap">HÌNH HIỆN TẠI</div>
-      <p class="desc">
-        Hiện trạng cho thấy tài sản không nằm ở vùng chờ phát triển mà đang tọa lạc trong khu vực đã vận hành giá trị, giúp tăng mức độ an tâm cho nhà đầu tư lớn.
-      </p>
-    </div>
+<div class="box">
 
-    <div class="card">
-      <h2>VÌ SAO TÀI SẢN NÀY CÓ TIỀM NĂNG TĂNG GIÁ MẠNH?</h2>
-      <ul>
-        <li>Quỹ đất trung tâm ngày càng khan hiếm, đặc biệt là quỹ đất lớn có hình thể đẹp.</li>
-        <li>Mặt tiền lớn tạo lợi thế nhận diện thương mại và giá trị biểu tượng cao.</li>
-        <li>GPXD 16 tầng – 3 hầm mở ra khả năng khai thác vượt trội.</li>
-        <li>Vị trí gần Somerset – TLSQ Hoa Kỳ – Sofitel khiến tài sản thuộc nhóm lõi hiếm.</li>
-      </ul>
-    </div>
+<h3>NDA – MỞ HỒ SƠ</h3>
 
-    <div class="card">
-      <h2>ĐÁNH GIÁ KHÁCH THEO NĂNG LỰC TÀI CHÍNH</h2>
-      <div class="score-grid">
-        <div class="score"><h3>50 – 100 TỶ</h3><p>Quan tâm cơ hội lớn nhưng thường cần thêm cấu trúc vốn hoặc hợp tác đầu tư.</p></div>
-        <div class="score"><h3>100 – 200 TỶ</h3><p>Có thể nghiên cứu hồ sơ sâu hơn nhưng thường phù hợp vai trò đồng đầu tư.</p></div>
-        <div class="score"><h3>200 – 300 TỶ</h3><p>Có khả năng đàm phán nghiêm túc hơn, cần rà rõ mục tiêu nắm giữ hay phát triển.</p></div>
-        <div class="score"><h3>300 – 500 TỶ</h3><p>Nhóm khách mạnh, có thể bước vào rà soát pháp lý và cấu trúc thương vụ.</p></div>
-        <div class="score"><h3>500 – 700 TỶ</h3><p>Nhóm rất mạnh, phù hợp tiếp cận hồ sơ sâu và lịch xem riêng.</p></div>
-        <div class="score"><h3>TRÊN 700 TỶ</h3><p>Nhóm khách lõi, ưu tiên hồ sơ VIP và làm việc trực tiếp theo quy trình kín.</p></div>
-      </div>
-    </div>
+<form id="form">
+<input placeholder="Họ tên" required>
+<input placeholder="SĐT" required>
 
-    <div class="card">
-      <h2>NHẬN ĐỊNH GIÁ TRỊ TƯƠNG LAI</h2>
-      <ul>
-        <li>Đây là dạng tài sản càng nắm giữ đúng chu kỳ càng dễ chuyển thành tài sản biểu tượng.</li>
-        <li>Giá trị tăng không chỉ đến từ đất mà còn từ câu chuyện phát triển dự án tương lai.</li>
-        <li>Trong bối cảnh trung tâm ngày càng hiếm nguồn cung, tài sản tương tự thường được định giá cao hơn nhờ tính độc bản.</li>
-      </ul>
-    </div>
+<select id="money" required>
+<option value="">Chọn năng lực</option>
+<option value="1">50-100 tỷ</option>
+<option value="2">100-200 tỷ</option>
+<option value="3">200-300 tỷ</option>
+<option value="4">300-500 tỷ</option>
+<option value="5">500-700 tỷ</option>
+<option value="6">>700 tỷ</option>
+</select>
 
-    <div class="card">
-      <h2>MỞ NDA – XEM HỒ SƠ KHÁCH THẬT</h2>
-      <p class="desc" style="text-align:center;">
-        Người xem hồ sơ xác nhận nhu cầu là thực, cam kết không phát tán, không sao chép, không chuyển tiếp, không sử dụng dữ liệu sai mục đích. Mọi dữ liệu, hình ảnh, phân tích và thông tin liên quan đến tài sản đều thuộc phạm vi bảo mật.
-      </p>
+<button>MỞ HỒ SƠ VIP</button>
+</form>
 
-      <form id="ndaForm" action="https://formspree.io/f/mpqykgzk" method="POST">
-        <input class="field" type="text" name="name" placeholder="Họ và tên" required>
-        <input class="field" type="tel" name="phone" placeholder="Số điện thoại" required>
-        <input class="field" type="email" name="email" placeholder="Email" required>
+</div>
 
-        <select class="field" name="nhu_cau" required>
-          <option value="">Chọn nhu cầu</option>
-          <option>Mua đầu tư giữ tài sản</option>
-          <option>Mua để phát triển dự án</option>
-          <option>Đại diện quỹ / công ty đầu tư</option>
-          <option>Muốn nhận hồ sơ nghiên cứu trước</option>
-        </select>
+<div id="score" class="box hidden"></div>
 
-        <select class="field" name="nang_luc_tai_chinh" required>
-          <option value="">Chọn năng lực tài chính</option>
-          <option>50 – 100 tỷ</option>
-          <option>100 – 200 tỷ</option>
-          <option>200 – 300 tỷ</option>
-          <option>300 – 500 tỷ</option>
-          <option>500 – 700 tỷ</option>
-          <option>Trên 700 tỷ</option>
-        </select>
+<div id="vip" class="box hidden">
+<h2 class="gold">HỒ SƠ VIP</h2>
+<p>0858 999 934</p>
+</div>
 
-        <label class="check">
-          <input type="checkbox" name="agree" required>
-          <span>Tôi xác nhận thông tin cung cấp là đúng sự thật, đồng ý NDA điện tử, cam kết bảo mật tuyệt đối mọi dữ liệu được cung cấp và chịu trách nhiệm nếu để lộ thông tin hoặc sử dụng sai mục đích.</span>
-        </label>
+</div>
 
-        <button class="btn" type="submit">TÔI ĐỒNG Ý NDA – MỞ HỒ SƠ VIP</button>
-      </form>
+<div class="floating">
+<a href="tel:0858999934" class="btn phone">☎</a>
+<a href="https://zalo.me/0858999934" class="btn zalo">Z</a>
+<a href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" class="btn fb">f</a>
+</div>
 
-      <div class="vip" id="vipContent">
-        <h3>HỒ SƠ VIP DÀNH CHO KHÁCH THẬT</h3>
-        <p>Thông tin tổng quan tài sản lõi trung tâm.</p>
-        <p>Góc nhìn hiện tại và định hướng phát triển tương lai.</p>
-        <p>Ưu tiên làm việc trực tiếp với khách thực và đơn vị có năng lực tài chính.</p>
-        <div class="hotline">0858 999 934</div>
-        <p>Tài sản lõi không dành cho số đông. Chỉ dành cho nhà đầu tư hiểu giá trị của vị trí, quy mô, độ hiếm và khả năng tăng giá trong tương lai.</p>
-        <a class="btn" style="display:inline-block;width:auto;padding:14px 18px;text-decoration:none;" href="tel:0858999934">GỌI NGAY MR. SƠN BẠCH</a>
-      </div>
-    </div>
+<script>
+const form=document.getElementById("form");
+const score=document.getElementById("score");
 
-  </div>
+const data={
+1:"Nhóm 50–100 tỷ: cần hợp tác",
+2:"Nhóm 100–200 tỷ: xem xét đầu tư",
+3:"Nhóm 200–300 tỷ: có thể đàm phán",
+4:"Nhóm 300–500 tỷ: khách mạnh",
+5:"Nhóm 500–700 tỷ: khách rất mạnh",
+6:"Trên 700 tỷ: khách VIP"
+};
 
-  <div class="floating">
-    <a class="fab phone" href="tel:0858999934">☎</a>
-    <a class="fab zalo" href="https://zalo.me/0858999934" target="_blank" rel="noopener">Z</a>
-    <a class="fab fb" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank" rel="noopener">f</a>
-  </div>
+form.addEventListener("submit",function(e){
+e.preventDefault();
+let v=document.getElementById("money").value;
 
-  <script>
-    const form = document.getElementById('ndaForm');
-    const vipContent = document.getElementById('vipContent');
+score.innerHTML=data[v];
+score.classList.remove("hidden");
 
-    form.addEventListener('submit', async function(e){
-      e.preventDefault();
-      const data = new FormData(form);
-
-      try{
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if(response.ok){
-          form.style.display = 'none';
-          vipContent.style.display = 'block';
-          vipContent.scrollIntoView({behavior:'smooth'});
-        }else{
-          alert('Gửi thông tin chưa thành công. Anh thử lại giúp em.');
-        }
-      }catch(err){
-        alert('Không kết nối được biểu mẫu. Anh kiểm tra lại mạng rồi thử lại giúp em.');
-      }
-    });
-  </script>
+document.getElementById("vip").classList.remove("hidden");
+});
+</script>
 
 </body>
 </html>
