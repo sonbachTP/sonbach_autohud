@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sơn Bạch Signature | Tài sản lõi Q1</title>
+<title>Sơn Bạch Signature</title>
 
 <style>
 body{
@@ -14,22 +14,24 @@ body{
   text-align:center;
 }
 
-/* LOGO NHẤP NHÁY */
 .logo{
-  font-size:40px;
+  font-size:60px;
   font-weight:bold;
   color:#ffd56a;
-  opacity:0.2;
   animation:blink 2s infinite;
 }
 @keyframes blink{
-  0%,100%{opacity:0.2}
+  0%,100%{opacity:0.3}
   50%{opacity:1}
 }
 
-/* SỐ 1250 TỶ PHÁT SÁNG */
+.title{
+  font-size:26px;
+  margin-top:10px;
+}
+
 .price{
-  font-size:55px;
+  font-size:60px;
   color:#ffd56a;
   text-shadow:0 0 20px gold;
   animation:glow 1.5s infinite alternate;
@@ -39,33 +41,28 @@ body{
   to{ text-shadow:0 0 40px #ffd56a;}
 }
 
-/* TEXT CHẠY */
-.marquee{
-  overflow:hidden;
-  white-space:nowrap;
-  box-sizing:border-box;
-}
-.marquee p{
-  display:inline-block;
-  padding-left:100%;
-  animation:marquee 10s linear infinite;
-}
-@keyframes marquee{
-  0%{ transform:translate(0,0);}
-  100%{ transform:translate(-100%,0);}
-}
-
-/* NÚT */
 .btn{
   display:block;
   margin:15px auto;
-  padding:15px;
-  width:80%;
+  padding:18px;
+  width:85%;
   background:#ffd56a;
   color:#000;
   font-weight:bold;
-  border-radius:8px;
+  border-radius:12px;
   text-decoration:none;
+}
+
+form{
+  margin-top:30px;
+}
+
+input, textarea{
+  width:85%;
+  padding:15px;
+  margin:10px;
+  border-radius:10px;
+  border:none;
 }
 
 </style>
@@ -75,28 +72,22 @@ body{
 
 <div class="logo">SB</div>
 
-<h2>SƠN BẠCH SIGNATURE</h2>
+<div class="title">SƠN BẠCH SIGNATURE</div>
 
 <div class="price">1.250 TỶ</div>
 
-<div class="marquee">
-  <p>TÀI SẢN LÕI TRUNG TÂM – KHÔNG DÀNH CHO SỐ ĐÔNG</p>
-</div>
-
-<br>
+<p>TÀI SẢN LÕI TRUNG TÂM – KHÔNG DÀNH CHO SỐ ĐÔNG</p>
 
 <a class="btn" href="#nda">🔒 XEM THÔNG TIN (NDA)</a>
 <a class="btn" href="tel:0858999934">📞 GỌI NGAY</a>
 <a class="btn" href="https://zalo.me/0858999934">💬 ZALO</a>
 
-<br><br>
+<h2 id="nda">ĐĂNG KÝ NDA</h2>
 
-<h3 id="nda">ĐĂNG KÝ NDA</h3>
-
-<form action="https://formspree.io/f/yourID" method="POST">
-  <input type="text" name="name" placeholder="Họ tên" required style="width:80%;padding:10px"><br><br>
-  <input type="text" name="phone" placeholder="SĐT" required style="width:80%;padding:10px"><br><br>
-  <input type="text" name="note" placeholder="Nhu cầu" style="width:80%;padding:10px"><br><br>
+<form action="https://formspree.io/f/mpqykgzk" method="POST">
+  <input type="text" name="name" placeholder="Họ tên" required>
+  <input type="text" name="phone" placeholder="SĐT" required>
+  <textarea name="note" placeholder="Nhu cầu"></textarea>
 
   <button class="btn" type="submit">TÔI ĐỒNG Ý NDA</button>
 </form>
