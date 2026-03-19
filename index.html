@@ -163,6 +163,121 @@ window.addEventListener("scroll", () => {
   lastScroll = current;
 });
 </script>
+<!-- ===== FLOAT BUTTON ULTRA VIP FINAL 3 ===== -->
+<style>
+.float-actions{
+  position:fixed;
+  right:18px;
+  bottom:90px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:9999;
+  transition:0.4s;
+}
 
+.fab{
+  position:relative;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:22px;
+  font-weight:bold;
+
+  background:linear-gradient(180deg,#ffe59d,#ffd86a,#e3a420);
+  color:#000;
+
+  box-shadow:
+    0 0 15px rgba(255,214,106,0.6),
+    0 8px 20px rgba(0,0,0,0.4);
+
+  transition:0.3s;
+}
+
+.fab:hover{
+  transform:scale(1.1);
+}
+
+/* TOOLTIP */
+.fab span{
+  position:absolute;
+  right:70px;
+  background:#000;
+  color:#FFD700;
+  padding:6px 10px;
+  border-radius:6px;
+  font-size:12px;
+  opacity:0;
+  transition:0.3s;
+  white-space:nowrap;
+}
+
+.fab:hover span{
+  opacity:1;
+}
+
+/* MOBILE FIX */
+@media (max-width:768px){
+  .float-actions{
+    bottom:110px;
+    right:12px;
+  }
+}
+
+/* ẨN KHI SCROLL */
+.hide{
+  transform:translateY(120px);
+}
+</style>
+
+<!-- ===== NÚT NỔI ===== -->
+<div class="float-actions" id="fabBox">
+
+  <!-- GỌI -->
+  <a class="fab" href="tel:0858999934">
+    ☎
+    <span>Gọi ngay</span>
+  </a>
+
+  <!-- ZALO -->
+  <a class="fab" href="https://zalo.me/0858999934">
+    Z
+    <span>Zalo</span>
+  </a>
+
+  <!-- FACEBOOK -->
+  <a class="fab" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr">
+    f
+    <span>Facebook</span>
+  </a>
+
+  <!-- NDA -->
+  <a class="fab" href="#nda">
+    🔐
+    <span>Xem hồ sơ</span>
+  </a>
+
+</div>
+
+<script>
+let lastScroll = 0;
+const fab = document.getElementById("fabBox");
+
+window.addEventListener("scroll", () => {
+  let current = window.pageYOffset;
+
+  if(current > lastScroll){
+    fab.classList.add("hide");
+  } else {
+    fab.classList.remove("hide");
+  }
+
+  lastScroll = current;
+});
+</script>
 </body>
 </html>
