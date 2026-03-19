@@ -657,5 +657,80 @@ color:#fff;
     <a class="float-btn float-zalo" href="https://zalo.me/0858999934" target="_blank">💬 Zalo</a>
     <a class="float-btn float-fb" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank">🔵 Facebook</a>
   </div>
+  <!-- POPUP NDA -->
+  <script>
+function openNDA(){
+  document.getElementById("ndaPopup").style.display = "flex";
+}
+
+function submitNDA(){
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let note = document.getElementById("note").value;
+
+  if(!name || !phone){
+    alert("Vui lòng nhập đủ thông tin");
+    return;
+  }
+
+  localStorage.setItem("nda_ok","true");
+
+  alert("Đã xác nhận. Sơn Bạch sẽ liên hệ ngay!");
+
+  document.getElementById("ndaPopup").style.display = "none";
+}
+
+setTimeout(()=>{
+  if(!localStorage.getItem("nda_ok")){
+    openNDA();
+  }
+},1500);
+</script>
+<div id="ndaPopup" style="
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.85);
+display:none;
+z-index:9999;
+align-items:center;
+justify-content:center;
+">
+
+<div style="
+background:#111;
+border:1px solid gold;
+border-radius:12px;
+padding:20px;
+width:90%;
+max-width:400px;
+color:#fff;
+">
+
+<h3 style="color:#ffd56a;">🔒 XÁC NHẬN KHÁCH HÀNG</h3>
+
+<input id="name" placeholder="Họ tên"
+style="width:100%;padding:10px;margin:5px 0;border-radius:6px;border:none;">
+
+<input id="phone" placeholder="Số điện thoại"
+style="width:100%;padding:10px;margin:5px 0;border-radius:6px;border:none;">
+
+<textarea id="note" placeholder="Nhu cầu..."
+style="width:100%;padding:10px;margin:5px 0;border-radius:6px;border:none;"></textarea>
+
+<button onclick="submitNDA()" style="
+width:100%;
+padding:12px;
+background:gold;
+border:none;
+border-radius:8px;
+font-weight:bold;
+margin-top:10px;
+">
+TÔI ĐỒNG Ý NDA
+</button>
+
+</div>
+</div>
 </body>
 </html>
