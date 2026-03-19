@@ -7,38 +7,34 @@
   <style>
     :root{
       --bg:#050505;
-      --card:#0f0f10;
+      --card:#0d0d0f;
       --gold:#f4c542;
       --gold2:#ffd86b;
-      --gold3:#ffefb0;
-      --text:#f7f1dd;
+      --text:#f6f1dd;
       --muted:#d6c08a;
       --line:#3b2b0b;
-      --shadow:0 10px 30px rgba(0,0,0,.35);
     }
-
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-      background:
-        radial-gradient(circle at top, rgba(255,202,60,.12), transparent 25%),
-        radial-gradient(circle at bottom right, rgba(255,185,40,.10), transparent 20%),
-        linear-gradient(180deg,#090909 0%, #030303 100%);
       color:var(--text);
+      background:
+        radial-gradient(circle at top, rgba(255,210,100,.12), transparent 25%),
+        linear-gradient(180deg, #090909 0%, #020202 100%);
       overflow-x:hidden;
     }
 
     .ticker-wrap{
       width:100%;
       overflow:hidden;
-      border-bottom:1px solid rgba(255,216,107,.18);
-      border-top:1px solid rgba(255,216,107,.12);
-      background:rgba(255,216,107,.05);
       position:sticky;
       top:0;
-      z-index:30;
+      z-index:60;
+      background:rgba(20,16,8,.95);
+      border-top:1px solid rgba(255,216,107,.18);
+      border-bottom:1px solid rgba(255,216,107,.18);
       backdrop-filter: blur(8px);
     }
     .ticker{
@@ -46,11 +42,11 @@
       white-space:nowrap;
       padding:10px 0;
       color:var(--gold2);
-      font-weight:800;
       font-size:13px;
+      font-weight:900;
       letter-spacing:1px;
       text-transform:uppercase;
-      animation:marquee 26s linear infinite;
+      animation:marquee 24s linear infinite;
     }
     @keyframes marquee{
       0%{transform:translateX(100%)}
@@ -59,24 +55,24 @@
 
     .watermark{
       position:fixed;
-      inset:auto auto 8% -40px;
-      width:280px;
-      height:280px;
+      left:-30px;
+      bottom:120px;
+      width:240px;
+      height:240px;
       border-radius:50%;
-      border:2px solid rgba(255,216,107,.10);
+      border:2px solid rgba(255,216,107,.08);
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:84px;
+      font-size:72px;
       font-weight:900;
-      color:rgba(255,216,107,.08);
+      color:rgba(255,216,107,.06);
+      box-shadow:0 0 40px rgba(255,216,107,.03) inset;
       z-index:0;
-      transform-origin:center;
-      animation:spinSlow 22s linear infinite;
       pointer-events:none;
-      box-shadow:0 0 50px rgba(255,216,107,.05) inset;
+      animation:spinSB 20s linear infinite;
     }
-    @keyframes spinSlow{
+    @keyframes spinSB{
       from{transform:rotate(0deg)}
       to{transform:rotate(360deg)}
     }
@@ -84,31 +80,30 @@
     .wrap{
       width:min(980px, 92%);
       margin:0 auto;
+      padding:24px 0 90px;
       position:relative;
       z-index:1;
-      padding:28px 0 90px;
     }
 
     .hero{
-      position:relative;
-      overflow:hidden;
-      padding:34px 20px 28px;
-      border-radius:30px;
       background:
         linear-gradient(180deg, rgba(255,216,107,.08), rgba(255,216,107,.02)),
-        rgba(15,15,16,.95);
+        rgba(15,15,16,.94);
       border:1px solid rgba(255,216,107,.16);
-      box-shadow:var(--shadow);
+      border-radius:30px;
+      padding:30px 18px 26px;
       text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
+      overflow:hidden;
+      position:relative;
     }
-
     .hero::before{
       content:"";
       position:absolute;
-      inset:-120px auto auto -120px;
+      inset:auto auto -120px -120px;
       width:280px;
       height:280px;
-      background:radial-gradient(circle, rgba(255,216,107,.18), transparent 65%);
+      background:radial-gradient(circle, rgba(255,216,107,.14), transparent 65%);
       pointer-events:none;
     }
 
@@ -119,77 +114,43 @@
       text-transform:uppercase;
       margin-bottom:10px;
     }
-
     .brand{
       margin:0;
       color:var(--gold2);
-      font-size:clamp(30px, 6vw, 56px);
-      line-height:1.05;
-      font-weight:900;
+      font-size:clamp(30px, 6vw, 54px);
+      line-height:1.06;
+      font-weight:1000;
       text-transform:uppercase;
-      text-shadow:0 0 18px rgba(255,216,107,.18);
-      animation:softGlow 2.4s ease-in-out infinite;
+      animation:softGlow 2.8s ease-in-out infinite;
     }
-
     .sub{
-      margin:14px 0 0;
-      font-size:clamp(17px, 3.5vw, 30px);
+      margin:12px 0 0;
+      font-size:clamp(18px, 3.8vw, 30px);
       font-weight:900;
-      text-transform:uppercase;
       line-height:1.35;
-      color:#fff;
-      animation:softGlow 3s ease-in-out infinite;
+      text-transform:uppercase;
+      animation:softGlow 3.2s ease-in-out infinite;
     }
-
     .price{
-      margin:20px 0 6px;
-      font-size:clamp(48px, 10vw, 92px);
+      margin:18px 0 6px;
+      font-size:clamp(50px, 10vw, 92px);
       line-height:1;
       font-weight:1000;
       color:var(--gold2);
-      text-shadow:
-        0 0 10px rgba(255,216,107,.25),
-        0 0 26px rgba(255,216,107,.20);
-      animation:priceBlink 1.6s ease-in-out infinite;
+      text-shadow:0 0 18px rgba(255,216,107,.25),0 0 34px rgba(255,216,107,.18);
+      animation:blinkPrice 1.6s ease-in-out infinite;
     }
-    @keyframes priceBlink{
-      0%,100%{
-        opacity:1;
-        text-shadow:0 0 10px rgba(255,216,107,.20),0 0 24px rgba(255,216,107,.16);
-        transform:scale(1);
-      }
-      50%{
-        opacity:.92;
-        text-shadow:0 0 20px rgba(255,216,107,.45),0 0 42px rgba(255,216,107,.28);
-        transform:scale(1.02);
-      }
+    @keyframes blinkPrice{
+      0%,100%{opacity:1;transform:scale(1)}
+      50%{opacity:.92;transform:scale(1.02)}
     }
-
     .note{
       color:var(--muted);
-      font-size:14px;
+      font-weight:900;
       text-transform:uppercase;
-      font-weight:800;
       letter-spacing:1px;
-      margin-bottom:18px;
+      font-size:14px;
     }
-
-    .facts{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:12px;
-      text-align:left;
-      margin-top:16px;
-    }
-
-    .fact{
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:16px;
-      padding:14px 15px;
-      font-size:16px;
-    }
-    .fact b{color:var(--gold2)}
 
     .section{
       margin-top:22px;
@@ -197,31 +158,41 @@
       border:1px solid rgba(255,255,255,.06);
       border-radius:26px;
       padding:24px 18px;
-      box-shadow:var(--shadow);
+      box-shadow:0 10px 30px rgba(0,0,0,.28);
     }
-
     .title{
       margin:0 0 14px;
       text-align:center;
       color:var(--gold2);
-      font-size:clamp(22px,4vw,34px);
+      font-size:clamp(22px, 4vw, 34px);
       line-height:1.2;
-      font-weight:900;
+      font-weight:1000;
       text-transform:uppercase;
-      text-shadow:0 0 16px rgba(255,216,107,.16);
-      animation:softGlow 2.8s ease-in-out infinite;
+      animation:softGlow 2.6s ease-in-out infinite;
     }
-
     @keyframes softGlow{
       0%,100%{opacity:1}
-      50%{opacity:.86}
+      50%{opacity:.85}
+    }
+
+    .poster{
+      margin-top:16px;
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid rgba(255,216,107,.14);
+      background:#111;
+    }
+    .poster img{
+      display:block;
+      width:100%;
+      height:auto;
     }
 
     .desc{
-      color:#f3e9c8;
-      font-size:16px;
+      margin:14px 0 0;
+      color:#f0e6c7;
       line-height:1.75;
-      margin:10px 0 0;
+      font-size:16px;
     }
 
     .imgbox{
@@ -235,16 +206,15 @@
       width:100%;
       display:block;
       object-fit:cover;
-      max-height:700px;
-      background:#111;
+      max-height:680px;
     }
     .imgcap{
       padding:12px 14px;
+      text-align:center;
       color:var(--muted);
       font-size:14px;
-      text-align:center;
+      font-weight:800;
       background:rgba(255,216,107,.04);
-      font-weight:700;
     }
 
     ul.bullets{
@@ -253,34 +223,55 @@
     }
     ul.bullets li{
       margin:9px 0;
-      color:#f3ead1;
       line-height:1.7;
+      color:#f3ead1;
+    }
+
+    .score-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+      margin-top:16px;
+    }
+    .score{
+      border:1px solid rgba(255,216,107,.12);
+      border-radius:18px;
+      padding:16px 14px;
+      background:rgba(255,216,107,.03);
+    }
+    .score h3{
+      margin:0 0 8px;
+      font-size:18px;
+      color:var(--gold2);
+    }
+    .score p{
+      margin:0;
+      color:#efe5c4;
+      line-height:1.65;
+      font-size:15px;
     }
 
     .nda-head{
       margin:0 0 10px;
       text-align:center;
-      color:#fff;
       font-size:clamp(22px,4vw,34px);
-      font-weight:900;
+      font-weight:1000;
       text-transform:uppercase;
-      text-shadow:0 0 14px rgba(255,216,107,.10);
+      color:#fff;
+      animation:softGlow 2.8s ease-in-out infinite;
     }
-
     .nda-sub{
       margin:0 auto 16px;
       max-width:780px;
-      color:#ebdfb9;
       text-align:center;
+      color:#eadfb8;
       line-height:1.75;
       font-size:15px;
     }
-
     form{
       max-width:780px;
       margin:0 auto;
     }
-
     .field{
       width:100%;
       padding:16px;
@@ -292,42 +283,39 @@
       font-size:17px;
       outline:none;
     }
-
     .check{
       display:flex;
       gap:10px;
       align-items:flex-start;
       margin-top:12px;
-      color:#f1e7c8;
-      font-size:14px;
-      line-height:1.6;
+      color:#f0e7c9;
       text-align:left;
+      font-size:14px;
+      line-height:1.65;
     }
-
     .btn{
       width:100%;
       border:none;
       border-radius:16px;
       padding:18px;
-      margin-top:16px;
       background:linear-gradient(180deg,#ffe15d,#f1c500);
       color:#fff;
-      font-size:22px;
-      font-weight:900;
+      font-size:21px;
+      font-weight:1000;
       cursor:pointer;
-      box-shadow:0 10px 24px rgba(255,216,107,.16);
+      margin-top:16px;
+      box-shadow:0 10px 24px rgba(255,216,107,.18);
       animation:buttonGlow 1.8s ease-in-out infinite;
     }
     @keyframes buttonGlow{
       0%,100%{filter:brightness(1)}
       50%{filter:brightness(1.08)}
     }
-
     .small-note{
       margin-top:10px;
-      text-align:center;
       color:var(--muted);
       font-size:13px;
+      text-align:center;
     }
 
     .vip{
@@ -337,32 +325,28 @@
       border-radius:22px;
       padding:22px 18px;
       background:linear-gradient(180deg, rgba(255,216,107,.08), rgba(255,216,107,.03));
-      border:1px solid rgba(255,216,107,.20);
+      border:1px solid rgba(255,216,107,.18);
       text-align:center;
     }
-
     .vip h3{
-      margin:0 0 12px;
+      margin:0 0 10px;
       color:var(--gold2);
       font-size:28px;
       text-transform:uppercase;
     }
-
     .vip p{
       margin:8px 0;
       color:#f5ecd2;
       line-height:1.7;
     }
-
     .hotline{
+      margin-top:12px;
       color:var(--gold2);
       font-size:38px;
       font-weight:1000;
-      margin-top:14px;
-      text-shadow:0 0 18px rgba(255,216,107,.18);
+      text-shadow:0 0 16px rgba(255,216,107,.18);
     }
-
-    .call{
+    .call-main{
       display:inline-block;
       margin-top:14px;
       padding:14px 18px;
@@ -370,19 +354,18 @@
       background:#fff;
       color:#111;
       text-decoration:none;
-      font-weight:900;
+      font-weight:1000;
     }
 
     .floating{
       position:fixed;
       right:14px;
       bottom:18px;
-      z-index:50;
+      z-index:80;
       display:flex;
       flex-direction:column;
       gap:10px;
     }
-
     .fab{
       width:58px;
       height:58px;
@@ -393,26 +376,25 @@
       text-decoration:none;
       box-shadow:0 10px 26px rgba(0,0,0,.34);
       font-size:24px;
-      font-weight:900;
+      font-weight:1000;
       border:1px solid rgba(255,255,255,.15);
-      backdrop-filter:blur(8px);
+      color:#fff;
     }
-    .fab.call{background:linear-gradient(180deg,#ffd900,#f0c500); color:#111}
-    .fab.zalo{background:#0a7cff; color:#fff}
-    .fab.fb{background:#1877f2; color:#fff}
+    .fab.phone{background:linear-gradient(180deg,#ffd900,#f0c500); color:#111}
+    .fab.zalo{background:#0a7cff}
+    .fab.fb{background:#1877f2}
 
     @media (max-width:720px){
-      .facts{grid-template-columns:1fr}
       .wrap{width:min(94%,94%)}
       .hero,.section{padding:20px 14px}
+      .score-grid{grid-template-columns:1fr}
+      .watermark{
+        width:200px;
+        height:200px;
+        font-size:62px;
+      }
       .btn{font-size:18px}
       .hotline{font-size:30px}
-      .watermark{
-        width:220px;
-        height:220px;
-        font-size:66px;
-        left:-25px;
-      }
     }
   </style>
 </head>
@@ -420,7 +402,7 @@
 
   <div class="ticker-wrap">
     <div class="ticker">
-      SƠN BẠCH SIGNATURE • TÀI SẢN LÕI KHÔNG TÁI TẠO • TRUNG TÂM QUẬN 1 • QUỸ ĐẤT HIẾM DÀNH CHO NHÀ ĐẦU TƯ THỰC LỰC • HỒ SƠ KÍN – LÀM VIỆC RIÊNG – ƯU TIÊN KHÁCH THẬT •
+      SƠN BẠCH SIGNATURE • TÀI SẢN LÕI KHÔNG TÁI TẠO • TRUNG TÂM QUẬN 1 • HỒ SƠ KÍN – ƯU TIÊN KHÁCH THẬT • LỌC KHÁCH THEO NĂNG LỰC TÀI CHÍNH • NDA ĐIỆN TỬ •
     </div>
   </div>
 
@@ -432,31 +414,23 @@
       <div class="channel">SƠN BẠCH CINEMATIC CHANNEL</div>
       <h1 class="brand">SƠN BẠCH SIGNATURE</h1>
       <div class="sub">TÀI SẢN LÕI KHÔNG TÁI TẠO<br>TRUNG TÂM QUẬN 1</div>
-
       <div class="price">1.250 TỶ</div>
       <div class="note">(THƯƠNG LƯỢNG)</div>
 
-      <div class="facts">
-        <div class="fact"><b>Diện tích:</b> 1.317,3 m²</div>
-        <div class="fact"><b>Mặt tiền:</b> 33m</div>
-        <div class="fact"><b>Chiều dài:</b> 39m</div>
-        <div class="fact"><b>Đường:</b> 20m</div>
-        <div class="fact"><b>GPXD:</b> 16 tầng – 3 hầm</div>
-        <div class="fact"><b>Vị trí:</b> Somerset – TLSQ Hoa Kỳ – Sofitel</div>
+      <div class="poster">
+        <img src="/mnt/data/B8C9A4AB-4849-4E39-9000-AD8CBA11069E.jpeg" alt="Poster Sơn Bạch Signature">
       </div>
     </section>
 
     <section class="section">
       <h2 class="title">HÌNH TƯƠNG LAI CỦA KHU ĐẤT</h2>
       <p class="desc">
-        Hình phối cảnh giúp nhà đầu tư nhìn ra ngay giá trị khai thác và vị thế biểu tượng của quỹ đất lõi trung tâm khi được phát triển đúng tầm.
+        Hình phối cảnh giúp nhà đầu tư nhìn ra ngay giá trị khai thác, khả năng nhận diện thương mại và vị thế biểu tượng của quỹ đất lõi trung tâm khi được phát triển đúng tầm.
       </p>
-
       <div class="imgbox">
-        <img src="LINK_ANH_TUONG_LAI" alt="Hình tương lai của khu đất">
+        <img src="/mnt/data/B8C9A4AB-4849-4E39-9000-AD8CBA11069E.jpeg" alt="Hình tương lai của khu đất">
         <div class="imgcap">HÌNH TƯƠNG LAI</div>
       </div>
-
       <p class="desc">
         Đây là góc nhìn tương lai cho một tài sản đủ độ hiếm – độ lớn – độ nhận diện. Khi sở hữu quỹ đất lõi trung tâm với mặt tiền rộng và khả năng phát triển mạnh, giá trị không chỉ nằm ở đất mà còn nằm ở thương hiệu công trình có thể hình thành trong tương lai.
       </p>
@@ -467,12 +441,10 @@
       <p class="desc">
         Hình thực tế thể hiện rõ khu vực đã có hạ tầng, lưu thông và giá trị sử dụng hiện hữu. Đây là yếu tố rất quan trọng với nhà đầu tư lớn.
       </p>
-
       <div class="imgbox">
-        <img src="LINK_ANH_HIEN_TAI" alt="Hình hiện tại của khu đất">
+        <img src="/mnt/data/DEC647D4-4CE7-40BB-9B71-B76E74256817.jpeg" alt="Hình hiện tại của khu đất">
         <div class="imgcap">HÌNH HIỆN TẠI</div>
       </div>
-
       <p class="desc">
         Hiện trạng cho thấy tài sản không nằm ở vùng chờ phát triển, mà đang tọa lạc trong khu vực đã vận hành giá trị. Điều này giúp tăng mức độ an tâm cho nhà đầu tư và tạo nền cho biên độ tăng giá theo chu kỳ 3–5 năm.
       </p>
@@ -482,10 +454,40 @@
       <h2 class="title">VÌ SAO TÀI SẢN NÀY CÓ TIỀM NĂNG TĂNG GIÁ MẠNH?</h2>
       <ul class="bullets">
         <li>Quỹ đất trung tâm ngày càng khan hiếm, đặc biệt là quỹ đất lớn có hình thể đẹp.</li>
-        <li>Mặt tiền 33m tạo lợi thế nhận diện thương mại và giá trị biểu tượng rất cao.</li>
+        <li>Mặt tiền lớn tạo lợi thế nhận diện thương mại và giá trị biểu tượng rất cao.</li>
         <li>GPXD 16 tầng – 3 hầm mở ra khả năng khai thác vượt trội cho khách sạn, văn phòng hoặc căn hộ cao cấp.</li>
         <li>Vị trí gần Somerset – TLSQ Hoa Kỳ – Sofitel khiến tài sản thuộc nhóm lõi hiếm, phù hợp nhà đầu tư thực lực.</li>
       </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="title">ĐÁNH GIÁ KHÁCH THEO NĂNG LỰC TÀI CHÍNH</h2>
+      <div class="score-grid">
+        <div class="score">
+          <h3>50 – 100 TỶ</h3>
+          <p>Nhóm khách quan tâm cơ hội lớn nhưng thường cần đồng hành thêm về cấu trúc vốn, phương án chia giai đoạn hoặc hợp tác đầu tư.</p>
+        </div>
+        <div class="score">
+          <h3>100 – 200 TỶ</h3>
+          <p>Nhóm có thể nghiên cứu sâu hồ sơ, nhưng thường phù hợp vai trò đồng đầu tư hoặc bước đầu tiếp cận tài sản lõi.</p>
+        </div>
+        <div class="score">
+          <h3>200 – 300 TỶ</h3>
+          <p>Nhóm có khả năng tham gia đàm phán nghiêm túc hơn, cần kiểm tra rõ mục tiêu nắm giữ hay phát triển.</p>
+        </div>
+        <div class="score">
+          <h3>300 – 500 TỶ</h3>
+          <p>Nhóm khách mạnh, có thể bước vào giai đoạn rà soát pháp lý, cấu trúc thương vụ và lộ trình phát triển tài sản.</p>
+        </div>
+        <div class="score">
+          <h3>500 – 700 TỶ</h3>
+          <p>Nhóm khách rất mạnh, phù hợp tiếp cận hồ sơ sâu và làm việc trực tiếp theo quy trình kín, ưu tiên lịch xem riêng.</p>
+        </div>
+        <div class="score">
+          <h3>TRÊN 700 TỶ</h3>
+          <p>Nhóm khách lõi, đủ điều kiện vào vòng làm việc trọng tâm. Ưu tiên tiếp cận hồ sơ VIP, lịch gặp riêng và trao đổi trực tiếp với bên sở hữu.</p>
+        </div>
+      </div>
     </section>
 
     <section class="section">
@@ -501,7 +503,7 @@
     <section class="section" id="nda">
       <h2 class="nda-head">MỞ NDA – XEM HỒ SƠ KHÁCH THẬT</h2>
       <p class="nda-sub">
-        Người xem hồ sơ xác nhận nhu cầu là thực, cam kết không phát tán hoặc sử dụng dữ liệu sai mục đích, đồng thời chịu trách nhiệm nếu để lộ thông tin dưới bất kỳ hình thức nào. Hồ sơ chỉ ưu tiên cho nhà đầu tư nghiêm túc, có năng lực tài chính và tôn trọng quy trình bảo mật.
+        Người xem hồ sơ xác nhận nhu cầu là thực, cam kết không phát tán, không sao chép, không chuyển tiếp, không sử dụng dữ liệu sai mục đích và không dùng thông tin này để tiếp cận vòng ngoài khi chưa được cho phép. Mọi dữ liệu, hình ảnh, phân tích và thông tin liên quan đến tài sản đều thuộc phạm vi bảo mật. Người nhận thông tin đồng ý chịu hoàn toàn trách nhiệm nếu để lộ, làm thất thoát hoặc sử dụng sai mục đích dưới bất kỳ hình thức nào. Hồ sơ chỉ ưu tiên cho nhà đầu tư nghiêm túc, có năng lực tài chính và tôn trọng quy trình bảo mật.
       </p>
 
       <form id="ndaForm" action="https://formspree.io/f/mpqykgzk" method="POST">
@@ -517,9 +519,19 @@
           <option>Muốn nhận hồ sơ nghiên cứu trước</option>
         </select>
 
+        <select class="field" name="nang_luc_tai_chinh" required>
+          <option value="">Chọn năng lực tài chính</option>
+          <option>50 – 100 tỷ</option>
+          <option>100 – 200 tỷ</option>
+          <option>200 – 300 tỷ</option>
+          <option>300 – 500 tỷ</option>
+          <option>500 – 700 tỷ</option>
+          <option>Trên 700 tỷ</option>
+        </select>
+
         <label class="check">
           <input type="checkbox" name="agree" required style="margin-top:4px">
-          <span>Tôi xác nhận thông tin cung cấp là đúng sự thật, đồng ý NDA điện tử và chịu trách nhiệm bảo mật mọi dữ liệu được cung cấp.</span>
+          <span>Tôi xác nhận thông tin cung cấp là đúng sự thật, đồng ý NDA điện tử, cam kết bảo mật tuyệt đối mọi dữ liệu được cung cấp và chịu trách nhiệm nếu để lộ thông tin hoặc sử dụng sai mục đích.</span>
         </label>
 
         <button class="btn" type="submit">TÔI ĐỒNG Ý NDA – MỞ HỒ SƠ VIP</button>
@@ -529,25 +541,22 @@
       <div class="vip" id="vipContent">
         <h3>HỒ SƠ VIP DÀNH CHO KHÁCH THẬT</h3>
         <p>Thông tin tổng quan tài sản lõi trung tâm.</p>
-        <p>Chỉ số diện tích – mặt tiền – chiều dài – GPXD.</p>
         <p>Góc nhìn hiện tại và định hướng phát triển tương lai.</p>
         <p>Nhận định vị thế tài sản theo chu kỳ 3–5 năm.</p>
         <p>Ưu tiên làm việc trực tiếp với khách thực và đơn vị có năng lực tài chính.</p>
-
         <div class="hotline">0858 999 934</div>
         <p>Tài sản lõi không dành cho số đông. Chỉ dành cho nhà đầu tư hiểu giá trị của vị trí, quy mô, độ hiếm và khả năng tăng giá trong tương lai.</p>
         <p>Liên hệ trực tiếp Mr. Sơn Bạch để nhận hồ sơ kín và lịch xem riêng.</p>
-
-        <a class="call" href="tel:0858999934">GỌI NGAY MR. SƠN BẠCH</a>
+        <a class="call-main" href="tel:0858999934">GỌI NGAY MR. SƠN BẠCH</a>
       </div>
     </section>
 
   </div>
 
   <div class="floating">
-    <a class="fab call" href="tel:0858999934" title="Gọi">☎</a>
-    <a class="fab zalo" href="https://zalo.me/" target="_blank" title="Zalo">Z</a>
-    <a class="fab fb" href="https://facebook.com/" target="_blank" title="Facebook">f</a>
+    <a class="fab phone" href="tel:0858999934" aria-label="Gọi ngay" title="Gọi">☎</a>
+    <a class="fab zalo" href="https://zalo.me/0858999934" target="_blank" rel="noopener" aria-label="Zalo" title="Zalo">Z</a>
+    <a class="fab fb" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">f</a>
   </div>
 
   <script>
@@ -556,7 +565,6 @@
 
     form.addEventListener('submit', async function(e){
       e.preventDefault();
-
       const data = new FormData(form);
 
       try{
@@ -570,11 +578,11 @@
           form.style.display = 'none';
           vipContent.style.display = 'block';
           vipContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
-          alert('Gửi thông tin chưa thành công. Anh kiểm tra lại Formspree giúp em.');
+        }else{
+          alert('Gửi thông tin chưa thành công. Anh thử lại giúp em.');
         }
-      } catch(error){
-        alert('Không kết nối được biểu mẫu. Anh kiểm tra lại mạng hoặc link Formspree giúp em.');
+      }catch(error){
+        alert('Không kết nối được biểu mẫu. Anh kiểm tra lại mạng rồi thử lại giúp em.');
       }
     });
   </script>
