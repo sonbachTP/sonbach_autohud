@@ -3,125 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Sơn Bạch Signature</title>
 
 <style>
 body{
-  margin:0;
-  background:#000;
-  color:#fff;
-  font-family:Arial;
-  text-align:center;
+margin:0;
+background:#000;
+color:#fff;
+font-family:Arial;
+text-align:center;
 }
 
-/* LOGO SB MỜ */
-.logo-bg{
-  position:fixed;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  font-size:160px;
-  color:#FFD700;
-  opacity:0.04;
-  animation:blink 3s infinite;
+.logo{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:150px;
+color:#FFD700;
+opacity:0.04;
 }
 
-@keyframes blink{
-  0%,100%{opacity:0.02;}
-  50%{opacity:0.08;}
-}
-
-/* TEXT CHẠY */
 .marquee{
-  position:fixed;
-  top:0;
-  width:100%;
-  background:#000;
-  color:#FFD700;
-  padding:10px;
-  font-weight:bold;
-  overflow:hidden;
-}
-.marquee span{
-  display:inline-block;
-  animation:run 12s linear infinite;
-}
-@keyframes run{
-  from{transform:translateX(100%);}
-  to{transform:translateX(-100%);}
+position:fixed;
+top:0;
+width:100%;
+background:#000;
+color:#FFD700;
+padding:10px;
+font-weight:bold;
 }
 
-/* TITLE */
 .title{
-  margin-top:70px;
-  font-size:26px;
+margin-top:70px;
+font-size:28px;
 }
 
-/* GIÁ */
 .price{
-  font-size:60px;
-  color:#FFD700;
-  text-shadow:0 0 25px gold;
-  animation:glow 1.5s infinite alternate;
-}
-@keyframes glow{
-  from{text-shadow:0 0 10px gold;}
-  to{text-shadow:0 0 35px gold;}
+font-size:60px;
+color:#FFD700;
+text-shadow:0 0 25px gold;
 }
 
 .info{
-  margin-top:10px;
-  font-size:16px;
-  color:#ccc;
-  line-height:1.6;
+color:#ccc;
+line-height:1.6;
 }
 
-/* ẢNH */
 .img{
-  width:92%;
-  margin:20px auto;
-  border-radius:12px;
+width:92%;
+margin:20px auto;
+border-radius:12px;
 }
 
-/* NÚT NỔI */
 .float-actions{
-  position:fixed;
-  right:15px;
-  bottom:120px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
+position:fixed;
+right:15px;
+bottom:120px;
+display:flex;
+flex-direction:column;
+gap:12px;
 }
 
 .fab{
-  width:55px;
-  height:55px;
-  background:#FFD700;
-  color:#000;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:bold;
-  box-shadow:0 0 15px gold;
-  text-decoration:none;
-  font-size:20px;
-}
-
-/* ẨN SCROLL */
-.hide{
-  transform:translateY(120px);
-  transition:0.3s;
+width:55px;
+height:55px;
+background:#FFD700;
+color:#000;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+font-size:20px;
+box-shadow:0 0 15px gold;
 }
 </style>
+
 </head>
 
 <body>
 
-<div class="logo-bg">SB</div>
+<div class="logo">SB</div>
 
 <div class="marquee">
-<span>🔥 TÀI SẢN LÕI KHÔNG TÁI TẠO – CƠ HỘI CHO NHÀ ĐẦU TƯ TRIỆU ĐÔ 🔥</span>
+🔥 TÀI SẢN LÕI KHÔNG TÁI TẠO – CƠ HỘI TRIỆU ĐÔ 🔥
 </div>
 
 <div class="title">SƠN BẠCH SIGNATURE</div>
@@ -136,21 +103,19 @@ GPXD: <b>16 tầng – 3 hầm</b><br>
 Vị trí: Somerset – TLSQ Hoa Kỳ – Sofitel
 </div>
 
-<!-- ẢNH VIP (TƯƠNG LAI) -->
-<img src="/mnt/data/A9DDF634-838B-44C3-B4B1-FCA4BB74C00C.jpeg" class="img">
+<!-- ẢNH TƯƠNG LAI -->
+<img src="https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/main/tuonglai.jpg" class="img">
 
 <!-- ẢNH THỰC TẾ -->
-<img src="/mnt/data/4D4F381D-078C-4F7A-B186-81E67B187A31.jpeg" class="img">
+<img src="https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/main/hientai.jpg" class="img">
 
-<div style="padding:20px;color:#FFD700;font-size:18px;">
+<div style="padding:20px;color:#FFD700;">
 🔥 TIỀM NĂNG TĂNG GIÁ:<br>
-Trục lõi trung tâm Q1 – quỹ đất cực hiếm<br>
-Khả năng tăng giá mạnh theo chu kỳ 3–5 năm<br>
-Phù hợp xây khách sạn – văn phòng – căn hộ cao cấp
+Quỹ đất lõi Q1 cực hiếm – tăng giá mạnh 3–5 năm<br>
+Phù hợp xây khách sạn / văn phòng / căn hộ cao cấp
 </div>
 
-<!-- NÚT -->
-<div class="float-actions" id="fabBox">
+<div class="float-actions">
 
 <a class="fab" href="tel:0858999934">📞</a>
 
@@ -158,26 +123,9 @@ Phù hợp xây khách sạn – văn phòng – căn hộ cao cấp
 
 <a class="fab" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr">f</a>
 
-<a class="fab" href="#nda">🔒</a>
+<a class="fab" href="https://formspree.io/f/mpqykgzk">🔒</a>
 
 </div>
-
-<script>
-let lastScroll = 0;
-const fab = document.getElementById("fabBox");
-
-window.addEventListener("scroll", () => {
-  let current = window.pageYOffset;
-
-  if(current > lastScroll){
-    fab.classList.add("hide");
-  } else {
-    fab.classList.remove("hide");
-  }
-
-  lastScroll = current;
-});
-</script>
 
 </body>
 </html>
