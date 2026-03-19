@@ -1,629 +1,168 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sơn Bạch Signature | Tài sản lõi Q1</title>
-  <style>
-    :root{
-      --bg:#070707;
-      --card:#111111;
-      --gold:#f3c75f;
-      --gold2:#c99a1e;
-      --text:#f6f1dd;
-      --muted:#d8c28a;
-      --line:#4b3910;
-      --shadow:0 0 20px rgba(243,199,95,.28);
-      --ok:#1d7a3e;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sơn Bạch Signature</title>
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top, rgba(243,199,95,.10), transparent 20%),
-        linear-gradient(180deg, #050505 0%, #090909 100%);
-      color:var(--text);
-    }
+<style>
+body{
+  margin:0;
+  background:#050505;
+  color:#fff;
+  font-family:Arial;
+}
 
-    .wrap{
-      width:min(100%, 940px);
-      margin:0 auto;
-      padding:20px 16px 70px;
-    }
+/* LOGO SB NỀN */
+body::before{
+  content:"SB";
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:200px;
+  color:rgba(255,215,0,0.05);
+  font-weight:bold;
+  animation: glowSB 3s infinite alternate;
+  pointer-events:none;
+}
 
-    .hero{
-      position:relative;
-      text-align:center;
-      padding:12px 0 24px;
-    }
+@keyframes glowSB{
+  from{opacity:0.05}
+  to{opacity:0.12}
+}
 
-    .watermark{
-      position:absolute;
-      inset:0;
-      display:flex;
-      justify-content:center;
-      align-items:flex-start;
-      font-size:140px;
-      font-weight:900;
-      letter-spacing:6px;
-      color:rgba(243,199,95,.05);
-      user-select:none;
-      pointer-events:none;
-      animation:fadePulse 2.8s infinite ease-in-out;
-    }
+/* TEXT CHẠY */
+.marquee{
+  background:#000;
+  color:#FFD700;
+  padding:10px;
+  font-weight:bold;
+  white-space:nowrap;
+  overflow:hidden;
+}
 
-    @keyframes fadePulse{
-      0%,100%{opacity:.35}
-      50%{opacity:1}
-    }
+.marquee span{
+  display:inline-block;
+  padding-left:100%;
+  animation:marq 15s linear infinite;
+}
 
-    .logo{
-      position:relative;
-      z-index:2;
-      font-size:72px;
-      font-weight:900;
-      color:var(--gold);
-      text-shadow:0 0 16px rgba(243,199,95,.25);
-      margin-top:6px;
-    }
+@keyframes marq{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-100%)}
+}
 
-    .brand{
-      position:relative;
-      z-index:2;
-      margin:10px 0 10px;
-      font-size:28px;
-      font-weight:900;
-      line-height:1.25;
-      letter-spacing:.5px;
-    }
+/* HERO */
+.hero{
+  text-align:center;
+  padding:80px 20px;
+}
 
-    .sub{
-      position:relative;
-      z-index:2;
-      color:var(--muted);
-      font-size:15px;
-      line-height:1.7;
-      max-width:780px;
-      margin:0 auto 18px;
-    }
+.price{
+  font-size:60px;
+  color:#FFD700;
+  animation: glow 1s infinite alternate;
+}
 
-    .price-box{
-      position:relative;
-      z-index:2;
-      width:min(100%, 720px);
-      margin:18px auto 18px;
-      border:1px solid rgba(243,199,95,.22);
-      border-radius:22px;
-      padding:20px 16px;
-      background:linear-gradient(180deg, rgba(243,199,95,.06), rgba(243,199,95,.02));
-      box-shadow:var(--shadow);
-    }
+@keyframes glow{
+  from{text-shadow:0 0 10px #FFD700}
+  to{text-shadow:0 0 30px #FFD700}
+}
 
-    .price-label{
-      color:var(--muted);
-      font-size:14px;
-      letter-spacing:2px;
-      margin-bottom:8px;
-    }
+/* FLOAT BUTTON */
+.float-actions{
+  position:fixed;
+  right:18px;
+  bottom:80px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:999;
+}
 
-    .price{
-      font-size:72px;
-      font-weight:900;
-      color:var(--gold);
-      text-shadow:0 0 10px rgba(243,199,95,.35), 0 0 28px rgba(243,199,95,.18);
-      animation:glow 1.6s infinite alternate;
-      line-height:1;
-    }
+.fab{
+  position:relative;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#FFD700;
+  color:#000;
+  font-weight:bold;
+  text-decoration:none;
+  box-shadow:0 0 15px rgba(255,215,0,0.6);
+}
 
-    @keyframes glow{
-      from{
-        text-shadow:0 0 8px rgba(243,199,95,.25), 0 0 18px rgba(243,199,95,.15);
-      }
-      to{
-        text-shadow:0 0 18px rgba(243,199,95,.45), 0 0 40px rgba(243,199,95,.22);
-      }
-    }
+/* TOOLTIP */
+.fab span{
+  position:absolute;
+  right:70px;
+  background:#000;
+  color:#FFD700;
+  padding:6px 10px;
+  border-radius:6px;
+  font-size:12px;
+  opacity:0;
+  transition:0.3s;
+}
 
-    .line3{
-      margin:18px auto 0;
-      width:min(100%, 800px);
-      display:grid;
-      gap:10px;
-    }
+.fab:hover span{
+  opacity:1;
+}
 
-    .line3 div{
-      background:rgba(255,255,255,.02);
-      border:1px solid rgba(243,199,95,.14);
-      border-radius:14px;
-      padding:12px 14px;
-      color:#fff7df;
-      font-weight:700;
-      font-size:15px;
-    }
+/* ẨN KHI SCROLL */
+.hide{
+  transform:translateY(100px);
+  transition:0.4s;
+}
 
-    .ticker{
-      width:100%;
-      overflow:hidden;
-      border-top:1px solid rgba(243,199,95,.15);
-      border-bottom:1px solid rgba(243,199,95,.15);
-      margin:24px 0 20px;
-      background:rgba(255,255,255,.02);
-    }
-
-    .ticker-track{
-      display:inline-block;
-      white-space:nowrap;
-      padding:12px 0;
-      min-width:200%;
-      animation:marquee 18s linear infinite;
-      color:var(--gold);
-      font-weight:800;
-      font-size:15px;
-    }
-
-    @keyframes marquee{
-      from{transform:translateX(0)}
-      to{transform:translateX(-50%)}
-    }
-
-    .actions{
-      display:grid;
-      gap:14px;
-      margin:22px 0 32px;
-    }
-
-    .btn{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      width:100%;
-      text-decoration:none;
-      background:linear-gradient(180deg, #f6d06b, #e8bf57);
-      color:#111;
-      border-radius:18px;
-      padding:20px 16px;
-      font-size:18px;
-      font-weight:900;
-      box-shadow:0 8px 20px rgba(0,0,0,.25);
-      border:1px solid rgba(255,255,255,.18);
-      cursor:pointer;
-    }
-
-    .btn:hover{transform:translateY(-1px)}
-
-    .btn-outline{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      width:100%;
-      text-decoration:none;
-      background:transparent;
-      color:var(--gold);
-      border-radius:18px;
-      padding:18px 16px;
-      font-size:17px;
-      font-weight:900;
-      border:1px solid rgba(243,199,95,.30);
-      cursor:pointer;
-    }
-
-    .btn-outline:hover{background:rgba(243,199,95,.06)}
-
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
-      border:1px solid rgba(243,199,95,.14);
-      border-radius:22px;
-      padding:22px 18px;
-      margin:18px 0;
-      box-shadow:0 8px 24px rgba(0,0,0,.2);
-    }
-
-    .section-title{
-      text-align:center;
-      font-size:34px;
-      line-height:1.2;
-      margin:4px 0 14px;
-      font-weight:900;
-      color:#fff4d0;
-    }
-
-    .section-sub{
-      text-align:center;
-      color:var(--muted);
-      font-size:15px;
-      line-height:1.7;
-      margin:0 auto 16px;
-      max-width:780px;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-    }
-
-    .info{
-      background:#0d0d0d;
-      border:1px solid rgba(243,199,95,.12);
-      border-radius:16px;
-      padding:14px;
-    }
-
-    .info b{
-      display:block;
-      color:var(--gold);
-      margin-bottom:6px;
-      font-size:13px;
-      letter-spacing:.5px;
-    }
-
-    .info span{
-      color:#fff6dd;
-      font-size:15px;
-      line-height:1.55;
-    }
-
-    .note{
-      margin-top:14px;
-      border-left:3px solid var(--gold);
-      padding:12px 14px;
-      background:rgba(243,199,95,.05);
-      border-radius:10px;
-      color:#fff2c8;
-      line-height:1.7;
-      font-size:15px;
-    }
-
-    .highlight-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr 1fr;
-      gap:12px;
-      margin-top:14px;
-    }
-
-    .highlight{
-      background:linear-gradient(180deg, rgba(243,199,95,.08), rgba(243,199,95,.03));
-      border:1px solid rgba(243,199,95,.16);
-      border-radius:16px;
-      padding:16px;
-    }
-
-    .highlight h3{
-      margin:0 0 10px;
-      font-size:18px;
-      color:#fff2c8;
-    }
-
-    .highlight p{
-      margin:0;
-      color:#efe3bf;
-      line-height:1.7;
-      font-size:14px;
-    }
-
-    form{
-      display:grid;
-      gap:14px;
-      margin-top:16px;
-    }
-
-    input, textarea, select{
-      width:100%;
-      padding:17px 16px;
-      border-radius:16px;
-      border:1px solid rgba(243,199,95,.15);
-      background:#f3f3f3;
-      color:#111;
-      font-size:17px;
-      outline:none;
-    }
-
-    textarea{
-      min-height:120px;
-      resize:vertical;
-    }
-
-    .legal-box{
-      background:#0c0c0c;
-      border:1px solid rgba(243,199,95,.18);
-      border-radius:16px;
-      padding:16px;
-      color:#f6f1dd;
-      text-align:left;
-      line-height:1.75;
-      font-size:14px;
-    }
-
-    .legal-box h3{
-      margin:0 0 10px;
-      color:var(--gold);
-      font-size:18px;
-    }
-
-    .check-wrap{
-      display:flex;
-      align-items:flex-start;
-      gap:10px;
-      text-align:left;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.7;
-    }
-
-    .check-wrap input{
-      width:20px;
-      height:20px;
-      margin-top:3px;
-      flex:0 0 20px;
-    }
-
-    .mini-note{
-      color:#bca66a;
-      font-size:13px;
-      line-height:1.7;
-      text-align:left;
-    }
-
-    .success-box{
-      display:none;
-      margin-top:16px;
-      background:rgba(29,122,62,.15);
-      border:1px solid rgba(77,181,113,.35);
-      color:#d8ffe5;
-      border-radius:16px;
-      padding:18px;
-      line-height:1.7;
-      text-align:left;
-    }
-
-    .success-box.show{
-      display:block;
-    }
-
-    .dossier-box{
-      display:none;
-      margin-top:16px;
-      border:1px solid rgba(243,199,95,.16);
-      border-radius:18px;
-      padding:18px;
-      background:rgba(243,199,95,.04);
-    }
-
-    .dossier-box.show{
-      display:block;
-    }
-
-    .footer{
-      text-align:center;
-      color:#bca66a;
-      font-size:14px;
-      margin-top:24px;
-      line-height:1.8;
-    }
-
-    @media (max-width:760px){
-      .grid{grid-template-columns:1fr}
-      .highlight-grid{grid-template-columns:1fr}
-    }
-
-    @media (max-width:640px){
-      .logo{font-size:56px}
-      .brand{font-size:22px}
-      .price{font-size:58px}
-      .section-title{font-size:28px}
-      .watermark{font-size:96px}
-    }
-  </style>
+</style>
 </head>
+
 <body>
-  <div class="wrap">
 
-    <section class="hero">
-      <div class="watermark">SB</div>
-      <div class="logo">SB</div>
-      <div class="brand">SƠN BẠCH SIGNATURE</div>
-      <div class="sub">
-        Tài sản lõi trung tâm – hồ sơ kín – chỉ làm việc với khách thật, đúng nhu cầu,
-        đủ năng lực tài chính và tôn trọng tuyệt đối nguyên tắc bảo mật thông tin.
-      </div>
+<div class="marquee">
+<span>🔥 TÀI SẢN LÕI KHÔNG TÁI TẠO – TRUNG TÂM QUẬN 1 – CƠ HỘI CHO NHÀ ĐẦU TƯ TRIỆU ĐÔ 🔥</span>
+</div>
 
-      <div class="price-box">
-        <div class="price-label">GIÁ KỲ VỌNG</div>
-        <div class="price">1.250 TỶ</div>
-      </div>
+<div class="hero">
+<h1>SƠN BẠCH SIGNATURE</h1>
+<div class="price">1.250 TỶ</div>
+<p>Diện tích: 1.317,3 m² – Mặt tiền 33m</p>
+</div>
 
-      <div class="line3">
-        <div>🔒 TÀI SẢN KHÔNG DÀNH ĐỂ THAM KHẢO ĐẠI TRÀ</div>
-        <div>💎 CHỈ DÀNH CHO NGƯỜI ĐỦ KHẢ NĂNG SỞ HỮU VÀ ĐI TIẾP THẬT</div>
-        <div>📌 HỒ SƠ CHI TIẾT, VỊ TRÍ, PHÁP LÝ CHỈ MỞ SAU NDA</div>
-      </div>
-    </section>
+<!-- NÚT NỔI -->
+<div class="float-actions" id="fabBox">
 
-    <div class="ticker">
-      <div class="ticker-track">
-        TÀI SẢN LÕI TRUNG TÂM • HỒ SƠ KÍN • KHÁCH THẬT • NDA BẮT BUỘC • SÀNG LỌC TRƯỚC KHI MỞ HỒ SƠ • TÀI SẢN GIÁ TRỊ LỚN •
-      </div>
-    </div>
+<a class="fab" href="tel:0858999934">☎<span>Gọi ngay</span></a>
 
-    <div class="actions">
-      <a class="btn" href="#nda">🔒 XEM THÔNG TIN (NDA)</a>
-      <a class="btn" href="tel:0858999934">📞 GỌI NGAY 0858 999 934</a>
-      <a class="btn" href="https://zalo.me/0858999934" target="_blank">💬 ZALO SƠN BẠCH</a>
-    </div>
+<a class="fab" href="https://zalo.me/0858999934">Z<span>Zalo</span></a>
 
-    <section class="card">
-      <div class="section-title">THÔNG TIN SƠ BỘ – SIÊU VIP</div>
-      <div class="section-sub">
-        Đây là phần thông tin mở để nhà đầu tư đánh giá mức độ phù hợp ban đầu.
-        Hồ sơ chi tiết, vị trí chuẩn, dữ liệu chuyên sâu và file tài liệu chỉ hiển thị sau bước NDA.
-      </div>
+<a class="fab" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr">f<span>Facebook</span></a>
 
-      <div class="grid">
-        <div class="info">
-          <b>PHÂN KHÚC</b>
-          <span>Tài sản lõi trung tâm / quy mô lớn / phù hợp nhà đầu tư chiến lược</span>
-        </div>
+<a class="fab" href="#nda">🔐<span>Xem NDA</span></a>
 
-        <div class="info">
-          <b>KHU VỰC</b>
-          <span>Quận 1 – trung tâm lõi – vị trí nhận diện cao, giá trị tích sản mạnh</span>
-        </div>
+</div>
 
-        <div class="info">
-          <b>DIỆN TÍCH</b>
-          <span>312.3m²</span>
-        </div>
+<script>
+let lastScroll = 0;
+const fab = document.getElementById("fabBox");
 
-        <div class="info">
-          <b>MẶT TIỀN / KÍCH THƯỚC</b>
-          <span>Mặt tiền đẹp – thông số thực tế sẽ cung cấp trong hồ sơ chi tiết sau NDA</span>
-        </div>
+window.addEventListener("scroll", () => {
+  let current = window.pageYOffset;
 
-        <div class="info">
-          <b>KẾT CẤU / QUY MÔ</b>
-          <span>Tài sản giá trị lớn, phù hợp giữ tài sản, khai thác thương mại hoặc tái cấu trúc đầu tư</span>
-        </div>
+  if(current > lastScroll){
+    fab.classList.add("hide");
+  } else {
+    fab.classList.remove("hide");
+  }
 
-        <div class="info">
-          <b>CHÚ THÍCH KHU VỰC</b>
-          <span>Khu lõi trung tâm, mật độ tài sản giá trị cao, thuận tiện nhận diện thương hiệu, khai thác thương mại và tiếp cận nhóm khách hàng thượng lưu</span>
-        </div>
+  lastScroll = current;
+});
+</script>
 
-        <div class="info">
-          <b>MỤC TIÊU KHAI THÁC</b>
-          <span>Giữ tài sản, M&amp;A, phát triển thương mại, khai thác dòng tiền hoặc tái cấu trúc</span>
-        </div>
-
-        <div class="info">
-          <b>PHÁP LÝ / NGUYÊN TẮC</b>
-          <span>Thông tin chi tiết chỉ cung cấp sau bước NDA; ưu tiên khách thật, quy trình rõ ràng và làm việc có trách nhiệm</span>
-        </div>
-      </div>
-
-      <div class="highlight-grid">
-        <div class="highlight">
-          <h3>💎 ĐIỂM HIẾM</h3>
-          <p>Tài sản lõi trung tâm quy mô lớn không xuất hiện đại trà; phù hợp nhóm khách có khẩu vị tài sản độc bản và cần độ nhận diện cao.</p>
-        </div>
-        <div class="highlight">
-          <h3>📈 TIỀM NĂNG TĂNG GIÁ</h3>
-          <p>Giá trị tích sản bền, thanh khoản theo tầng lớp tài sản hiếm, hưởng lợi từ vị trí lõi và khả năng tái cơ cấu khai thác.</p>
-        </div>
-        <div class="highlight">
-          <h3>🛡 TRẠNG THÁI HỒ SƠ</h3>
-          <p>Hồ sơ kín – sàng lọc trước – chỉ mở cho người phù hợp sau khi hoàn tất bước xác nhận bảo mật ban đầu.</p>
-        </div>
-      </div>
-
-      <div class="note">
-        “Tài sản này không dành để hỏi chơi. Chúng tôi chỉ chia sẻ cho người thực sự đủ điều kiện đi tiếp.”
-      </div>
-    </section>
-
-    <section class="card" id="nda">
-      <div class="section-title">ĐĂNG KÝ NDA</div>
-      <div class="section-sub">
-        Điền thông tin bên dưới để xác nhận nhu cầu thật. Sau bước này, hệ thống sẽ ghi nhận cam kết bảo mật và hiển thị nút xem hồ sơ.
-      </div>
-
-      <form id="ndaForm" action="https://formspree.io/f/mpqykgzk" method="POST">
-        <input type="text" name="name" placeholder="Họ tên / Tên công ty" required>
-        <input type="text" name="phone" placeholder="Số điện thoại" required>
-        <input type="email" name="email" placeholder="Email nhận hồ sơ" required>
-
-        <select name="budget" required>
-          <option value="">Mức ngân sách dự kiến</option>
-          <option>50 – 100 tỷ</option>
-          <option>100 – 300 tỷ</option>
-          <option>300 – 700 tỷ</option>
-          <option>700 tỷ trở lên</option>
-        </select>
-
-        <textarea name="purpose" placeholder="Nhu cầu đầu tư / mục tiêu khai thác / thời gian dự kiến làm việc" required></textarea>
-
-        <div class="legal-box">
-          <h3>ĐIỀU KHOẢN BẢO MẬT & CAM KẾT TRÁCH NHIỆM</h3>
-          Tôi xác nhận rằng mọi thông tin, hồ sơ, dữ liệu, hình ảnh, vị trí, pháp lý, phương án khai thác, thông tin chủ thể liên quan và các tài liệu được Sơn Bạch Signature cung cấp sau bước này đều thuộc phạm vi thông tin bảo mật.
-          <br><br>
-          Tôi cam kết:
-          <br>1. Chỉ sử dụng thông tin cho mục đích xem xét đầu tư, mua bán, hợp tác hoặc giao dịch thực tế của chính tôi/doanh nghiệp tôi.
-          <br>2. Không sao chép, chụp màn hình, ghi âm, chuyển tiếp, tiết lộ, phát tán hoặc cung cấp cho bất kỳ bên thứ ba nào khi chưa có sự đồng ý bằng văn bản.
-          <br>3. Không dùng thông tin để tiếp cận trực tiếp chủ tài sản, bên liên quan hoặc sử dụng vào mục đích cạnh tranh, môi giới lại hay khai thác trái phép.
-          <br>4. Chịu hoàn toàn trách nhiệm cá nhân và/hoặc trách nhiệm doanh nghiệp mình đối với mọi hành vi làm lộ, lọt, thất thoát, sử dụng sai mục đích hoặc phát tán thông tin bảo mật, dù cố ý hay vô ý.
-          <br>5. Trường hợp vi phạm, tôi đồng ý chịu trách nhiệm đối với thiệt hại thực tế phát sinh và chấp nhận các biện pháp xử lý theo thỏa thuận và quy định pháp luật hiện hành.
-          <br>6. Tôi hiểu rằng đây là bước xác nhận điện tử ban đầu; khi cần thiết, tôi sẽ tiếp tục ký văn bản NDA riêng theo yêu cầu.
-        </div>
-
-        <label class="check-wrap">
-          <input type="checkbox" name="agree_terms" required>
-          <span>
-            Tôi đã đọc, hiểu và đồng ý toàn bộ điều khoản bảo mật nêu trên; đồng thời xác nhận sẽ tự chịu trách nhiệm nếu có bất kỳ hành vi làm lộ thông tin, sử dụng sai mục đích hoặc gây thiệt hại cho bên cung cấp thông tin.
-          </span>
-        </label>
-
-        <input type="hidden" name="_subject" value="Khách mới đăng ký NDA - Sơn Bạch Signature">
-
-        <button class="btn" type="submit">TÔI ĐỒNG Ý NDA</button>
-
-        <div class="mini-note">
-          Lưu ý: Sau khi gửi thành công, hệ thống sẽ hiện nút xem hồ sơ. Đây là lớp hiển thị tiện dụng trên web tĩnh; để bảo mật chặt hơn, nên dùng thêm gửi hồ sơ thủ công hoặc file có kiểm soát riêng.
-        </div>
-      </form>
-
-      <div id="successBox" class="success-box">
-        ✅ Hệ thống đã ghi nhận NDA thành công.  
-        Sơn Bạch Signature đã nhận thông tin của anh/chị.  
-        Bên dưới là nút mở hồ sơ tham khảo bước đầu.
-      </div>
-
-      <div id="dossierBox" class="dossier-box">
-        <a class="btn-outline" href="https://sonbachtp.github.io/sonbach_autohud/hoso-vip.pdf" target="_blank">
-          📂 MỞ HỒ SƠ VIP
-        </a>
-      </div>
-    </section>
-
-    <div class="footer">
-      Sơn Bạch Signature<br>
-      Chuyên kết nối tài sản giá trị lớn – hồ sơ kín – khách thật<br>
-      Hotline: 0858 999 934
-    </div>
-  </div>
-
-  <script>
-    const form = document.getElementById('ndaForm');
-    const successBox = document.getElementById('successBox');
-    const dossierBox = document.getElementById('dossierBox');
-
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-
-      const data = new FormData(form);
-
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-          successBox.classList.add('show');
-          dossierBox.classList.add('show');
-          form.reset();
-          successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } else {
-          alert('Gửi chưa thành công. Anh kiểm tra lại Formspree hoặc xác nhận email Formspree giúp em.');
-        }
-      } catch (error) {
-        alert('Có lỗi kết nối khi gửi form. Anh thử lại sau vài giây.');
-      }
-    });
-  </script>
 </body>
 </html>
