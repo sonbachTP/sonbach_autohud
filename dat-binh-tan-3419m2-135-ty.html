@@ -538,7 +538,173 @@ họ<!DOCTYPE html>
       .contact-btn{min-width:100%}
       .floating-bar{width:94%; gap:8px; padding:8px}
       .float-btn{font-size:14px; padding:12px 6px}
+     }
+    img:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255,215,106,0.5);
+  transition: 0.5s;
     }
+    /* ===== NDA VIP / FILTER BOX ===== */
+.vip-toggle-wrap{
+  margin-top:20px;
+  display:grid;
+  gap:14px;
+}
+
+.vip-toggle{
+  width:100%;
+  border:none;
+  cursor:pointer;
+  text-align:left;
+  padding:18px 20px;
+  border-radius:18px;
+  font-size:18px;
+  font-weight:900;
+  letter-spacing:.3px;
+  text-transform:uppercase;
+  color:#111;
+  background:linear-gradient(135deg,#fff1a8,#ffd96f,#d69c12);
+  box-shadow:0 0 18px rgba(255,217,111,.22);
+  animation:vipBlink 1.8s ease-in-out infinite;
+}
+
+.vip-toggle.nda{
+  background:linear-gradient(135deg,#ffe89a,#ffd15a,#c88a08);
+}
+
+.vip-toggle.need{
+  background:linear-gradient(135deg,#9fffc8,#35df83,#009e51);
+  color:#072b16;
+}
+
+.vip-toggle.finance{
+  background:linear-gradient(135deg,#9ed0ff,#458fff,#1747d1);
+  color:#fff;
+}
+
+.vip-panel{
+  display:none;
+  margin-top:10px;
+  padding:18px;
+  border-radius:20px;
+  border:1px solid rgba(255,217,111,.20);
+  background:linear-gradient(180deg, rgba(255,217,111,.04), rgba(255,255,255,.01));
+  box-shadow:inset 0 0 24px rgba(255,217,111,.03);
+}
+
+.vip-panel.show{
+  display:block;
+  animation:fadeUp .35s ease;
+}
+
+.vip-grid{
+  display:grid;
+  gap:12px;
+}
+
+.vip-input,
+.vip-select,
+.vip-textarea{
+  width:100%;
+  padding:14px 14px;
+  border-radius:14px;
+  border:1px solid rgba(255,217,111,.18);
+  background:#0d0d0d;
+  color:#fff;
+  font-size:16px;
+  outline:none;
+}
+
+.vip-textarea{
+  min-height:110px;
+  resize:vertical;
+}
+
+.vip-label{
+  color:#ffd96f;
+  font-size:14px;
+  font-weight:800;
+  margin-bottom:6px;
+  display:block;
+  text-transform:uppercase;
+}
+
+.need-tags,
+.finance-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.need-tag,
+.finance-tag{
+  padding:10px 14px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:900;
+  border:1px solid rgba(255,255,255,.16);
+  text-transform:uppercase;
+  cursor:pointer;
+  user-select:none;
+}
+
+.need-tag{
+  color:#dfffe8;
+  background:rgba(0,200,120,.12);
+}
+
+.need-tag.active{
+  background:linear-gradient(135deg,#8ef5ba,#25cc73);
+  color:#072b16;
+  box-shadow:0 0 18px rgba(37,204,115,.35);
+}
+
+.finance-tag{
+  color:#fff;
+  background:rgba(255,255,255,.06);
+}
+
+.finance-tag.lv1{ background:linear-gradient(135deg,#7ee7a7,#0bbd62); color:#062514; }
+.finance-tag.lv2{ background:linear-gradient(135deg,#9ce8ff,#24b6ff); color:#06233a; }
+.finance-tag.lv3{ background:linear-gradient(135deg,#ffd77a,#ffae00); color:#3d2400; }
+.finance-tag.lv4{ background:linear-gradient(135deg,#ffb3ec,#ff53c8); color:#3b0428; }
+.finance-tag.lv5{ background:linear-gradient(135deg,#d7c2ff,#8a55ff); color:#17053a; }
+
+.finance-tag.active{
+  transform:scale(1.06);
+  box-shadow:0 0 20px rgba(255,217,111,.28);
+}
+
+.vip-submit{
+  width:100%;
+  border:none;
+  cursor:pointer;
+  padding:15px 16px;
+  border-radius:16px;
+  font-size:17px;
+  font-weight:900;
+  text-transform:uppercase;
+  color:#111;
+  background:linear-gradient(135deg,#fff1a8,#ffd96f,#d69c12);
+  box-shadow:0 0 22px rgba(255,217,111,.28);
+  animation:vipBlink 1.8s ease-in-out infinite;
+}
+
+.vip-note{
+  color:#ead9a4;
+  font-size:14px;
+  line-height:1.6;
+}
+
+@keyframes vipBlink{
+  0%,100%{filter:brightness(1)}
+  50%{filter:brightness(1.16)}
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(10px)}
+  to{opacity:1; transform:translateY(0)}
+}
   </style>
 </head>
 <body>
@@ -573,7 +739,123 @@ họ<!DOCTYPE html>
         </div>
       </div>
     </section>
+    <section class="lead-box" style="margin-top:20px;">
+  <h2>Khách VIP xác nhận thông tin</h2>
 
+  <div class="vip-toggle-wrap">
+    <div>
+      <button class="vip-toggle nda" onclick="toggleVIP('ndaBox')">🔒 Xác nhận NDA & bảo mật hồ sơ</button>
+      <div id="ndaBox" class="vip-panel">
+        <div class="vip-grid">
+          <div>
+            <label class="vip-label">Họ tên khách</label>
+            <input id="vipName" class="vip-input" placeholder="Nhập họ tên">
+          </div>
+
+          <div>
+            <label class="vip-label">Số điện thoại</label>
+            <input id="vipPhone" class="vip-input" placeholder="Nhập số điện thoại">
+          </div>
+
+          <div>
+            <label class="vip-label">Email / Zalo</label>
+            <input id="vipContact" class="vip-input" placeholder="Email hoặc Zalo">
+          </div>
+
+          <div>
+            <label class="vip-label">Cam kết NDA</label>
+            <select id="vipNDA" class="vip-select">
+              <option value="">Chọn xác nhận</option>
+              <option value="dong-y">Tôi đồng ý bảo mật thông tin tài sản</option>
+              <option value="khong-chia-se">Tôi cam kết không chia sẻ cho bên thứ ba</option>
+              <option value="khach-thuc">Tôi là khách thực / đại diện khách thực</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="vip-label">Ghi chú thêm</label>
+            <textarea id="vipNote" class="vip-textarea" placeholder="Ví dụ: cần hồ sơ pháp lý, muốn xem thực địa, cần làm việc kín..."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <button class="vip-toggle need" onclick="toggleVIP('needBox')">🎯 Lọc nhu cầu khách</button>
+      <div id="needBox" class="vip-panel">
+        <div class="vip-grid">
+          <div>
+            <label class="vip-label">Mục tiêu chính</label>
+            <div class="need-tags" id="needTags">
+              <div class="need-tag" data-value="giu-tai-san">Giữ tài sản</div>
+              <div class="need-tag" data-value="dong-tien">Dòng tiền</div>
+              <div class="need-tag" data-value="xay-chdv">Xây CHDV</div>
+              <div class="need-tag" data-value="cao-oc-van-phong">Cao ốc văn phòng</div>
+              <div class="need-tag" data-value="du-an-lon">Dự án lớn</div>
+              <div class="need-tag" data-value="mua-sap-nhap">Mua sáp nhập quỹ đất</div>
+            </div>
+          </div>
+
+          <div>
+            <label class="vip-label">Mức độ gấp</label>
+            <select id="vipUrgent" class="vip-select">
+              <option value="">Chọn mức độ</option>
+              <option value="ngay">Cần làm việc ngay</option>
+              <option value="1-tuan">Trong 1 tuần</option>
+              <option value="1-thang">Trong 1 tháng</option>
+              <option value="tham-khao">Đang tham khảo</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="vip-label">Nhu cầu chi tiết</label>
+            <textarea id="vipNeedDetail" class="vip-textarea" placeholder="Khách cần gì cụ thể: pháp lý, quy hoạch, khai thác, lộ giới, hiện trạng thuê..."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <button class="vip-toggle finance" onclick="toggleVIP('financeBox')">💎 Sàng lọc năng lực tài chính</button>
+      <div id="financeBox" class="vip-panel">
+        <div class="vip-grid">
+          <div>
+            <label class="vip-label">Khung tài chính khách</label>
+            <div class="finance-tags" id="financeTags">
+              <div class="finance-tag lv1" data-value="10-30">10–30 tỷ</div>
+              <div class="finance-tag lv2" data-value="30-70">30–70 tỷ</div>
+              <div class="finance-tag lv3" data-value="70-150">70–150 tỷ</div>
+              <div class="finance-tag lv4" data-value="150-300">150–300 tỷ</div>
+              <div class="finance-tag lv5" data-value="300-700+">300–700+ tỷ</div>
+            </div>
+          </div>
+
+          <div>
+            <label class="vip-label">Hình thức thanh toán dự kiến</label>
+            <select id="vipPayment" class="vip-select">
+              <option value="">Chọn hình thức</option>
+              <option value="tien-mat">Tiền mặt / vốn sẵn</option>
+              <option value="ket-hop">Kết hợp vốn và vay</option>
+              <option value="nhom-dau-tu">Nhóm đầu tư / pháp nhân</option>
+              <option value="chua-xac-dinh">Chưa xác định</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="vip-label">Ghi chú tài chính</label>
+            <textarea id="vipFinanceNote" class="vip-textarea" placeholder="Ví dụ: khách cần tài sản trên 100 tỷ, ưu tiên pháp lý sạch, chốt nhanh nếu đúng quy hoạch..."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="vip-submit" onclick="submitVIPLead()">✨ Gửi xác nhận & mở hồ sơ VIP</button>
+
+    <div class="vip-note">
+      Thông tin khách được lưu cục bộ để hỗ trợ sàng lọc khách thực, đúng nhu cầu, đúng năng lực tài chính trước khi mở hồ sơ chi tiết.
+    </div>
+  </div>
+</section>
     <section class="grid">
       <div class="card">
         <h2>Thông số chính</h2>
@@ -635,6 +917,9 @@ họ<!DOCTYPE html>
       <div class="gallery">
         <h2>Tiềm năng phát triển tương lai</h2>
         <img src="79352CC3-5DFE-4A75-BE6B-F5513B882126.png" style="width:100%;border-radius:12px;">
+        <p style="color:#ffd56a;font-weight:bold;font-size:16px;margin-top:10px;">
+🔥 Quỹ đất lõi hiếm – không dành cho số đông – chỉ làm việc với khách đủ năng lực tài chính.
+</p>
       </div>
 
       <div class="gallery">
@@ -745,5 +1030,63 @@ họ<!DOCTYPE html>
       </button>
     </div>
   </div>
+  <script>
+function toggleVIP(id){
+  document.getElementById(id).classList.toggle('show');
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+  document.querySelectorAll(".need-tag").forEach(tag=>{
+    tag.addEventListener("click", function(){
+      this.classList.toggle("active");
+    });
+  });
+
+  document.querySelectorAll(".finance-tag").forEach(tag=>{
+    tag.addEventListener("click", function(){
+      document.querySelectorAll(".finance-tag").forEach(t=>t.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+});
+
+function submitVIPLead(){
+  const name = document.getElementById("vipName").value.trim();
+  const phone = document.getElementById("vipPhone").value.trim();
+  const contact = document.getElementById("vipContact").value.trim();
+  const nda = document.getElementById("vipNDA").value;
+  const urgent = document.getElementById("vipUrgent").value;
+  const payment = document.getElementById("vipPayment").value;
+  const note = document.getElementById("vipNote").value.trim();
+  const needDetail = document.getElementById("vipNeedDetail").value.trim();
+  const financeNote = document.getElementById("vipFinanceNote").value.trim();
+
+  const selectedNeeds = Array.from(document.querySelectorAll(".need-tag.active")).map(el=>el.dataset.value);
+  const selectedFinance = document.querySelector(".finance-tag.active")?.dataset.value || "";
+
+  if(!name || !phone){
+    alert("Vui lòng nhập tối thiểu họ tên và số điện thoại.");
+    return;
+  }
+
+  const payload = {
+    name,
+    phone,
+    contact,
+    nda,
+    selectedNeeds,
+    urgent,
+    needDetail,
+    selectedFinance,
+    payment,
+    financeNote,
+    note,
+    time: new Date().toLocaleString("vi-VN")
+  };
+
+  localStorage.setItem("vip_lead_info", JSON.stringify(payload));
+  alert("Đã lưu khách VIP. Sơn Bạch sẽ mở hồ sơ phù hợp theo đúng nhu cầu và năng lực tài chính.");
+}
+</script>
 </body>
 </html>
