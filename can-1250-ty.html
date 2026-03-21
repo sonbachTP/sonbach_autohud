@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tài sản lõi không tái tạo – Trung tâm Quận 1 | Sơn Bạch Signature</title>
+  <meta name="description" content="Tài sản lõi không tái tạo trung tâm Quận 1 - Giá 1.250 tỷ - Sơn Bạch Signature">
+  <style>
+    :root{
+      --bg:#040404;
+      --card:#101010;
+      --gold:#ffd96f;
+      --gold2:#c99d2e;
+      --text:#f7f1df;
+      --muted:#d6bf82;
+      --line:rgba(255,217,111,.18);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(255,217,111,.12), transparent 25%),
+        radial-gradient(circle at bottom left, rgba(255,217,111,.08), transparent 25%),
+        linear-gradient(180deg,#050505,#0b0b0b,#050505);
+      color:var(--text);
+    }
+    .wrap{
+      width:min(1120px,92%);
+      margin:auto;
+      padding:20px 0 40px;
+    }
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:linear-gradient(180deg,#111,#0a0a0a);
+      box-shadow:0 0 30px rgba(255,217,111,.08);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:0;
+    }
+    .hero-content{
+      padding:26px 20px 20px;
+      position:relative;
+      z-index:2;
+    }
+    .sb-mark{
+      position:absolute;
+      right:10px;
+      top:10px;
+      font-size:100px;
+      font-weight:900;
+      color:rgba(255,217,111,.05);
+      transform:rotate(-12deg);
+      pointer-events:none;
+      user-select:none;
+    }
+    .brand{
+      display:inline-block;
+      border:1px solid rgba(255,217,111,.3);
+      color:var(--gold);
+      border-radius:999px;
+      padding:7px 14px;
+      font-size:12px;
+      letter-spacing:1px;
+      margin-bottom:14px;
+    }
+    h1{
+      margin:0;
+      font-size:32px;
+      line-height:1.15;
+      color:var(--gold);
+      text-transform:uppercase;
+    }
+    .sub{
+      margin-top:14px;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:15px;
+    }
+    .price{
+      margin-top:16px;
+      font-size:52px;
+      font-weight:900;
+      color:#fff2bf;
+      text-shadow:0 0 15px rgba(255,217,111,.18);
+      line-height:1;
+    }
+    .tl{
+      margin-top:6px;
+      color:#ffe39a;
+      font-weight:700;
+      font-size:16px;
+    }
+    .ticker{
+      overflow:hidden;
+      white-space:nowrap;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:rgba(255,217,111,.04);
+      margin-top:18px;
+    }
+    .ticker span{
+      display:inline-block;
+      min-width:100%;
+      padding:11px 0;
+      color:#ffe39a;
+      font-weight:700;
+      animation:run 18s linear infinite;
+    }
+    @keyframes run{
+      from{transform:translateX(100%)}
+      to{transform:translateX(-100%)}
+    }
+    .hero-image{
+      border-top:1px solid var(--line);
+    }
+    .hero-image img{
+      width:100%;
+      display:block;
+      object-fit:cover;
+      max-height:680px;
+    }
+    .section{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:18px;
+    }
+    .card h2{
+      margin:0 0 14px;
+      color:var(--gold);
+      font-size:22px;
+    }
+    .info{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+    }
+    .info-item{
+      padding:13px 14px;
+      border:1px solid rgba(255,217,111,.1);
+      border-radius:14px;
+      background:rgba(255,255,255,.02);
+      line-height:1.6;
+    }
+    .label{
+      display:block;
+      color:var(--gold);
+      font-weight:700;
+      margin-bottom:3px;
+    }
+    .cta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
+    }
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      padding:13px 18px;
+      border-radius:14px;
+      font-weight:800;
+      text-align:center;
+    }
+    .btn-call{
+      background:linear-gradient(180deg,#ffe08b,#d6a11d);
+      color:#111;
+    }
+    .btn-zalo{
+      background:#0a66ff;
+      color:#fff;
+    }
+    .btn-nda{
+      background:#191919;
+      color:var(--gold);
+      border:1px solid rgba(255,217,111,.28);
+    }
+    .gallery img{
+      width:100%;
+      border-radius:18px;
+      display:block;
+      border:1px solid var(--line);
+    }
+    .footer{
+      margin-top:24px;
+      text-align:center;
+      color:#d6bf82;
+      font-size:14px;
+      line-height:1.8;
+    }
+    @media (min-width:900px){
+      .hero-grid{grid-template-columns:1.02fr .98fr}
+      .hero-image{border-top:none;border-left:1px solid var(--line)}
+      h1{font-size:44px}
+      .section{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="sb-mark">SB</div>
+          <div class="brand">SƠN BẠCH SIGNATURE • HỒ SƠ KÍN</div>
+          <h1>TÀI SẢN LÕI KHÔNG TÁI TẠO<br>TRUNG TÂM QUẬN 1</h1>
+          <div class="sub">
+            Tài sản lõi trung tâm mang giá trị vị trí hiếm có, phù hợp cho nhà đầu tư lớn,
+            chiến lược nắm giữ dài hạn hoặc phát triển dự án biểu tượng tại khu trung tâm TP.HCM.
+          </div>
+          <div class="price">1.250 TỶ</div>
+          <div class="tl">(THƯƠNG LƯỢNG)</div>
+
+          <div class="ticker">
+            <span>TÀI SẢN LÕI KHÔNG TÁI TẠO • TRUNG TÂM QUẬN 1 • 1.250 TỶ • HỒ SƠ KÍN • CHỈ TIẾP KHÁCH THỰC • 0858 999 934</span>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="can-1250-ty-poster.jpg" alt="Tài sản lõi trung tâm quận 1">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Thông số tài sản</h2>
+        <div class="info">
+          <div class="info-item">
+            <span class="label">Giá</span>
+            1.250 tỷ (thương lượng)
+          </div>
+          <div class="info-item">
+            <span class="label">Diện tích</span>
+            1,317.3 m²
+          </div>
+          <div class="info-item">
+            <span class="label">Mặt tiền</span>
+            33m
+          </div>
+          <div class="info-item">
+            <span class="label">Chiều dài</span>
+            39m
+          </div>
+          <div class="info-item">
+            <span class="label">Đường</span>
+            20m
+          </div>
+          <div class="info-item">
+            <span class="label">GPXD</span>
+            16 tầng – 3 hầm
+          </div>
+          <div class="info-item">
+            <span class="label">Vị trí</span>
+            SOMERSET – TLSQ HOA KỲ – SOFITEL
+          </div>
+        </div>
+
+        <div class="cta">
+          <a class="btn btn-call" href="tel:0858999934">📞 GỌI NGAY</a>
+          <a class="btn btn-zalo" href="https://zalo.me/0858999934">ZALO</a>
+          <a class="btn btn-nda" href="https://formspree.io/f/mpqykgzk">NHẬN HỒ SƠ NDA</a>
+        </div>
+      </div>
+
+      <div class="card gallery">
+        <h2>Hình thực tế khu vực</h2>
+        <img src="khu-vuc-q1-thuc-te.jpg" alt="Hình thực tế khu vực trung tâm quận 1">
+      </div>
+    </section>
+
+    <div class="footer">
+      Mr. Sơn Bạch – 0858 999 934<br>
+      Chuyên nhận ký gửi – mua bán BĐS giá trị cao – tài sản lõi – hồ sơ kín
+    </div>
+  </div>
+</body>
+</html>
