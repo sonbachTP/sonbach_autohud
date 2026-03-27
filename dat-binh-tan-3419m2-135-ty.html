@@ -3,190 +3,197 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sơn Bạch Signature | Quỹ đất Bình Tân 3.419m² | 135 Tỷ</title>
-  <meta name="description" content="Tài sản quỹ đất lớn Bình Tân 3.419m² - hồ sơ chọn lọc khách thực - Sơn Bạch Signature." />
+  <title>Sơn Bạch Signature | Bình Tân | 135 Tỷ</title>
   <style>
     :root{
-      --bg:#060606;
-      --bg2:#0d0d0d;
+      --bg:#050505;
       --card:#101010;
-      --card2:#151515;
       --gold:#ffd76a;
-      --gold2:#c78d08;
-      --gold3:#fff0bd;
-      --line:rgba(255,215,106,.18);
-      --text:#f8f2dd;
-      --muted:#d8c488;
-      --soft:rgba(255,215,106,.06);
+      --gold2:#b97d00;
+      --gold3:#fff3c6;
+      --text:#f8f1dc;
+      --muted:#d9c78f;
+      --line:rgba(255,215,106,.16);
       --shadow:0 12px 30px rgba(0,0,0,.45);
-      --red:#cf1f1f;
-      --blue:#1668e3;
-      --green:#19a56c;
+      --red:#c71919;
+      --blue:#1c63d8;
+      --green:#189a66;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-
     body{
       margin:0;
       font-family:Arial, Helvetica, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top right, rgba(255,215,106,.09), transparent 25%),
-        radial-gradient(circle at left center, rgba(255,215,106,.05), transparent 20%),
-        linear-gradient(180deg,#050505 0%,#0a0a0a 35%,#050505 100%);
-      line-height:1.6;
+        radial-gradient(circle at top right, rgba(255,215,106,.10), transparent 25%),
+        linear-gradient(180deg,#040404 0%,#0a0a0a 50%,#040404 100%);
+      overflow-x:hidden;
     }
 
     a{text-decoration:none;color:inherit}
-
-    .wrap{
-      width:min(1140px,94%);
-      margin:0 auto;
-      position:relative;
-      z-index:2;
-    }
-
-    .watermark{
-      position:fixed;
-      left:50%;
-      bottom:9%;
-      transform:translateX(-50%) rotate(-8deg);
-      font-size:110px;
-      font-weight:900;
-      letter-spacing:10px;
-      color:rgba(255,215,106,.05);
-      pointer-events:none;
-      user-select:none;
-      z-index:0;
-      animation:wm 6s ease-in-out infinite;
-      white-space:nowrap;
-    }
-
-    @keyframes wm{
-      0%,100%{opacity:.18;transform:translateX(-50%) rotate(-8deg) scale(1)}
-      50%{opacity:.30;transform:translateX(-50%) rotate(-6deg) scale(1.03)}
-    }
+    .wrap{width:min(1150px,94%);margin:0 auto;position:relative;z-index:2}
 
     .hero{
-      padding:30px 0 18px;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      position:relative;
+      padding:24px 0 90px;
     }
 
     .hero-box{
-      background:
-        linear-gradient(180deg, rgba(255,215,106,.08), rgba(255,215,106,.015)),
-        rgba(10,10,10,.95);
+      width:100%;
+      background:linear-gradient(180deg, rgba(255,215,106,.05), rgba(255,215,106,.01)), rgba(10,10,10,.92);
       border:1px solid var(--line);
-      border-radius:28px;
-      overflow:hidden;
+      border-radius:30px;
       box-shadow:var(--shadow);
+      overflow:hidden;
       position:relative;
+      padding:28px 18px 34px;
+      text-align:center;
     }
 
-    .hero-top{
-      text-align:center;
-      padding:12px 18px;
-      color:var(--muted);
+    .topline{
       font-size:12px;
-      letter-spacing:2px;
-      border-bottom:1px solid rgba(255,215,106,.10);
-      background:rgba(255,215,106,.03);
+      letter-spacing:3px;
+      color:var(--muted);
       text-transform:uppercase;
-    }
-
-    .hero-inner{
-      padding:34px 18px 30px;
-      text-align:center;
-      position:relative;
-    }
-
-    .brand{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:8px 14px;
-      border-radius:999px;
-      background:rgba(255,215,106,.06);
-      border:1px solid rgba(255,215,106,.16);
-      color:var(--gold);
-      font-weight:800;
       margin-bottom:18px;
     }
 
-    .brand-logo{
-      width:34px;
-      height:34px;
+    .sb-stage{
+      position:relative;
+      width:320px;
+      height:320px;
+      margin:0 auto 18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .ring{
+      position:absolute;
+      border:1px solid rgba(255,215,106,.22);
       border-radius:50%;
-      display:grid;
-      place-items:center;
-      background:linear-gradient(135deg,#ffe8a8,#b77c00);
-      color:#1d1400;
+      animation:spin 18s linear infinite;
+    }
+
+    .ring1{width:280px;height:280px;opacity:.35}
+    .ring2{width:220px;height:220px;opacity:.28;animation-direction:reverse;animation-duration:14s}
+    .ring3{width:160px;height:160px;opacity:.22;animation-duration:10s}
+
+    @keyframes spin{
+      from{transform:rotate(0deg)}
+      to{transform:rotate(360deg)}
+    }
+
+    .sb-logo{
+      position:relative;
+      z-index:2;
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:56px;
       font-weight:900;
-      box-shadow:0 0 14px rgba(255,215,106,.25);
+      color:#1d1400;
+      background:linear-gradient(135deg,#ffe9ac,#b57600);
+      box-shadow:
+        0 0 18px rgba(255,215,106,.30),
+        0 0 45px rgba(255,215,106,.12);
+      animation:sbPulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes sbPulse{
+      0%,100%{transform:scale(1);opacity:.92}
+      50%{transform:scale(1.05);opacity:1}
+    }
+
+    .brand{
+      color:var(--gold);
+      font-size:15px;
+      font-weight:800;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      margin-bottom:10px;
     }
 
     h1{
       margin:0;
+      font-size:clamp(30px,5.5vw,64px);
+      line-height:1.05;
       text-transform:uppercase;
-      font-size:clamp(30px,5.8vw,64px);
-      line-height:1.08;
+      color:#fff7df;
       letter-spacing:1px;
-      color:#fff8e5;
-      text-shadow:0 0 10px rgba(255,215,106,.06);
     }
 
     .gold-line{
       display:block;
       color:var(--gold);
       text-shadow:
-        0 0 6px rgba(255,215,106,.30),
-        0 0 16px rgba(255,215,106,.20),
-        0 0 30px rgba(255,215,106,.12);
+        0 0 8px rgba(255,215,106,.32),
+        0 0 20px rgba(255,215,106,.22),
+        0 0 40px rgba(255,215,106,.10);
     }
 
-    .price-main{
+    .price{
       display:block;
-      margin-top:10px;
-      font-size:clamp(40px,9vw,92px);
+      margin-top:12px;
+      font-size:clamp(48px,10vw,108px);
       line-height:1;
       font-weight:900;
       color:var(--gold3);
       text-shadow:
-        0 0 8px rgba(255,215,106,.40),
-        0 0 18px rgba(255,215,106,.30),
-        0 0 38px rgba(255,215,106,.22),
-        0 0 60px rgba(255,215,106,.10);
-      animation:pulse 2.4s ease-in-out infinite;
+        0 0 8px rgba(255,215,106,.48),
+        0 0 18px rgba(255,215,106,.36),
+        0 0 35px rgba(255,215,106,.28),
+        0 0 65px rgba(255,215,106,.16);
+      animation:priceFlash 1.15s ease-in-out infinite;
     }
 
-    @keyframes pulse{
-      0%,100%{transform:scale(1)}
-      50%{transform:scale(1.025)}
+    @keyframes priceFlash{
+      0%,100%{
+        opacity:1;
+        transform:scale(1);
+        text-shadow:
+          0 0 8px rgba(255,215,106,.48),
+          0 0 18px rgba(255,215,106,.36),
+          0 0 35px rgba(255,215,106,.28),
+          0 0 65px rgba(255,215,106,.16);
+      }
+      50%{
+        opacity:.88;
+        transform:scale(1.04);
+        text-shadow:
+          0 0 12px rgba(255,215,106,.75),
+          0 0 28px rgba(255,215,106,.58),
+          0 0 48px rgba(255,215,106,.42),
+          0 0 88px rgba(255,215,106,.24);
+      }
     }
 
-    .hero-sub{
-      max-width:950px;
-      margin:18px auto 0;
+    .subline{
+      margin:14px auto 0;
+      max-width:800px;
       color:var(--muted);
       font-size:16px;
     }
 
-    .badge-row{
-      margin-top:22px;
-      display:flex;
-      justify-content:center;
-      flex-wrap:wrap;
-      gap:10px;
+    .range-line{
+      margin-top:16px;
+      color:#f8e6ab;
+      font-size:15px;
+      letter-spacing:1px;
+      text-transform:uppercase;
     }
 
-    .badge{
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid rgba(255,215,106,.14);
-      background:rgba(255,215,106,.05);
-      color:#f7e7af;
-      font-weight:700;
-      font-size:14px;
+    .range-line b{
+      color:#fff0bb;
+      text-shadow:0 0 12px rgba(255,215,106,.16);
     }
 
     .cta-row{
@@ -198,42 +205,55 @@
     }
 
     .btn{
-      min-height:50px;
-      padding:13px 18px;
+      min-height:52px;
+      padding:13px 20px;
       border-radius:14px;
       display:inline-flex;
       align-items:center;
       justify-content:center;
       gap:8px;
-      font-weight:800;
       font-size:15px;
+      font-weight:800;
       border:none;
       cursor:pointer;
       transition:.25s ease;
-      box-shadow:0 8px 18px rgba(0,0,0,.22);
+      box-shadow:0 10px 20px rgba(0,0,0,.26);
     }
 
     .btn:hover{transform:translateY(-2px)}
-
-    .btn-gold{
-      background:linear-gradient(135deg,#ffe7a2,#b67b00);
-      color:#241800;
+    .btn-gold{background:linear-gradient(135deg,#ffe7a4,#b67600);color:#251900}
+    .btn-dark{background:#121212;color:#fff3cb;border:1px solid rgba(255,215,106,.15)}
+    .btn-red{background:linear-gradient(135deg,#ff6a4b,#c61d11);color:#fff}
+    .btn-blue{background:linear-gradient(135deg,#3b8cff,#184db5);color:#fff}
+        .ticker{
+      width:100%;
+      overflow:hidden;
+      border-top:1px solid rgba(255,215,106,.10);
+      border-bottom:1px solid rgba(255,215,106,.10);
+      background:rgba(255,215,106,.03);
+      margin-top:28px;
+      padding:12px 0;
     }
 
-    .btn-dark{
-      background:#121212;
-      color:#fff3cf;
-      border:1px solid rgba(255,215,106,.16);
+    .ticker-track{
+      display:flex;
+      width:max-content;
+      animation:marquee 24s linear infinite;
+      white-space:nowrap;
+      color:#f5df9f;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-size:14px;
     }
 
-    .btn-red{
-      background:linear-gradient(135deg,#ff6d4d,#c71e12);
-      color:#fff;
+    .ticker-track span{
+      padding-right:60px;
     }
 
-    .btn-blue{
-      background:linear-gradient(135deg,#3b8cff,#1b54bf);
-      color:#fff;
+    @keyframes marquee{
+      from{transform:translateX(0)}
+      to{transform:translateX(-50%)}
     }
 
     .floating{
@@ -243,7 +263,7 @@
       display:flex;
       flex-direction:column;
       gap:10px;
-      z-index:50;
+      z-index:99;
     }
 
     .floating a{
@@ -254,112 +274,52 @@
       place-items:center;
       color:#fff;
       font-size:22px;
-      box-shadow:0 10px 22px rgba(0,0,0,.35);
+      box-shadow:0 10px 24px rgba(0,0,0,.34);
       border:1px solid rgba(255,255,255,.08);
     }
 
-    .float-call{background:linear-gradient(135deg,#26c982,#118256)}
-    .float-zalo{background:linear-gradient(135deg,#15a0ff,#0a60ca)}
-    .float-fb{background:linear-gradient(135deg,#2f7bff,#1847b3)}
+    .call{background:linear-gradient(135deg,#25c57f,#117b53)}
+    .zalo{background:linear-gradient(135deg,#139fff,#0a61c9)}
+    .fb{background:linear-gradient(135deg,#347dff,#1845ae)}
 
-    .section{
-      padding:18px 0;
-    }
-
-    .grid-2{
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:18px;
-    }
-
-    .grid-3{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-    }
+    .section{padding:26px 0}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 
     .card{
-      background:
-        linear-gradient(180deg, rgba(255,215,106,.05), rgba(255,215,106,.015)),
-        var(--card);
-      border:1px solid rgba(255,215,106,.13);
+      background:linear-gradient(180deg, rgba(255,215,106,.05), rgba(255,215,106,.01)), var(--card);
+      border:1px solid var(--line);
       border-radius:22px;
-      padding:20px;
+      padding:22px;
       box-shadow:var(--shadow);
     }
 
     .card h2{
       margin:0 0 12px;
-      font-size:24px;
       color:var(--gold);
-      text-shadow:0 0 10px rgba(255,215,106,.10);
-      text-transform:uppercase;
-    }
-
-    .card h3{
-      margin:0 0 10px;
-      font-size:18px;
-      color:#ffe9ad;
-    }
-
-    .lead{
-      font-size:17px;
-      color:#fff0c1;
-    }
-
-    .muted{color:var(--muted)}
-
-    .specs{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:12px;
-      margin-top:14px;
-    }
-
-    .spec{
-      border:1px solid rgba(255,215,106,.10);
-      background:rgba(255,215,106,.04);
-      border-radius:16px;
-      padding:14px;
-    }
-
-    .spec .label{
-      font-size:12px;
-      color:var(--muted);
+      font-size:22px;
       text-transform:uppercase;
       letter-spacing:1px;
+      text-shadow:0 0 10px rgba(255,215,106,.12);
     }
 
-    .spec .value{
-      margin-top:6px;
-      font-size:21px;
-      font-weight:900;
-      color:#fff2c6;
+    .mini-strong{
+      color:#fff0c4;
+      font-size:18px;
+      line-height:1.6;
     }
 
-    .bullet{
-      margin:0;
-      padding-left:18px;
+    .clean-list{
+      display:grid;
+      gap:10px;
+      color:var(--muted);
+      font-size:15px;
     }
 
-    .bullet li{margin:8px 0}
-        .notice-gold{
-      background:linear-gradient(180deg, rgba(255,215,106,.10), rgba(255,215,106,.03));
-      border:1px solid rgba(255,215,106,.18);
-      border-radius:18px;
-      padding:15px;
-      color:#fff0bf;
-      font-weight:700;
-      margin-top:14px;
-    }
-
-    .rare-box{
-      border-left:4px solid var(--gold);
-      background:rgba(255,215,106,.04);
-      padding:16px;
+    .clean-item{
+      padding:12px 14px;
       border-radius:14px;
-      color:#fff0c8;
-      margin-top:14px;
+      border:1px solid rgba(255,215,106,.10);
+      background:rgba(255,215,106,.03);
     }
 
     .gallery{
@@ -378,69 +338,47 @@
 
     .photo img{
       width:100%;
-      height:360px;
+      height:370px;
       object-fit:cover;
       display:block;
       background:#151515;
     }
 
-    .photo-cap{
-      padding:14px 16px 8px;
-      color:#ffe7a3;
+    .cap{
+      padding:14px 16px;
+      color:#ffe7a5;
       font-weight:900;
       text-transform:uppercase;
+      letter-spacing:1px;
     }
 
-    .photo-note{
-      padding:0 16px 16px;
-      color:var(--muted);
-      font-size:14px;
-    }
+    form{display:grid;gap:12px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 
-    form{
-      display:grid;
-      gap:12px;
-    }
-
-    .form-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-    }
-
-    input, select, textarea{
+    input, select{
       width:100%;
-      padding:14px 14px;
+      padding:14px;
       border-radius:14px;
       border:1px solid rgba(255,215,106,.14);
-      background:#0d0d0d;
-      color:#fff7de;
+      background:#0c0c0c;
+      color:#fff7dd;
       font-size:15px;
       outline:none;
     }
 
-    input::placeholder, textarea::placeholder{color:#b6a877}
-    textarea{min-height:115px; resize:vertical}
-
     .checkline{
       display:flex;
-      align-items:flex-start;
       gap:10px;
-      color:#f2e0ad;
+      align-items:flex-start;
+      color:#f1dfac;
       font-size:14px;
-      padding-top:4px;
     }
 
     .checkline input{
       width:18px;
       height:18px;
-      flex:0 0 18px;
       margin-top:2px;
-    }
-
-    .mini{
-      font-size:13px;
-      color:var(--muted);
+      flex:0 0 18px;
     }
 
     .hidden{display:none}
@@ -453,121 +391,97 @@
       padding:18px;
     }
 
-    .reveal-title{
+    .reveal h3{
       margin:0 0 10px;
-      color:#ffe8ab;
-      font-size:25px;
-      font-weight:900;
+      font-size:24px;
+      color:#ffe8aa;
       text-transform:uppercase;
-      text-shadow:0 0 12px rgba(255,215,106,.14);
+      text-shadow:0 0 10px rgba(255,215,106,.12);
     }
 
-    .reveal-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-      margin-top:14px;
-    }
-
-    .reveal-item{
-      background:rgba(0,0,0,.16);
-      border:1px solid rgba(255,215,106,.10);
-      border-radius:16px;
-      padding:14px;
-    }
-
-    .quote{
-      margin-top:16px;
-      border-left:4px solid var(--gold);
-      background:rgba(255,215,106,.04);
-      padding:16px 18px;
-      border-radius:14px;
-      color:#fff1c7;
-      font-style:italic;
+    .reveal p{
+      color:var(--muted);
+      margin:0;
     }
 
     .footer{
-      padding:28px 0 44px;
       text-align:center;
+      padding:26px 0 42px;
       color:var(--muted);
       font-size:14px;
     }
 
     .hotline{
       margin-top:8px;
-      color:#fff0b6;
-      font-size:23px;
+      color:#fff0bb;
+      font-size:24px;
       font-weight:900;
       text-shadow:0 0 12px rgba(255,215,106,.16);
     }
 
-    @media (max-width:920px){
-      .grid-2,.grid-3,.gallery,.form-grid,.reveal-grid{
-        grid-template-columns:1fr;
-      }
-      .specs{
-        grid-template-columns:1fr;
-      }
-      .photo img{
-        height:250px;
-      }
-      .watermark{
-        font-size:70px;
-      }
+    @media (max-width:900px){
+      .grid-2,.gallery,.form-grid{grid-template-columns:1fr}
+      .photo img{height:250px}
+      .sb-stage{width:260px;height:260px}
+      .ring1{width:230px;height:230px}
+      .ring2{width:180px;height:180px}
+      .ring3{width:130px;height:130px}
     }
 
     @media (max-width:560px){
       .cta-row{flex-direction:column}
       .btn{width:100%}
-      .hero-inner{padding:26px 14px 24px}
-      .card{padding:16px}
+      .hero-box{padding:24px 14px 28px}
       .floating a{width:54px;height:54px}
     }
   </style>
 </head>
 <body>
-  <div class="watermark">SB</div>
-
   <div class="floating">
-    <a class="float-call" href="tel:0858999934" aria-label="Gọi">📞</a>
-    <a class="float-zalo" href="https://zalo.me/0858999934" target="_blank" aria-label="Zalo">Z</a>
-    <a class="float-fb" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">f</a>
+    <a class="call" href="tel:0858999934">📞</a>
+    <a class="zalo" href="https://zalo.me/0858999934" target="_blank">Z</a>
+    <a class="fb" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank">f</a>
   </div>
 
   <header class="hero">
     <div class="wrap">
       <div class="hero-box">
-        <div class="hero-top">SƠN BẠCH SIGNATURE • TÀI SẢN CHỌN LỌC • LỌC KHÁCH THỰC • HỒ SƠ TIẾP CẬN CÓ ĐIỀU KIỆN</div>
+        <div class="topline">SƠN BẠCH SIGNATURE • PRO VIP EDITION</div>
 
-        <div class="hero-inner">
-          <div class="brand">
-            <span class="brand-logo">SB</span>
-            <span>SƠN BẠCH SIGNATURE</span>
-          </div>
+        <div class="sb-stage">
+          <div class="ring ring1"></div>
+          <div class="ring ring2"></div>
+          <div class="ring ring3"></div>
+          <div class="sb-logo">SB</div>
+        </div>
 
-          <h1>
-            QUỸ ĐẤT QUY MÔ LỚN
-            <span class="gold-line">BÌNH TÂN – TP.HCM</span>
-            <span class="price-main">135 TỶ</span>
-          </h1>
+        <div class="brand">SƠN BẠCH SIGNATURE</div>
 
-          <div class="hero-sub">
-            Tài sản không dành cho số đông. Đây là quỹ đất quy mô lớn mang tính chiến lược, phù hợp nhóm khách nhìn theo giá trị dài hạn, biết chọn đúng tài sản lõi và ưu tiên làm việc kín – gọn – thực tế.
-          </div>
+        <h1>
+          QUỸ ĐẤT QUY MÔ LỚN
+          <span class="gold-line">BÌNH TÂN – TP.HCM</span>
+          <span class="price">135 TỶ</span>
+        </h1>
 
-          <div class="badge-row">
-            <span class="badge">Tổng diện tích 3.419m²</span>
-            <span class="badge">Hàng hiếm Bình Tân</span>
-            <span class="badge">Tiếp cận có chọn lọc</span>
-            <span class="badge">Phù hợp vốn mạnh</span>
-            <span class="badge">Ưu tiên khách thực</span>
-          </div>
+        <div class="subline">
+          Tối giản ngôn từ. Nhấn mạnh vị thế. Định vị đúng nhóm khách nhìn giá trị dài hạn.
+        </div>
 
-          <div class="cta-row">
-            <a href="#nda-form" class="btn btn-gold">📩 NHẬN HỒ SƠ TIẾP CẬN</a>
-            <a href="tel:0858999934" class="btn btn-dark">📞 GỌI NGAY</a>
-            <a href="https://zalo.me/0858999934" target="_blank" class="btn btn-red">💬 ZALO SƠN BẠCH</a>
-            <a href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank" class="btn btn-blue">📘 FACEBOOK</a>
+        <div class="range-line">
+          DẢI TÀI SẢN THAM CHIẾU: <b>30 TỶ — 1.500 TỶ</b>
+        </div>
+
+        <div class="cta-row">
+          <a href="#nda-form" class="btn btn-gold">📩 TIẾP CẬN HỒ SƠ</a>
+          <a href="tel:0858999934" class="btn btn-dark">📞 GỌI NGAY</a>
+          <a href="https://zalo.me/0858999934" target="_blank" class="btn btn-red">💬 ZALO</a>
+          <a href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank" class="btn btn-blue">📘 FACEBOOK</a>
+        </div>
+
+        <div class="ticker">
+          <div class="ticker-track">
+            <span>TÀI SẢN CHỌN LỌC • QUỸ ĐẤT QUY MÔ LỚN • ĐỊNH VỊ GIÁ TRỊ • SƠN BẠCH SIGNATURE •</span>
+            <span>TÀI SẢN CHỌN LỌC • QUỸ ĐẤT QUY MÔ LỚN • ĐỊNH VỊ GIÁ TRỊ • SƠN BẠCH SIGNATURE •</span>
           </div>
         </div>
       </div>
@@ -577,81 +491,17 @@
   <section class="section">
     <div class="wrap grid-2">
       <div class="card">
-        <h2>ĐỊNH VỊ TÀI SẢN</h2>
-        <div class="lead">
-          Đây là dạng tài sản mà người mua nhỏ lẻ khó hấp thụ. Giá trị thật nằm ở quy mô, vị thế quỹ đất và khả năng mở ra nhiều kịch bản hơn so với hàng phổ thông ngoài thị trường.
-        </div>
-
-        <div class="specs">
-          <div class="spec">
-            <div class="label">Tổng diện tích</div>
-            <div class="value">3.419m²</div>
-          </div>
-          <div class="spec">
-            <div class="label">Giá tham chiếu</div>
-            <div class="value">135 TỶ</div>
-          </div>
-          <div class="spec">
-            <div class="label">Khu vực</div>
-            <div class="value">Bình Tân</div>
-          </div>
-          <div class="spec">
-            <div class="label">Nhóm khách phù hợp</div>
-            <div class="value">Khách thực • Vốn mạnh</div>
-          </div>
-        </div>
-
-        <div class="rare-box">
-          <b>Điểm hiếm:</b> Quỹ đất diện tích lớn trong đô thị không chỉ là một bất động sản, mà còn là quyền giữ vị trí trong một khu vực đang tiếp tục hoàn thiện giá trị theo thời gian.
+        <h2>ĐỊNH VỊ</h2>
+        <div class="mini-strong">
+          3.419m² • Bình Tân • tài sản quy mô lớn dành cho nhóm khách ưu tiên vị thế và biên độ giá trị.
         </div>
       </div>
 
       <div class="card">
-        <h2>GIÁ ẨN – LỌC KHÁCH ẨN</h2>
-        <ul class="bullet">
-          <li>Không mở hồ sơ sâu theo kiểu chào đại trà ngoài thị trường.</li>
-          <li>Không ưu tiên nhóm chỉ hỏi thử, dò giá hoặc xin thông tin để đi vòng.</li>
-          <li>Chỉ làm việc với khách có nhu cầu thật, định hướng rõ và tôn trọng tính bảo mật.</li>
-          <li>Thông tin sâu hơn sẽ mở sau bước đăng ký NDA cơ bản bên dưới.</li>
-        </ul>
-
-        <div class="notice-gold">
-          Tài sản dạng này thường không mạnh ở việc “rao nhiều”, mà mạnh ở việc tiếp cận đúng người – đúng nhu cầu – đúng thời điểm.
+        <h2>TIẾP CẬN</h2>
+        <div class="mini-strong">
+          Thông tin được mở theo mức độ phù hợp để giữ trải nghiệm chuyên nghiệp, gọn và đúng đối tượng.
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap grid-3">
-      <div class="card">
-        <h2>PHÙ HỢP NHÓM KHÁCH</h2>
-        <ul class="bullet">
-          <li>Nhà đầu tư tích lũy quỹ đất quy mô lớn.</li>
-          <li>Nhóm vốn mạnh cần hàng hiếm để giữ tài sản.</li>
-          <li>Khách đi theo chiến lược trung hạn – dài hạn.</li>
-          <li>Nhà đầu tư ưu tiên pháp lý rõ, cách làm việc kín.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>GIÁ TRỊ ẨN</h2>
-        <ul class="bullet">
-          <li>Quy mô lớn giúp tạo ưu thế so với nguồn hàng nhỏ lẻ.</li>
-          <li>Dễ xây dựng câu chuyện tăng giá theo chu kỳ hạ tầng và đô thị hóa.</li>
-          <li>Có biên độ thương lượng và định vị riêng khi gặp đúng người mua.</li>
-          <li>Tính khan hiếm tăng dần theo thời gian, không phải lúc nào cũng có.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>NGUYÊN TẮC LÀM VIỆC</h2>
-        <ul class="bullet">
-          <li>Ưu tiên khách thực, không vòng vo.</li>
-          <li>Thông tin đi theo từng mức độ tiếp cận.</li>
-          <li>Không chia sẻ hồ sơ sâu tràn lan.</li>
-          <li>Làm việc nhanh, rõ, tôn trọng bảo mật.</li>
-        </ul>
       </div>
     </div>
   </section>
@@ -660,49 +510,32 @@
     <div class="wrap">
       <div class="gallery">
         <div class="photo">
-          <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/dat-hientrang-135-ty.jpg" alt="Hiện trạng quỹ đất Bình Tân" />
-          <div class="photo-cap">HIỆN TRẠNG KHU ĐẤT</div>
-          <div class="photo-note">Nếu ảnh chưa ra, thay đúng link RAW ảnh hiện trạng thật của anh vào dòng này.</div>
+          <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/dat-hientrang-135-ty.jpg" alt="Hiện trạng khu đất">
+          <div class="cap">Hiện trạng</div>
         </div>
-
         <div class="photo">
-          <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/dat-tuonglai-135-ty.jpg" alt="Định hướng tương lai quỹ đất Bình Tân" />
-          <div class="photo-cap">ĐỊNH HƯỚNG GIÁ TRỊ TƯƠNG LAI</div>
-          <div class="photo-note">Nếu ảnh tương lai chưa ra, thay đúng link RAW ảnh thứ 2 vào dòng này.</div>
+          <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/dat-tuonglai-135-ty.jpg" alt="Định hướng tương lai">
+          <div class="cap">Định hướng tương lai</div>
         </div>
       </div>
     </div>
-  </section>
-    <section class="section">
+  </section>  <section class="section">
     <div class="wrap grid-2">
       <div class="card">
-        <h2>TIỀM NĂNG TƯƠNG LAI</h2>
-        <div class="lead">
-          Với những người nhìn theo chu kỳ, quỹ đất lớn luôn có lợi thế riêng. Không phải vì ai cũng mua được, mà vì khi thị trường cần loại tài sản này thì nguồn cung thực tế thường rất hạn chế.
-        </div>
-        <ul class="bullet">
-          <li>Giữ giá trị tốt hơn khi đặt trong bài toán tích lũy tài sản lớn.</li>
-          <li>Dễ tạo sự khác biệt nếu so với hàng diện tích nhỏ trên cùng khu vực.</li>
-          <li>Phù hợp chiến lược chờ đúng thời điểm để khai thác hoặc chuyển nhượng.</li>
-          <li>Tăng sức hút với nhóm khách thích vị thế hơn là lướt sóng ngắn hạn.</li>
-        </ul>
-
-        <div class="rare-box">
-          <b>Câu chốt chiến lược:</b> Không phải ai cũng cần quỹ đất lớn. Nhưng người hiểu tài sản lõi thường ra quyết định trước khi phần đông thị trường nhận ra cơ hội thật sự.
+        <h2>GIÁ TRỊ CỐT LÕI</h2>
+        <div class="clean-list">
+          <div class="clean-item">Quy mô lớn tạo khác biệt rõ so với hàng phổ thông.</div>
+          <div class="clean-item">Phù hợp tư duy trung hạn – dài hạn.</div>
+          <div class="clean-item">Dễ định vị là tài sản có vị thế trong khu vực.</div>
         </div>
       </div>
 
       <div class="card">
-        <h2>ĐIỀU KIỆN TIẾP CẬN HỒ SƠ</h2>
-        <ul class="bullet">
-          <li>Để lại thông tin rõ ràng.</li>
-          <li>Xác nhận nhu cầu tiếp cận thực.</li>
-          <li>Đồng ý nguyên tắc NDA cơ bản.</li>
-          <li>Sau đó mở phần hồ sơ chọn lọc ngay bên dưới.</li>
-        </ul>
-
-        <div class="notice-gold">
-          Hồ sơ dưới đây chỉ là lớp tiếp cận đầu tiên. Khi cần làm sâu hơn, Sơn Bạch sẽ chọn lọc tiếp theo đúng mức độ phù hợp của khách.
+        <h2>NGUYÊN TẮC LÀM VIỆC</h2>
+        <div class="clean-list">
+          <div class="clean-item">Ưu tiên nhu cầu rõ ràng.</div>
+          <div class="clean-item">Trao đổi gọn, đúng trọng tâm.</div>
+          <div class="clean-item">Mở thông tin theo từng bước phù hợp.</div>
         </div>
       </div>
     </div>
@@ -711,97 +544,49 @@
   <section class="section" id="nda-form">
     <div class="wrap">
       <div class="card">
-        <h2>ĐĂNG KÝ NDA – MỞ HỒ SƠ CHỌN LỌC</h2>
-        <p class="muted">
-          Vui lòng điền thông tin thực. Đây là bước sàng lọc cơ bản để tiếp cận tài sản mang tính chọn lọc.
-        </p>
+        <h2>TIẾP CẬN HỒ SƠ</h2>
 
         <form id="leadForm" action="https://formspree.io/f/mpqykgzk" method="POST">
           <div class="form-grid">
-            <input type="text" name="ho_ten" placeholder="Họ và tên" required />
-            <input type="tel" name="so_dien_thoai" placeholder="Số điện thoại" required />
+            <input type="text" name="ho_ten" placeholder="Họ và tên" required>
+            <input type="tel" name="so_dien_thoai" placeholder="Số điện thoại" required>
           </div>
 
           <div class="form-grid">
-            <input type="email" name="email" placeholder="Email" required />
-            <select name="ngan_sach" required>
-              <option value="">Khung ngân sách dự kiến</option>
-              <option>Dưới 100 tỷ</option>
-              <option>100 - 150 tỷ</option>
-              <option>150 - 300 tỷ</option>
-              <option>Trên 300 tỷ</option>
-            </select>
-          </div>
-
-          <div class="form-grid">
+            <input type="email" name="email" placeholder="Email" required>
             <select name="muc_dich" required>
               <option value="">Mục đích tiếp cận</option>
-              <option>Mua đầu tư giữ tài sản</option>
-              <option>Mua để phát triển quỹ đất</option>
-              <option>Mua thay mặt đối tác / nhóm vốn</option>
-              <option>Tìm hiểu sơ bộ</option>
+              <option>Mua đầu tư</option>
+              <option>Mua giữ tài sản</option>
+              <option>Đại diện đối tác</option>
+              <option>Tìm hiểu trước</option>
             </select>
-            <input type="text" name="don_vi" placeholder="Công ty / nhóm đầu tư / cá nhân" />
           </div>
-
-          <textarea name="ghi_chu" placeholder="Ghi chú thêm về nhu cầu, định hướng, thời gian làm việc dự kiến..."></textarea>
 
           <label class="checkline">
-            <input type="checkbox" id="ndaCheck" required />
-            <span>
-              Tôi cam kết sử dụng thông tin đúng mục đích, không phát tán hồ sơ nếu chưa có sự đồng ý của bên cung cấp. Tôi tự chịu trách nhiệm nếu cung cấp thông tin sai hoặc sử dụng thông tin sai mục đích.
-            </span>
+            <input type="checkbox" id="ndaCheck" required>
+            <span>Tôi xác nhận thông tin cung cấp là phù hợp cho bước tiếp cận ban đầu.</span>
           </label>
 
-          <div class="mini">
-            Form này đang dùng Formspree của anh. Sau này nếu muốn đổi nơi nhận thông tin, chỉ cần thay link trong thuộc tính <b>action</b> của thẻ form.
-          </div>
-
           <div class="cta-row" style="justify-content:flex-start">
-            <button type="submit" class="btn btn-gold">✅ TÔI ĐỒNG Ý NDA</button>
-            <button type="button" class="btn btn-dark" onclick="openHiddenProfile()">🔓 MỞ HỒ SƠ CHỌN LỌC</button>
+            <button type="submit" class="btn btn-gold">✅ XÁC NHẬN</button>
+            <button type="button" class="btn btn-dark" onclick="openHiddenProfile()">🔓 MỞ HỒ SƠ</button>
           </div>
         </form>
 
         <div id="hiddenProfile" class="hidden reveal">
-          <div class="reveal-title">HỒ SƠ CHỌN LỌC ĐÃ ĐƯỢC MỞ</div>
+          <h3>HỒ SƠ ĐÃ MỞ</h3>
           <p>
-            Cảm ơn anh/chị đã hoàn tất bước tiếp cận ban đầu. Dưới đây là phần tóm tắt để đánh giá nhanh mức độ phù hợp trước khi đi sâu hơn vào hồ sơ làm việc.
+            Quỹ đất quy mô lớn tại Bình Tân, phù hợp nhóm khách ưu tiên vị thế, quy mô và tầm nhìn giá trị dài hạn. Liên hệ Sơn Bạch để tiếp cận bước làm việc tiếp theo.
           </p>
-
-          <div class="reveal-grid">
-            <div class="reveal-item">
-              <h3>01. TÍNH CHẤT TÀI SẢN</h3>
-              <p class="muted">Quỹ đất quy mô lớn, không dành cho hướng mua nhỏ lẻ thông thường, phù hợp tư duy chiến lược.</p>
-            </div>
-
-            <div class="reveal-item">
-              <h3>02. GIÁ TRỊ CỐT LÕI</h3>
-              <p class="muted">Lợi thế chính nằm ở quy mô, độ hiếm và vị thế để xây câu chuyện đầu tư theo chu kỳ.</p>
-            </div>
-
-            <div class="reveal-item">
-              <h3>03. PHONG CÁCH GIAO DỊCH</h3>
-              <p class="muted">Ưu tiên khách rõ nhu cầu, rõ năng lực, tôn trọng bảo mật và làm việc trực tiếp.</p>
-            </div>
-
-            <div class="reveal-item">
-              <h3>04. BƯỚC TIẾP THEO</h3>
-              <p class="muted">Liên hệ Sơn Bạch để nhận thêm dữ liệu sâu hơn, vị trí, hướng làm việc và lộ trình tiếp cận phù hợp.</p>
-            </div>
-          </div>
-
-          <div class="quote">
-            “Người mua phổ thông thường tìm giá. Người mua lớn thường nhìn vị thế. Và tài sản lõi luôn thuộc về người ra quyết định đúng thời điểm.”
-          </div>
         </div>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <div>SƠN BẠCH SIGNATURE • KẾT NỐI TÀI SẢN CHỌN LỌC • LỌC KHÁCH THỰC</div>
-    <div class="hotline">Hotline: 0858 999 934</div>
+    <div>SƠN BẠCH SIGNATURE • PRO VIP EDITION</div>
+    <div class="hotline">0858 999 934</div>
   </footer>
 
   <script>
@@ -810,7 +595,7 @@
       const box = document.getElementById('hiddenProfile');
 
       if(!checked){
-        alert('Vui lòng tick đồng ý NDA trước khi mở hồ sơ.');
+        alert('Vui lòng xác nhận trước khi mở hồ sơ.');
         return;
       }
 
@@ -822,7 +607,7 @@
       const checked = document.getElementById('ndaCheck').checked;
       if(!checked){
         e.preventDefault();
-        alert('Vui lòng tick đồng ý NDA trước khi gửi thông tin.');
+        alert('Vui lòng xác nhận trước khi gửi.');
         return;
       }
 
@@ -833,3 +618,4 @@
   </script>
 </body>
 </html>
+  
