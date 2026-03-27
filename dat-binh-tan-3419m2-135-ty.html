@@ -4,23 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sơn Bạch Signature | Quỹ đất Bình Tân 3.419m² | 135 Tỷ</title>
-  <meta name="description" content="Sơn Bạch Signature - Quỹ đất Bình Tân 3.419m² - 135 Tỷ - trang tiếp cận tài sản cao cấp." />
+  <meta name="description" content="Sơn Bạch Signature - Corporate Luxury Access Page - Quỹ đất Bình Tân 3.419m² - 135 Tỷ." />
   <style>
     :root{
-      --bg:#050505;
+      --bg:#040404;
       --bg-soft:#0b0b0b;
       --card:#101010;
-      --card2:#151515;
       --gold:#ffd76a;
-      --gold2:#b97a00;
-      --gold3:#fff1bf;
-      --text:#f7f0dd;
-      --muted:#d3c189;
+      --gold2:#c78600;
+      --gold3:#fff2c4;
+      --text:#f8f1de;
+      --muted:#d2bf87;
       --line:rgba(255,215,106,.14);
-      --line2:rgba(255,215,106,.22);
+      --line-strong:rgba(255,215,106,.22);
       --shadow:0 16px 40px rgba(0,0,0,.45);
-      --blue:#215fda;
-      --red:#c91f14;
+      --blue:#2360da;
     }
 
     *{box-sizing:border-box}
@@ -31,20 +29,21 @@
       color:var(--text);
       background:
         radial-gradient(circle at top right, rgba(255,215,106,.08), transparent 22%),
-        radial-gradient(circle at left center, rgba(255,215,106,.04), transparent 18%),
-        linear-gradient(180deg,#040404 0%,#090909 48%,#040404 100%);
+        radial-gradient(circle at left center, rgba(255,215,106,.03), transparent 18%),
+        linear-gradient(180deg,#030303 0%,#090909 48%,#030303 100%);
       overflow-x:hidden;
     }
 
     a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
+    button{font-family:inherit}
     .wrap{width:min(1160px,94%);margin:0 auto;position:relative;z-index:2}
 
     .hero{
       min-height:100vh;
       display:flex;
       align-items:center;
-      padding:18px 0 70px;
+      padding:18px 0 64px;
       position:relative;
     }
 
@@ -90,7 +89,7 @@
       position:relative;
       z-index:2;
       text-align:center;
-      padding:56px 18px 40px;
+      padding:54px 18px 40px;
     }
 
     .sb-bg{
@@ -100,7 +99,7 @@
       justify-content:center;
       z-index:1;
       pointer-events:none;
-      opacity:.17;
+      opacity:.15;
     }
 
     .sb-wrap{
@@ -140,8 +139,8 @@
     }
 
     @keyframes sbFade{
-      0%,100%{opacity:.55}
-      50%{opacity:.95}
+      0%,100%{opacity:.45}
+      50%{opacity:.9}
     }
 
     .brand{
@@ -152,7 +151,7 @@
       font-weight:800;
       letter-spacing:2px;
       text-transform:uppercase;
-      margin-bottom:8px;
+      margin-bottom:10px;
     }
 
     h1{
@@ -183,28 +182,22 @@
       font-weight:900;
       color:var(--gold3);
       text-shadow:
-        0 0 12px rgba(255,215,106,.48),
-        0 0 26px rgba(255,215,106,.34),
-        0 0 52px rgba(255,215,106,.24),
-        0 0 88px rgba(255,215,106,.12);
-      animation:priceFlash 1.15s ease-in-out infinite;
+        0 0 12px rgba(255,215,106,.60),
+        0 0 30px rgba(255,215,106,.40),
+        0 0 56px rgba(255,215,106,.24),
+        0 0 96px rgba(255,215,106,.14);
+      animation:priceFlash 1.05s ease-in-out infinite;
     }
 
     @keyframes priceFlash{
-      0%,100%{
-        opacity:1;
-        transform:scale(1);
-      }
-      50%{
-        opacity:.88;
-        transform:scale(1.035);
-      }
+      0%,100%{opacity:1;transform:scale(1)}
+      50%{opacity:.86;transform:scale(1.04)}
     }
 
     .subline{
       position:relative;
       z-index:2;
-      max-width:760px;
+      max-width:700px;
       margin:16px auto 0;
       color:var(--muted);
       font-size:17px;
@@ -239,7 +232,7 @@
 
     .btn:hover{transform:translateY(-2px)}
     .btn-gold{background:linear-gradient(135deg,#ffecb0,#c18300);color:#221600}
-    .btn-dark{background:#111;color:#fff3cb;border:1px solid rgba(255,215,106,.15)}
+    .btn-dark{background:#0e0e0e;color:#fff3cb;border:1px solid rgba(255,215,106,.15)}
     .btn-blue{background:linear-gradient(135deg,#3d8fff,#1b51bf);color:#fff}
 
     .quick-facts{
@@ -324,7 +317,7 @@
     .visual-card{
       overflow:hidden;
       border-radius:28px;
-      border:1px solid var(--line2);
+      border:1px solid var(--line-strong);
       background:#0b0b0b;
       box-shadow:var(--shadow);
     }
@@ -336,9 +329,7 @@
       transition:transform .5s ease;
     }
 
-    .visual-card:hover img{
-      transform:scale(1.03);
-    }
+    .visual-card:hover img{transform:scale(1.03)}
 
     .visual-caption{
       padding:16px 18px;
@@ -369,6 +360,12 @@
       border-radius:22px;
       padding:18px;
       background:linear-gradient(180deg, rgba(255,215,106,.06), rgba(255,215,106,.015));
+      animation:fadeDown .28s ease;
+    }
+
+    @keyframes fadeDown{
+      from{opacity:0; transform:translateY(-8px)}
+      to{opacity:1; transform:translateY(0)}
     }
 
     .price-title{
@@ -387,18 +384,56 @@
     }
 
     .price-item{
-      border:1px solid rgba(255,215,106,.12);
-      border-radius:16px;
+      border-radius:18px;
       padding:16px 12px;
-      background:rgba(0,0,0,.18);
       text-align:center;
-      color:#fff0c4;
       font-size:15px;
-      font-weight:800;
-      min-height:72px;
+      font-weight:900;
+      min-height:78px;
       display:flex;
       align-items:center;
       justify-content:center;
+      border:1px solid transparent;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.02);
+    }
+
+    .tier-1{
+      background:linear-gradient(180deg, rgba(255,240,200,.10), rgba(255,240,200,.03));
+      border-color:rgba(255,240,200,.16);
+      color:#fff1cf;
+    }
+
+    .tier-2{
+      background:linear-gradient(180deg, rgba(255,224,154,.14), rgba(255,224,154,.04));
+      border-color:rgba(255,224,154,.20);
+      color:#ffe9b3;
+    }
+
+    .tier-3{
+      background:linear-gradient(180deg, rgba(255,205,110,.18), rgba(255,205,110,.05));
+      border-color:rgba(255,205,110,.24);
+      color:#ffe29a;
+    }
+
+    .tier-4{
+      background:linear-gradient(180deg, rgba(255,183,77,.22), rgba(255,183,77,.06));
+      border-color:rgba(255,183,77,.26);
+      color:#ffd57d;
+    }
+
+    .tier-5{
+      background:linear-gradient(180deg, rgba(255,160,50,.24), rgba(255,160,50,.07));
+      border-color:rgba(255,160,50,.28);
+      color:#ffcb63;
+    }
+
+    .tier-6{
+      background:linear-gradient(180deg, rgba(255,215,106,.28), rgba(255,215,106,.10));
+      border-color:rgba(255,215,106,.34);
+      color:#fff0bd;
+      box-shadow:
+        0 0 16px rgba(255,215,106,.12),
+        inset 0 0 16px rgba(255,215,106,.04);
     }
 
     .contact-card{
@@ -453,8 +488,8 @@
 
     .floating{
       position:fixed;
-      right:14px;
-      bottom:14px;
+      right:12px;
+      bottom:12px;
       display:flex;
       flex-direction:column;
       gap:10px;
@@ -462,27 +497,85 @@
     }
 
     .floating a{
-      width:58px;
-      height:58px;
+      width:50px;
+      height:50px;
       border-radius:50%;
       display:grid;
       place-items:center;
       color:#fff;
-      font-size:22px;
-      box-shadow:0 10px 24px rgba(0,0,0,.34);
+      font-size:20px;
+      box-shadow:0 8px 18px rgba(0,0,0,.30);
       border:1px solid rgba(255,255,255,.08);
+      opacity:.88;
+      transition:.2s ease;
+    }
+
+    .floating a:hover{
+      opacity:1;
+      transform:translateY(-1px);
     }
 
     .f-zalo{background:linear-gradient(135deg,#12a0ff,#0b61ca)}
     .f-fb{background:linear-gradient(135deg,#377fff,#1846b3)}
 
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.68);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:120;
+    }
+
+    .modal.show{
+      display:flex;
+    }
+
+    .modal-card{
+      width:min(620px,100%);
+      border:1px solid rgba(255,215,106,.18);
+      border-radius:24px;
+      background:
+        linear-gradient(180deg, rgba(255,215,106,.06), rgba(255,215,106,.015)),
+        #0d0d0d;
+      box-shadow:0 24px 60px rgba(0,0,0,.55);
+      padding:22px;
+      animation:popIn .22s ease;
+    }
+
+    @keyframes popIn{
+      from{opacity:0; transform:scale(.97)}
+      to{opacity:1; transform:scale(1)}
+    }
+
+    .modal-title{
+      color:var(--gold);
+      font-size:24px;
+      font-weight:900;
+      text-transform:uppercase;
+      margin:0 0 12px;
+    }
+
+    .modal-text{
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.7;
+      margin:0 0 18px;
+    }
+
+    .modal-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
     @media (max-width:980px){
       .quick-facts,.grid-2,.visual-grid,.form-grid,.price-grid{
         grid-template-columns:1fr;
       }
-      .sb-wrap{
-        width:260px;height:260px;
-      }
+      .sb-wrap{width:260px;height:260px}
       .ring1{width:220px;height:220px;left:20px;top:20px}
       .ring2{width:160px;height:160px;left:50px;top:50px}
       .ring3{width:100px;height:100px;left:80px;top:80px}
@@ -492,10 +585,10 @@
 
     @media (max-width:560px){
       .hero-inner{padding:42px 14px 28px}
-      .cta-row{flex-direction:column}
+      .cta-row,.modal-actions{flex-direction:column}
       .btn{width:100%}
       .card{padding:18px}
-      .floating a{width:54px;height:54px}
+      .floating a{width:46px;height:46px}
     }
   </style>
 </head>
@@ -503,6 +596,19 @@
   <div class="floating">
     <a class="f-zalo" href="https://zalo.me/0858999934" target="_blank" aria-label="Zalo">Z</a>
     <a class="f-fb" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">f</a>
+  </div>
+
+  <div id="ndaModal" class="modal" onclick="closeNdaIfBackdrop(event)">
+    <div class="modal-card">
+      <div class="modal-title">Xác nhận NDA</div>
+      <p class="modal-text">
+        Thông tin tiếp cận được sử dụng trong phạm vi làm việc phù hợp và được bảo mật theo nguyên tắc trao đổi trực tiếp. Khi tiếp tục, anh/chị đồng ý không chia sẻ nội dung chi tiết ra bên ngoài khi chưa có sự đồng thuận.
+      </p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-gold" onclick="acceptNda()">TÔI ĐỒNG Ý</button>
+        <button type="button" class="btn btn-dark" onclick="closeNda()">ĐÓNG</button>
+      </div>
+    </div>
   </div>
 
   <header class="hero">
@@ -533,13 +639,13 @@
           </h1>
 
           <div class="subline">
-            Trang tiếp cận tài sản theo phong cách corporate luxury. Tối giản ngôn từ, nhấn mạnh vị thế và giữ trải nghiệm tiếp cận ở mức gọn – sang – đúng trọng tâm.
+            Tối giản ngôn từ. Nhấn mạnh vị thế. Giữ trải nghiệm tiếp cận ở mức gọn, sang và đúng trọng tâm.
           </div>
 
           <div class="cta-row">
             <a href="#contact-form" class="btn btn-gold">📩 TIẾP CẬN THÔNG TIN</a>
+            <button type="button" class="btn btn-dark" onclick="openNda()">🔒 NDA BẢO MẬT</button>
             <a href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank" class="btn btn-blue">📘 FACEBOOK</a>
-            <a href="https://zalo.me/0858999934" target="_blank" class="btn btn-dark">💬 ZALO</a>
           </div>
 
           <div class="quick-facts">
@@ -584,12 +690,12 @@
           <div id="pricePanel" class="hidden price-panel">
             <div class="price-title">Các nhóm tài sản tham chiếu</div>
             <div class="price-grid">
-              <div class="price-item">Dưới 30 TỶ</div>
-              <div class="price-item">30 – 100 TỶ</div>
-              <div class="price-item">100 – 300 TỶ</div>
-              <div class="price-item">300 – 700 TỶ</div>
-              <div class="price-item">700 – 1.000 TỶ</div>
-              <div class="price-item">1.000 – 1.500 TỶ</div>
+              <div class="price-item tier-1">Dưới 30 TỶ</div>
+              <div class="price-item tier-2">30 – 100 TỶ</div>
+              <div class="price-item tier-3">100 – 300 TỶ</div>
+              <div class="price-item tier-4">300 – 700 TỶ</div>
+              <div class="price-item tier-5">700 – 1.000 TỶ</div>
+              <div class="price-item tier-6">1.000 – 1.500 TỶ</div>
             </div>
           </div>
         </div>
@@ -622,6 +728,7 @@
         <form action="https://formspree.io/f/mpqykgzk" method="POST">
           <input type="hidden" name="_subject" value="Khách mới từ landing page 135 tỷ - Sơn Bạch">
           <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="nda_status" id="ndaStatus" value="Chưa xác nhận">
 
           <div class="form-grid">
             <input type="text" name="ho_ten" placeholder="Họ và tên" required>
@@ -640,10 +747,11 @@
           </div>
 
           <div class="helper">
-            Thông tin từ form này sẽ được gửi qua endpoint hiện tại. Nếu Formspree của anh đang cấu hình đúng, dữ liệu sẽ chuyển về mail <b>sonbach723@gmail.com</b>.
+            Thông tin từ form này sẽ được gửi qua endpoint hiện tại. Nếu Formspree đang cấu hình đúng, dữ liệu sẽ chuyển về mail <b>sonbach723@gmail.com</b>.
           </div>
 
           <div class="cta-row" style="justify-content:flex-start">
+            <button type="button" class="btn btn-dark" onclick="openNda()">🔒 XEM NDA</button>
             <button type="submit" class="btn btn-gold">✅ GỬI VỀ MAIL</button>
           </div>
         </form>
@@ -659,6 +767,26 @@
   <script>
     function togglePricePanel(){
       document.getElementById('pricePanel').classList.toggle('hidden');
+    }
+
+    function openNda(){
+      document.getElementById('ndaModal').classList.add('show');
+    }
+
+    function closeNda(){
+      document.getElementById('ndaModal').classList.remove('show');
+    }
+
+    function closeNdaIfBackdrop(e){
+      if(e.target.id === 'ndaModal'){
+        closeNda();
+      }
+    }
+
+    function acceptNda(){
+      document.getElementById('ndaStatus').value = 'Đã đồng ý NDA';
+      closeNda();
+      alert('Đã xác nhận NDA.');
     }
   </script>
 </body>
