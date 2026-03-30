@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KHO BĐS SƠN BẠCH | VIP LEVEL 2</title>
-  <meta name="description" content="Kho BĐS Sơn Bạch VIP Level 2 - tài sản lõi, hàng kín, NDA, khách thật, hồ sơ chọn lọc." />
+  <title>SƠN BẠCH BĐS VIP PRO</title>
+  <meta name="description" content="Sơn Bạch BĐS VIP PRO - Kho bất động sản chọn lọc, hàng kín, NDA, hồ sơ chọn lọc, khách thật ưu tiên." />
   <style>
     :root{
       --bg:#040404;
-      --bg-soft:#0a0a0a;
+      --bg-soft:#0b0b0b;
       --card:#111111;
-      --card-2:#171717;
+      --card2:#171717;
       --gold:#ffd76a;
       --gold2:#c9981c;
       --gold3:#fff1bc;
@@ -20,6 +20,15 @@
       --line-strong:rgba(255,215,106,.28);
       --shadow:0 0 24px rgba(255,215,106,.10), 0 0 60px rgba(201,152,28,.07);
       --radius:26px;
+
+      --c-under50:#7fe0ff;
+      --c-under50-bg:rgba(127,224,255,.08);
+
+      --c-mid:#ffcf5a;
+      --c-mid-bg:rgba(255,207,90,.10);
+
+      --c-over:#ff8f8f;
+      --c-over-bg:rgba(255,143,143,.08);
     }
 
     *{box-sizing:border-box}
@@ -42,7 +51,7 @@
       top:0;
       z-index:90;
       backdrop-filter:blur(14px);
-      background:rgba(6,6,6,.82);
+      background:rgba(6,6,6,.84);
       border-bottom:1px solid rgba(255,215,106,.12);
       box-shadow:0 8px 24px rgba(0,0,0,.35);
     }
@@ -53,10 +62,9 @@
       min-height:62px;
       display:flex;
       align-items:center;
-      justify-content:space-between;
+      justify-content:center;
       gap:12px;
-      flex-wrap:wrap;
-      padding:8px 0;
+      padding:10px 0;
     }
 
     .brand{
@@ -67,6 +75,7 @@
       font-weight:900;
       letter-spacing:1px;
       text-shadow:0 0 10px rgba(255,215,106,.18);
+      text-transform:uppercase;
     }
 
     .brand-dot{
@@ -79,37 +88,6 @@
     @keyframes pulse{
       0%,100%{transform:scale(1);opacity:1}
       50%{transform:scale(1.25);opacity:.78}
-    }
-
-    .top-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .pill{
-      min-height:40px;
-      padding:0 14px;
-      border-radius:999px;
-      border:1px solid rgba(255,215,106,.16);
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      background:rgba(255,215,106,.05);
-      color:var(--gold);
-      font-size:12px;
-      font-weight:900;
-      letter-spacing:.5px;
-      box-shadow:0 0 14px rgba(255,215,106,.05);
-      transition:.25s ease;
-    }
-
-    .pill:hover{transform:translateY(-1px)}
-    .pill.gold{
-      color:#111;
-      background:linear-gradient(90deg,#dcb54a,#ffd76a,#b78314);
-      border-color:transparent;
-      box-shadow:0 0 18px rgba(255,215,106,.18);
     }
 
     .runner{
@@ -141,7 +119,7 @@
     .wrap{
       width:min(1220px,92%);
       margin:auto;
-      padding:24px 0 115px;
+      padding:24px 0 120px;
     }
 
     .hero{
@@ -299,37 +277,68 @@
 
     .hero-banner strong{color:var(--gold)}
 
-    .section{
-      margin-top:28px;
+    .section{margin-top:28px}
+
+    .toggle-block{
+      margin-top:18px;
+      border:1px solid rgba(255,215,106,.14);
+      border-radius:28px;
+      background:
+        linear-gradient(180deg, rgba(255,215,106,.04), rgba(255,215,106,.015)),
+        rgba(10,10,10,.82);
+      box-shadow:0 0 16px rgba(255,215,106,.05);
+      overflow:hidden;
     }
 
-    .section-head{
+    .toggle-btn{
+      width:100%;
+      border:0;
+      background:transparent;
+      color:#fff2c9;
+      text-align:left;
+      padding:18px 20px;
+      font-size:18px;
+      font-weight:900;
+      letter-spacing:.4px;
       display:flex;
-      align-items:end;
+      align-items:center;
       justify-content:space-between;
       gap:16px;
-      flex-wrap:wrap;
-      margin-bottom:14px;
+      cursor:pointer;
     }
 
-    .section-head h2{
-      margin:0;
-      font-size:clamp(24px,4vw,36px);
+    .toggle-btn span:last-child{
       color:var(--gold);
-      text-shadow:0 0 12px rgba(255,215,106,.12);
+      font-size:22px;
+      line-height:1;
+      transition:transform .25s ease;
     }
 
-    .section-head p{
-      margin:0;
-      color:var(--muted);
-      font-size:14px;
+    .toggle-block.open .toggle-btn span:last-child{
+      transform:rotate(45deg);
+    }
+
+    .toggle-content{
+      display:none;
+      padding:0 20px 20px;
+      border-top:1px solid rgba(255,215,106,.08);
+    }
+
+    .toggle-block.open .toggle-content{
+      display:block;
+      animation:fadeDown .25s ease;
+    }
+
+    @keyframes fadeDown{
+      from{opacity:0;transform:translateY(-6px)}
+      to{opacity:1;transform:translateY(0)}
     }
 
     .chips{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
-      margin-top:8px;
+      margin-top:16px;
     }
 
     .chip{
@@ -345,44 +354,69 @@
       box-shadow:0 0 14px rgba(255,215,106,.04);
     }
 
-    .nda-grid{
+    .chip-under{
+      color:var(--c-under50);
+      border-color:rgba(127,224,255,.32);
+      background:var(--c-under50-bg);
+      box-shadow:0 0 14px rgba(127,224,255,.06);
+    }
+
+    .chip-mid{
+      color:var(--c-mid);
+      border-color:rgba(255,207,90,.30);
+      background:var(--c-mid-bg);
+      box-shadow:0 0 14px rgba(255,207,90,.06);
+    }
+
+    .chip-over{
+      color:var(--c-over);
+      border-color:rgba(255,143,143,.28);
+      background:var(--c-over-bg);
+      box-shadow:0 0 14px rgba(255,143,143,.06);
+    }
+
+    .mini-note{
+      margin-top:14px;
+      color:#e9dcb0;
+      line-height:1.8;
+      font-size:14px;
+    }
+
+    .info-grid{
       display:grid;
-      grid-template-columns:1.15fr .85fr;
+      grid-template-columns:1.1fr .9fr;
       gap:18px;
       margin-top:18px;
     }
 
-    .nda-box,.private-box{
-      border-radius:28px;
+    .box{
+      border-radius:24px;
       border:1px solid rgba(255,215,106,.14);
-      background:
-        linear-gradient(180deg, rgba(255,215,106,.04), rgba(255,215,106,.015)),
-        rgba(10,10,10,.82);
-      box-shadow:0 0 16px rgba(255,215,106,.05);
-      padding:22px 20px;
+      background:rgba(255,255,255,.015);
+      padding:18px;
+      box-shadow:0 0 14px rgba(255,215,106,.04);
     }
 
-    .nda-box h3,.private-box h3{
+    .box h3{
       margin:0;
-      font-size:24px;
-      color:#fff1c6;
-      text-shadow:0 0 10px rgba(255,215,106,.08);
+      font-size:22px;
+      color:#fff1c8;
     }
 
-    .nda-box p,.private-box p{
+    .box p{
       margin:12px 0 0;
       color:#eadcb0;
       line-height:1.85;
       font-size:14px;
     }
 
-    .nda-points{
+    .points{
       display:grid;
       gap:10px;
       margin-top:16px;
     }
 
-    .nda-points div{
+    .points div{
       padding:12px 14px;
       border-radius:16px;
       border:1px solid rgba(255,215,106,.1);
@@ -392,7 +426,58 @@
       font-size:14px;
     }
 
-    .box-actions{
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .form-grid .full{
+      grid-column:1 / -1;
+    }
+
+    .field{
+      width:100%;
+      min-height:50px;
+      border-radius:16px;
+      border:1px solid rgba(255,215,106,.14);
+      background:#0f0f0f;
+      color:#f8efd8;
+      padding:14px 14px;
+      outline:none;
+      font-size:14px;
+    }
+
+    textarea.field{
+      min-height:110px;
+      resize:vertical;
+    }
+
+    .field::placeholder{color:#9f926e}
+
+    .field:focus{
+      border-color:rgba(255,215,106,.32);
+      box-shadow:0 0 0 2px rgba(255,215,106,.08);
+    }
+
+    .agree{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      margin-top:14px;
+      color:#eadcb0;
+      font-size:13px;
+      line-height:1.7;
+    }
+
+    .agree input{
+      margin-top:3px;
+      accent-color:#ffd76a;
+      transform:scale(1.1);
+    }
+
+    .btn-row{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
@@ -411,6 +496,7 @@
       letter-spacing:.4px;
       transition:.24s ease;
       border:1px solid rgba(255,215,106,.16);
+      cursor:pointer;
     }
 
     .btn-main{
@@ -515,18 +601,39 @@
       box-shadow:0 0 12px rgba(255,215,106,.05);
     }
 
+    .tag-under{
+      color:var(--c-under50);
+      border-color:rgba(127,224,255,.32);
+      background:var(--c-under50-bg);
+    }
+
+    .tag-mid{
+      color:var(--c-mid);
+      border-color:rgba(255,207,90,.30);
+      background:var(--c-mid-bg);
+    }
+
+    .tag-over{
+      color:var(--c-over);
+      border-color:rgba(255,143,143,.28);
+      background:var(--c-over-bg);
+    }
+
     .price{
       margin-top:16px;
       font-size:clamp(36px,5vw,50px);
       line-height:1;
       font-weight:900;
-      color:var(--gold);
       text-shadow:
-        0 0 10px rgba(255,215,106,.55),
-        0 0 22px rgba(255,215,106,.22),
+        0 0 10px rgba(255,215,106,.30),
+        0 0 22px rgba(255,215,106,.15),
         0 0 46px rgba(255,215,106,.08);
       animation:pricePulse 1.8s ease-in-out infinite alternate;
     }
+
+    .price-under{color:var(--c-under50); text-shadow:0 0 10px rgba(127,224,255,.35),0 0 24px rgba(127,224,255,.14)}
+    .price-mid{color:var(--c-mid); text-shadow:0 0 10px rgba(255,207,90,.35),0 0 24px rgba(255,207,90,.14)}
+    .price-over{color:var(--c-over); text-shadow:0 0 10px rgba(255,143,143,.35),0 0 24px rgba(255,143,143,.14)}
 
     @keyframes pricePulse{
       from{transform:scale(1)}
@@ -585,42 +692,6 @@
       margin-top:18px;
     }
 
-    .signature{
-      margin-top:28px;
-      border-radius:28px;
-      border:1px solid rgba(255,215,106,.14);
-      padding:26px 20px;
-      background:
-        radial-gradient(circle at top center, rgba(255,215,106,.08), transparent 42%),
-        rgba(10,10,10,.78);
-      box-shadow:0 0 16px rgba(255,215,106,.05);
-      text-align:center;
-    }
-
-    .signature h3{
-      margin:0;
-      font-size:clamp(22px,4vw,34px);
-      color:var(--gold);
-      text-shadow:0 0 12px rgba(255,215,106,.12);
-    }
-
-    .signature p{
-      width:min(860px,100%);
-      margin:12px auto 0;
-      color:#ebddb0;
-      line-height:1.9;
-      font-size:15px;
-    }
-
-    .signature-line{
-      margin-top:16px;
-      color:#fff2c3;
-      font-weight:900;
-      line-height:1.7;
-      font-size:16px;
-      text-shadow:0 0 12px rgba(255,215,106,.1);
-    }
-
     .footer{
       margin-top:28px;
       padding:22px 18px;
@@ -673,8 +744,12 @@
 
     @media (max-width:1024px){
       .cards{grid-template-columns:1fr}
-      .nda-grid{grid-template-columns:1fr}
+      .info-grid{grid-template-columns:1fr}
       .desc{min-height:auto}
+    }
+
+    @media (max-width:700px){
+      .form-grid{grid-template-columns:1fr}
     }
 
     @media (max-width:640px){
@@ -684,6 +759,8 @@
       .sb-orbit{width:104px;height:104px}
       .sb-core{font-size:32px}
       .card-top{min-height:auto}
+      .toggle-btn{font-size:16px;padding:16px}
+      .toggle-content{padding:0 16px 16px}
       .sticky a{font-size:13px;min-height:50px}
     }
   </style>
@@ -694,20 +771,14 @@
     <div class="topbar-inner">
       <div class="brand">
         <span class="brand-dot"></span>
-        <span>SƠN BẠCH SIGNATURE</span>
-      </div>
-
-      <div class="top-actions">
-        <a class="pill gold" href="tel:0858999934">📞 GỌI NGAY</a>
-        <a class="pill" href="https://zalo.me/0858999934" target="_blank">💬 ZALO</a>
-        <a class="pill" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank">📘 FACEBOOK</a>
+        <span>SƠN BẠCH BĐS VIP PRO</span>
       </div>
     </div>
   </div>
 
   <div class="runner">
     <div class="runner-track">
-      KHO BĐS SƠN BẠCH • VIP LEVEL 2 • HÀNG KÍN • NDA • KHÁCH THẬT • HỒ SƠ CHỌN LỌC • CORE ASSET • TROPHY ASSET • QUỸ ĐẤT HIẾM • KHO BĐS SƠN BẠCH • VIP LEVEL 2 • HÀNG KÍN • NDA • KHÁCH THẬT • HỒ SƠ CHỌN LỌC •
+      SƠN BẠCH BĐS VIP PRO • HÀNG KÍN • NDA • HỒ SƠ CHỌN LỌC • KHÁCH THẬT ƯU TIÊN • TÀI SẢN GIÁ TRỊ • CORE ASSET • QUỸ ĐẤT HIẾM • SƠN BẠCH BĐS VIP PRO • HÀNG KÍN • NDA • HỒ SƠ CHỌN LỌC • KHÁCH THẬT ƯU TIÊN •
     </div>
   </div>
 
@@ -718,11 +789,11 @@
         <div class="sb-core">SB</div>
       </div>
 
-      <div class="hero-sub">Sơn Bạch Signature • KHO TÀI SẢN CHỌN LỌC</div>
-      <h1>KHO BĐS <span class="gold">VIP LEVEL 2</span></h1>
+      <div class="hero-sub">Sơn Bạch BĐS VIP PRO • KHO TÀI SẢN CHỌN LỌC</div>
+      <h1>KHO BĐS <span class="gold">SƠN BẠCH</span></h1>
 
       <div class="hero-desc">
-        Nơi tổng hợp các tài sản giá trị cao, tài sản lõi, quỹ đất hiếm và các hồ sơ chọn lọc dành cho khách có
+        Nơi tổng hợp các tài sản giá trị cao, tài sản lõi, quỹ đất hiếm và hồ sơ chọn lọc dành cho khách có
         <span class="gold">nhu cầu thật – tài chính thật – tinh thần làm việc rõ ràng</span>.
       </div>
 
@@ -734,73 +805,128 @@
       </div>
 
       <div class="hero-banner">
-        <strong>Lưu ý quan trọng:</strong> Một phần hồ sơ trong kho đang hiển thị theo hướng chọn lọc thông tin.
-        Khách cần tiếp cận sâu hơn về vị trí, hồ sơ pháp lý, phương án giao dịch hoặc dữ liệu mở rộng có thể gửi
-        yêu cầu trực tiếp để được sàng lọc và hỗ trợ đúng nhu cầu.
+        <strong>Lưu ý:</strong> Một phần nội dung đang hiển thị theo hướng chọn lọc thông tin.
+        Khách cần tiếp cận sâu hơn về hồ sơ, vị trí, pháp lý hoặc điều kiện giao dịch có thể gửi yêu cầu trực tiếp để được sàng lọc phù hợp.
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-head">
-        <div>
-          <h2>PHÂN NHÓM TÀI SẢN</h2>
-          <p>Nhìn nhanh theo phân khúc vốn và mức độ chọn lọc hồ sơ.</p>
+    <section class="toggle-block" id="toggle-phan-nhom">
+      <button class="toggle-btn" type="button" onclick="toggleBlock('toggle-phan-nhom')">
+        <span>PHÂN NHÓM TÀI SẢN</span>
+        <span>＋</span>
+      </button>
+      <div class="toggle-content">
+        <div class="chips">
+          <span class="chip chip-under">Dưới 50 tỷ</span>
+          <span class="chip chip-mid">50 – 200 tỷ</span>
+          <span class="chip chip-over">Trên 200 tỷ</span>
+          <span class="chip">Hàng kín</span>
+          <span class="chip">Ưu tiên khách thật</span>
         </div>
-      </div>
 
-      <div class="chips">
-        <span class="chip">Dưới 50 tỷ</span>
-        <span class="chip">50 – 200 tỷ</span>
-        <span class="chip">Trên 200 tỷ</span>
-        <span class="chip">Hàng kín</span>
-        <span class="chip">Ưu tiên khách thật</span>
+        <div class="mini-note">
+          Hệ thống được chia theo phân khúc giá để khách nhìn nhanh và chọn đúng nhóm tài sản phù hợp với mục tiêu đầu tư.
+        </div>
       </div>
     </section>
 
-    <section class="nda-grid">
-      <div class="nda-box">
-        <h3>HÀNG KÍN / NDA / HỒ SƠ CHỌN LỌC</h3>
-        <p>
-          Một số tài sản trong hệ thống chỉ phù hợp khi làm việc với đúng nhóm khách.
-          Việc sàng lọc trước giúp hạn chế lộ thông tin, giữ nhịp giao dịch chuyên nghiệp và tập trung đúng người có nhu cầu thật.
-        </p>
+    <section class="toggle-block" id="toggle-nda">
+      <button class="toggle-btn" type="button" onclick="toggleBlock('toggle-nda')">
+        <span>HÀNG KÍN / NDA / HỒ SƠ CHỌN LỌC</span>
+        <span>＋</span>
+      </button>
+      <div class="toggle-content">
+        <div class="info-grid">
+          <div class="box">
+            <h3>GỬI YÊU CẦU HỒ SƠ</h3>
+            <p>
+              Một số tài sản chỉ mở sâu hơn khi khách để lại thông tin thật và xác nhận đồng ý nguyên tắc bảo mật thông tin.
+              Việc này giúp quá trình trao đổi gọn, đúng người và hạn chế lộ dữ liệu không cần thiết.
+            </p>
 
-        <div class="nda-points">
-          <div>✔ Chỉ cung cấp sâu hơn cho khách có định hướng mua rõ ràng.</div>
-          <div>✔ Ưu tiên khách có năng lực tài chính phù hợp với phân khúc tài sản.</div>
-          <div>✔ Hồ sơ mở rộng, vị trí sâu và điều kiện giao dịch sẽ trao đổi chọn lọc.</div>
-        </div>
+            <div class="points">
+              <div>✔ Chỉ ưu tiên khách có nhu cầu thật và mục tiêu rõ.</div>
+              <div>✔ Hồ sơ mở rộng sẽ trao đổi theo mức độ phù hợp của khách.</div>
+              <div>✔ Thông tin gửi đi cần trung thực để tránh sai lệch trong quá trình kết nối.</div>
+            </div>
 
-        <div class="box-actions">
-          <a class="btn btn-main" href="mailto:sonbach723@gmail.com?subject=Yeu%20cau%20ho%20so%20VIP%20-%20KHO%20BDS%20SON%20BACH&body=Ho%20ten%3A%0ASDT%3A%0AEmail%3A%0ANhu%20cau%3A%0ATai%20san%20quan%20tam%3A%0A">
-            YÊU CẦU HỒ SƠ
-          </a>
-          <a class="btn btn-sub" href="tel:0858999934">
-            GỌI TRAO ĐỔI NHANH
-          </a>
+            <form action="https://formspree.io/f/mpqykgzk" method="POST">
+              <div class="form-grid">
+                <input class="field" type="text" name="Họ tên" placeholder="Họ và tên" required>
+                <input class="field" type="tel" name="Số điện thoại" placeholder="Số điện thoại" required>
+                <input class="field" type="email" name="Email" placeholder="Email" required>
+                <input class="field" type="text" name="Tài sản quan tâm" placeholder="Tài sản quan tâm">
+                <textarea class="field full" name="Nhu cầu" placeholder="Nhu cầu / mục tiêu đầu tư / nội dung cần trao đổi"></textarea>
+
+                <input type="hidden" name="_subject" value="Lead NDA mới từ KHO BĐS SƠN BẠCH">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://sonbachtp.github.io/sonbach_autohud/?success=1">
+              </div>
+
+              <label class="agree">
+                <input type="checkbox" name="Đồng ý NDA" required>
+                <span>
+                  Tôi xác nhận thông tin cung cấp là đúng và đồng ý nguyên tắc bảo mật khi tiếp cận hồ sơ chọn lọc.
+                  Trường hợp cung cấp thông tin không chính xác hoặc sử dụng thông tin sai mục đích, bên cung cấp hồ sơ có quyền từ chối tiếp tục chia sẻ dữ liệu.
+                </span>
+              </label>
+
+              <div class="btn-row">
+                <button class="btn btn-main" type="submit">GỬI YÊU CẦU HỒ SƠ</button>
+                <a class="btn btn-sub" href="tel:0858999934">GỌI TRAO ĐỔI NHANH</a>
+              </div>
+            </form>
+          </div>
+
+          <div class="box">
+            <h3>NGUYÊN TẮC CHỌN LỌC</h3>
+            <p>
+              Mỗi hồ sơ được mở theo mức độ phù hợp nhằm giữ nhịp giao dịch chuyên nghiệp và tập trung vào đúng nhóm khách có khả năng đi tới kết quả thực tế.
+            </p>
+
+            <div class="points">
+              <div>• Ưu tiên khách có định hướng mua rõ ràng.</div>
+              <div>• Ưu tiên khách có năng lực tài chính phù hợp phân khúc.</div>
+              <div>• Thông tin sâu hơn sẽ trao đổi chọn lọc theo từng hồ sơ.</div>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="private-box">
-        <h3>KHÁCH THẬT ƯU TIÊN</h3>
-        <p>
-          Kho này được xây để phục vụ đúng nhóm khách cần tài sản thật sự có giá trị.
-          Càng làm việc rõ ngay từ đầu, quá trình kết nối hồ sơ và thương lượng càng nhanh và hiệu quả.
-        </p>
+    <section class="toggle-block" id="toggle-khach-that">
+      <button class="toggle-btn" type="button" onclick="toggleBlock('toggle-khach-that')">
+        <span>KHÁCH THẬT ƯU TIÊN</span>
+        <span>＋</span>
+      </button>
+      <div class="toggle-content">
+        <div class="info-grid">
+          <div class="box">
+            <h3>NHÓM KHÁCH ƯU TIÊN</h3>
+            <p>
+              Kho này được xây để phục vụ đúng nhóm khách cần tài sản thật sự có giá trị.
+              Càng rõ từ đầu, quá trình kết nối hồ sơ và thương lượng càng nhanh và hiệu quả.
+            </p>
 
-        <div class="nda-points">
-          <div>• Khách mua giữ tài sản lõi trung tâm</div>
-          <div>• Khách cần quỹ đất lớn để gom hoặc tái cấu trúc</div>
-          <div>• Khách muốn tiếp cận hồ sơ theo hướng kín và chọn lọc</div>
-        </div>
+            <div class="points">
+              <div>• Khách mua giữ tài sản lõi trung tâm.</div>
+              <div>• Khách cần quỹ đất lớn để gom hoặc tái cấu trúc.</div>
+              <div>• Khách muốn tiếp cận hồ sơ theo hướng kín và chọn lọc.</div>
+            </div>
+          </div>
 
-        <div class="box-actions">
-          <a class="btn btn-sub" href="https://zalo.me/0858999934" target="_blank">
-            NHẮN ZALO
-          </a>
-          <a class="btn btn-sub" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank">
-            KẾT NỐI FACEBOOK
-          </a>
+          <div class="box">
+            <h3>KÊNH LIÊN HỆ NHANH</h3>
+            <p>
+              Khi cần trao đổi trực tiếp, có thể kết nối nhanh qua các kênh bên dưới để sàng lọc hồ sơ phù hợp hơn.
+            </p>
+
+            <div class="btn-row">
+              <a class="btn btn-sub" href="https://zalo.me/0858999934" target="_blank">NHẮN ZALO</a>
+              <a class="btn btn-sub" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank">KẾT NỐI FACEBOOK</a>
+              <a class="btn btn-main" href="tel:0858999934">GỌI NGAY</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -814,8 +940,8 @@
       <div class="cards">
         <article class="card">
           <div class="card-top">
-            <div class="tag">Hàng trung tâm chọn lọc</div>
-            <div class="price">42 TỶ</div>
+            <div class="tag tag-under">Hàng trung tâm chọn lọc</div>
+            <div class="price price-under">42 TỶ</div>
             <div class="card-title">Căn 42 Tỷ Quận 1</div>
             <div class="card-sub">
               Mức vốn gọn hơn nhưng vẫn giữ lợi thế trung tâm, thanh khoản và giá trị khai thác.
@@ -852,8 +978,8 @@
       <div class="cards">
         <article class="card">
           <div class="card-top">
-            <div class="tag">Quỹ đất chiến lược</div>
-            <div class="price">135 TỶ</div>
+            <div class="tag tag-mid">Quỹ đất chiến lược</div>
+            <div class="price price-mid">135 TỶ</div>
             <div class="card-title">Đất Bình Tân 3.419m²</div>
             <div class="card-sub">
               Quỹ đất diện tích lớn, hợp với nhà đầu tư nhìn dài hạn và cần câu chuyện tăng giá rõ.
@@ -890,8 +1016,8 @@
       <div class="cards">
         <article class="card">
           <div class="card-top">
-            <div class="tag">Tài sản lõi trung tâm</div>
-            <div class="price">1.250 TỶ</div>
+            <div class="tag tag-over">Tài sản lõi trung tâm</div>
+            <div class="price price-over">1.250 TỶ</div>
             <div class="card-title">Lõi Trung Tâm Quận 1</div>
             <div class="card-sub">
               Tài sản giá trị lớn, thiên về giữ tài sản lõi, gom quỹ đất trung tâm và tiếp cận chọn lọc.
@@ -919,21 +1045,18 @@
       </div>
     </section>
 
-    <section class="signature">
-      <h3>SƠN BẠCH SIGNATURE</h3>
-      <p>
-        Không chạy theo số lượng. Chỉ tập trung vào những tài sản đủ chất lượng để làm việc với đúng nhóm khách,
-        đúng nhu cầu và đúng năng lực tài chính. Mỗi hồ sơ được chọn lọc để hướng tới hiệu quả thật trong giao dịch.
-      </p>
-      <div class="signature-line">
-        TÀI SẢN GIÁ TRỊ KHÔNG DÀNH CHO SỐ ĐÔNG • CHỈ DÀNH CHO NGƯỜI NHÌN RA GIÁ TRỊ THẬT
+    <section class="toggle-block" id="toggle-footer-brand">
+      <button class="toggle-btn" type="button" onclick="toggleBlock('toggle-footer-brand')">
+        <span>SƠN BẠCH BĐS VIP PRO</span>
+        <span>＋</span>
+      </button>
+      <div class="toggle-content">
+        <div class="footer">
+          <strong>SƠN BẠCH BĐS VIP PRO</strong><br>
+          Tập trung vào tài sản lõi, quỹ đất hiếm, hàng kín và cơ hội đầu tư chọn lọc.<br>
+          Liên hệ trực tiếp: <strong>Mr. Sơn Bạch – 0858 999 934</strong>
+        </div>
       </div>
-    </section>
-
-    <section class="footer">
-      <strong>KHO BĐS SƠN BẠCH VIP LEVEL 2</strong><br>
-      Chuyên kết nối tài sản lõi, quỹ đất hiếm, hàng kín và cơ hội đầu tư chọn lọc.<br>
-      Liên hệ trực tiếp: <strong>Mr. Sơn Bạch – 0858 999 934</strong>
     </section>
 
   </main>
@@ -943,6 +1066,22 @@
     <a class="zalo" href="https://zalo.me/0858999934" target="_blank">💬 ZALO</a>
     <a class="fb" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank">📘 FACEBOOK</a>
   </div>
+
+  <script>
+    function toggleBlock(id){
+      const el = document.getElementById(id);
+      if(el){
+        el.classList.toggle('open');
+      }
+    }
+
+    (function(){
+      const params = new URLSearchParams(window.location.search);
+      if(params.get('success') === '1'){
+        alert('Đã gửi yêu cầu thành công. Sơn Bạch sẽ liên hệ lại khi sàng lọc phù hợp.');
+      }
+    })();
+  </script>
 
 </body>
 </html>
