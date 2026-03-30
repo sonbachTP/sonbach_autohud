@@ -3,20 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KHO BĐS SƠN BẠCH</title>
-  <meta name="description" content="Kho BĐS Sơn Bạch - Tổng hợp tài sản giá trị, hàng VIP, hàng lõi trung tâm, quỹ đất hiếm." />
+  <title>KHO BĐS SƠN BẠCH | VIP</title>
+  <meta name="description" content="Kho BĐS Sơn Bạch Signature - tổng hợp tài sản VIP, tài sản lõi, quỹ đất hiếm, hàng giá trị cao." />
   <style>
     :root{
-      --bg:#070707;
-      --bg2:#101010;
+      --bg:#050505;
+      --bg-soft:#0d0d0d;
       --card:#121212;
-      --line:#3b2a06;
+      --card-2:#171717;
       --gold:#ffd76a;
-      --gold2:#c99a1e;
-      --text:#f8f1dd;
-      --muted:#cbb77a;
-      --shadow:0 0 18px rgba(255,215,106,.18), 0 0 40px rgba(201,154,30,.08);
-      --radius:22px;
+      --gold-2:#c9981c;
+      --gold-3:#fff1b8;
+      --text:#f7f0dc;
+      --muted:#cdbb87;
+      --line:rgba(255,215,106,.16);
+      --shadow:0 0 24px rgba(255,215,106,.12), 0 0 60px rgba(201,152,28,.08);
+      --radius:24px;
+      --radius-sm:18px;
     }
 
     *{box-sizing:border-box}
@@ -24,62 +27,134 @@
     body{
       margin:0;
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-      color:var(--text);
       background:
-        radial-gradient(circle at top, rgba(255,215,106,.08), transparent 30%),
-        linear-gradient(180deg,#050505 0%, #0a0a0a 50%, #050505 100%);
-      min-height:100vh;
+        radial-gradient(circle at top center, rgba(255,215,106,.12), transparent 22%),
+        radial-gradient(circle at 20% 20%, rgba(255,215,106,.05), transparent 25%),
+        linear-gradient(180deg, #030303 0%, #090909 40%, #030303 100%);
+      color:var(--text);
       overflow-x:hidden;
     }
 
     a{text-decoration:none;color:inherit}
 
-    .wrap{
-      width:min(1180px,92%);
-      margin:0 auto;
-      padding:24px 0 90px;
+    .topline{
+      position:sticky;
+      top:0;
+      z-index:60;
+      backdrop-filter:blur(12px);
+      background:rgba(6,6,6,.76);
+      border-bottom:1px solid rgba(255,215,106,.14);
+      box-shadow:0 6px 24px rgba(0,0,0,.35);
     }
 
-    .top-runner{
-      width:100%;
+    .topline-inner{
+      width:min(1220px,92%);
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      min-height:62px;
+    }
+
+    .brand-mini{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:900;
+      letter-spacing:1px;
+      color:var(--gold);
+      text-shadow:0 0 10px rgba(255,215,106,.25);
+    }
+
+    .brand-mini .dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:var(--gold);
+      box-shadow:0 0 14px rgba(255,215,106,.6);
+      animation:pulseDot 1.8s ease-in-out infinite;
+    }
+
+    @keyframes pulseDot{
+      0%,100%{transform:scale(1);opacity:1}
+      50%{transform:scale(1.25);opacity:.8}
+    }
+
+    .top-cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .top-cta a{
+      min-height:40px;
+      padding:0 14px;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid rgba(255,215,106,.18);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.6px;
+      color:var(--gold);
+      background:rgba(255,215,106,.05);
+      box-shadow:0 0 14px rgba(255,215,106,.06);
+    }
+
+    .top-cta a.gold-btn{
+      color:#111;
+      background:linear-gradient(90deg, #d9b24a, #ffd76a, #b88413);
+      border-color:transparent;
+      box-shadow:0 0 20px rgba(255,215,106,.2);
+    }
+
+    .runner{
       overflow:hidden;
-      border-top:1px solid rgba(255,215,106,.18);
-      border-bottom:1px solid rgba(255,215,106,.18);
-      background:rgba(255,215,106,.04);
-      box-shadow:inset 0 0 20px rgba(255,215,106,.05);
-      margin-bottom:24px;
+      white-space:nowrap;
+      border-bottom:1px solid rgba(255,215,106,.12);
+      border-top:1px solid rgba(255,215,106,.08);
+      background:rgba(255,215,106,.03);
     }
 
-    .runner-text{
+    .runner-track{
       display:inline-block;
-      white-space:nowrap;
-      padding:12px 0;
       min-width:200%;
-      animation:runText 24s linear infinite;
-      font-size:13px;
-      font-weight:700;
+      padding:11px 0;
+      color:var(--gold);
+      font-size:12px;
+      font-weight:900;
       letter-spacing:2px;
       text-transform:uppercase;
-      color:var(--gold);
-      text-shadow:0 0 10px rgba(255,215,106,.35);
+      text-shadow:0 0 10px rgba(255,215,106,.22);
+      animation:runnerMove 26s linear infinite;
     }
 
-    @keyframes runText{
+    @keyframes runnerMove{
       from{transform:translateX(0)}
       to{transform:translateX(-50%)}
     }
 
+    .wrap{
+      width:min(1220px,92%);
+      margin:auto;
+      padding:24px 0 110px;
+    }
+
     .hero{
       position:relative;
-      padding:42px 22px 30px;
-      border:1px solid rgba(255,215,106,.16);
-      border-radius:30px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)),
-        rgba(10,10,10,.72);
-      box-shadow:var(--shadow);
       overflow:hidden;
+      border:1px solid rgba(255,215,106,.16);
+      border-radius:34px;
+      background:
+        radial-gradient(circle at center top, rgba(255,215,106,.10), transparent 35%),
+        linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01)),
+        rgba(8,8,8,.86);
+      box-shadow:var(--shadow);
+      padding:42px 22px 34px;
       text-align:center;
+      isolation:isolate;
     }
 
     .hero::before{
@@ -87,161 +162,257 @@
       position:absolute;
       inset:auto 0 10px 0;
       margin:auto;
-      text-align:center;
-      font-size:180px;
-      line-height:1;
+      font-size:210px;
       font-weight:900;
-      color:rgba(255,215,106,.05);
-      letter-spacing:8px;
-      pointer-events:none;
+      line-height:1;
+      text-align:center;
+      color:rgba(255,215,106,.045);
+      letter-spacing:10px;
+      z-index:-1;
       user-select:none;
-      filter:blur(.3px);
+      pointer-events:none;
+      text-shadow:0 0 28px rgba(255,215,106,.06);
     }
 
-    .sb-ring{
-      width:120px;
-      height:120px;
-      margin:0 auto 16px;
-      position:relative;
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      border-radius:34px;
+      padding:1px;
+      background:linear-gradient(135deg, rgba(255,215,106,.0), rgba(255,215,106,.28), rgba(255,215,106,.0));
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite:xor;
+              mask-composite:exclude;
+      pointer-events:none;
+      opacity:.65;
+    }
+
+    .sb-orbit{
+      width:126px;
+      height:126px;
+      margin:0 auto 18px;
       border-radius:50%;
-      border:1px solid rgba(255,215,106,.3);
+      position:relative;
       display:flex;
       align-items:center;
       justify-content:center;
-      box-shadow:0 0 18px rgba(255,215,106,.12), inset 0 0 24px rgba(255,215,106,.06);
-      animation:floatRing 4s ease-in-out infinite;
+      border:1px solid rgba(255,215,106,.28);
+      box-shadow:0 0 18px rgba(255,215,106,.12), inset 0 0 22px rgba(255,215,106,.05);
+      animation:floaty 4s ease-in-out infinite;
     }
 
-    .sb-ring::before,
-    .sb-ring::after{
+    .sb-orbit::before,
+    .sb-orbit::after{
       content:"";
       position:absolute;
-      inset:10px;
       border-radius:50%;
-      border:1px solid rgba(255,215,106,.16);
+      border:1px solid rgba(255,215,106,.14);
     }
 
-    .sb-ring::after{
-      inset:-10px;
-      border-color:rgba(255,215,106,.10);
-    }
+    .sb-orbit::before{inset:10px}
+    .sb-orbit::after{inset:-10px}
 
-    .sb-logo{
-      font-size:38px;
+    .sb-core{
+      font-size:40px;
       font-weight:900;
       letter-spacing:3px;
       color:var(--gold);
-      text-shadow:0 0 10px rgba(255,215,106,.45), 0 0 26px rgba(255,215,106,.18);
+      text-shadow:0 0 10px rgba(255,215,106,.4), 0 0 24px rgba(255,215,106,.16);
     }
 
-    @keyframes floatRing{
+    @keyframes floaty{
       0%,100%{transform:translateY(0)}
       50%{transform:translateY(-6px)}
     }
 
-    .sub{
+    .hero-sub{
       color:var(--muted);
       text-transform:uppercase;
       letter-spacing:3px;
       font-size:12px;
-      font-weight:800;
+      font-weight:900;
       margin-bottom:10px;
     }
 
-    h1{
+    .hero h1{
       margin:0;
-      font-size:clamp(28px,5vw,58px);
-      line-height:1.08;
+      font-size:clamp(32px,5vw,66px);
+      line-height:1.06;
       letter-spacing:1px;
-      color:#fff5d8;
-      text-shadow:0 0 14px rgba(255,215,106,.18);
+      color:#fff7db;
+      text-shadow:0 0 14px rgba(255,215,106,.14);
     }
 
     .gold{
       color:var(--gold);
       text-shadow:
-        0 0 8px rgba(255,215,106,.55),
-        0 0 24px rgba(255,215,106,.22);
-      animation:glowGold 2s ease-in-out infinite alternate;
+        0 0 8px rgba(255,215,106,.6),
+        0 0 24px rgba(255,215,106,.2),
+        0 0 50px rgba(255,215,106,.08);
+      animation:goldBlink 2.4s ease-in-out infinite alternate;
     }
 
-    @keyframes glowGold{
+    @keyframes goldBlink{
       from{filter:brightness(1)}
-      to{filter:brightness(1.18)}
+      to{filter:brightness(1.15)}
     }
 
     .hero-desc{
-      width:min(780px,100%);
+      width:min(820px,100%);
       margin:16px auto 0;
-      color:#efe2b4;
       font-size:15px;
-      line-height:1.8;
+      line-height:1.9;
+      color:#efe2b4;
     }
 
-    .hero-note{
+    .hero-badges{
       margin-top:18px;
-      display:inline-block;
-      padding:10px 16px;
-      border:1px solid rgba(255,215,106,.18);
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .hero-badges span{
+      padding:10px 14px;
       border-radius:999px;
-      font-size:12px;
-      color:var(--gold);
+      border:1px solid rgba(255,215,106,.16);
       background:rgba(255,215,106,.06);
-      box-shadow:0 0 14px rgba(255,215,106,.08);
-      font-weight:800;
-      letter-spacing:1px;
-      text-transform:uppercase;
-    }
-
-    .section-title{
-      text-align:center;
-      margin:34px 0 18px;
-    }
-
-    .section-title h2{
-      margin:0;
-      font-size:clamp(22px,4vw,34px);
       color:var(--gold);
-      text-shadow:0 0 12px rgba(255,215,106,.16);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.7px;
+      text-transform:uppercase;
+      box-shadow:0 0 14px rgba(255,215,106,.06);
     }
 
-    .section-title p{
-      margin:10px 0 0;
+    .section{
+      margin-top:28px;
+    }
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:14px;
+      flex-wrap:wrap;
+    }
+
+    .section-head h2{
+      margin:0;
+      font-size:clamp(24px,4vw,36px);
+      color:var(--gold);
+      text-shadow:0 0 12px rgba(255,215,106,.14);
+      letter-spacing:.5px;
+    }
+
+    .section-head p{
+      margin:0;
       color:var(--muted);
       font-size:14px;
     }
 
-    .grid{
+    .filter-bar{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
+
+    .chip{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,215,106,.16);
+      background:rgba(255,215,106,.05);
+      color:var(--gold);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+      box-shadow:0 0 14px rgba(255,215,106,.05);
+    }
+
+    .vip-note{
+      margin-top:12px;
+      padding:16px 18px;
+      border-radius:20px;
+      border:1px solid rgba(255,215,106,.14);
+      background:linear-gradient(180deg, rgba(255,215,106,.05), rgba(255,215,106,.025));
+      color:#ebddb0;
+      line-height:1.8;
+      box-shadow:0 0 16px rgba(255,215,106,.05);
+    }
+
+    .vip-note strong{
+      color:var(--gold);
+    }
+
+    .group{
+      margin-top:26px;
+      border:1px solid rgba(255,215,106,.12);
+      border-radius:28px;
+      padding:18px;
+      background:rgba(255,255,255,.015);
+      box-shadow:0 0 18px rgba(255,215,106,.04);
+    }
+
+    .group-title{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:14px;
+      flex-wrap:wrap;
+    }
+
+    .group-title .line{
+      flex:1;
+      min-width:40px;
+      height:1px;
+      background:linear-gradient(90deg, rgba(255,215,106,.4), rgba(255,215,106,0));
+    }
+
+    .group-title h3{
+      margin:0;
+      font-size:18px;
+      color:#fff0bf;
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
+
+    .cards{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:18px;
-      margin-top:18px;
     }
 
     .card{
       position:relative;
-      background:
-        linear-gradient(180deg, rgba(255,215,106,.06), rgba(255,215,106,.02)),
-        var(--card);
-      border:1px solid rgba(255,215,106,.14);
-      border-radius:var(--radius);
+      border-radius:26px;
       overflow:hidden;
-      box-shadow:var(--shadow);
+      border:1px solid rgba(255,215,106,.14);
+      background:
+        linear-gradient(180deg, rgba(255,215,106,.06), rgba(255,215,106,.015)),
+        linear-gradient(180deg, #141414 0%, #101010 100%);
+      box-shadow:0 0 22px rgba(255,215,106,.07);
       transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
     }
 
     .card:hover{
       transform:translateY(-6px);
-      border-color:rgba(255,215,106,.32);
-      box-shadow:0 0 24px rgba(255,215,106,.18), 0 0 52px rgba(255,215,106,.08);
+      border-color:rgba(255,215,106,.28);
+      box-shadow:0 0 26px rgba(255,215,106,.14), 0 0 54px rgba(255,215,106,.06);
     }
 
     .card-top{
       position:relative;
+      min-height:190px;
       padding:22px 20px 18px;
-      min-height:170px;
       background:
-        radial-gradient(circle at top right, rgba(255,215,106,.12), transparent 35%),
+        radial-gradient(circle at top right, rgba(255,215,106,.13), transparent 36%),
         linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
       border-bottom:1px solid rgba(255,215,106,.08);
     }
@@ -249,43 +420,51 @@
     .tag{
       display:inline-flex;
       align-items:center;
-      gap:8px;
+      justify-content:center;
       padding:8px 12px;
       border-radius:999px;
-      background:rgba(255,215,106,.08);
       border:1px solid rgba(255,215,106,.16);
+      background:rgba(255,215,106,.08);
       color:var(--gold);
       font-size:11px;
-      font-weight:800;
-      letter-spacing:1.2px;
+      font-weight:900;
+      letter-spacing:1px;
       text-transform:uppercase;
-      box-shadow:0 0 14px rgba(255,215,106,.08);
+      box-shadow:0 0 12px rgba(255,215,106,.05);
     }
 
     .price{
       margin-top:16px;
-      font-size:clamp(34px,5vw,48px);
+      font-size:clamp(36px,5vw,50px);
       line-height:1;
       font-weight:900;
       color:var(--gold);
       text-shadow:
         0 0 10px rgba(255,215,106,.55),
         0 0 22px rgba(255,215,106,.22),
-        0 0 40px rgba(255,215,106,.12);
+        0 0 46px rgba(255,215,106,.08);
       animation:pricePulse 1.8s ease-in-out infinite alternate;
     }
 
     @keyframes pricePulse{
       from{transform:scale(1)}
-      to{transform:scale(1.03)}
+      to{transform:scale(1.025)}
     }
 
     .card-title{
       margin-top:12px;
-      font-size:22px;
+      font-size:24px;
       font-weight:900;
-      color:#fff4d0;
-      line-height:1.3;
+      line-height:1.25;
+      color:#fff4cf;
+      text-shadow:0 0 10px rgba(255,215,106,.08);
+    }
+
+    .card-sub{
+      margin-top:8px;
+      color:#dac89a;
+      font-size:13px;
+      line-height:1.7;
     }
 
     .card-body{
@@ -295,28 +474,28 @@
     .meta{
       display:grid;
       gap:10px;
-      margin-bottom:16px;
     }
 
     .meta-item{
       display:flex;
       align-items:flex-start;
       gap:10px;
-      color:#f2e6bf;
       font-size:14px;
-      line-height:1.7;
+      line-height:1.75;
+      color:#efe3bc;
     }
 
     .meta-item b{
-      color:var(--gold);
       min-width:84px;
+      color:var(--gold);
     }
 
     .desc{
+      margin-top:14px;
       color:#ddd0a7;
       font-size:14px;
-      line-height:1.8;
-      min-height:92px;
+      line-height:1.85;
+      min-height:102px;
     }
 
     .btns{
@@ -326,226 +505,357 @@
     }
 
     .btn{
+      min-height:50px;
+      border-radius:16px;
       display:flex;
       align-items:center;
       justify-content:center;
-      min-height:48px;
-      border-radius:14px;
       font-weight:900;
-      letter-spacing:.5px;
-      transition:all .25s ease;
+      letter-spacing:.4px;
       border:1px solid rgba(255,215,106,.16);
+      transition:all .24s ease;
+      text-align:center;
+      padding:0 12px;
     }
 
     .btn-main{
-      background:linear-gradient(90deg, #e1b949, #ffd76a, #b88416);
-      color:#161616;
-      box-shadow:0 0 18px rgba(255,215,106,.2);
+      color:#101010;
+      background:linear-gradient(90deg, #dbb349, #ffd76a, #b78414);
+      box-shadow:0 0 18px rgba(255,215,106,.18);
     }
 
     .btn-main:hover{
       transform:translateY(-2px);
-      box-shadow:0 0 22px rgba(255,215,106,.28);
+      box-shadow:0 0 24px rgba(255,215,106,.28);
     }
 
     .btn-sub{
-      background:rgba(255,215,106,.05);
       color:var(--gold);
+      background:rgba(255,215,106,.05);
     }
 
     .btn-sub:hover{
-      background:rgba(255,215,106,.1);
-      border-color:rgba(255,215,106,.28);
+      background:rgba(255,215,106,.09);
+      border-color:rgba(255,215,106,.24);
+    }
+
+    .signature-box{
+      margin-top:28px;
+      border:1px solid rgba(255,215,106,.14);
+      border-radius:28px;
+      background:
+        radial-gradient(circle at top center, rgba(255,215,106,.08), transparent 42%),
+        rgba(10,10,10,.75);
+      box-shadow:0 0 18px rgba(255,215,106,.05);
+      padding:26px 20px;
+      text-align:center;
+    }
+
+    .signature-box h3{
+      margin:0;
+      font-size:clamp(22px,4vw,34px);
+      color:var(--gold);
+      text-shadow:0 0 12px rgba(255,215,106,.12);
+    }
+
+    .signature-box p{
+      margin:12px auto 0;
+      width:min(850px,100%);
+      color:#eadcb1;
+      line-height:1.9;
+      font-size:15px;
+    }
+
+    .signature-line{
+      margin-top:16px;
+      color:#fff2c3;
+      font-weight:900;
+      line-height:1.7;
+      font-size:16px;
+      text-shadow:0 0 12px rgba(255,215,106,.12);
     }
 
     .footer{
-      margin-top:34px;
+      margin-top:28px;
+      padding:22px 18px;
       text-align:center;
-      padding:22px 16px;
-      border:1px solid rgba(255,215,106,.1);
       border-radius:22px;
+      border:1px solid rgba(255,215,106,.12);
       background:rgba(255,215,106,.03);
-      color:#e8d7a4;
-      line-height:1.8;
-      box-shadow:0 0 18px rgba(255,215,106,.05);
+      color:#e9dbaf;
+      line-height:1.85;
+      box-shadow:0 0 14px rgba(255,215,106,.05);
     }
 
     .footer strong{
       color:var(--gold);
     }
 
-    .sticky-bar{
+    .sticky{
       position:fixed;
       left:12px;
       right:12px;
       bottom:12px;
-      z-index:50;
+      z-index:70;
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:10px;
     }
 
-    .sticky-btn{
-      min-height:52px;
-      border-radius:16px;
+    .sticky a{
+      min-height:54px;
+      border-radius:18px;
       display:flex;
       align-items:center;
       justify-content:center;
       font-size:14px;
       font-weight:900;
       border:1px solid rgba(255,215,106,.18);
-      backdrop-filter:blur(10px);
-      box-shadow:0 0 18px rgba(255,215,106,.1);
+      backdrop-filter:blur(12px);
+      box-shadow:0 0 16px rgba(255,215,106,.08);
+      text-align:center;
+      padding:0 8px;
     }
 
-    .call{background:linear-gradient(90deg,#e2b94f,#ffd76a,#b98414);color:#111}
-    .zalo{background:rgba(255,215,106,.08);color:var(--gold)}
-    .fb{background:rgba(255,215,106,.08);color:var(--gold)}
+    .sticky .call{
+      color:#111;
+      background:linear-gradient(90deg, #ddb64b, #ffd76a, #b88413);
+    }
 
-    @media (max-width:960px){
-      .grid{grid-template-columns:1fr}
+    .sticky .zalo,
+    .sticky .fb{
+      color:var(--gold);
+      background:rgba(255,215,106,.08);
+    }
+
+    .sticky .zalo:hover,
+    .sticky .fb:hover{
+      background:rgba(255,215,106,.11);
+    }
+
+    @media (max-width:1024px){
+      .cards{grid-template-columns:1fr}
       .desc{min-height:auto}
     }
 
     @media (max-width:640px){
+      .topline-inner{width:min(94%,100%);min-height:58px}
       .wrap{width:min(94%,100%)}
-      .hero{padding:34px 16px 24px}
-      .sb-ring{width:100px;height:100px}
-      .sb-logo{font-size:30px}
+      .hero{padding:36px 14px 26px}
+      .sb-orbit{width:104px;height:104px}
+      .sb-core{font-size:32px}
+      .hero::before{font-size:120px;bottom:28px}
       .card-top{min-height:auto}
-      .meta-item{font-size:13.5px}
-      .sticky-bar{grid-template-columns:repeat(3,1fr)}
-      .sticky-btn{font-size:13px;min-height:50px}
+      .top-cta a{padding:0 12px;font-size:11px}
+      .sticky a{font-size:13px;min-height:50px}
     }
   </style>
 </head>
 <body>
 
-  <div class="top-runner">
-    <div class="runner-text">
-      KHO BĐS SƠN BẠCH • OFF-MARKET • CORE ASSET • HÀNG GIÁ TRỊ • NDA • TÀI SẢN LÕI • HÀNG VIP • KHO BĐS SƠN BẠCH • OFF-MARKET • CORE ASSET • HÀNG GIÁ TRỊ • NDA • TÀI SẢN LÕI • HÀNG VIP •
+  <div class="topline">
+    <div class="topline-inner">
+      <div class="brand-mini">
+        <span class="dot"></span>
+        <span>SƠN BẠCH SIGNATURE</span>
+      </div>
+      <div class="top-cta">
+        <a href="tel:0858999934" class="gold-btn">📞 GỌI NGAY</a>
+        <a href="https://zalo.me/0858999934" target="_blank">💬 ZALO</a>
+        <a href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank">📘 FACEBOOK</a>
+      </div>
     </div>
   </div>
 
-  <div class="wrap">
+  <div class="runner">
+    <div class="runner-track">
+      KHO BĐS SƠN BẠCH • OFF-MARKET • CORE ASSET • TROPHY ASSET • QUỸ ĐẤT HIẾM • HÀNG CHỌN LỌC • NDA • KHÁCH THẬT • SƠN BẠCH SIGNATURE • KHO BĐS SƠN BẠCH • OFF-MARKET • CORE ASSET • TROPHY ASSET • QUỸ ĐẤT HIẾM • HÀNG CHỌN LỌC • NDA • KHÁCH THẬT •
+    </div>
+  </div>
+
+  <main class="wrap">
+
     <section class="hero">
-      <div class="sb-ring">
-        <div class="sb-logo">SB</div>
+      <div class="sb-orbit">
+        <div class="sb-core">SB</div>
       </div>
 
-      <div class="sub">Sơn Bạch Signature</div>
-      <h1>KHO BĐS <span class="gold">SƠN BẠCH</span></h1>
+      <div class="hero-sub">Sơn Bạch Signature • KHO TÀI SẢN CHỌN LỌC</div>
+      <h1>KHO BĐS <span class="gold">SƠN BẠCH VIP</span></h1>
 
       <div class="hero-desc">
-        Nơi tổng hợp các tài sản giá trị, hàng hiếm, hàng lõi trung tâm và quỹ đất chiến lược.
-        Giao dịch theo định hướng <span class="gold">chọn lọc khách thật</span>, ưu tiên nhà đầu tư có
-        nhu cầu thực, năng lực tài chính rõ ràng và tinh thần làm việc nghiêm túc.
+        Nơi tổng hợp các tài sản giá trị cao, quỹ đất hiếm, tài sản lõi trung tâm và cơ hội đầu tư chọn lọc.
+        Định hướng làm việc rõ ràng, ưu tiên <span class="gold">khách thật – nhu cầu thật – năng lực tài chính rõ</span>.
       </div>
 
-      <div class="hero-note">Hồ sơ chọn lọc • Kết nối trực tiếp • Ưu tiên khách thật</div>
+      <div class="hero-badges">
+        <span>HÀNG GIÁ TRỊ</span>
+        <span>OFF-MARKET</span>
+        <span>TÀI SẢN LÕI</span>
+        <span>KHÁCH THẬT</span>
+      </div>
     </section>
 
-    <div class="section-title">
-      <h2>DANH MỤC TÀI SẢN ĐANG MỞ</h2>
-      <p>Chạm vào từng tài sản để mở trang chi tiết</p>
-    </div>
-
-    <section class="grid">
-
-      <!-- CARD 1250 -->
-      <article class="card">
-        <div class="card-top">
-          <div class="tag">Tài sản lõi trung tâm</div>
-          <div class="price">1.250 TỶ</div>
-          <div class="card-title">Lõi Trung Tâm Q1</div>
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>DANH MỤC TÀI SẢN ĐANG MỞ</h2>
+          <p>Phân nhóm để khách nhìn nhanh và chọn đúng phân khúc phù hợp.</p>
         </div>
-        <div class="card-body">
-          <div class="meta">
-            <div class="meta-item"><b>Phân khúc:</b> Core Asset / Trophy Asset</div>
-            <div class="meta-item"><b>Khu vực:</b> Quận 1 – trung tâm TP.HCM</div>
-            <div class="meta-item"><b>Tính chất:</b> Hàng giá trị cao – tiếp cận chọn lọc</div>
-          </div>
+      </div>
 
-          <div class="desc">
-            Tài sản định vị ở nhóm giá trị lớn, phù hợp nhà đầu tư theo hướng giữ tài sản lõi,
-            gom quỹ đất trung tâm và tìm cơ hội tăng trưởng dài hạn tại khu vực hiếm nguồn cung.
-          </div>
+      <div class="filter-bar">
+        <span class="chip">Dưới 50 tỷ</span>
+        <span class="chip">50 – 200 tỷ</span>
+        <span class="chip">Trên 200 tỷ</span>
+        <span class="chip">Tài sản lõi</span>
+        <span class="chip">Quỹ đất hiếm</span>
+      </div>
 
-          <div class="btns">
-            <a class="btn btn-main" href="https://sonbachTP.github.io/son-bach-signature/" target="_blank">
-              MỞ TÀI SẢN 1.250 TỶ
-            </a>
-          </div>
-        </div>
-      </article>
+      <div class="vip-note">
+        <strong>Lưu ý:</strong> Một số tài sản đang hiển thị theo hướng chọn lọc thông tin.
+        Khách cần tiếp cận sâu hơn về hồ sơ, vị trí chi tiết hoặc phương án giao dịch có thể làm việc trực tiếp qua
+        <strong>Mr. Sơn Bạch – 0858 999 934</strong>.
+      </div>
+    </section>
 
-      <!-- CARD 135 -->
-      <article class="card">
-        <div class="card-top">
-          <div class="tag">Quỹ đất chiến lược</div>
-          <div class="price">135 TỶ</div>
-          <div class="card-title">Đất Bình Tân 3.419m²</div>
-        </div>
-        <div class="card-body">
-          <div class="meta">
-            <div class="meta-item"><b>Phân khúc:</b> Quỹ đất lớn / chiến lược</div>
-            <div class="meta-item"><b>Khu vực:</b> Bình Tân – TP.HCM</div>
-            <div class="meta-item"><b>Diện tích:</b> 3.419m²</div>
-          </div>
+    <section class="group" id="duoi-50-ty">
+      <div class="group-title">
+        <h3>Nhóm dưới 50 tỷ</h3>
+        <div class="line"></div>
+      </div>
 
-          <div class="desc">
-            Quỹ đất diện tích lớn, phù hợp nhà đầu tư cần biên độ thương lượng, cơ cấu lại công năng,
-            hoặc gom tài sản có câu chuyện tăng giá trong chu kỳ tiếp theo.
+      <div class="cards">
+        <article class="card">
+          <div class="card-top">
+            <div class="tag">Hàng trung tâm chọn lọc</div>
+            <div class="price">42 TỶ</div>
+            <div class="card-title">Căn 42 Tỷ Quận 1</div>
+            <div class="card-sub">
+              Tài sản trung tâm – mức vốn gọn hơn nhóm trophy asset nhưng vẫn giữ độ hiếm và giá trị khai thác.
+            </div>
           </div>
+          <div class="card-body">
+            <div class="meta">
+              <div class="meta-item"><b>Phân khúc:</b> Nhà phố / tài sản trung tâm</div>
+              <div class="meta-item"><b>Khu vực:</b> Quận 1 – TP.HCM</div>
+              <div class="meta-item"><b>Mục tiêu:</b> Giữ tiền + khai thác + thanh khoản</div>
+            </div>
 
-          <div class="btns">
-            <a class="btn btn-main" href="https://sonbachtp.github.io/sonbach_autohud/dat-binh-tan-3419m2-135-ty.html?v=999" target="_blank">
-              MỞ TÀI SẢN 135 TỶ
-            </a>
+            <div class="desc">
+              Phù hợp với khách muốn chạm vào nhóm tài sản trung tâm bằng mức vốn gọn hơn, vẫn giữ được lợi thế
+              vị trí, tính thương mại và tiềm năng tăng giá dài hạn.
+            </div>
+
+            <div class="btns">
+              <a class="btn btn-main" href="https://sonbachtp.github.io/sonbach_autohud/can-42-ty-q1.html?v=4001" target="_blank">
+                MỞ TÀI SẢN 42 TỶ
+              </a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
+    </section>
 
-      <!-- CARD 42 -->
-      <article class="card">
-        <div class="card-top">
-          <div class="tag">Hàng trung tâm chọn lọc</div>
-          <div class="price">42 TỶ</div>
-          <div class="card-title">Căn 42 Tỷ Quận 1</div>
-        </div>
-        <div class="card-body">
-          <div class="meta">
-            <div class="meta-item"><b>Phân khúc:</b> Nhà phố / tài sản trung tâm</div>
-            <div class="meta-item"><b>Khu vực:</b> Quận 1 – TP.HCM</div>
-            <div class="meta-item"><b>Tính chất:</b> Giá trị khai thác + giữ tiền</div>
+    <section class="group" id="tu-50-den-200">
+      <div class="group-title">
+        <h3>Nhóm 50 – 200 tỷ</h3>
+        <div class="line"></div>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-top">
+            <div class="tag">Quỹ đất chiến lược</div>
+            <div class="price">135 TỶ</div>
+            <div class="card-title">Đất Bình Tân 3.419m²</div>
+            <div class="card-sub">
+              Quỹ đất diện tích lớn, hợp khách cần biên độ thương lượng và câu chuyện tăng giá theo chu kỳ.
+            </div>
           </div>
+          <div class="card-body">
+            <div class="meta">
+              <div class="meta-item"><b>Phân khúc:</b> Quỹ đất lớn / chiến lược</div>
+              <div class="meta-item"><b>Khu vực:</b> Bình Tân – TP.HCM</div>
+              <div class="meta-item"><b>Diện tích:</b> 3.419m²</div>
+            </div>
 
-          <div class="desc">
-            Dòng tài sản dành cho khách muốn sở hữu bất động sản khu trung tâm với mức vốn thấp hơn
-            nhóm trophy asset nhưng vẫn giữ được độ hiếm, tính thanh khoản và giá trị khai thác.
+            <div class="desc">
+              Phù hợp với nhà đầu tư nhìn dài hạn, cần quỹ đất lớn để tái cấu trúc công năng, mở rộng khai thác
+              hoặc nắm giữ trong nhịp tăng giá tiếp theo.
+            </div>
+
+            <div class="btns">
+              <a class="btn btn-main" href="https://sonbachtp.github.io/sonbach_autohud/dat-binh-tan-3419m2-135-ty.html?v=999" target="_blank">
+                MỞ TÀI SẢN 135 TỶ
+              </a>
+            </div>
           </div>
+        </article>
+      </div>
+    </section>
 
-          <div class="btns">
-            <a class="btn btn-main" href="https://sonbachtp.github.io/sonbach_autohud/can-42-ty-q1.html?v=4001" target="_blank">
-              MỞ TÀI SẢN 42 TỶ
-            </a>
+    <section class="group" id="tren-200-ty">
+      <div class="group-title">
+        <h3>Nhóm trên 200 tỷ</h3>
+        <div class="line"></div>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-top">
+            <div class="tag">Tài sản lõi trung tâm</div>
+            <div class="price">1.250 TỶ</div>
+            <div class="card-title">Lõi Trung Tâm Quận 1</div>
+            <div class="card-sub">
+              Tài sản giá trị lớn, thiên về giữ tài sản lõi, gom quỹ đất trung tâm và tiếp cận nhóm khách thật sự tương xứng.
+            </div>
           </div>
-        </div>
-      </article>
+          <div class="card-body">
+            <div class="meta">
+              <div class="meta-item"><b>Phân khúc:</b> Core Asset / Trophy Asset</div>
+              <div class="meta-item"><b>Khu vực:</b> Quận 1 – trung tâm TP.HCM</div>
+              <div class="meta-item"><b>Tính chất:</b> Hàng lõi – giá trị cao – chọn lọc</div>
+            </div>
 
+            <div class="desc">
+              Dành cho nhà đầu tư ưu tiên quỹ đất lõi trung tâm, tư duy giữ giá trị bền vững, tăng trưởng dài hạn
+              và tiếp cận tài sản ở phân khúc rất ít nguồn hàng thật.
+            </div>
+
+            <div class="btns">
+              <a class="btn btn-main" href="https://sonbachTP.github.io/son-bach-signature/" target="_blank">
+                MỞ TÀI SẢN 1.250 TỶ
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="signature-box">
+      <h3>SƠN BẠCH SIGNATURE</h3>
+      <p>
+        Không chạy theo số lượng. Chỉ tập trung vào những tài sản đủ chất lượng để làm việc với đúng nhóm khách,
+        đúng nhu cầu và đúng năng lực tài chính. Mỗi hồ sơ được chọn lọc để hướng đến hiệu quả thật trong giao dịch.
+      </p>
+      <div class="signature-line">
+        TÀI SẢN GIÁ TRỊ KHÔNG DÀNH CHO SỐ ĐÔNG • CHỈ DÀNH CHO NGƯỜI NHÌN RA GIÁ TRỊ THẬT
+      </div>
     </section>
 
     <section class="footer">
-      <strong>KHO BĐS SƠN BẠCH</strong><br>
-      Chuyên kết nối tài sản giá trị, hàng hiếm, quỹ đất lõi và cơ hội đầu tư chọn lọc.<br>
-      Ưu tiên khách thực – làm việc rõ ràng – tiếp cận đúng nhu cầu.
+      <strong>KHO BĐS SƠN BẠCH VIP</strong><br>
+      Chuyên kết nối tài sản lõi, quỹ đất hiếm, hàng giá trị cao và cơ hội đầu tư chọn lọc.<br>
+      Liên hệ trực tiếp: <strong>Mr. Sơn Bạch – 0858 999 934</strong>
     </section>
-  </div>
 
-  <div class="sticky-bar">
-    <a class="sticky-btn call" href="tel:0858999934">📞 Gọi ngay</a>
-    <a class="sticky-btn zalo" href="https://zalo.me/0858999934" target="_blank">💬 Zalo</a>
-    <a class="sticky-btn fb" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank">📘 Facebook</a>
+  </main>
+
+  <div class="sticky">
+    <a class="call" href="tel:0858999934">📞 GỌI NGAY</a>
+    <a class="zalo" href="https://zalo.me/0858999934" target="_blank">💬 ZALO</a>
+    <a class="fb" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank">📘 FACEBOOK</a>
   </div>
 
 </body>
