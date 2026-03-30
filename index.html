@@ -19,7 +19,6 @@
       --line:rgba(255,215,106,.16);
       --line-strong:rgba(255,215,106,.28);
       --shadow:0 0 24px rgba(255,215,106,.10), 0 0 60px rgba(201,152,28,.07);
-      --radius:26px;
 
       --c-under50:#7fe0ff;
       --c-under50-bg:rgba(127,224,255,.08);
@@ -82,12 +81,12 @@
       width:10px;height:10px;border-radius:50%;
       background:var(--gold);
       box-shadow:0 0 14px rgba(255,215,106,.5);
-      animation:pulse 1.8s ease-in-out infinite;
+      animation:pulse 2.2s ease-in-out infinite;
     }
 
     @keyframes pulse{
       0%,100%{transform:scale(1);opacity:1}
-      50%{transform:scale(1.25);opacity:.78}
+      50%{transform:scale(1.18);opacity:.82}
     }
 
     .runner{
@@ -108,7 +107,7 @@
       letter-spacing:2px;
       text-transform:uppercase;
       text-shadow:0 0 8px rgba(255,215,106,.18);
-      animation:run 26s linear infinite;
+      animation:run 28s linear infinite;
     }
 
     @keyframes run{
@@ -126,31 +125,23 @@
       position:relative;
       overflow:hidden;
       border-radius:34px;
-      padding:42px 20px 34px;
+      padding:44px 20px 36px;
       text-align:center;
       border:1px solid rgba(255,215,106,.15);
       background:
-        radial-gradient(circle at center top, rgba(255,215,106,.11), transparent 35%),
-        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)),
-        rgba(8,8,8,.86);
-      box-shadow:var(--shadow);
+        linear-gradient(rgba(6,6,6,.55), rgba(8,8,8,.82)),
+        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      box-shadow:0 0 26px rgba(255,215,106,.10), 0 0 60px rgba(201,152,28,.07);
       isolation:isolate;
     }
 
     .hero::before{
-      content:"SB";
+      content:"";
       position:absolute;
-      inset:auto 0 18px 0;
-      margin:auto;
-      font-size:220px;
-      font-weight:900;
-      line-height:1;
-      letter-spacing:10px;
-      color:rgba(255,215,106,.04);
-      user-select:none;
+      inset:0;
+      background:
+        radial-gradient(circle at center top, rgba(255,215,106,.12), transparent 38%);
       pointer-events:none;
-      z-index:-1;
-      text-shadow:0 0 26px rgba(255,215,106,.04);
     }
 
     .hero::after{
@@ -167,40 +158,63 @@
       opacity:.6;
     }
 
-    .sb-orbit{
-      width:126px;height:126px;
-      margin:0 auto 18px;
+    .hero-bg-sb{
+      position:absolute;
+      left:50%;
+      top:52%;
+      transform:translate(-50%,-50%);
+      width:min(62vw,520px);
+      aspect-ratio:1/1;
       border-radius:50%;
-      position:relative;
+      pointer-events:none;
+      opacity:.16;
+      z-index:0;
+      animation:spinSlow 28s linear infinite;
+    }
+
+    .hero-bg-sb::before,
+    .hero-bg-sb::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:50%;
+      border:1px solid rgba(255,215,106,.18);
+      box-shadow:0 0 20px rgba(255,215,106,.08), inset 0 0 20px rgba(255,215,106,.04);
+    }
+
+    .hero-bg-sb::after{
+      inset:18px;
+      border-color:rgba(255,215,106,.14);
+    }
+
+    .hero-bg-sb .ring3{
+      position:absolute;
+      inset:36px;
+      border-radius:50%;
+      border:1px solid rgba(255,215,106,.10);
+    }
+
+    .hero-bg-sb .sb-mark{
+      position:absolute;
+      inset:0;
       display:flex;
       align-items:center;
       justify-content:center;
-      border:1px solid rgba(255,215,106,.28);
-      box-shadow:0 0 20px rgba(255,215,106,.1), inset 0 0 20px rgba(255,215,106,.05);
-      animation:float 4s ease-in-out infinite;
-    }
-
-    .sb-orbit::before,.sb-orbit::after{
-      content:"";
-      position:absolute;
-      border-radius:50%;
-      border:1px solid rgba(255,215,106,.14);
-    }
-
-    .sb-orbit::before{inset:10px}
-    .sb-orbit::after{inset:-10px}
-
-    .sb-core{
-      font-size:40px;
+      font-size:clamp(72px,15vw,180px);
       font-weight:900;
-      letter-spacing:3px;
-      color:var(--gold);
-      text-shadow:0 0 10px rgba(255,215,106,.35), 0 0 22px rgba(255,215,106,.12);
+      letter-spacing:8px;
+      color:rgba(255,215,106,.18);
+      text-shadow:0 0 22px rgba(255,215,106,.10);
     }
 
-    @keyframes float{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-6px)}
+    @keyframes spinSlow{
+      from{transform:translate(-50%,-50%) rotate(0deg)}
+      to{transform:translate(-50%,-50%) rotate(360deg)}
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:2;
     }
 
     .hero-sub{
@@ -226,12 +240,12 @@
         0 0 8px rgba(255,215,106,.55),
         0 0 24px rgba(255,215,106,.18),
         0 0 46px rgba(255,215,106,.08);
-      animation:goldGlow 2.4s ease-in-out infinite alternate;
+      animation:goldGlow 2.6s ease-in-out infinite alternate;
     }
 
     @keyframes goldGlow{
       from{filter:brightness(1)}
-      to{filter:brightness(1.14)}
+      to{filter:brightness(1.13)}
     }
 
     .hero-desc{
@@ -254,13 +268,14 @@
       padding:10px 14px;
       border-radius:999px;
       border:1px solid rgba(255,215,106,.16);
-      background:rgba(255,215,106,.06);
+      background:rgba(255,215,106,.08);
       color:var(--gold);
       font-size:12px;
       font-weight:900;
       letter-spacing:.6px;
       text-transform:uppercase;
       box-shadow:0 0 14px rgba(255,215,106,.05);
+      backdrop-filter:blur(4px);
     }
 
     .hero-banner{
@@ -268,16 +283,15 @@
       padding:16px 18px;
       border-radius:20px;
       border:1px solid rgba(255,215,106,.14);
-      background:linear-gradient(180deg, rgba(255,215,106,.05), rgba(255,215,106,.025));
+      background:linear-gradient(180deg, rgba(255,215,106,.08), rgba(255,215,106,.03));
       color:#eadcb1;
       box-shadow:0 0 16px rgba(255,215,106,.05);
       line-height:1.8;
       font-size:14px;
+      backdrop-filter:blur(4px);
     }
 
     .hero-banner strong{color:var(--gold)}
-
-    .section{margin-top:28px}
 
     .toggle-block{
       margin-top:18px;
@@ -426,15 +440,14 @@
       font-size:14px;
     }
 
-    .form-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
+    .nda-form{
       margin-top:16px;
     }
 
-    .form-grid .full{
-      grid-column:1 / -1;
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:12px;
     }
 
     .field{
@@ -447,11 +460,6 @@
       padding:14px 14px;
       outline:none;
       font-size:14px;
-    }
-
-    textarea.field{
-      min-height:110px;
-      resize:vertical;
     }
 
     .field::placeholder{color:#9f926e}
@@ -538,13 +546,62 @@
       animation:fadeDown .25s ease;
     }
 
-    .group{
-      margin-top:26px;
+    .filter-tabs{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .filter-tab{
+      min-height:46px;
+      padding:0 16px;
+      border-radius:999px;
+      border:1px solid rgba(255,215,106,.14);
+      background:rgba(255,215,106,.04);
+      color:#fff2c8;
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:.4px;
+      cursor:pointer;
+      transition:.22s ease;
+    }
+
+    .filter-tab:hover{
+      transform:translateY(-1px);
+    }
+
+    .filter-tab.active-under{
+      color:var(--c-under50);
+      border-color:rgba(127,224,255,.34);
+      background:rgba(127,224,255,.08);
+    }
+
+    .filter-tab.active-mid{
+      color:var(--c-mid);
+      border-color:rgba(255,207,90,.34);
+      background:rgba(255,207,90,.10);
+    }
+
+    .filter-tab.active-over{
+      color:var(--c-over);
+      border-color:rgba(255,143,143,.30);
+      background:rgba(255,143,143,.08);
+    }
+
+    .asset-panel{
+      display:none;
+      margin-top:18px;
       border:1px solid rgba(255,215,106,.12);
       border-radius:28px;
       padding:18px;
       background:rgba(255,255,255,.015);
       box-shadow:0 0 18px rgba(255,215,106,.04);
+      animation:fadeDown .25s ease;
+    }
+
+    .asset-panel.show{
+      display:block;
     }
 
     .group-title{
@@ -642,10 +699,6 @@
       font-size:clamp(36px,5vw,50px);
       line-height:1;
       font-weight:900;
-      text-shadow:
-        0 0 10px rgba(255,215,106,.30),
-        0 0 22px rgba(255,215,106,.15),
-        0 0 46px rgba(255,215,106,.08);
       animation:pricePulse 1.8s ease-in-out infinite alternate;
     }
 
@@ -835,19 +888,13 @@
       .cards{grid-template-columns:1fr}
       .info-grid{grid-template-columns:1fr}
       .desc{min-height:auto}
-    }
-
-    @media (max-width:700px){
       .form-grid{grid-template-columns:1fr}
     }
 
     @media (max-width:640px){
       .topbar-inner,.wrap{width:min(94%,100%)}
       .hero{padding:36px 14px 26px}
-      .hero::before{font-size:120px;bottom:26px}
-      .sb-orbit{width:104px;height:104px}
-      .sb-core{font-size:32px}
-      .card-top{min-height:auto}
+      .hero-bg-sb{width:min(86vw,360px)}
       .toggle-btn{font-size:16px;padding:16px}
       .toggle-content{padding:0 16px 16px}
       .sticky a{font-size:13px;min-height:50px}
@@ -876,28 +923,31 @@
   <main class="wrap">
 
     <section class="hero">
-      <div class="sb-orbit">
-        <div class="sb-core">SB</div>
+      <div class="hero-bg-sb">
+        <div class="ring3"></div>
+        <div class="sb-mark">SB</div>
       </div>
 
-      <div class="hero-sub">Sơn Bạch BĐS VIP PRO • KHO TÀI SẢN CHỌN LỌC</div>
-      <h1>KHO BĐS <span class="gold">SƠN BẠCH</span></h1>
+      <div class="hero-inner">
+        <div class="hero-sub">Sơn Bạch BĐS VIP PRO • KHO TÀI SẢN CHỌN LỌC</div>
+        <h1>KHO BĐS <span class="gold">SƠN BẠCH</span></h1>
 
-      <div class="hero-desc">
-        Nơi tổng hợp các tài sản giá trị cao, tài sản lõi, quỹ đất hiếm và hồ sơ chọn lọc dành cho khách có
-        <span class="gold">nhu cầu thật – tài chính thật – tinh thần làm việc rõ ràng</span>.
-      </div>
+        <div class="hero-desc">
+          Nơi tổng hợp các tài sản giá trị cao, tài sản lõi, quỹ đất hiếm và hồ sơ chọn lọc dành cho khách có
+          <span class="gold">nhu cầu thật – tài chính thật – tinh thần làm việc rõ ràng</span>.
+        </div>
 
-      <div class="hero-badges">
-        <span>HÀNG GIÁ TRỊ</span>
-        <span>HÀNG KÍN</span>
-        <span>NDA</span>
-        <span>KHÁCH THẬT</span>
-      </div>
+        <div class="hero-badges">
+          <span>HÀNG GIÁ TRỊ</span>
+          <span>HÀNG KÍN</span>
+          <span>NDA</span>
+          <span>KHÁCH THẬT</span>
+        </div>
 
-      <div class="hero-banner">
-        <strong>Lưu ý:</strong> Một phần nội dung đang hiển thị theo hướng chọn lọc thông tin.
-        Khách cần tiếp cận sâu hơn về hồ sơ, vị trí, pháp lý hoặc điều kiện giao dịch có thể gửi yêu cầu trực tiếp để được sàng lọc phù hợp.
+        <div class="hero-banner">
+          <strong>Lưu ý:</strong> Một phần nội dung đang hiển thị theo hướng chọn lọc thông tin.
+          Khách cần tiếp cận sâu hơn về hồ sơ, vị trí, pháp lý hoặc điều kiện giao dịch có thể gửi yêu cầu trực tiếp để được sàng lọc phù hợp.
+        </div>
       </div>
     </section>
 
@@ -916,56 +966,172 @@
         </div>
 
         <div class="mini-note">
-          Hệ thống được chia theo phân khúc giá để khách nhìn nhanh và chọn đúng nhóm tài sản phù hợp với mục tiêu đầu tư.
+          Bấm từng nút phân khúc phía dưới để chỉ hiện đúng nhóm tài sản anh muốn xem.
         </div>
+
+        <div class="filter-tabs">
+          <button class="filter-tab active-under" type="button" onclick="showAssetPanel('panel-under', this, 'under')">DƯỚI 50 TỶ</button>
+          <button class="filter-tab" type="button" onclick="showAssetPanel('panel-mid', this, 'mid')">50 – 200 TỶ</button>
+          <button class="filter-tab" type="button" onclick="showAssetPanel('panel-over', this, 'over')">TRÊN 200 TỶ</button>
+        </div>
+
+        <div class="asset-panel show" id="panel-under">
+          <div class="group-title">
+            <h3>Nhóm dưới 50 tỷ</h3>
+            <div class="line"></div>
+          </div>
+
+          <div class="cards">
+            <article class="card">
+              <div class="card-top">
+                <div class="tag tag-under">Hàng trung tâm chọn lọc</div>
+                <div class="price price-under">42 TỶ</div>
+                <div class="card-title">Căn 42 Tỷ Quận 1</div>
+                <div class="card-sub">
+                  Mức vốn gọn hơn nhưng vẫn giữ lợi thế trung tâm, thanh khoản và giá trị khai thác.
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="meta">
+                  <div class="meta-item"><b>Phân khúc:</b> Nhà phố / tài sản trung tâm</div>
+                  <div class="meta-item"><b>Khu vực:</b> Quận 1 – TP.HCM</div>
+                  <div class="meta-item"><b>Mục tiêu:</b> Giữ tiền + khai thác + thanh khoản</div>
+                </div>
+
+                <div class="desc">
+                  Phù hợp với khách muốn vào phân khúc tài sản trung tâm với mức vốn linh hoạt hơn nhưng vẫn ưu tiên
+                  giá trị bền, vị trí mạnh và khả năng khai thác dài hạn.
+                </div>
+
+                <div class="btns">
+                  <a class="btn btn-main" href="https://sonbachtp.github.io/sonbach_autohud/can-42-ty-q1.html?v=4001" target="_blank">
+                    MỞ TÀI SẢN 42 TỶ
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="asset-panel" id="panel-mid">
+          <div class="group-title">
+            <h3>Nhóm 50 – 200 tỷ</h3>
+            <div class="line"></div>
+          </div>
+
+          <div class="cards">
+            <article class="card">
+              <div class="card-top">
+                <div class="tag tag-mid">Quỹ đất chiến lược</div>
+                <div class="price price-mid">135 TỶ</div>
+                <div class="card-title">Đất Bình Tân 3.419m²</div>
+                <div class="card-sub">
+                  Quỹ đất diện tích lớn, hợp với nhà đầu tư nhìn dài hạn và cần câu chuyện tăng giá rõ.
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="meta">
+                  <div class="meta-item"><b>Phân khúc:</b> Quỹ đất lớn / chiến lược</div>
+                  <div class="meta-item"><b>Khu vực:</b> Bình Tân – TP.HCM</div>
+                  <div class="meta-item"><b>Diện tích:</b> 3.419m²</div>
+                </div>
+
+                <div class="desc">
+                  Dành cho khách cần gom quỹ đất lớn để tái cấu trúc công năng, tạo biên độ thương lượng hoặc nắm giữ
+                  trong chu kỳ tăng giá kế tiếp.
+                </div>
+
+                <div class="btns">
+                  <a class="btn btn-main" href="https://sonbachtp.github.io/sonbach_autohud/dat-binh-tan-3419m2-135-ty.html?v=999" target="_blank">
+                    MỞ TÀI SẢN 135 TỶ
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="asset-panel" id="panel-over">
+          <div class="group-title">
+            <h3>Nhóm trên 200 tỷ</h3>
+            <div class="line"></div>
+          </div>
+
+          <div class="cards">
+            <article class="card">
+              <div class="card-top">
+                <div class="tag tag-over">Tài sản lõi trung tâm</div>
+                <div class="price price-over">1.250 TỶ</div>
+                <div class="card-title">Lõi Trung Tâm Quận 1</div>
+                <div class="card-sub">
+                  Tài sản giá trị lớn, thiên về giữ tài sản lõi, gom quỹ đất trung tâm và tiếp cận chọn lọc.
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="meta">
+                  <div class="meta-item"><b>Phân khúc:</b> Core Asset / Trophy Asset</div>
+                  <div class="meta-item"><b>Khu vực:</b> Quận 1 – trung tâm TP.HCM</div>
+                  <div class="meta-item"><b>Tính chất:</b> Hàng lõi – giá trị cao – chọn lọc</div>
+                </div>
+
+                <div class="desc">
+                  Phù hợp với nhà đầu tư ưu tiên quỹ đất lõi trung tâm, tư duy bảo toàn giá trị và đi đường dài
+                  với tài sản hiếm nguồn cung thật.
+                </div>
+
+                <div class="btns">
+                  <a class="btn btn-main" href="https://sonbachTP.github.io/son-bach-signature/" target="_blank">
+                    MỞ TÀI SẢN 1.250 TỶ
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <section class="toggle-block" id="toggle-nda">
       <button class="toggle-btn" type="button" onclick="toggleExclusive('toggle-nda')">
-        <span>HÀNG KÍN / NDA / HỒ SƠ CHỌN LỌC</span>
+        <span>NDA / BẢO MẬT / HỒ SƠ CHỌN LỌC</span>
         <span>＋</span>
       </button>
       <div class="toggle-content">
         <div class="info-grid">
           <div class="box">
-            <h3>GỬI YÊU CẦU HỒ SƠ</h3>
+            <h3>ĐĂNG KÝ NDA / BẢO MẬT</h3>
             <p>
-              Một số tài sản chỉ mở sâu hơn khi khách để lại thông tin thật và xác nhận đồng ý nguyên tắc bảo mật thông tin.
-              Việc này giúp quá trình trao đổi gọn, đúng người và hạn chế lộ dữ liệu không cần thiết.
+              Điền đúng thông tin cơ bản. Sau khi bấm đồng ý, biểu mẫu sẽ gửi qua Formspree về email nhận lead đã cấu hình cho endpoint của anh.
             </p>
 
             <div class="points">
-              <div>✔ Chỉ ưu tiên khách có nhu cầu thật và mục tiêu rõ.</div>
-              <div>✔ Hồ sơ mở rộng sẽ trao đổi theo mức độ phù hợp của khách.</div>
-              <div>✔ Thông tin gửi đi cần trung thực để tránh sai lệch trong quá trình kết nối.</div>
+              <div>✔ Thông tin cơ bản: họ tên, số điện thoại, email.</div>
+              <div>✔ Chỉ ưu tiên hồ sơ khách có nhu cầu thật.</div>
+              <div>✔ Dữ liệu sâu hơn sẽ mở theo mức độ phù hợp.</div>
             </div>
 
-            <form action="https://formspree.io/f/mpqykgzk" method="POST">
+            <form class="nda-form" action="https://formspree.io/f/mpqykgzk" method="POST">
               <div class="form-grid">
                 <input class="field" type="text" name="Họ tên" placeholder="Họ và tên" required>
                 <input class="field" type="tel" name="Số điện thoại" placeholder="Số điện thoại" required>
                 <input class="field" type="email" name="Email" placeholder="Email" required>
-                <input class="field" type="text" name="Tài sản quan tâm" placeholder="Tài sản quan tâm">
-                <textarea class="field full" name="Nhu cầu" placeholder="Nhu cầu / mục tiêu đầu tư / nội dung cần trao đổi"></textarea>
-
-                <input type="hidden" name="_subject" value="Lead NDA mới từ KHO BĐS SƠN BẠCH">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://sonbachtp.github.io/sonbach_autohud/?success=1">
               </div>
 
+              <input type="hidden" name="_subject" value="Lead NDA mới từ KHO BĐS SƠN BẠCH">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://sonbachtp.github.io/sonbach_autohud/?success=1">
+
               <label class="agree">
-                <input type="checkbox" name="Đồng ý NDA" required>
+                <input type="checkbox" name="Tôi đồng ý NDA" required>
                 <span>
-                  Tôi xác nhận thông tin cung cấp là đúng và đồng ý nguyên tắc bảo mật khi tiếp cận hồ sơ chọn lọc.
-                  Trường hợp cung cấp thông tin không chính xác hoặc sử dụng thông tin sai mục đích, bên cung cấp hồ sơ có quyền từ chối tiếp tục chia sẻ dữ liệu.
+                  Tôi đồng ý nguyên tắc bảo mật và xác nhận thông tin trên là đúng. Khi bấm gửi, yêu cầu sẽ được chuyển tới hộp thư nhận lead đã cấu hình của hệ thống.
                 </span>
               </label>
 
               <div class="btn-row">
-                <button class="btn btn-main" type="submit">GỬI YÊU CẦU HỒ SƠ</button>
+                <button class="btn btn-main" type="submit">TÔI ĐỒNG Ý & GỬI THÔNG TIN</button>
                 <button class="btn btn-sub" type="button" onclick="toggleDeepBox()">HIỆN HỒ SƠ SÂU / VỊ TRÍ SÂU</button>
-                <a class="btn btn-sub" href="tel:0858999934">GỌI TRAO ĐỔI NHANH</a>
               </div>
             </form>
 
@@ -1028,120 +1194,6 @@
       </div>
     </section>
 
-    <section class="group" id="duoi-50-ty">
-      <div class="group-title">
-        <h3>Nhóm dưới 50 tỷ</h3>
-        <div class="line"></div>
-      </div>
-
-      <div class="cards">
-        <article class="card">
-          <div class="card-top">
-            <div class="tag tag-under">Hàng trung tâm chọn lọc</div>
-            <div class="price price-under">42 TỶ</div>
-            <div class="card-title">Căn 42 Tỷ Quận 1</div>
-            <div class="card-sub">
-              Mức vốn gọn hơn nhưng vẫn giữ lợi thế trung tâm, thanh khoản và giá trị khai thác.
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="meta">
-              <div class="meta-item"><b>Phân khúc:</b> Nhà phố / tài sản trung tâm</div>
-              <div class="meta-item"><b>Khu vực:</b> Quận 1 – TP.HCM</div>
-              <div class="meta-item"><b>Mục tiêu:</b> Giữ tiền + khai thác + thanh khoản</div>
-            </div>
-
-            <div class="desc">
-              Phù hợp với khách muốn vào phân khúc tài sản trung tâm với mức vốn linh hoạt hơn nhưng vẫn ưu tiên
-              giá trị bền, vị trí mạnh và khả năng khai thác dài hạn.
-            </div>
-
-            <div class="btns">
-              <a class="btn btn-main" href="https://sonbachtp.github.io/sonbach_autohud/can-42-ty-q1.html?v=4001" target="_blank">
-                MỞ TÀI SẢN 42 TỶ
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="group" id="tu-50-den-200">
-      <div class="group-title">
-        <h3>Nhóm 50 – 200 tỷ</h3>
-        <div class="line"></div>
-      </div>
-
-      <div class="cards">
-        <article class="card">
-          <div class="card-top">
-            <div class="tag tag-mid">Quỹ đất chiến lược</div>
-            <div class="price price-mid">135 TỶ</div>
-            <div class="card-title">Đất Bình Tân 3.419m²</div>
-            <div class="card-sub">
-              Quỹ đất diện tích lớn, hợp với nhà đầu tư nhìn dài hạn và cần câu chuyện tăng giá rõ.
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="meta">
-              <div class="meta-item"><b>Phân khúc:</b> Quỹ đất lớn / chiến lược</div>
-              <div class="meta-item"><b>Khu vực:</b> Bình Tân – TP.HCM</div>
-              <div class="meta-item"><b>Diện tích:</b> 3.419m²</div>
-            </div>
-
-            <div class="desc">
-              Dành cho khách cần gom quỹ đất lớn để tái cấu trúc công năng, tạo biên độ thương lượng hoặc nắm giữ
-              trong chu kỳ tăng giá kế tiếp.
-            </div>
-
-            <div class="btns">
-              <a class="btn btn-main" href="https://sonbachtp.github.io/sonbach_autohud/dat-binh-tan-3419m2-135-ty.html?v=999" target="_blank">
-                MỞ TÀI SẢN 135 TỶ
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="group" id="tren-200-ty">
-      <div class="group-title">
-        <h3>Nhóm trên 200 tỷ</h3>
-        <div class="line"></div>
-      </div>
-
-      <div class="cards">
-        <article class="card">
-          <div class="card-top">
-            <div class="tag tag-over">Tài sản lõi trung tâm</div>
-            <div class="price price-over">1.250 TỶ</div>
-            <div class="card-title">Lõi Trung Tâm Quận 1</div>
-            <div class="card-sub">
-              Tài sản giá trị lớn, thiên về giữ tài sản lõi, gom quỹ đất trung tâm và tiếp cận chọn lọc.
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="meta">
-              <div class="meta-item"><b>Phân khúc:</b> Core Asset / Trophy Asset</div>
-              <div class="meta-item"><b>Khu vực:</b> Quận 1 – trung tâm TP.HCM</div>
-              <div class="meta-item"><b>Tính chất:</b> Hàng lõi – giá trị cao – chọn lọc</div>
-            </div>
-
-            <div class="desc">
-              Phù hợp với nhà đầu tư ưu tiên quỹ đất lõi trung tâm, tư duy bảo toàn giá trị và đi đường dài
-              với tài sản hiếm nguồn cung thật.
-            </div>
-
-            <div class="btns">
-              <a class="btn btn-main" href="https://sonbachTP.github.io/son-bach-signature/" target="_blank">
-                MỞ TÀI SẢN 1.250 TỶ
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
     <section class="toggle-block" id="toggle-footer-brand">
       <button class="toggle-btn" type="button" onclick="toggleExclusive('toggle-footer-brand')">
         <span>SƠN BẠCH BĐS VIP PRO</span>
@@ -1169,8 +1221,8 @@
       <div class="popup-icon">✓</div>
       <h3>Gửi thành công</h3>
       <p>
-        Yêu cầu của anh/chị đã được ghi nhận.<br>
-        Sơn Bạch sẽ ưu tiên sàng lọc và phản hồi theo mức độ phù hợp của hồ sơ.
+        Thông tin NDA / bảo mật đã được ghi nhận.<br>
+        Hệ thống sẽ chuyển yêu cầu tới email nhận lead đã cấu hình cho biểu mẫu.
       </p>
       <div class="popup-actions">
         <button class="btn btn-main" type="button" onclick="closePopup()">ĐÓNG</button>
@@ -1198,23 +1250,33 @@
       }
     }
 
+    function showAssetPanel(panelId, btn, type){
+      document.querySelectorAll('.asset-panel').forEach(p => p.classList.remove('show'));
+      const panel = document.getElementById(panelId);
+      if(panel) panel.classList.add('show');
+
+      document.querySelectorAll('.filter-tab').forEach(b => {
+        b.classList.remove('active-under','active-mid','active-over');
+      });
+
+      if(type === 'under') btn.classList.add('active-under');
+      if(type === 'mid') btn.classList.add('active-mid');
+      if(type === 'over') btn.classList.add('active-over');
+    }
+
     function closePopup(){
       const popup = document.getElementById('successPopup');
-      if(popup){
-        popup.classList.remove('show');
-      }
+      if(popup) popup.classList.remove('show');
       const url = new URL(window.location.href);
       url.searchParams.delete('success');
-      window.history.replaceState({}, '', url.pathname + (url.search ? url.search : ''));
+      window.history.replaceState({}, '', url.pathname);
     }
 
     (function(){
       const params = new URLSearchParams(window.location.search);
       if(params.get('success') === '1'){
         const popup = document.getElementById('successPopup');
-        if(popup){
-          popup.classList.add('show');
-        }
+        if(popup) popup.classList.add('show');
       }
     })();
   </script>
