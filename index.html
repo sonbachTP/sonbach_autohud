@@ -520,6 +520,24 @@
       border-color:rgba(255,215,106,.24);
     }
 
+    .deep-box{
+      display:none;
+      margin-top:16px;
+      padding:16px;
+      border-radius:20px;
+      border:1px solid rgba(255,215,106,.14);
+      background:linear-gradient(180deg, rgba(255,215,106,.05), rgba(255,215,106,.02));
+      box-shadow:0 0 14px rgba(255,215,106,.04);
+      color:#f0e3bd;
+      line-height:1.8;
+      font-size:14px;
+    }
+
+    .deep-box.show{
+      display:block;
+      animation:fadeDown .25s ease;
+    }
+
     .group{
       margin-top:26px;
       border:1px solid rgba(255,215,106,.12);
@@ -742,6 +760,77 @@
       background:rgba(255,215,106,.08);
     }
 
+    .popup-wrap{
+      position:fixed;
+      inset:0;
+      z-index:999;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      background:rgba(0,0,0,.65);
+      backdrop-filter:blur(4px);
+    }
+
+    .popup-wrap.show{
+      display:flex;
+      animation:fadeIn .25s ease;
+    }
+
+    @keyframes fadeIn{
+      from{opacity:0}
+      to{opacity:1}
+    }
+
+    .popup{
+      width:min(520px,100%);
+      border-radius:28px;
+      border:1px solid rgba(255,215,106,.18);
+      background:
+        radial-gradient(circle at top center, rgba(255,215,106,.10), transparent 45%),
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)),
+        #0d0d0d;
+      box-shadow:0 0 30px rgba(255,215,106,.12), 0 0 80px rgba(0,0,0,.5);
+      padding:28px 22px 22px;
+      text-align:center;
+      color:#f5e9c8;
+    }
+
+    .popup-icon{
+      width:72px;
+      height:72px;
+      margin:0 auto 14px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:30px;
+      border:1px solid rgba(255,215,106,.22);
+      color:var(--gold);
+      box-shadow:0 0 18px rgba(255,215,106,.12), inset 0 0 18px rgba(255,215,106,.05);
+    }
+
+    .popup h3{
+      margin:0;
+      font-size:28px;
+      color:#fff2c7;
+    }
+
+    .popup p{
+      margin:12px 0 0;
+      line-height:1.85;
+      color:#eadcb0;
+      font-size:14px;
+    }
+
+    .popup-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-top:18px;
+    }
+
     @media (max-width:1024px){
       .cards{grid-template-columns:1fr}
       .info-grid{grid-template-columns:1fr}
@@ -762,6 +851,8 @@
       .toggle-btn{font-size:16px;padding:16px}
       .toggle-content{padding:0 16px 16px}
       .sticky a{font-size:13px;min-height:50px}
+      .popup{padding:24px 16px 18px}
+      .popup h3{font-size:24px}
     }
   </style>
 </head>
@@ -811,7 +902,7 @@
     </section>
 
     <section class="toggle-block" id="toggle-phan-nhom">
-      <button class="toggle-btn" type="button" onclick="toggleBlock('toggle-phan-nhom')">
+      <button class="toggle-btn" type="button" onclick="toggleExclusive('toggle-phan-nhom')">
         <span>PHÂN NHÓM TÀI SẢN</span>
         <span>＋</span>
       </button>
@@ -831,7 +922,7 @@
     </section>
 
     <section class="toggle-block" id="toggle-nda">
-      <button class="toggle-btn" type="button" onclick="toggleBlock('toggle-nda')">
+      <button class="toggle-btn" type="button" onclick="toggleExclusive('toggle-nda')">
         <span>HÀNG KÍN / NDA / HỒ SƠ CHỌN LỌC</span>
         <span>＋</span>
       </button>
@@ -873,9 +964,15 @@
 
               <div class="btn-row">
                 <button class="btn btn-main" type="submit">GỬI YÊU CẦU HỒ SƠ</button>
+                <button class="btn btn-sub" type="button" onclick="toggleDeepBox()">HIỆN HỒ SƠ SÂU / VỊ TRÍ SÂU</button>
                 <a class="btn btn-sub" href="tel:0858999934">GỌI TRAO ĐỔI NHANH</a>
               </div>
             </form>
+
+            <div class="deep-box" id="deepBox">
+              Hồ sơ sâu / vị trí sâu sẽ được mở theo mức độ phù hợp sau khi tiếp nhận thông tin và sàng lọc nhu cầu.
+              Với tài sản kín, phần dữ liệu chi tiết hơn sẽ ưu tiên trao đổi trực tiếp để giữ nhịp giao dịch chuyên nghiệp và đúng đối tượng.
+            </div>
           </div>
 
           <div class="box">
@@ -895,7 +992,7 @@
     </section>
 
     <section class="toggle-block" id="toggle-khach-that">
-      <button class="toggle-btn" type="button" onclick="toggleBlock('toggle-khach-that')">
+      <button class="toggle-btn" type="button" onclick="toggleExclusive('toggle-khach-that')">
         <span>KHÁCH THẬT ƯU TIÊN</span>
         <span>＋</span>
       </button>
@@ -1046,7 +1143,7 @@
     </section>
 
     <section class="toggle-block" id="toggle-footer-brand">
-      <button class="toggle-btn" type="button" onclick="toggleBlock('toggle-footer-brand')">
+      <button class="toggle-btn" type="button" onclick="toggleExclusive('toggle-footer-brand')">
         <span>SƠN BẠCH BĐS VIP PRO</span>
         <span>＋</span>
       </button>
@@ -1067,18 +1164,57 @@
     <a class="fb" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank">📘 FACEBOOK</a>
   </div>
 
+  <div class="popup-wrap" id="successPopup">
+    <div class="popup">
+      <div class="popup-icon">✓</div>
+      <h3>Gửi thành công</h3>
+      <p>
+        Yêu cầu của anh/chị đã được ghi nhận.<br>
+        Sơn Bạch sẽ ưu tiên sàng lọc và phản hồi theo mức độ phù hợp của hồ sơ.
+      </p>
+      <div class="popup-actions">
+        <button class="btn btn-main" type="button" onclick="closePopup()">ĐÓNG</button>
+        <a class="btn btn-sub" href="tel:0858999934">GỌI NGAY</a>
+      </div>
+    </div>
+  </div>
+
   <script>
-    function toggleBlock(id){
-      const el = document.getElementById(id);
-      if(el){
-        el.classList.toggle('open');
+    function toggleExclusive(id){
+      const blocks = document.querySelectorAll('.toggle-block');
+      blocks.forEach(block => {
+        if(block.id === id){
+          block.classList.toggle('open');
+        } else {
+          block.classList.remove('open');
+        }
+      });
+    }
+
+    function toggleDeepBox(){
+      const box = document.getElementById('deepBox');
+      if(box){
+        box.classList.toggle('show');
       }
+    }
+
+    function closePopup(){
+      const popup = document.getElementById('successPopup');
+      if(popup){
+        popup.classList.remove('show');
+      }
+      const url = new URL(window.location.href);
+      url.searchParams.delete('success');
+      window.history.replaceState({}, '', url.pathname + (url.search ? url.search : ''));
     }
 
     (function(){
       const params = new URLSearchParams(window.location.search);
       if(params.get('success') === '1'){
-        alert('Đã gửi yêu cầu thành công. Sơn Bạch sẽ liên hệ lại khi sàng lọc phù hợp.');
+        const popup = document.getElementById('successPopup');
+        if(popup){
+          popup.classList.add('show');
+        }
       }
     })();
   </script>
