@@ -743,7 +743,29 @@
         localStorage.setItem('sb_42ty_nda_passed', 'yes');
       }catch(e){}
     }
+function sendMailLead(){
+  let name = '';
+  let phone = '';
+  let email = '';
 
+  try{
+    name = localStorage.getItem('sb_42ty_nda_name') || '';
+    phone = localStorage.getItem('sb_42ty_nda_phone') || '';
+    email = localStorage.getItem('sb_42ty_nda_email') || '';
+  }catch(e){}
+
+  const subject = encodeURIComponent('Khách quan tâm tài sản 42 tỷ Q1');
+  const body = encodeURIComponent(
+    'Họ tên: ' + name + '\n' +
+    'SĐT: ' + phone + '\n' +
+    'Email: ' + email + '\n\n' +
+    'Nội dung: Tôi quan tâm tài sản 42 tỷ Q1 và cần thêm thông tin.'
+  );
+
+  window.location.href = 'mailto:sonbach723@gmail.com?subject=' + subject + '&body=' + body;
+}
+
+(function restoreAccess(){
     (function restoreAccess(){
       try{
         const passed = localStorage.getItem('sb_42ty_nda_passed');
