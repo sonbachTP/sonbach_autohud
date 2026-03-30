@@ -17,6 +17,8 @@
       --line:rgba(255,215,106,.22);
       --red:#ff3b30;
       --blue:#147df5;
+      --green:#00b86b;
+      --purple:#9b59ff;
       --shadow:0 0 18px rgba(255,215,106,.22), 0 0 40px rgba(255,215,106,.12);
     }
 
@@ -79,7 +81,7 @@
     }
 
     .nda-card{
-      width:min(100%,540px);
+      width:min(100%,560px);
       border-radius:28px;
       border:1px solid rgba(255,215,106,.24);
       background:linear-gradient(180deg,#18120a 0%,#0a0a0a 100%);
@@ -176,7 +178,7 @@
     .page{
       width:min(100%,980px);
       margin:0 auto;
-      padding:18px 14px 120px;
+      padding:18px 14px 140px;
     }
 
     .hero{
@@ -190,19 +192,6 @@
       box-shadow:0 16px 48px rgba(0,0,0,.52), inset 0 0 34px rgba(255,215,106,.04);
       padding:24px 16px 24px;
       margin-top:12px;
-    }
-
-    .hero::before{
-      content:"";
-      position:absolute;
-      top:-60px;
-      left:-50px;
-      width:280px;
-      height:280px;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(255,215,106,.14), transparent 70%);
-      filter:blur(8px);
-      pointer-events:none;
     }
 
     .logo-wrap{
@@ -253,7 +242,6 @@
       color:#140d00;
       font-size:56px;
       font-weight:1000;
-      text-shadow:0 1px 0 rgba(255,255,255,.2);
       box-shadow:
         0 0 18px rgba(255,215,106,.35),
         0 0 46px rgba(255,215,106,.18),
@@ -325,7 +313,6 @@
         0 0 56px rgba(255,170,40,.45);
       animation:priceBlink 1.8s ease-in-out infinite;
     }
-
     .price small{
       display:block;
       margin-top:8px;
@@ -334,7 +321,6 @@
       color:#fff1bf;
       text-shadow:0 0 14px rgba(255,215,106,.4);
     }
-
     @keyframes priceBlink{
       0%,100%{opacity:1;transform:scale(1)}
       50%{opacity:.78;transform:scale(1.02)}
@@ -348,15 +334,15 @@
       margin:4px 0 14px;
       text-shadow:0 0 10px rgba(255,215,106,.15);
     }
-        .gallery{
+
+    .gallery{
       display:grid;
       grid-template-columns:1fr;
       gap:14px;
       margin:0 auto 14px;
       max-width:920px;
     }
-
-    .shot{
+        .shot{
       position:relative;
       border-radius:22px;
       overflow:hidden;
@@ -364,14 +350,12 @@
       background:#121212;
       box-shadow:0 14px 32px rgba(0,0,0,.42);
     }
-
     .shot img{
       width:100%;
       aspect-ratio:16/11;
       object-fit:cover;
       transition:transform .55s ease;
     }
-
     .shot:hover img,
     .shot:active img{
       transform:scale(1.04);
@@ -399,9 +383,6 @@
 
     .reveal-btn{
       width:100%;
-      border:1px solid rgba(255,215,106,.24);
-      background:linear-gradient(180deg, rgba(255,215,106,.12), rgba(255,215,106,.04));
-      color:#fff5d0;
       border-radius:18px;
       padding:16px 16px;
       font-size:16px;
@@ -409,18 +390,16 @@
       letter-spacing:1.2px;
       text-transform:uppercase;
       cursor:pointer;
-      box-shadow:0 10px 24px rgba(0,0,0,.32);
-      transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
       margin:12px 0 10px;
       position:relative;
       overflow:hidden;
+      color:#fff;
+      transition:transform .25s ease;
     }
-
     .reveal-btn:hover,
     .reveal-btn:active{
       transform:translateY(-1px);
     }
-
     .reveal-btn::after{
       content:"";
       position:absolute;
@@ -429,25 +408,37 @@
       transform:translateX(-100%);
       animation:sweep 3.2s linear infinite;
     }
-
-    @keyframes sweep{
-      to{transform:translateX(100%)}
-    }
+    @keyframes sweep{to{transform:translateX(100%)}}
 
     .btn-gold{
+      border:1px solid rgba(255,215,106,.24);
+      background:linear-gradient(180deg, rgba(255,215,106,.12), rgba(255,215,106,.04));
       box-shadow:0 0 20px rgba(255,215,106,.18), 0 10px 24px rgba(0,0,0,.32);
+      color:#fff5d0;
     }
 
     .btn-red{
-      border-color:rgba(255,80,80,.25);
-      background:linear-gradient(180deg, rgba(255,80,80,.12), rgba(255,80,80,.04));
+      border:1px solid rgba(255,80,80,.25);
+      background:linear-gradient(180deg, rgba(255,80,80,.14), rgba(255,80,80,.05));
       box-shadow:0 0 18px rgba(255,80,80,.12), 0 10px 24px rgba(0,0,0,.32);
     }
 
     .btn-blue{
-      border-color:rgba(77,163,255,.26);
+      border:1px solid rgba(77,163,255,.26);
       background:linear-gradient(180deg, rgba(77,163,255,.14), rgba(77,163,255,.05));
       box-shadow:0 0 18px rgba(77,163,255,.12), 0 10px 24px rgba(0,0,0,.32);
+    }
+
+    .btn-green{
+      border:1px solid rgba(0,184,107,.26);
+      background:linear-gradient(180deg, rgba(0,184,107,.14), rgba(0,184,107,.05));
+      box-shadow:0 0 18px rgba(0,184,107,.15), 0 10px 24px rgba(0,0,0,.32);
+    }
+
+    .btn-purple{
+      border:1px solid rgba(155,89,255,.30);
+      background:linear-gradient(180deg, rgba(155,89,255,.16), rgba(155,89,255,.05));
+      box-shadow:0 0 18px rgba(155,89,255,.15), 0 10px 24px rgba(0,0,0,.32);
     }
 
     .panel{
@@ -460,7 +451,6 @@
       box-shadow:inset 0 0 30px rgba(255,215,106,.03), 0 14px 32px rgba(0,0,0,.3);
       animation:fadeUp .35s ease;
     }
-
     .panel.show{display:block}
 
     @keyframes fadeUp{
@@ -472,7 +462,6 @@
       margin:0;
       padding-left:18px;
     }
-
     .panel li{
       margin:10px 0;
       color:#f4ead1;
@@ -507,8 +496,8 @@
       bottom:12px;
       z-index:110;
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:10px;
+      grid-template-columns:repeat(4,1fr);
+      gap:8px;
     }
 
     .cta{
@@ -518,32 +507,37 @@
       align-items:center;
       justify-content:center;
       font-weight:1000;
-      font-size:14px;
-      letter-spacing:.8px;
+      font-size:13px;
+      letter-spacing:.5px;
       text-transform:uppercase;
       color:#fff;
       border:1px solid rgba(255,255,255,.12);
       box-shadow:0 10px 24px rgba(0,0,0,.34);
       animation:ctaPulse 1.6s ease-in-out infinite;
       backdrop-filter:blur(6px);
+      text-align:center;
+      padding:0 6px;
     }
 
     .cta-call{
       background:linear-gradient(180deg, rgba(255,60,48,.95), rgba(145,18,12,.95));
       box-shadow:0 0 18px rgba(255,59,48,.45), 0 0 34px rgba(255,59,48,.22);
     }
-
     .cta-zalo{
       background:linear-gradient(180deg, rgba(0,113,255,.96), rgba(0,67,160,.96));
       box-shadow:0 0 18px rgba(77,163,255,.45), 0 0 34px rgba(77,163,255,.22);
       animation-delay:.2s;
     }
-
     .cta-fb{
       background:linear-gradient(180deg, rgba(255,196,58,.95), rgba(158,112,0,.95));
       color:#1f1500;
       box-shadow:0 0 18px rgba(255,215,106,.55), 0 0 34px rgba(255,215,106,.24);
       animation-delay:.4s;
+    }
+    .cta-mail{
+      background:linear-gradient(180deg, rgba(0,184,107,.96), rgba(0,103,58,.96));
+      box-shadow:0 0 18px rgba(0,184,107,.45), 0 0 34px rgba(0,184,107,.22);
+      animation-delay:.6s;
     }
 
     @keyframes ctaPulse{
@@ -558,9 +552,9 @@
         left:50%;
         right:auto;
         transform:translateX(-50%);
-        width:min(780px, calc(100% - 24px));
+        width:min(980px, calc(100% - 24px));
       }
-      .cta{font-size:15px}
+      .cta{font-size:14px}
     }
   </style>
 </head>
@@ -581,21 +575,12 @@
         <li>Tôi chịu trách nhiệm với thông tin mình cung cấp.</li>
       </ul>
 
-      <div class="field">
-        <input type="text" id="ndaName" placeholder="Họ và tên" />
-      </div>
-      <div class="field">
-        <input type="tel" id="ndaPhone" placeholder="Số điện thoại" />
-      </div>
-      <div class="field">
-        <input type="email" id="ndaEmail" placeholder="Email" />
-      </div>
+      <div class="field"><input type="text" id="ndaName" placeholder="Họ và tên" /></div>
+      <div class="field"><input type="tel" id="ndaPhone" placeholder="Số điện thoại" /></div>
+      <div class="field"><input type="email" id="ndaEmail" placeholder="Email" /></div>
 
       <button class="nda-btn" onclick="unlockSite()">TÔI ĐỒNG Ý &amp; TIẾP TỤC</button>
-
-      <div class="nda-note">
-        Sau khi xác minh, nội dung tài sản sẽ được hiển thị đầy đủ hơn.
-      </div>
+      <div class="nda-note">Sau khi xác minh, nội dung tài sản sẽ được hiển thị đầy đủ hơn.</div>
     </div>
   </div>
 
@@ -608,7 +593,6 @@
 
   <main class="page" id="mainContent" style="display:none;">
     <section class="hero">
-
       <div class="logo-wrap">
         <div class="ring"></div>
         <div class="ring2"></div>
@@ -640,7 +624,6 @@
           <div class="tag">Hiện trạng</div>
           <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/IMG_6540.jpeg" alt="Hiện trạng tài sản 42 tỷ Quận 1">
         </div>
-
         <div class="shot">
           <div class="tag">Định hướng tương lai</div>
           <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/IMG_6541.jpeg" alt="Định hướng tương lai tài sản 42 tỷ Quận 1">
@@ -648,9 +631,7 @@
       </div>
 
       <section class="section">
-        <button class="reveal-btn btn-gold" onclick="togglePanel('panelSpecs')">
-          THÔNG SỐ TÀI SẢN
-        </button>
+        <button class="reveal-btn btn-gold" onclick="togglePanel('panelSpecs')">THÔNG SỐ TÀI SẢN</button>
         <div class="panel" id="panelSpecs">
           <ul>
             <li><strong>Diện tích:</strong> 205.6m²</li>
@@ -661,10 +642,8 @@
           </ul>
         </div>
 
-        <button class="reveal-btn btn-red" onclick="togglePanel('panelValue')">
-          GIÁ TRỊ CỐT LÕI
-        </button>
-                <div class="panel" id="panelValue">
+        <button class="reveal-btn btn-red" onclick="togglePanel('panelValue')">GIÁ TRỊ CỐT LÕI</button>
+        <div class="panel" id="panelValue">
           <ul>
             <li>Quỹ đất trung tâm, nguồn cung hạn chế, phù hợp khách giữ tài sản lõi lâu dài.</li>
             <li>Hai mặt tiền giúp tăng khả năng nhận diện, linh hoạt khai thác và nâng giá trị tài sản.</li>
@@ -673,15 +652,45 @@
           </ul>
         </div>
 
-        <button class="reveal-btn btn-blue" onclick="togglePanel('panelFuture')">
-          ĐỊNH HƯỚNG TƯƠNG LAI
-        </button>
+        <button class="reveal-btn btn-blue" onclick="togglePanel('panelFuture')">ĐỊNH HƯỚNG TƯƠNG LAI</button>
         <div class="panel" id="panelFuture">
           <ul>
             <li>Biệt thự cao cấp trung tâm</li>
             <li>Nhà hàng sang trọng</li>
             <li>Khách sạn boutique</li>
             <li>Trụ sở tập đoàn</li>
+          </ul>
+        </div>
+                <button class="reveal-btn btn-green" onclick="togglePanel('panelPriceRange')">PHÂN KHÚC GIÁ</button>
+        <div class="panel" id="panelPriceRange">
+          <ul>
+            <li>Dưới 30 tỷ</li>
+            <li>30 tỷ – 50 tỷ</li>
+            <li>50 tỷ – 100 tỷ</li>
+            <li>100 tỷ – 300 tỷ</li>
+            <li>300 tỷ – 500 tỷ</li>
+            <li>500 tỷ – 1500 tỷ</li>
+          </ul>
+        </div>
+
+        <button class="reveal-btn btn-purple" onclick="togglePanel('panelDemand')">NHU CẦU</button>
+        <div class="panel" id="panelDemand">
+          <ul>
+            <li>Khách mua giữ tài sản lõi trung tâm.</li>
+            <li>Khách cần nâng cấp thành biệt thự cao cấp.</li>
+            <li>Khách tìm vị trí đẹp để làm nhà hàng sang trọng.</li>
+            <li>Khách khai thác khách sạn boutique hoặc lưu trú cao cấp.</li>
+            <li>Doanh nghiệp cần trụ sở đại diện hoặc văn phòng vị thế.</li>
+          </ul>
+        </div>
+
+        <button class="reveal-btn btn-gold" onclick="togglePanel('panelNDA')">NDA / BẢO MẬT</button>
+        <div class="panel" id="panelNDA">
+          <ul>
+            <li>Thông tin chỉ dành cho khách có nhu cầu thực.</li>
+            <li>Không chia sẻ hồ sơ cho bên thứ 3 khi chưa được phép.</li>
+            <li>Không sử dụng thông tin sai mục đích.</li>
+            <li>Ưu tiên khách có xác minh thông tin và nhu cầu rõ ràng.</li>
           </ul>
         </div>
       </section>
@@ -693,7 +702,6 @@
       <div class="footer-quote">
         Một tài sản đẹp không chỉ giữ tiền, mà còn giữ vị thế của người sở hữu nó.
       </div>
-
     </section>
   </main>
 
@@ -701,15 +709,14 @@
     <a class="cta cta-call" href="tel:0858999934">GỌI NGAY</a>
     <a class="cta cta-zalo" href="https://zalo.me/0858999934" target="_blank" rel="noopener">ZALO</a>
     <a class="cta cta-fb" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank" rel="noopener">FACEBOOK</a>
+    <a class="cta cta-mail" href="mailto:sonbach723@gmail.com?subject=Quan%20tam%20tai%20san%2042%20ty%20Q1">GỬI MAIL</a>
   </div>
 
   <script>
     function togglePanel(id){
       const panel = document.getElementById(id);
       const isOpen = panel.classList.contains('show');
-
       document.querySelectorAll('.panel').forEach(p => p.classList.remove('show'));
-
       if(!isOpen){
         panel.classList.add('show');
       }
@@ -748,6 +755,5 @@
       }catch(e){}
     })();
   </script>
-
 </body>
 </html>
