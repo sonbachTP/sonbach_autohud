@@ -19,7 +19,6 @@
       --blue:#147df5;
       --green:#00b86b;
       --purple:#9b59ff;
-      --shadow:0 0 18px rgba(255,215,106,.22), 0 0 40px rgba(255,215,106,.12);
     }
 
     *{box-sizing:border-box}
@@ -158,6 +157,20 @@
       box-shadow:inset 0 0 16px rgba(255,215,106,.03);
     }
     .field input::placeholder{color:#bba46a}
+
+    .nda-check{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      margin:14px 0 6px;
+      color:#f1e7cf;
+      font-size:14px;
+      line-height:1.6;
+    }
+    .nda-check input{
+      margin-top:3px;
+      transform:scale(1.15);
+    }
 
     .nda-btn{
       width:100%;
@@ -596,13 +609,35 @@
         <li>Tôi chịu trách nhiệm với thông tin mình cung cấp.</li>
       </ul>
 
-      <div class="field"><input type="text" id="ndaName" placeholder="Họ và tên" /></div>
-      <div class="field"><input type="tel" id="ndaPhone" placeholder="Số điện thoại" /></div>
-      <div class="field"><input type="email" id="ndaEmail" placeholder="Email" /></div>
+      <form id="ndaForm" action="https://formspree.io/f/mpqykgzk" method="POST">
+        <div class="field">
+          <input type="text" id="ndaName" name="Họ tên" placeholder="Họ và tên" required />
+        </div>
 
-      <button type="button" class="nda-btn" onclick="unlockSite(); return false;">TÔI ĐỒNG Ý &amp; TIẾP TỤC</button>
+        <div class="field">
+          <input type="tel" id="ndaPhone" name="Số điện thoại" placeholder="Số điện thoại" required />
+        </div>
 
-      <div class="nda-note">
+        <div class="field">
+          <input type="email" id="ndaEmail" name="Email" placeholder="Email" required />
+        </div>
+
+        <input type="hidden" name="_subject" value="Lead NDA mới - Tài sản 42 tỷ Q1" />
+        <input type="hidden" name="Tài sản" value="Biệt thự phong cách Pháp - 42 tỷ - Quận 1" />
+        <input type="hidden" name="Nguồn" value="Landing page NDA VIP" />
+        <input type="hidden" name="Liên hệ nhận lead" value="sonbach723@gmail.com" />
+
+        <label class="nda-check">
+          <input type="checkbox" id="ndaCheck" required />
+          <span>
+            Tôi xác nhận thông tin cung cấp là đúng và đồng ý gửi yêu cầu truy cập tài sản đến bộ phận phụ trách của Sơn Bạch.
+          </span>
+        </label>
+
+        <button type="submit" class="nda-btn">TÔI ĐỒNG Ý &amp; TIẾP TỤC</button>
+      </form>
+
+      <div class="nda-note" id="ndaNote">
         Sau khi xác minh, nội dung tài sản sẽ được hiển thị đầy đủ hơn.
       </div>
     </div>
@@ -814,13 +849,30 @@
       }
     }
 
-    function unlockSite(){
+    function revealContentAfterNDA(){
+      const nda = document.getElementById('ndaOverlay');
+      const main = document.getElementById('mainContent');
+      const cta = document.getElementById('ctaRow');
+
+      if(nda){ nda.style.display = 'none'; }
+      if(main){ main.style.display = 'block'; }
+      if(cta){ cta.style.display = 'grid'; }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    async function submitNDAForm(event){
+      event.preventDefault();
+
       const nameInput = document.getElementById('ndaName');
       const phoneInput = document.getElementById('ndaPhone');
       const emailInput = document.getElementById('ndaEmail');
+      const ndaCheck = document.getElementById('ndaCheck');
+      const ndaNote = document.getElementById('ndaNote');
+      const form = document.getElementById('ndaForm');
 
-      if(!nameInput || !phoneInput || !emailInput){
-        alert('Thiếu ô nhập thông tin NDA.');
+      if(!nameInput || !phoneInput || !emailInput || !ndaCheck || !form){
+        alert('Thiếu trường dữ liệu NDA.');
         return;
       }
 
@@ -829,7 +881,12 @@
       const email = emailInput.value.trim();
 
       if(!name || !phone || !email){
-        alert('Vui lòng nhập đầy đủ Họ tên, SĐT và Email để tiếp tục.');
+        alert('Vui lòng nhập đầy đủ Họ tên, SĐT và Email.');
+        return;
+      }
+
+      if(!ndaCheck.checked){
+        alert('Vui lòng tích xác nhận trước khi tiếp tục.');
         return;
       }
 
@@ -840,15 +897,28 @@
         localStorage.setItem('sb_42ty_nda_passed', 'yes');
       }catch(e){}
 
-      const nda = document.getElementById('ndaOverlay');
-      const main = document.getElementById('mainContent');
-      const cta = document.getElementById('ctaRow');
+      const formData = new FormData(form);
 
-      if(nda){ nda.style.display = 'none'; }
-      if(main){ main.style.display = 'block'; }
-      if(cta){ cta.style.display = 'grid'; }
+      try{
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
 
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+        if(response.ok){
+          if(ndaNote){
+            ndaNote.innerHTML = 'Đã gửi xác minh thành công. Đang mở hồ sơ tài sản...';
+          }
+          revealContentAfterNDA();
+        }else{
+          alert('Gửi thông tin chưa thành công. Vui lòng thử lại.');
+        }
+      }catch(error){
+        alert('Không thể gửi NDA lúc này. Vui lòng kiểm tra mạng và thử lại.');
+      }
     }
 
     function sendMailLead(){
@@ -873,21 +943,16 @@
       window.location.href = 'mailto:sonbach723@gmail.com?subject=' + subject + '&body=' + body;
     }
 
-    (function restoreAccess(){
+    (function initNDA(){
+      const form = document.getElementById('ndaForm');
+      if(form){
+        form.addEventListener('submit', submitNDAForm);
+      }
+
       try{
         const passed = localStorage.getItem('sb_42ty_nda_passed');
-        const nda = document.getElementById('ndaOverlay');
-        const main = document.getElementById('mainContent');
-        const cta = document.getElementById('ctaRow');
-
         if(passed === 'yes'){
-          if(nda){ nda.style.display = 'none'; }
-          if(main){ main.style.display = 'block'; }
-          if(cta){ cta.style.display = 'grid'; }
-        }else{
-          if(nda){ nda.style.display = 'flex'; }
-          if(main){ main.style.display = 'none'; }
-          if(cta){ cta.style.display = 'none'; }
+          revealContentAfterNDA();
         }
       }catch(e){}
     })();
