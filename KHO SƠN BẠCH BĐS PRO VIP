@@ -2,13 +2,20 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>SƠN BẠCH BĐS VIP PRO</title>
   <meta name="description" content="Sơn Bạch BĐS VIP PRO - Kho bất động sản chọn lọc, hàng kín, NDA, hồ sơ chọn lọc, khách thật ưu tiên." />
-  <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/1JL1MVP2F_3ASM3R.jpeg">
-  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/1JL1MVP2F_3ASM3R.jpeg">
+
+  <!-- BRAND / ICON -->
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png">
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png">
   <meta name="theme-color" content="#0b0b0b">
-  <meta property="og:image" content="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/1JL1MVP2F_3ASM3R.jpeg">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Sơn Bạch VIP Pro">
+  <meta property="og:title" content="SƠN BẠCH BĐS VIP PRO">
+  <meta property="og:description" content="Kho tài sản chọn lọc - hàng kín - NDA - khách thật ưu tiên.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png">
 
   <style>
     :root{
@@ -49,13 +56,14 @@
     }
 
     a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
 
     .topbar{
       position:sticky;
       top:0;
       z-index:90;
       backdrop-filter:blur(14px);
-      background:rgba(6,6,6,.84);
+      background:rgba(6,6,6,.86);
       border-bottom:1px solid rgba(255,215,106,.12);
       box-shadow:0 8px 24px rgba(0,0,0,.35);
     }
@@ -63,7 +71,7 @@
     .topbar-inner{
       width:min(1220px,92%);
       margin:auto;
-      min-height:68px;
+      min-height:70px;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -82,8 +90,8 @@
     }
 
     .brand img{
-      width:46px;
-      height:46px;
+      width:48px;
+      height:48px;
       object-fit:cover;
       border-radius:14px;
       border:1px solid rgba(255,215,106,.22);
@@ -148,11 +156,11 @@
       position:relative;
       overflow:hidden;
       border-radius:34px;
-      padding:44px 20px 36px;
+      padding:48px 20px 38px;
       text-align:center;
       border:1px solid rgba(255,215,106,.15);
       background:
-        linear-gradient(rgba(6,6,6,.55), rgba(8,8,8,.82)),
+        linear-gradient(rgba(6,6,6,.58), rgba(8,8,8,.84)),
         url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       box-shadow:0 0 26px rgba(255,215,106,.10), 0 0 60px rgba(201,152,28,.07);
       isolation:isolate;
@@ -189,9 +197,9 @@
       width:min(62vw,520px);
       aspect-ratio:1/1;
       pointer-events:none;
-      opacity:.13;
+      opacity:.12;
       z-index:0;
-      animation:spinSlow 38s linear infinite;
+      animation:spinSlow 42s linear infinite;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -461,7 +469,6 @@
     }
 
     .field::placeholder{color:#9f926e}
-
     .field:focus{
       border-color:rgba(255,215,106,.32);
       box-shadow:0 0 0 2px rgba(255,215,106,.08);
@@ -482,7 +489,143 @@
       accent-color:#ffd76a;
       transform:scale(1.1);
     }
+  </style>
+</head>
+<body>
 
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png" alt="Sơn Bạch VIP Pro">
+        <div class="brand-text">
+          <strong>SƠN BẠCH BĐS VIP PRO</strong>
+          <small>KHO TÀI SẢN CHỌN LỌC</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="runner">
+    <div class="runner-track">
+      SƠN BẠCH BĐS VIP PRO • HÀNG KÍN • NDA • HỒ SƠ CHỌN LỌC • KHÁCH THẬT ƯU TIÊN • TÀI SẢN GIÁ TRỊ • CORE ASSET • QUỸ ĐẤT HIẾM •
+    </div>
+  </div>
+
+  <main class="wrap">
+
+    <section class="hero">
+      <div class="hero-bg-sb">
+        <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png">
+      </div>
+
+      <div class="hero-inner">
+        <div class="hero-sub">Sơn Bạch BĐS VIP PRO</div>
+        <h1>KHO BĐS <span class="gold">SƠN BẠCH</span></h1>
+
+        <div class="hero-desc">
+          Kho tài sản lõi – hàng kín – NDA – chỉ tiếp khách thật.
+        </div>
+
+        <div class="hero-badges">
+          <span>HÀNG KÍN</span>
+          <span>NDA</span>
+          <span>CORE ASSET</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= AUTO ADD ================= -->
+    <section class="toggle-block open">
+
+      <button class="toggle-btn">
+        <span>KHO TÀI SẢN</span>
+        <span>＋</span>
+      </button>
+
+      <div class="toggle-content" style="display:block">
+
+        <div class="auto-add-note">
+          👉 COPY 1 CARD BÊN DƯỚI → DÁN → SỬA GIÁ + LINK LÀ XONG
+        </div>
+
+        <div class="cards">
+
+          <!-- ===== CARD MẪU 1 ===== -->
+          <article class="card">
+            <div class="card-top">
+              <div class="tag tag-mid">QUỸ ĐẤT</div>
+              <div class="price price-mid">135 TỶ</div>
+              <div class="card-title">ĐẤT BÌNH TÂN 3.419M²</div>
+              <div class="card-sub">Quỹ đất lớn – dễ khai thác</div>
+            </div>
+
+            <div class="card-body">
+              <div class="meta">
+                <div class="meta-item"><b>Khu:</b> Bình Tân</div>
+                <div class="meta-item"><b>DT:</b> 3.419m²</div>
+                <div class="meta-item"><b>Loại:</b> Quỹ đất</div>
+              </div>
+
+              <div class="btns">
+                <a class="btn btn-main" href="https://sonbachtp.github.io/sonbach_autohud/dat-binh-tan-3419m2-135-ty.html" target="_blank">
+                  XEM CHI TIẾT
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ===== CARD MẪU 2 ===== -->
+          <article class="card">
+            <div class="card-top">
+              <div class="tag tag-under">NHÀ PHỐ</div>
+              <div class="price price-under">42 TỶ</div>
+              <div class="card-title">NHÀ QUẬN 1</div>
+              <div class="card-sub">Giữ tiền – thanh khoản tốt</div>
+            </div>
+
+            <div class="card-body">
+              <div class="meta">
+                <div class="meta-item"><b>Khu:</b> Quận 1</div>
+                <div class="meta-item"><b>Loại:</b> Nhà phố</div>
+                <div class="meta-item"><b>Mục tiêu:</b> Giữ tiền</div>
+              </div>
+
+              <div class="btns">
+                <a class="btn btn-main" href="#" target="_blank">
+                  XEM CHI TIẾT
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ===== CARD MẪU 3 ===== -->
+          <article class="card">
+            <div class="card-top">
+              <div class="tag tag-over">CORE ASSET</div>
+              <div class="price price-over">1.250 TỶ</div>
+              <div class="card-title">LÕI TRUNG TÂM Q1</div>
+              <div class="card-sub">Tài sản siêu hiếm</div>
+            </div>
+
+            <div class="card-body">
+              <div class="meta">
+                <div class="meta-item"><b>Khu:</b> Quận 1</div>
+                <div class="meta-item"><b>Loại:</b> Core Asset</div>
+                <div class="meta-item"><b>Giá trị:</b> Giữ tài sản</div>
+              </div>
+
+              <div class="btns">
+                <a class="btn btn-main" href="https://sonbachTP.github.io/son-bach-signature/" target="_blank">
+                  XEM CHI TIẾT
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
     .btn-row{
       display:flex;
       gap:10px;
@@ -543,6 +686,7 @@
       display:block;
       animation:fadeDown .25s ease;
     }
+
     .filter-tabs{
       display:flex;
       gap:10px;
@@ -564,9 +708,7 @@
       transition:.22s ease;
     }
 
-    .filter-tab:hover{
-      transform:translateY(-1px);
-    }
+    .filter-tab:hover{transform:translateY(-1px)}
 
     .filter-tab.active-under{
       color:var(--c-under50);
@@ -597,9 +739,7 @@
       animation:fadeDown .25s ease;
     }
 
-    .asset-panel.show{
-      display:block;
-    }
+    .asset-panel.show{display:block}
 
     .group-title{
       display:flex;
@@ -881,6 +1021,18 @@
       margin-top:18px;
     }
 
+    /* AUTO ADD TEMPLATE NOTE */
+    .auto-add-note{
+      margin-top:18px;
+      padding:14px 16px;
+      border-radius:18px;
+      border:1px dashed rgba(255,215,106,.18);
+      background:rgba(255,215,106,.03);
+      color:#e7d9ab;
+      font-size:13px;
+      line-height:1.8;
+    }
+
     @media (max-width:1024px){
       .cards{grid-template-columns:1fr}
       .info-grid{grid-template-columns:1fr}
@@ -908,7 +1060,7 @@
   <div class="topbar">
     <div class="topbar-inner">
       <div class="brand">
-        <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/1JL1MVP2F_3ASM3R.jpeg" alt="Sơn Bạch VIP Pro">
+        <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png" alt="Sơn Bạch VIP Pro">
         <div class="brand-text">
           <strong>SƠN BẠCH BĐS VIP PRO</strong>
           <small>KHO TÀI SẢN CHỌN LỌC</small>
@@ -927,7 +1079,7 @@
 
     <section class="hero">
       <div class="hero-bg-sb">
-        <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/1JL1MVP2F_3ASM3R.jpeg" alt="SB Logo">
+        <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png" alt="SB Logo">
       </div>
 
       <div class="hero-inner">
@@ -975,6 +1127,12 @@
           <button class="filter-tab active-under" type="button" onclick="showAssetPanel('panel-under', this, 'under')">DƯỚI 50 TỶ</button>
           <button class="filter-tab" type="button" onclick="showAssetPanel('panel-mid', this, 'mid')">50 – 200 TỶ</button>
           <button class="filter-tab" type="button" onclick="showAssetPanel('panel-over', this, 'over')">TRÊN 200 TỶ</button>
+        </div>
+
+        <div class="auto-add-note">
+          <strong>AUTO ADD:</strong> Sau này thêm căn mới, chỉ cần copy 1 khối
+          <code>&lt;article class="card"&gt;...&lt;/article&gt;</code>
+          vào đúng nhóm giá là xong.
         </div>
 
         <div class="asset-panel show" id="panel-under">
@@ -1052,6 +1210,7 @@
             </article>
           </div>
         </div>
+
         <div class="asset-panel" id="panel-over">
           <div class="group-title">
             <h3>Nhóm trên 200 tỷ</h3>
