@@ -3,1282 +3,831 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SƠN BẠCH BĐS VIP PRO</title>
-  <meta name="description" content="Sơn Bạch BĐS VIP PRO - Kho bất động sản chọn lọc, hàng kín, NDA, hồ sơ chọn lọc, khách thật ưu tiên." />
+  <title>Sơn Bạch VIP PRO | Kho BĐS Chọn Lọc</title>
+  <meta name="description" content="Sơn Bạch VIP PRO - Kho bất động sản chọn lọc, tài sản lõi, giao dịch kín, NDA, chỉ tiếp khách thực." />
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/favicon.png" />
   <style>
     :root{
-      --bg:#040404;
-      --bg-soft:#0b0b0b;
+      --bg:#060606;
+      --bg2:#0d0d0d;
       --card:#111111;
-      --card2:#171717;
-      --gold:#ffd76a;
-      --gold2:#c9981c;
-      --gold3:#fff1bc;
-      --text:#f7efd9;
-      --muted:#ccb982;
-      --line:rgba(255,215,106,.16);
-      --line-strong:rgba(255,215,106,.28);
-      --shadow:0 0 24px rgba(255,215,106,.10), 0 0 60px rgba(201,152,28,.07);
-
-      --c-under50:#7fe0ff;
-      --c-under50-bg:rgba(127,224,255,.08);
-
-      --c-mid:#ffcf5a;
-      --c-mid-bg:rgba(255,207,90,.10);
-
-      --c-over:#ff8f8f;
-      --c-over-bg:rgba(255,143,143,.08);
+      --gold:#ffd56a;
+      --gold2:#c9961a;
+      --gold3:#ffecb0;
+      --line:rgba(255,213,106,.22);
+      --text:#f7f3e8;
+      --muted:#d5c08a;
+      --soft:#999;
+      --red:#e11d2e;
+      --shadow:0 0 18px rgba(255,213,106,.18);
+      --shadow-strong:0 0 28px rgba(255,213,106,.35);
+      --radius:22px;
     }
 
-    *{box-sizing:border-box}
+    *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-      color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
       background:
-        radial-gradient(circle at top center, rgba(255,215,106,.10), transparent 20%),
-        radial-gradient(circle at 20% 15%, rgba(255,215,106,.04), transparent 28%),
-        linear-gradient(180deg, #020202 0%, #090909 42%, #030303 100%);
+        radial-gradient(circle at top right, rgba(255,213,106,.08), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(255,213,106,.06), transparent 20%),
+        linear-gradient(180deg,#050505 0%,#0b0b0b 100%);
+      color:var(--text);
       overflow-x:hidden;
     }
 
     a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(1180px,92%);margin:auto}
 
-    .topbar{
+    /* HEADER */
+    .header{
       position:sticky;
       top:0;
-      z-index:90;
-      backdrop-filter:blur(14px);
-      background:rgba(6,6,6,.84);
-      border-bottom:1px solid rgba(255,215,106,.12);
-      box-shadow:0 8px 24px rgba(0,0,0,.35);
+      z-index:999;
+      backdrop-filter:blur(12px);
+      background:rgba(7,7,7,.78);
+      border-bottom:1px solid var(--line);
     }
-
-    .topbar-inner{
-      width:min(1220px,92%);
-      margin:auto;
-      min-height:62px;
+    .header-wrap{
       display:flex;
       align-items:center;
-      justify-content:center;
-      gap:12px;
-      padding:10px 0;
+      justify-content:space-between;
+      gap:18px;
+      min-height:84px;
     }
-
     .brand{
       display:flex;
       align-items:center;
-      gap:10px;
+      gap:14px;
+      min-width:0;
+    }
+    .brand-logo{
+      width:56px;
+      height:56px;
+      border-radius:50%;
+      border:1px solid rgba(255,213,106,.35);
+      box-shadow:0 0 18px rgba(255,213,106,.18);
+      object-fit:cover;
+      background:#111;
+    }
+    .brand-text{
+      line-height:1.05;
+    }
+    .brand-text strong{
+      display:block;
+      font-size:22px;
       color:var(--gold);
-      font-weight:900;
-      letter-spacing:1px;
-      text-shadow:0 0 10px rgba(255,215,106,.18);
-      text-transform:uppercase;
+      letter-spacing:.5px;
+      text-shadow:0 0 10px rgba(255,213,106,.25);
     }
-
-    .brand-dot{
-      width:10px;height:10px;border-radius:50%;
-      background:var(--gold);
-      box-shadow:0 0 14px rgba(255,215,106,.5);
-      animation:pulse 2.2s ease-in-out infinite;
-    }
-
-    @keyframes pulse{
-      0%,100%{transform:scale(1);opacity:1}
-      50%{transform:scale(1.18);opacity:.82}
-    }
-
-    .runner{
-      overflow:hidden;
-      white-space:nowrap;
-      border-top:1px solid rgba(255,215,106,.08);
-      border-bottom:1px solid rgba(255,215,106,.1);
-      background:rgba(255,215,106,.03);
-    }
-
-    .runner-track{
-      display:inline-block;
-      min-width:200%;
-      padding:11px 0;
-      color:var(--gold);
-      font-size:12px;
-      font-weight:900;
+    .brand-text span{
+      font-size:11px;
+      color:#d8c28f;
       letter-spacing:2px;
       text-transform:uppercase;
-      text-shadow:0 0 8px rgba(255,215,106,.18);
-      animation:run 28s linear infinite;
     }
 
-    @keyframes run{
-      from{transform:translateX(0)}
-      to{transform:translateX(-50%)}
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
 
-    .wrap{
-      width:min(1220px,92%);
-      margin:auto;
-      padding:24px 0 120px;
+    .nav-btn{
+      appearance:none;
+      border:none;
+      background:transparent;
+      color:#f7edd2;
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:700;
+      cursor:pointer;
+      border:1px solid transparent;
+      transition:.25s ease;
+      position:relative;
+    }
+    .nav-btn:hover,
+    .nav-btn.active{
+      color:#111;
+      background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));
+      box-shadow:
+        0 0 10px rgba(255,213,106,.35),
+        0 0 22px rgba(255,213,106,.22);
+      border-color:rgba(255,213,106,.45);
     }
 
+    .hotline{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,213,106,.28);
+      color:var(--gold);
+      font-weight:800;
+      box-shadow:var(--shadow);
+      white-space:nowrap;
+    }
+
+    /* HERO */
     .hero{
       position:relative;
+      padding:58px 0 28px;
+      border-bottom:1px solid var(--line);
       overflow:hidden;
-      border-radius:34px;
-      padding:44px 20px 36px;
-      text-align:center;
-      border:1px solid rgba(255,215,106,.15);
-      background:
-        linear-gradient(rgba(6,6,6,.55), rgba(8,8,8,.82)),
-        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      box-shadow:0 0 26px rgba(255,215,106,.10), 0 0 60px rgba(201,152,28,.07);
-      isolation:isolate;
     }
-
     .hero::before{
       content:"";
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at center top, rgba(255,215,106,.12), transparent 38%);
-      pointer-events:none;
+        linear-gradient(90deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,.38) 44%, rgba(0,0,0,.12) 100%),
+        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      opacity:.95;
+      z-index:-2;
     }
-
     .hero::after{
       content:"";
       position:absolute;
-      inset:-1px;
-      border-radius:34px;
-      padding:1px;
-      background:linear-gradient(130deg, rgba(255,215,106,0), rgba(255,215,106,.28), rgba(255,215,106,0));
-      -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite:xor;
-              mask-composite:exclude;
-      pointer-events:none;
-      opacity:.6;
-    }
-
-    .hero-bg-sb{
-      position:absolute;
-      left:50%;
-      top:52%;
-      transform:translate(-50%,-50%);
-      width:min(62vw,520px);
-      aspect-ratio:1/1;
-      border-radius:50%;
-      pointer-events:none;
-      opacity:.16;
-      z-index:0;
-      animation:spinSlow 28s linear infinite;
-    }
-
-    .hero-bg-sb::before,
-    .hero-bg-sb::after{
-      content:"";
-      position:absolute;
       inset:0;
-      border-radius:50%;
-      border:1px solid rgba(255,215,106,.18);
-      box-shadow:0 0 20px rgba(255,215,106,.08), inset 0 0 20px rgba(255,215,106,.04);
+      background:radial-gradient(circle at 20% 30%, rgba(255,213,106,.14), transparent 28%);
+      z-index:-1;
     }
 
-    .hero-bg-sb::after{
-      inset:18px;
-      border-color:rgba(255,215,106,.14);
-    }
-
-    .hero-bg-sb .ring3{
-      position:absolute;
-      inset:36px;
-      border-radius:50%;
-      border:1px solid rgba(255,215,106,.10);
-    }
-
-    .hero-bg-sb .sb-mark{
-      position:absolute;
-      inset:0;
-      display:flex;
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:24px;
       align-items:center;
-      justify-content:center;
-      font-size:clamp(72px,15vw,180px);
-      font-weight:900;
-      letter-spacing:8px;
-      color:rgba(255,215,106,.18);
-      text-shadow:0 0 22px rgba(255,215,106,.10);
+      min-height:600px;
     }
 
-    @keyframes spinSlow{
-      from{transform:translate(-50%,-50%) rotate(0deg)}
-      to{transform:translate(-50%,-50%) rotate(360deg)}
-    }
-
-    .hero-inner{
-      position:relative;
-      z-index:2;
-    }
-
-    .hero-sub{
-      color:var(--muted);
-      text-transform:uppercase;
-      letter-spacing:3px;
-      font-size:12px;
-      font-weight:900;
-      margin-bottom:10px;
+    .tagline{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,213,106,.28);
+      color:var(--gold);
+      background:rgba(0,0,0,.32);
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:18px;
+      box-shadow:var(--shadow);
     }
 
     h1{
-      margin:0;
-      font-size:clamp(32px,5vw,68px);
-      line-height:1.05;
-      color:#fff7dd;
-      text-shadow:0 0 14px rgba(255,215,106,.12);
+      font-size:clamp(34px,6vw,72px);
+      line-height:1.02;
+      letter-spacing:-1px;
+      max-width:760px;
+      margin-bottom:14px;
+      text-shadow:0 0 22px rgba(255,213,106,.12);
     }
 
-    .gold{
-      color:var(--gold);
-      text-shadow:
-        0 0 8px rgba(255,215,106,.55),
-        0 0 24px rgba(255,215,106,.18),
-        0 0 46px rgba(255,215,106,.08);
-      animation:goldGlow 2.6s ease-in-out infinite alternate;
-    }
-
-    @keyframes goldGlow{
-      from{filter:brightness(1)}
-      to{filter:brightness(1.13)}
-    }
-
-    .hero-desc{
-      width:min(840px,100%);
-      margin:16px auto 0;
-      color:#efdfb0;
-      line-height:1.9;
-      font-size:15px;
-    }
-
-    .hero-badges{
-      margin-top:18px;
-      display:flex;
-      justify-content:center;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .hero-badges span{
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid rgba(255,215,106,.16);
-      background:rgba(255,215,106,.08);
-      color:var(--gold);
-      font-size:12px;
-      font-weight:900;
-      letter-spacing:.6px;
-      text-transform:uppercase;
-      box-shadow:0 0 14px rgba(255,215,106,.05);
-      backdrop-filter:blur(4px);
-    }
-
-    .hero-banner{
-      margin-top:18px;
-      padding:16px 18px;
-      border-radius:20px;
-      border:1px solid rgba(255,215,106,.14);
-      background:linear-gradient(180deg, rgba(255,215,106,.08), rgba(255,215,106,.03));
-      color:#eadcb1;
-      box-shadow:0 0 16px rgba(255,215,106,.05);
-      line-height:1.8;
-      font-size:14px;
-      backdrop-filter:blur(4px);
-    }
-
-    .hero-banner strong{color:var(--gold)}
-
-    .toggle-block{
-      margin-top:18px;
-      border:1px solid rgba(255,215,106,.14);
-      border-radius:28px;
-      background:
-        linear-gradient(180deg, rgba(255,215,106,.04), rgba(255,215,106,.015)),
-        rgba(10,10,10,.82);
-      box-shadow:0 0 16px rgba(255,215,106,.05);
-      overflow:hidden;
-    }
-
-    .toggle-btn{
-      width:100%;
-      border:0;
-      background:transparent;
-      color:#fff2c9;
-      text-align:left;
-      padding:18px 20px;
+    .hero-sub{
       font-size:18px;
-      font-weight:900;
-      letter-spacing:.4px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      cursor:pointer;
+      color:#f1e5bf;
+      max-width:720px;
+      margin-bottom:18px;
     }
 
-    .toggle-btn span:last-child{
-      color:var(--gold);
-      font-size:22px;
+    .price-glow{
+      font-size:clamp(38px,7vw,84px);
+      font-weight:900;
       line-height:1;
-      transition:transform .25s ease;
+      margin:8px 0 18px;
+      color:#ffdf88;
+      text-shadow:
+        0 0 10px rgba(255,213,106,.4),
+        0 0 18px rgba(255,213,106,.28),
+        0 0 38px rgba(255,213,106,.16);
+      animation:glowPulse 1.8s infinite alternate;
     }
 
-    .toggle-block.open .toggle-btn span:last-child{
-      transform:rotate(45deg);
+    @keyframes glowPulse{
+      from{opacity:.88; transform:translateY(0)}
+      to{opacity:1; transform:translateY(-1px)}
     }
 
-    .toggle-content{
-      display:none;
-      padding:0 20px 20px;
-      border-top:1px solid rgba(255,215,106,.08);
-    }
-
-    .toggle-block.open .toggle-content{
-      display:block;
-      animation:fadeDown .25s ease;
-    }
-
-    @keyframes fadeDown{
-      from{opacity:0;transform:translateY(-6px)}
-      to{opacity:1;transform:translateY(0)}
-    }
-
-    .chips{
+    .hero-actions{
       display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:16px;
-    }
-
-    .chip{
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid rgba(255,215,106,.16);
-      background:rgba(255,215,106,.05);
-      color:var(--gold);
-      font-size:12px;
-      font-weight:900;
-      letter-spacing:.8px;
-      text-transform:uppercase;
-      box-shadow:0 0 14px rgba(255,215,106,.04);
-    }
-
-    .chip-under{
-      color:var(--c-under50);
-      border-color:rgba(127,224,255,.32);
-      background:var(--c-under50-bg);
-      box-shadow:0 0 14px rgba(127,224,255,.06);
-    }
-
-    .chip-mid{
-      color:var(--c-mid);
-      border-color:rgba(255,207,90,.30);
-      background:var(--c-mid-bg);
-      box-shadow:0 0 14px rgba(255,207,90,.06);
-    }
-
-    .chip-over{
-      color:var(--c-over);
-      border-color:rgba(255,143,143,.28);
-      background:var(--c-over-bg);
-      box-shadow:0 0 14px rgba(255,143,143,.06);
-    }
-
-    .mini-note{
-      margin-top:14px;
-      color:#e9dcb0;
-      line-height:1.8;
-      font-size:14px;
-    }
-
-    .info-grid{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:18px;
-      margin-top:18px;
-    }
-
-    .box{
-      border-radius:24px;
-      border:1px solid rgba(255,215,106,.14);
-      background:rgba(255,255,255,.015);
-      padding:18px;
-      box-shadow:0 0 14px rgba(255,215,106,.04);
-    }
-
-    .box h3{
-      margin:0;
-      font-size:22px;
-      color:#fff1c8;
-    }
-
-    .box p{
-      margin:12px 0 0;
-      color:#eadcb0;
-      line-height:1.85;
-      font-size:14px;
-    }
-
-    .points{
-      display:grid;
-      gap:10px;
-      margin-top:16px;
-    }
-
-    .points div{
-      padding:12px 14px;
-      border-radius:16px;
-      border:1px solid rgba(255,215,106,.1);
-      background:rgba(255,215,106,.04);
-      color:#f0e3bd;
-      line-height:1.7;
-      font-size:14px;
-    }
-
-    .nda-form{
-      margin-top:16px;
-    }
-
-    .form-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr 1fr;
       gap:12px;
-    }
-
-    .field{
-      width:100%;
-      min-height:50px;
-      border-radius:16px;
-      border:1px solid rgba(255,215,106,.14);
-      background:#0f0f0f;
-      color:#f8efd8;
-      padding:14px 14px;
-      outline:none;
-      font-size:14px;
-    }
-
-    .field::placeholder{color:#9f926e}
-
-    .field:focus{
-      border-color:rgba(255,215,106,.32);
-      box-shadow:0 0 0 2px rgba(255,215,106,.08);
-    }
-
-    .agree{
-      display:flex;
-      align-items:flex-start;
-      gap:10px;
-      margin-top:14px;
-      color:#eadcb0;
-      font-size:13px;
-      line-height:1.7;
-    }
-
-    .agree input{
-      margin-top:3px;
-      accent-color:#ffd76a;
-      transform:scale(1.1);
-    }
-
-    .btn-row{
-      display:flex;
-      gap:10px;
       flex-wrap:wrap;
-      margin-top:16px;
+      margin-top:18px;
     }
 
     .btn{
-      min-height:50px;
-      padding:0 16px;
-      border-radius:16px;
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      text-align:center;
-      font-weight:900;
-      letter-spacing:.4px;
-      transition:.24s ease;
-      border:1px solid rgba(255,215,106,.16);
-      cursor:pointer;
+      min-height:52px;
+      padding:0 22px;
+      border-radius:16px;
+      border:1px solid rgba(255,213,106,.28);
+      font-weight:800;
+      font-size:15px;
+      transition:.25s ease;
     }
-
-    .btn-main{
+    .btn-gold{
+      background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));
       color:#111;
-      background:linear-gradient(90deg,#dcb54a,#ffd76a,#b88413);
-      box-shadow:0 0 18px rgba(255,215,106,.18);
+      box-shadow:0 0 22px rgba(255,213,106,.24);
     }
-
-    .btn-main:hover{
+    .btn-gold:hover{
       transform:translateY(-2px);
-      box-shadow:0 0 22px rgba(255,215,106,.25);
+      box-shadow:0 0 30px rgba(255,213,106,.34);
     }
-
-    .btn-sub{
+    .btn-dark{
+      background:rgba(10,10,10,.6);
       color:var(--gold);
-      background:rgba(255,215,106,.05);
+    }
+    .btn-dark:hover{
+      border-color:rgba(255,213,106,.5);
+      box-shadow:var(--shadow);
     }
 
-    .btn-sub:hover{
-      background:rgba(255,215,106,.09);
-      border-color:rgba(255,215,106,.24);
+    .hero-card{
+      background:rgba(10,10,10,.7);
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:22px;
+      box-shadow:0 0 32px rgba(0,0,0,.28);
+      position:relative;
+      overflow:hidden;
     }
-
-    .deep-box{
-      display:none;
-      margin-top:16px;
-      padding:16px;
-      border-radius:20px;
-      border:1px solid rgba(255,215,106,.14);
-      background:linear-gradient(180deg, rgba(255,215,106,.05), rgba(255,215,106,.02));
-      box-shadow:0 0 14px rgba(255,215,106,.04);
-      color:#f0e3bd;
-      line-height:1.8;
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      width:260px;height:260px;
+      border-radius:50%;
+      top:-140px;right:-70px;
+      background:radial-gradient(circle, rgba(255,213,106,.15), transparent 65%);
+      pointer-events:none;
+    }
+    .hero-card h3{
+      font-size:22px;
+      margin-bottom:8px;
+      color:var(--gold);
+    }
+    .hero-card p{
+      color:#dfcfaa;
       font-size:14px;
+      margin-bottom:18px;
+    }
+    .hero-card input{
+      width:100%;
+      background:#171717;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.08);
+      min-height:52px;
+      border-radius:14px;
+      padding:0 14px;
+      margin-bottom:12px;
+      outline:none;
+      font-size:15px;
+    }
+    .hero-note{
+      color:#cdb886;
+      font-size:12px;
+      line-height:1.5;
+      margin-top:10px;
     }
 
-    .deep-box.show{
-      display:block;
-      animation:fadeDown .25s ease;
+    /* CLICK PANELS */
+    .panel-wrap{
+      padding:26px 0 10px;
+      background:linear-gradient(180deg,rgba(255,213,106,.03),transparent);
     }
 
-    .filter-tabs{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:18px;
+    .panel-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
     }
 
-    .filter-tab{
-      min-height:46px;
-      padding:0 16px;
-      border-radius:999px;
-      border:1px solid rgba(255,215,106,.14);
-      background:rgba(255,215,106,.04);
-      color:#fff2c8;
-      font-size:13px;
-      font-weight:900;
-      letter-spacing:.4px;
-      cursor:pointer;
-      transition:.22s ease;
+    .panel-box{
+      border:1px solid var(--line);
+      background:rgba(13,13,13,.9);
+      border-radius:18px;
+      overflow:hidden;
     }
 
-    .filter-tab:hover{
-      transform:translateY(-1px);
-    }
-
-    .filter-tab.active-under{
-      color:var(--c-under50);
-      border-color:rgba(127,224,255,.34);
-      background:rgba(127,224,255,.08);
-    }
-
-    .filter-tab.active-mid{
-      color:var(--c-mid);
-      border-color:rgba(255,207,90,.34);
-      background:rgba(255,207,90,.10);
-    }
-
-    .filter-tab.active-over{
-      color:var(--c-over);
-      border-color:rgba(255,143,143,.30);
-      background:rgba(255,143,143,.08);
-    }
-
-    .asset-panel{
-      display:none;
-      margin-top:18px;
-      border:1px solid rgba(255,215,106,.12);
-      border-radius:28px;
+    .panel-toggle{
+      width:100%;
+      background:transparent;
+      color:#fff;
+      border:none;
+      text-align:left;
       padding:18px;
-      background:rgba(255,255,255,.015);
-      box-shadow:0 0 18px rgba(255,215,106,.04);
-      animation:fadeDown .25s ease;
-    }
-
-    .asset-panel.show{
-      display:block;
-    }
-
-    .group-title{
+      font-size:16px;
+      font-weight:800;
+      cursor:pointer;
       display:flex;
       align-items:center;
+      justify-content:space-between;
       gap:12px;
-      flex-wrap:wrap;
-      margin-bottom:14px;
     }
 
-    .group-title h3{
-      margin:0;
-      font-size:18px;
-      color:#fff0c2;
+    .panel-toggle span{
+      color:var(--gold);
+      text-shadow:0 0 10px rgba(255,213,106,.18);
+    }
+
+    .panel-content{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .35s ease, padding .35s ease;
+      padding:0 18px;
+      color:#d8d0bb;
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    .panel-box.active .panel-content{
+      max-height:260px;
+      padding:0 18px 18px;
+    }
+
+    /* SECTION */
+    section{
+      padding:54px 0;
+      border-top:1px solid rgba(255,213,106,.07);
+    }
+
+    .section-head{
+      text-align:center;
+      margin-bottom:28px;
+    }
+    .section-head .mini{
+      color:var(--gold);
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:2px;
       text-transform:uppercase;
-      letter-spacing:1px;
+      margin-bottom:10px;
+    }
+    .section-head h2{
+      font-size:clamp(28px,4vw,48px);
+      margin-bottom:10px;
+      color:#fff3ce;
+    }
+    .section-head p{
+      color:#cbbd98;
+      max-width:760px;
+      margin:auto;
     }
 
-    .group-title .line{
-      flex:1;
-      min-width:40px;
-      height:1px;
-      background:linear-gradient(90deg, rgba(255,215,106,.4), rgba(255,215,106,0));
-    }
-
-    .cards{
+    /* LISTINGS */
+    .listing-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:18px;
     }
 
-    .card{
-      position:relative;
-      border-radius:26px;
+    .listing-card{
+      background:linear-gradient(180deg,#111,#0c0c0c);
+      border:1px solid var(--line);
+      border-radius:22px;
       overflow:hidden;
-      border:1px solid rgba(255,215,106,.14);
-      background:
-        linear-gradient(180deg, rgba(255,215,106,.06), rgba(255,215,106,.015)),
-        linear-gradient(180deg, #141414 0%, #101010 100%);
-      box-shadow:0 0 22px rgba(255,215,106,.07);
-      transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+      box-shadow:0 0 18px rgba(255,213,106,.06);
+      transition:.25s ease;
+    }
+    .listing-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 0 28px rgba(255,213,106,.12);
+      border-color:rgba(255,213,106,.34);
     }
 
-    .card:hover{
-      transform:translateY(-6px);
-      border-color:rgba(255,215,106,.28);
-      box-shadow:0 0 26px rgba(255,215,106,.14), 0 0 54px rgba(255,215,106,.06);
+    .listing-img{
+      aspect-ratio:16/10;
+      overflow:hidden;
+      background:#0a0a0a;
+    }
+    .listing-img img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
 
-    .card-top{
-      min-height:192px;
-      padding:22px 20px 18px;
-      background:
-        radial-gradient(circle at top right, rgba(255,215,106,.13), transparent 36%),
-        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
-      border-bottom:1px solid rgba(255,215,106,.08);
+    .listing-body{
+      padding:18px;
     }
-
-    .tag{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,215,106,.16);
-      background:rgba(255,215,106,.08);
-      color:var(--gold);
-      font-size:11px;
-      font-weight:900;
-      letter-spacing:1px;
-      text-transform:uppercase;
-      box-shadow:0 0 12px rgba(255,215,106,.05);
-    }
-
-    .tag-under{
-      color:var(--c-under50);
-      border-color:rgba(127,224,255,.32);
-      background:var(--c-under50-bg);
-    }
-
-    .tag-mid{
-      color:var(--c-mid);
-      border-color:rgba(255,207,90,.30);
-      background:var(--c-mid-bg);
-    }
-
-    .tag-over{
-      color:var(--c-over);
-      border-color:rgba(255,143,143,.28);
-      background:var(--c-over-bg);
-    }
-
-    .price{
-      margin-top:16px;
-      font-size:clamp(36px,5vw,50px);
-      line-height:1;
-      font-weight:900;
-      animation:pricePulse 1.8s ease-in-out infinite alternate;
-    }
-
-    .price-under{color:var(--c-under50); text-shadow:0 0 10px rgba(127,224,255,.35),0 0 24px rgba(127,224,255,.14)}
-    .price-mid{color:var(--c-mid); text-shadow:0 0 10px rgba(255,207,90,.35),0 0 24px rgba(255,207,90,.14)}
-    .price-over{color:var(--c-over); text-shadow:0 0 10px rgba(255,143,143,.35),0 0 24px rgba(255,143,143,.14)}
-
-    @keyframes pricePulse{
-      from{transform:scale(1)}
-      to{transform:scale(1.025)}
-    }
-
-    .card-title{
-      margin-top:12px;
-      font-size:24px;
-      font-weight:900;
-      line-height:1.25;
-      color:#fff4cf;
-    }
-
-    .card-sub{
-      margin-top:8px;
-      color:#d9c796;
-      font-size:13px;
-      line-height:1.7;
-    }
-
-    .card-body{
-      padding:18px 20px 22px;
-    }
-
-    .meta{
-      display:grid;
-      gap:10px;
-    }
-
-    .meta-item{
+    .listing-top{
       display:flex;
       align-items:flex-start;
+      justify-content:space-between;
       gap:10px;
-      font-size:14px;
-      line-height:1.75;
-      color:#efe3bc;
+      margin-bottom:10px;
     }
-
-    .meta-item b{
-      min-width:84px;
+    .listing-top h3{
+      font-size:24px;
+      color:#fff;
+    }
+    .listing-price{
+      font-size:34px;
+      font-weight:900;
       color:var(--gold);
+      text-shadow:0 0 14px rgba(255,213,106,.18);
+      white-space:nowrap;
+    }
+    .listing-meta{
+      color:#d2c199;
+      font-size:15px;
+      line-height:1.7;
+      min-height:78px;
     }
 
-    .desc{
-      margin-top:14px;
-      color:#ddd0a7;
-      font-size:14px;
-      line-height:1.85;
-      min-height:102px;
-    }
-
-    .btns{
-      display:grid;
+    .listing-buttons{
+      display:flex;
       gap:10px;
+      margin-top:14px;
+      flex-wrap:wrap;
+    }
+
+    /* HIDDEN INFO */
+    .private-box{
+      background:linear-gradient(180deg,#111,#0d0d0d);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px;
+      max-width:900px;
+      margin:0 auto;
+      box-shadow:0 0 20px rgba(255,213,106,.08);
+    }
+    .private-button{
+      width:100%;
+      min-height:60px;
+      border-radius:16px;
+      border:none;
+      cursor:pointer;
+      font-size:18px;
+      font-weight:900;
+      background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));
+      color:#111;
+      box-shadow:0 0 24px rgba(255,213,106,.24);
+    }
+    .private-content{
+      display:none;
       margin-top:18px;
+      background:#151515;
+      border:1px solid rgba(255,213,106,.14);
+      border-radius:18px;
+      padding:18px;
+      color:#ddd2b6;
+      line-height:1.8;
+    }
+    .private-content.show{
+      display:block;
     }
 
-    .footer{
-      margin-top:28px;
-      padding:22px 18px;
-      text-align:center;
-      border-radius:22px;
-      border:1px solid rgba(255,215,106,.12);
-      background:rgba(255,215,106,.03);
-      color:#e9dbaf;
-      line-height:1.85;
-      box-shadow:0 0 14px rgba(255,215,106,.05);
+    /* FOOTER */
+    footer{
+      padding:36px 0 110px;
+      border-top:1px solid var(--line);
+      background:#070707;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr .8fr;
+      gap:20px;
+    }
+    .footer-title{
+      color:var(--gold);
+      font-size:18px;
+      font-weight:800;
+      margin-bottom:12px;
+    }
+    .footer-text{
+      color:#ccb887;
+      line-height:1.8;
+      font-size:14px;
     }
 
-    .footer strong{color:var(--gold)}
-
-    .sticky{
+    /* FLOAT CTA */
+    .float-cta{
       position:fixed;
-      left:12px;
-      right:12px;
-      bottom:12px;
-      z-index:100;
+      left:50%;
+      transform:translateX(-50%);
+      bottom:14px;
+      z-index:999;
+      width:min(760px,94%);
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:10px;
-    }
-
-    .sticky a{
-      min-height:54px;
-      border-radius:18px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:0 8px;
-      font-size:14px;
-      font-weight:900;
-      border:1px solid rgba(255,215,106,.18);
+      background:rgba(10,10,10,.78);
       backdrop-filter:blur(12px);
-      box-shadow:0 0 16px rgba(255,215,106,.08);
+      border:1px solid rgba(255,213,106,.18);
+      border-radius:22px;
+      padding:10px;
+      box-shadow:0 0 22px rgba(0,0,0,.3);
     }
-
-    .sticky .call{
+    .float-link{
+      min-height:52px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      font-size:18px;
+      border:1px solid rgba(255,213,106,.24);
+    }
+    .float-link.gold{
+      background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));
       color:#111;
-      background:linear-gradient(90deg,#ddb64b,#ffd76a,#b88413);
     }
-
-    .sticky .zalo,.sticky .fb{
+    .float-link.dark{
+      background:#111;
       color:var(--gold);
-      background:rgba(255,215,106,.08);
     }
 
-    .popup-wrap{
-      position:fixed;
-      inset:0;
-      z-index:999;
-      display:none;
-      align-items:center;
-      justify-content:center;
-      padding:18px;
-      background:rgba(0,0,0,.65);
-      backdrop-filter:blur(4px);
-    }
+    /* MOBILE */
+    @media (max-width: 980px){
+      .hero-grid,
+      .footer-grid,
+      .listing-grid,
+      .panel-grid{
+        grid-template-columns:1fr;
+      }
 
-    .popup-wrap.show{
-      display:flex;
-      animation:fadeIn .25s ease;
-    }
+      .nav{
+        display:none;
+      }
 
-    @keyframes fadeIn{
-      from{opacity:0}
-      to{opacity:1}
-    }
+      .brand-text strong{
+        font-size:19px;
+      }
 
-    .popup{
-      width:min(520px,100%);
-      border-radius:28px;
-      border:1px solid rgba(255,215,106,.18);
-      background:
-        radial-gradient(circle at top center, rgba(255,215,106,.10), transparent 45%),
-        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)),
-        #0d0d0d;
-      box-shadow:0 0 30px rgba(255,215,106,.12), 0 0 80px rgba(0,0,0,.5);
-      padding:28px 22px 22px;
-      text-align:center;
-      color:#f5e9c8;
-    }
+      .hero{
+        padding-top:34px;
+      }
 
-    .popup-icon{
-      width:72px;
-      height:72px;
-      margin:0 auto 14px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:30px;
-      border:1px solid rgba(255,215,106,.22);
-      color:var(--gold);
-      box-shadow:0 0 18px rgba(255,215,106,.12), inset 0 0 18px rgba(255,215,106,.05);
-    }
+      .hero-grid{
+        min-height:auto;
+      }
 
-    .popup h3{
-      margin:0;
-      font-size:28px;
-      color:#fff2c7;
-    }
-
-    .popup p{
-      margin:12px 0 0;
-      line-height:1.85;
-      color:#eadcb0;
-      font-size:14px;
-    }
-
-    .popup-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:center;
-      margin-top:18px;
-    }
-
-    @media (max-width:1024px){
-      .cards{grid-template-columns:1fr}
-      .info-grid{grid-template-columns:1fr}
-      .desc{min-height:auto}
-      .form-grid{grid-template-columns:1fr}
-    }
-
-    @media (max-width:640px){
-      .topbar-inner,.wrap{width:min(94%,100%)}
-      .hero{padding:36px 14px 26px}
-      .hero-bg-sb{width:min(86vw,360px)}
-      .toggle-btn{font-size:16px;padding:16px}
-      .toggle-content{padding:0 16px 16px}
-      .sticky a{font-size:13px;min-height:50px}
-      .popup{padding:24px 16px 18px}
-      .popup h3{font-size:24px}
+      .float-cta{
+        grid-template-columns:1fr 1fr 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <span class="brand-dot"></span>
-        <span>SƠN BẠCH BĐS VIP PRO</span>
+  <header class="header">
+    <div class="container header-wrap">
+      <a href="#" class="brand">
+        <img class="brand-logo" src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-home.png" alt="Sơn Bạch Logo">
+        <div class="brand-text">
+          <strong>SƠN BẠCH VIP PRO</strong>
+          <span>Bất động sản chọn lọc</span>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <button class="nav-btn active" data-target="tongquan">Tổng quan</button>
+        <button class="nav-btn" data-target="taisan">Tài sản</button>
+        <button class="nav-btn" data-target="quytrinh">Quy trình</button>
+        <button class="nav-btn" data-target="nda">NDA</button>
+        <button class="nav-btn" data-target="lienhe">Liên hệ</button>
+        <a class="hotline" href="tel:0858999934">📞 0858 999 934</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="tongquan">
+    <div class="container hero-grid">
+      <div>
+        <div class="tagline">GIAO DỊCH KÍN • NDA • CHỈ TIẾP KHÁCH THỰC</div>
+        <h1>TÀI SẢN LÕI<br>KHÔNG DÀNH CHO SỐ ĐÔNG</h1>
+        <div class="hero-sub">
+          Hệ thống web BĐS chuyên nghiệp cho tài sản chọn lọc, trình bày đẳng cấp, lọc khách thật, tạo cảm giác như một nền tảng lớn.
+        </div>
+        <div class="price-glow">135 TỶ / 1.250 TỶ</div>
+
+        <div class="hero-actions">
+          <a href="#taisan" class="btn btn-gold">Xem tài sản nổi bật</a>
+          <a href="#thongtinkin" class="btn btn-dark">Mở thông tin kín</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Nhận hồ sơ tài sản kín</h3>
+        <p>Điền thông tin để nhận quyền tiếp cận tài sản phù hợp. Dữ liệu được lọc trước khi chia sẻ sâu.</p>
+
+        <input type="text" placeholder="Họ và tên">
+        <input type="text" placeholder="Số điện thoại">
+        <input type="email" placeholder="Email">
+        <a href="#nda" class="btn btn-gold" style="width:100%;">NHẬN THÔNG TIN KÍN</a>
+
+        <div class="hero-note">
+          * Thông tin tài sản chuyên sâu chỉ gửi cho khách thật, có nhu cầu thật và đồng ý nguyên tắc bảo mật.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="panel-wrap">
+    <div class="container">
+      <div class="panel-grid">
+        <div class="panel-box active">
+          <button class="panel-toggle">
+            <span>Tổng quan hệ thống</span> +
+          </button>
+          <div class="panel-content">
+            Web chuẩn VIP sẽ có logo thương hiệu, menu sáng mạnh, khối tài sản nổi bật, form thu lead, NDA, CTA nổi và cấu trúc mở rộng lâu dài.
+          </div>
+        </div>
+
+        <div class="panel-box">
+          <button class="panel-toggle">
+            <span>Tài sản lõi</span> +
+          </button>
+          <div class="panel-content">
+            Chỉ khi bấm vào mới hiện chi tiết để giữ cảm giác giao dịch kín, chọn lọc và chuyên nghiệp hơn so với web rao vặt đại trà.
+          </div>
+        </div>
+
+        <div class="panel-box">
+          <button class="panel-toggle">
+            <span>Quy trình lọc khách</span> +
+          </button>
+          <div class="panel-content">
+            Khách sẽ xem bản giới thiệu trước, sau đó điền thông tin, đồng ý bảo mật, rồi mới mở sâu hồ sơ hoặc nhận liên hệ trực tiếp.
+          </div>
+        </div>
+
+        <div class="panel-box">
+          <button class="panel-toggle">
+            <span>Phong cách thương hiệu</span> +
+          </button>
+          <div class="panel-content">
+            Đen vàng kim, glow mạnh, cảm giác quỹ đất lõi, off-market, tài sản không dành cho số đông và mang đúng dấu ấn Sơn Bạch.
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="runner">
-    <div class="runner-track">
-      SƠN BẠCH BĐS VIP PRO • HÀNG KÍN • NDA • HỒ SƠ CHỌN LỌC • KHÁCH THẬT ƯU TIÊN • TÀI SẢN GIÁ TRỊ • CORE ASSET • QUỸ ĐẤT HIẾM • SƠN BẠCH BĐS VIP PRO • HÀNG KÍN • NDA • HỒ SƠ CHỌN LỌC • KHÁCH THẬT ƯU TIÊN •
-    </div>
-  </div>
-
-  <main class="wrap">
-
-    <section class="hero">
-      <div class="hero-bg-sb">
-        <div class="ring3"></div>
-        <div class="sb-mark">SB</div>
+  <section id="taisan">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">tài sản nổi bật</div>
+        <h2>KHO BẤT ĐỘNG SẢN CHỌN LỌC</h2>
+        <p>Giao diện này mô phỏng phong cách web lớn, nhưng nâng cấp theo hướng giao dịch kín, chọn lọc khách và xây thương hiệu riêng.</p>
       </div>
 
-      <div class="hero-inner">
-        <div class="hero-sub">Sơn Bạch BĐS VIP PRO • KHO TÀI SẢN CHỌN LỌC</div>
-        <h1>KHO BĐS <span class="gold">SƠN BẠCH</span></h1>
-
-        <div class="hero-desc">
-          Nơi tổng hợp các tài sản giá trị cao, tài sản lõi, quỹ đất hiếm và hồ sơ chọn lọc dành cho khách có
-          <span class="gold">nhu cầu thật – tài chính thật – tinh thần làm việc rõ ràng</span>.
-        </div>
-
-        <div class="hero-badges">
-          <span>HÀNG GIÁ TRỊ</span>
-          <span>HÀNG KÍN</span>
-          <span>NDA</span>
-          <span>KHÁCH THẬT</span>
-        </div>
-
-        <div class="hero-banner">
-          <strong>Lưu ý:</strong> Một phần nội dung đang hiển thị theo hướng chọn lọc thông tin.
-          Khách cần tiếp cận sâu hơn về hồ sơ, vị trí, pháp lý hoặc điều kiện giao dịch có thể gửi yêu cầu trực tiếp để được sàng lọc phù hợp.
-        </div>
-      </div>
-    </section>
-
-    <section class="toggle-block" id="toggle-phan-nhom">
-      <button class="toggle-btn" type="button" onclick="toggleExclusive('toggle-phan-nhom')">
-        <span>PHÂN NHÓM TÀI SẢN</span>
-        <span>＋</span>
-      </button>
-      <div class="toggle-content">
-        <div class="chips">
-          <span class="chip chip-under">Dưới 50 tỷ</span>
-          <span class="chip chip-mid">50 – 200 tỷ</span>
-          <span class="chip chip-over">Trên 200 tỷ</span>
-          <span class="chip">Hàng kín</span>
-          <span class="chip">Ưu tiên khách thật</span>
-        </div>
-
-        <div class="mini-note">
-          Bấm từng nút phân khúc phía dưới để chỉ hiện đúng nhóm tài sản anh muốn xem.
-        </div>
-
-        <div class="filter-tabs">
-          <button class="filter-tab active-under" type="button" onclick="showAssetPanel('panel-under', this, 'under')">DƯỚI 50 TỶ</button>
-          <button class="filter-tab" type="button" onclick="showAssetPanel('panel-mid', this, 'mid')">50 – 200 TỶ</button>
-          <button class="filter-tab" type="button" onclick="showAssetPanel('panel-over', this, 'over')">TRÊN 200 TỶ</button>
-        </div>
-
-        <div class="asset-panel show" id="panel-under">
-          <div class="group-title">
-            <h3>Nhóm dưới 50 tỷ</h3>
-            <div class="line"></div>
+      <div class="listing-grid">
+        <article class="listing-card">
+          <div class="listing-img">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" alt="Bình Tân 135 tỷ">
           </div>
-
-          <div class="cards">
-            <article class="card">
-              <div class="card-top">
-                <div class="tag tag-under">Hàng trung tâm chọn lọc</div>
-                <div class="price price-under">42 TỶ</div>
-                <div class="card-title">Căn 42 Tỷ Quận 1</div>
-                <div class="card-sub">
-                  Mức vốn gọn hơn nhưng vẫn giữ lợi thế trung tâm, thanh khoản và giá trị khai thác.
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="meta">
-                  <div class="meta-item"><b>Phân khúc:</b> Nhà phố / tài sản trung tâm</div>
-                  <div class="meta-item"><b>Khu vực:</b> Quận 1 – TP.HCM</div>
-                  <div class="meta-item"><b>Mục tiêu:</b> Giữ tiền + khai thác + thanh khoản</div>
-                </div>
-
-                <div class="desc">
-                  Phù hợp với khách muốn vào phân khúc tài sản trung tâm với mức vốn linh hoạt hơn nhưng vẫn ưu tiên
-                  giá trị bền, vị trí mạnh và khả năng khai thác dài hạn.
-                </div>
-
-                <div class="btns">
-                  <a class="btn btn-main" href="https://sonbachtp.github.io/sonbach_autohud/can-42-ty-q1.html?v=4001" target="_blank">
-                    MỞ TÀI SẢN 42 TỶ
-                  </a>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div class="asset-panel" id="panel-mid">
-          <div class="group-title">
-            <h3>Nhóm 50 – 200 tỷ</h3>
-            <div class="line"></div>
-          </div>
-
-          <div class="cards">
-            <article class="card">
-              <div class="card-top">
-                <div class="tag tag-mid">Quỹ đất chiến lược</div>
-                <div class="price price-mid">135 TỶ</div>
-                <div class="card-title">Đất Bình Tân 3.419m²</div>
-                <div class="card-sub">
-                  Quỹ đất diện tích lớn, hợp với nhà đầu tư nhìn dài hạn và cần câu chuyện tăng giá rõ.
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="meta">
-                  <div class="meta-item"><b>Phân khúc:</b> Quỹ đất lớn / chiến lược</div>
-                  <div class="meta-item"><b>Khu vực:</b> Bình Tân – TP.HCM</div>
-                  <div class="meta-item"><b>Diện tích:</b> 3.419m²</div>
-                </div>
-
-                <div class="desc">
-                  Dành cho khách cần gom quỹ đất lớn để tái cấu trúc công năng, tạo biên độ thương lượng hoặc nắm giữ
-                  trong chu kỳ tăng giá kế tiếp.
-                </div>
-
-                <div class="btns">
-                  <a class="btn btn-main" href="https://sonbachtp.github.io/sonbach_autohud/dat-binh-tan-3419m2-135-ty.html?v=999" target="_blank">
-                    MỞ TÀI SẢN 135 TỶ
-                  </a>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div class="asset-panel" id="panel-over">
-          <div class="group-title">
-            <h3>Nhóm trên 200 tỷ</h3>
-            <div class="line"></div>
-          </div>
-
-          <div class="cards">
-            <article class="card">
-              <div class="card-top">
-                <div class="tag tag-over">Tài sản lõi trung tâm</div>
-                <div class="price price-over">1.250 TỶ</div>
-                <div class="card-title">Lõi Trung Tâm Quận 1</div>
-                <div class="card-sub">
-                  Tài sản giá trị lớn, thiên về giữ tài sản lõi, gom quỹ đất trung tâm và tiếp cận chọn lọc.
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="meta">
-                  <div class="meta-item"><b>Phân khúc:</b> Core Asset / Trophy Asset</div>
-                  <div class="meta-item"><b>Khu vực:</b> Quận 1 – trung tâm TP.HCM</div>
-                  <div class="meta-item"><b>Tính chất:</b> Hàng lõi – giá trị cao – chọn lọc</div>
-                </div>
-
-                <div class="desc">
-                  Phù hợp với nhà đầu tư ưu tiên quỹ đất lõi trung tâm, tư duy bảo toàn giá trị và đi đường dài
-                  với tài sản hiếm nguồn cung thật.
-                </div>
-
-                <div class="btns">
-                  <a class="btn btn-main" href="https://sonbachTP.github.io/son-bach-signature/" target="_blank">
-                    MỞ TÀI SẢN 1.250 TỶ
-                  </a>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="toggle-block" id="toggle-nda">
-      <button class="toggle-btn" type="button" onclick="toggleExclusive('toggle-nda')">
-        <span>NDA / BẢO MẬT / HỒ SƠ CHỌN LỌC</span>
-        <span>＋</span>
-      </button>
-      <div class="toggle-content">
-        <div class="info-grid">
-          <div class="box">
-            <h3>ĐĂNG KÝ NDA / BẢO MẬT</h3>
-            <p>
-              Điền đúng thông tin cơ bản. Sau khi bấm đồng ý, biểu mẫu sẽ gửi qua Formspree về email nhận lead đã cấu hình cho endpoint của anh.
-            </p>
-
-            <div class="points">
-              <div>✔ Thông tin cơ bản: họ tên, số điện thoại, email.</div>
-              <div>✔ Chỉ ưu tiên hồ sơ khách có nhu cầu thật.</div>
-              <div>✔ Dữ liệu sâu hơn sẽ mở theo mức độ phù hợp.</div>
+          <div class="listing-body">
+            <div class="listing-top">
+              <h3>Bình Tân</h3>
+              <div class="listing-price">135 TỶ</div>
             </div>
-
-            <form class="nda-form" action="https://formspree.io/f/mpqykgzk" method="POST">
-              <div class="form-grid">
-                <input class="field" type="text" name="Họ tên" placeholder="Họ và tên" required>
-                <input class="field" type="tel" name="Số điện thoại" placeholder="Số điện thoại" required>
-                <input class="field" type="email" name="Email" placeholder="Email" required>
-              </div>
-
-              <input type="hidden" name="_subject" value="Lead NDA mới từ KHO BĐS SƠN BẠCH">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_next" value="https://sonbachtp.github.io/sonbach_autohud/?success=1">
-
-              <label class="agree">
-                <input type="checkbox" name="Tôi đồng ý NDA" required>
-                <span>
-                  Tôi đồng ý nguyên tắc bảo mật và xác nhận thông tin trên là đúng. Khi bấm gửi, yêu cầu sẽ được chuyển tới hộp thư nhận lead đã cấu hình của hệ thống.
-                </span>
-              </label>
-
-              <div class="btn-row">
-                <button class="btn btn-main" type="submit">TÔI ĐỒNG Ý & GỬI THÔNG TIN</button>
-                <button class="btn btn-sub" type="button" onclick="toggleDeepBox()">HIỆN HỒ SƠ SÂU / VỊ TRÍ SÂU</button>
-              </div>
-            </form>
-
-            <div class="deep-box" id="deepBox">
-              Hồ sơ sâu / vị trí sâu sẽ được mở theo mức độ phù hợp sau khi tiếp nhận thông tin và sàng lọc nhu cầu.
-              Với tài sản kín, phần dữ liệu chi tiết hơn sẽ ưu tiên trao đổi trực tiếp để giữ nhịp giao dịch chuyên nghiệp và đúng đối tượng.
+            <div class="listing-meta">
+              Diện tích lớn • quỹ đất đẹp • phù hợp phát triển<br>
+              Bản trình bày dành cho nhà đầu tư cần tài sản giá trị
+            </div>
+            <div class="listing-buttons">
+              <a class="btn btn-gold" href="#">Chi tiết</a>
+              <a class="btn btn-dark" href="#">NDA</a>
             </div>
           </div>
+        </article>
 
-          <div class="box">
-            <h3>NGUYÊN TẮC CHỌN LỌC</h3>
-            <p>
-              Mỗi hồ sơ được mở theo mức độ phù hợp nhằm giữ nhịp giao dịch chuyên nghiệp và tập trung vào đúng nhóm khách có khả năng đi tới kết quả thực tế.
-            </p>
-
-            <div class="points">
-              <div>• Ưu tiên khách có định hướng mua rõ ràng.</div>
-              <div>• Ưu tiên khách có năng lực tài chính phù hợp phân khúc.</div>
-              <div>• Thông tin sâu hơn sẽ trao đổi chọn lọc theo từng hồ sơ.</div>
+        <article class="listing-card">
+          <div class="listing-img">
+            <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80" alt="Quận 1 1250 tỷ">
+          </div>
+          <div class="listing-body">
+            <div class="listing-top">
+              <h3>Quận 1</h3>
+              <div class="listing-price">1.250 TỶ</div>
+            </div>
+            <div class="listing-meta">
+              Tài sản lõi trung tâm • phù hợp nhà đầu tư lớn<br>
+              Bản giới thiệu theo phong cách trophy asset
+            </div>
+            <div class="listing-buttons">
+              <a class="btn btn-gold" href="#">Chi tiết</a>
+              <a class="btn btn-dark" href="#">NDA</a>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </article>
 
-    <section class="toggle-block" id="toggle-khach-that">
-      <button class="toggle-btn" type="button" onclick="toggleExclusive('toggle-khach-that')">
-        <span>KHÁCH THẬT ƯU TIÊN</span>
-        <span>＋</span>
-      </button>
-      <div class="toggle-content">
-        <div class="info-grid">
-          <div class="box">
-            <h3>NHÓM KHÁCH ƯU TIÊN</h3>
-            <p>
-              Kho này được xây để phục vụ đúng nhóm khách cần tài sản thật sự có giá trị.
-              Càng rõ từ đầu, quá trình kết nối hồ sơ và thương lượng càng nhanh và hiệu quả.
-            </p>
-
-            <div class="points">
-              <div>• Khách mua giữ tài sản lõi trung tâm.</div>
-              <div>• Khách cần quỹ đất lớn để gom hoặc tái cấu trúc.</div>
-              <div>• Khách muốn tiếp cận hồ sơ theo hướng kín và chọn lọc.</div>
+        <article class="listing-card">
+          <div class="listing-img">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="BĐS VIP">
+          </div>
+          <div class="listing-body">
+            <div class="listing-top">
+              <h3>Tài sản VIP</h3>
+              <div class="listing-price">42 TỶ</div>
+            </div>
+            <div class="listing-meta">
+              Giao diện có thể nhân bản nhanh cho các căn sau<br>
+              Phù hợp làm kho BĐS trung tâm của Sơn Bạch
+            </div>
+            <div class="listing-buttons">
+              <a class="btn btn-gold" href="#">Chi tiết</a>
+              <a class="btn btn-dark" href="#">NDA</a>
             </div>
           </div>
-
-          <div class="box">
-            <h3>KÊNH LIÊN HỆ NHANH</h3>
-            <p>
-              Khi cần trao đổi trực tiếp, có thể kết nối nhanh qua các kênh bên dưới để sàng lọc hồ sơ phù hợp hơn.
-            </p>
-
-            <div class="btn-row">
-              <a class="btn btn-sub" href="https://zalo.me/0858999934" target="_blank">NHẮN ZALO</a>
-              <a class="btn btn-sub" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank">KẾT NỐI FACEBOOK</a>
-              <a class="btn btn-main" href="tel:0858999934">GỌI NGAY</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="toggle-block" id="toggle-footer-brand">
-      <button class="toggle-btn" type="button" onclick="toggleExclusive('toggle-footer-brand')">
-        <span>SƠN BẠCH BĐS VIP PRO</span>
-        <span>＋</span>
-      </button>
-      <div class="toggle-content">
-        <div class="footer">
-          <strong>SƠN BẠCH BĐS VIP PRO</strong><br>
-          Tập trung vào tài sản lõi, quỹ đất hiếm, hàng kín và cơ hội đầu tư chọn lọc.<br>
-          Liên hệ trực tiếp: <strong>Mr. Sơn Bạch – 0858 999 934</strong>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <div class="sticky">
-    <a class="call" href="tel:0858999934">📞 GỌI NGAY</a>
-    <a class="zalo" href="https://zalo.me/0858999934" target="_blank">💬 ZALO</a>
-    <a class="fb" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank">📘 FACEBOOK</a>
-  </div>
-
-  <div class="popup-wrap" id="successPopup">
-    <div class="popup">
-      <div class="popup-icon">✓</div>
-      <h3>Gửi thành công</h3>
-      <p>
-        Thông tin NDA / bảo mật đã được ghi nhận.<br>
-        Hệ thống sẽ chuyển yêu cầu tới email nhận lead đã cấu hình cho biểu mẫu.
-      </p>
-      <div class="popup-actions">
-        <button class="btn btn-main" type="button" onclick="closePopup()">ĐÓNG</button>
-        <a class="btn btn-sub" href="tel:0858999934">GỌI NGAY</a>
+        </article>
       </div>
     </div>
+  </section>
+
+  <section id="thongtinkin">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">thông tin ẩn</div>
+        <h2>BẤM MỚI HIỆN – ĐÚNG CHẤT WEB CHUYÊN NGHIỆP</h2>
+        <p>Phần này giúp web nhìn khác web thường: không show hết ngay, mà mở dần theo hành vi của khách.</p>
+      </div>
+
+      <div class="private-box">
+        <button class="private-button" onclick="togglePrivateInfo()">MỞ THÔNG TIN KÍN</button>
+        <div class="private-content" id="privateContent">
+          Đây là vùng thông tin chỉ hiện khi khách chủ động bấm xem. Sau này anh có thể thay bằng:
+          <br><br>
+          • vị trí tổng quan<br>
+          • diện tích / kết cấu / mặt tiền<br>
+          • tiềm năng tăng giá<br>
+          • hình hiện trạng / hình tương lai<br>
+          • nút nhận NDA / nhận hồ sơ / gọi trực tiếp
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="nda">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">lọc khách thật</div>
+        <h2>NDA • FORM • QUY TRÌNH CHỐT LEAD</h2>
+        <p>Đây là phần cực quan trọng để web không chỉ đẹp mà còn giúp anh lọc khách, lấy lead và chốt khách thật hiệu quả hơn.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="lienhe">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-title">SƠN BẠCH VIP PRO</div>
+        <div class="footer-text">
+          Hệ thống giới thiệu bất động sản chọn lọc, giao dịch kín, định vị đẳng cấp, phù hợp xây thương hiệu môi giới cao cấp lâu dài.
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Liên hệ</div>
+        <div class="footer-text">
+          Hotline: 0858 999 934<br>
+          Facebook / Zalo / Call sẽ gắn ở thanh nổi phía dưới
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Hướng phát triển</div>
+        <div class="footer-text">
+          Tạo kho BĐS • thêm nhiều căn • gắn NDA • thu lead • mở rộng thành hệ thống VIP riêng của anh.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="float-cta">
+    <a class="float-link gold" href="tel:0858999934">📞 Gọi</a>
+    <a class="float-link dark" href="https://zalo.me/0858999934" target="_blank">💬 Zalo</a>
+    <a class="float-link dark" href="#" target="_blank">📘 Facebook</a>
   </div>
 
   <script>
-    function toggleExclusive(id){
-      const blocks = document.querySelectorAll('.toggle-block');
-      blocks.forEach(block => {
-        if(block.id === id){
-          block.classList.toggle('open');
-        } else {
-          block.classList.remove('open');
+    document.querySelectorAll('.panel-toggle').forEach(btn=>{
+      btn.addEventListener('click', function(){
+        this.parentElement.classList.toggle('active');
+      });
+    });
+
+    function togglePrivateInfo(){
+      document.getElementById('privateContent').classList.toggle('show');
+    }
+
+    document.querySelectorAll('.nav-btn').forEach(btn=>{
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+        this.classList.add('active');
+        const id = this.dataset.target;
+        const target = document.getElementById(id);
+        if(target){
+          target.scrollIntoView({behavior:'smooth'});
         }
       });
-    }
-
-    function toggleDeepBox(){
-      const box = document.getElementById('deepBox');
-      if(box){
-        box.classList.toggle('show');
-      }
-    }
-
-    function showAssetPanel(panelId, btn, type){
-      document.querySelectorAll('.asset-panel').forEach(p => p.classList.remove('show'));
-      const panel = document.getElementById(panelId);
-      if(panel) panel.classList.add('show');
-
-      document.querySelectorAll('.filter-tab').forEach(b => {
-        b.classList.remove('active-under','active-mid','active-over');
-      });
-
-      if(type === 'under') btn.classList.add('active-under');
-      if(type === 'mid') btn.classList.add('active-mid');
-      if(type === 'over') btn.classList.add('active-over');
-    }
-
-    function closePopup(){
-      const popup = document.getElementById('successPopup');
-      if(popup) popup.classList.remove('show');
-      const url = new URL(window.location.href);
-      url.searchParams.delete('success');
-      window.history.replaceState({}, '', url.pathname);
-    }
-
-    (function(){
-      const params = new URLSearchParams(window.location.search);
-      if(params.get('success') === '1'){
-        const popup = document.getElementById('successPopup');
-        if(popup) popup.classList.add('show');
-      }
-    })();
+    });
   </script>
 
 </body>
