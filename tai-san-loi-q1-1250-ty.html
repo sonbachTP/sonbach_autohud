@@ -5,12 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Tài sản lõi Quận 1 - 1.250 TỶ | Sơn Bạch VIP PRO</title>
   <meta name="description" content="Tài sản lõi Quận 1 giá 1.250 tỷ. Phong cách trophy asset, trung tâm, phù hợp khách đầu tư lớn và giao dịch chọn lọc." />
+  <meta name="theme-color" content="#0b0b0b" />
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png" />
+
   <style>
     :root{
-      --bg:#070707;--bg2:#111;--gold:#ffd56a;--gold2:#c9961a;--gold3:#fff0b6;
-      --text:#f6f0de;--muted:#d6c39a;--line:rgba(255,213,106,.18);--shadow:0 18px 48px rgba(0,0,0,.34);
+      --bg:#070707;
+      --bg2:#111;
+      --gold:#ffd56a;
+      --gold2:#c9961a;
+      --gold3:#fff0b6;
+      --text:#f6f0de;
+      --muted:#d6c39a;
+      --line:rgba(255,213,106,.18);
+      --line2:rgba(255,213,106,.08);
+      --shadow:0 18px 48px rgba(0,0,0,.34);
+      --glow:0 0 14px rgba(255,213,106,.16);
+      --glowStrong:0 0 24px rgba(255,213,106,.18);
     }
+
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
@@ -19,36 +32,82 @@
       color:var(--text);
       overflow-x:hidden;
     }
+
     a{text-decoration:none;color:inherit}
     img{display:block;max-width:100%}
     .container{width:min(1180px,92%);margin:auto}
+
     .topbar{
-      position:sticky;top:0;z-index:999;
-      background:rgba(8,8,8,.84);backdrop-filter:blur(14px);
+      position:sticky;
+      top:0;
+      z-index:999;
+      background:rgba(8,8,8,.84);
+      backdrop-filter:blur(14px);
       border-bottom:1px solid var(--line);
     }
+
     .topbar-wrap{
-      min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:14px;
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
     }
-    .brand{display:flex;align-items:center;gap:14px}
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
     .brand img{
-      width:52px;height:52px;border-radius:50%;object-fit:cover;
+      width:52px;
+      height:52px;
+      border-radius:50%;
+      object-fit:cover;
       border:1px solid rgba(255,213,106,.34);
-      box-shadow:0 0 14px rgba(255,213,106,.14);
+      box-shadow:var(--glow);
       background:#111;
     }
-    .brand strong{display:block;color:var(--gold);font-size:22px;line-height:1.02}
-    .brand span{display:block;color:#d9c58f;font-size:11px;letter-spacing:2px;text-transform:uppercase}
-    .back-btn,.gold-btn,.dark-btn{
-      min-height:52px;padding:0 20px;border-radius:16px;font-weight:1000;
-      display:inline-flex;align-items:center;justify-content:center;
-      border:1px solid rgba(255,213,106,.24);
+
+    .brand strong{
+      display:block;
+      color:var(--gold);
+      font-size:22px;
+      line-height:1.02;
     }
-    .back-btn,.dark-btn{color:var(--gold);background:#111}
+
+    .brand span{
+      display:block;
+      color:#d9c58f;
+      font-size:11px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+    }
+
+    .back-btn,.gold-btn,.dark-btn{
+      min-height:52px;
+      padding:0 20px;
+      border-radius:16px;
+      font-weight:1000;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid rgba(255,213,106,.24);
+      cursor:pointer;
+    }
+
+    .back-btn,.dark-btn{
+      color:var(--gold);
+      background:#111;
+    }
+
     .gold-btn{
       background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));
-      color:#111;box-shadow:0 0 18px rgba(255,213,106,.16);
+      color:#111;
+      box-shadow:var(--glowStrong);
     }
+
     .hero{
       position:relative;
       min-height:100vh;
@@ -56,33 +115,60 @@
         linear-gradient(90deg, rgba(0,0,0,.86) 0%, rgba(0,0,0,.48) 48%, rgba(0,0,0,.20) 100%),
         url('https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
     }
-    .hero-content{padding:60px 0 42px}
-    .tag{
-      display:inline-block;padding:11px 16px;border-radius:999px;
-      border:1px solid rgba(255,213,106,.22);color:var(--gold);
-      background:rgba(10,10,10,.55);font-weight:1000;margin-bottom:18px;
+
+    .hero-content{
+      padding:60px 0 42px;
     }
+
+    .tag{
+      display:inline-block;
+      padding:11px 16px;
+      border-radius:999px;
+      border:1px solid rgba(255,213,106,.22);
+      color:var(--gold);
+      background:rgba(10,10,10,.55);
+      font-weight:1000;
+      margin-bottom:18px;
+      box-shadow:var(--glow);
+    }
+
     h1{
       font-size:clamp(38px,6vw,78px);
       line-height:1.01;
       margin-bottom:14px;
       letter-spacing:-1px;
     }
+
     .price{
       font-size:clamp(42px,7vw,92px);
-      font-weight:1000;color:#ffe089;
+      font-weight:1000;
+      color:#ffe089;
       text-shadow:0 0 18px rgba(255,213,106,.24);
       margin:10px 0 18px;
       line-height:1;
     }
+
     .sub{
-      max-width:860px;color:#f0dfb8;
-      font-size:20px;line-height:1.65;
+      max-width:860px;
+      color:#f0dfb8;
+      font-size:20px;
+      line-height:1.65;
     }
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+
+    .cta{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:24px;
+    }
+
     .grid{
-      display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      margin-top:28px;
     }
+
     .box{
       background:rgba(10,10,10,.78);
       border:1px solid var(--line);
@@ -90,39 +176,282 @@
       padding:22px;
       box-shadow:var(--shadow);
     }
-    .box h3{color:var(--gold);font-size:24px;margin-bottom:12px}
-    .box p,.box li{color:var(--muted);line-height:1.85;font-size:16px}
+
+    .box h3{
+      color:var(--gold);
+      font-size:24px;
+      margin-bottom:12px;
+    }
+
+    .box p,.box li{
+      color:var(--muted);
+      line-height:1.85;
+      font-size:16px;
+    }
+
     ul{padding-left:18px}
-    .section{padding:58px 0;border-top:1px solid rgba(255,213,106,.08)}
-    .section-head{text-align:center;margin-bottom:28px}
+
+    .section{
+      padding:58px 0;
+      border-top:1px solid var(--line2);
+    }
+
+    .section-head{
+      text-align:center;
+      margin-bottom:28px;
+    }
+
     .section-head .mini{
-      color:var(--gold);text-transform:uppercase;letter-spacing:4px;
-      font-size:12px;font-weight:1000;margin-bottom:10px;
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:4px;
+      font-size:12px;
+      font-weight:1000;
+      margin-bottom:10px;
     }
-    .section-head h2{font-size:clamp(28px,4.5vw,54px);line-height:1.04;margin-bottom:10px}
-    .section-head p{max-width:840px;margin:auto;color:var(--muted);font-size:18px;line-height:1.75}
+
+    .section-head h2{
+      font-size:clamp(28px,4.5vw,54px);
+      line-height:1.04;
+      margin-bottom:10px;
+    }
+
+    .section-head p{
+      max-width:840px;
+      margin:auto;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.75;
+    }
+
     .feature-grid{
-      display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
     }
+
     .feature{
-      background:#101010;border:1px solid var(--line);border-radius:20px;padding:18px;
+      background:#101010;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:18px;
     }
-    .feature strong{display:block;color:var(--gold);font-size:18px;margin-bottom:8px}
-    .feature p{color:var(--muted);font-size:15px;line-height:1.75}
+
+    .feature strong{
+      display:block;
+      color:var(--gold);
+      font-size:18px;
+      margin-bottom:8px;
+    }
+
+    .feature p{
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.75;
+    }
+
     .float{
-      position:fixed;left:50%;transform:translateX(-50%);bottom:12px;
-      width:min(820px,94%);display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
-      background:rgba(11,11,11,.86);backdrop-filter:blur(12px);
-      border:1px solid rgba(255,213,106,.18);border-radius:24px;padding:10px;z-index:999;
+      position:fixed;
+      left:50%;
+      transform:translateX(-50%);
+      bottom:12px;
+      width:min(820px,94%);
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      background:rgba(11,11,11,.86);
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(255,213,106,.18);
+      border-radius:24px;
+      padding:10px;
+      z-index:999;
+      box-shadow:0 18px 35px rgba(0,0,0,.35);
     }
+
     .float a{
-      min-height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;
-      font-weight:1000;border:1px solid rgba(255,213,106,.22);
+      min-height:56px;
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:1000;
+      border:1px solid rgba(255,213,106,.22);
     }
-    .float .gold{background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));color:#111}
-    .float .dark{background:#111;color:var(--gold)}
+
+    .float .gold{
+      background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));
+      color:#111;
+    }
+
+    .float .dark{
+      background:#111;
+      color:var(--gold);
+    }
+
+    /* NDA */
+    .nda-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.82);
+      backdrop-filter:blur(8px);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:9999;
+      padding:16px;
+    }
+
+    .nda-overlay.show{
+      display:flex;
+    }
+
+    .nda-modal{
+      width:min(720px,96%);
+      max-height:90vh;
+      overflow:auto;
+      background:linear-gradient(180deg,#111,#0b0b0b);
+      border:1px solid rgba(255,213,106,.22);
+      border-radius:22px;
+      padding:22px;
+      box-shadow:0 0 30px rgba(255,213,106,.12), 0 24px 60px rgba(0,0,0,.45);
+    }
+
+    .nda-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:14px;
+    }
+
+    .nda-title{
+      color:#ffd56a;
+      font-size:26px;
+      font-weight:1000;
+      line-height:1.05;
+    }
+
+    .nda-sub{
+      color:#d6c08a;
+      margin-top:8px;
+      line-height:1.7;
+      font-size:14px;
+    }
+
+    .nda-close{
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      border:1px solid rgba(255,213,106,.18);
+      background:#171717;
+      color:#ffd56a;
+      font-size:24px;
+      cursor:pointer;
+      flex:0 0 auto;
+    }
+
+    .nda-box{
+      background:#121212;
+      border:1px solid rgba(255,213,106,.12);
+      border-radius:18px;
+      padding:16px;
+      margin-bottom:14px;
+    }
+
+    .nda-box strong{
+      display:block;
+      color:#ffd56a;
+      font-size:17px;
+      margin-bottom:8px;
+    }
+
+    .nda-box p,
+    .nda-box li{
+      color:#d7c49a;
+      line-height:1.8;
+      font-size:15px;
+    }
+
+    .nda-box ul{
+      padding-left:18px;
+    }
+
+    .nda-form input,
+    .nda-form select,
+    .nda-form textarea{
+      width:100%;
+      margin-bottom:12px;
+      min-height:52px;
+      border-radius:14px;
+      background:#111;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.08);
+      padding:0 14px;
+      outline:none;
+      font-size:15px;
+    }
+
+    .nda-form textarea{
+      min-height:90px;
+      padding:12px 14px;
+      resize:vertical;
+    }
+
+    .nda-check{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      color:#decda7;
+      line-height:1.7;
+      font-size:14px;
+      margin:8px 0 14px;
+    }
+
+    .nda-check input{
+      margin-top:4px;
+      transform:scale(1.1);
+    }
+
+    .nda-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .nda-btn{
+      min-height:52px;
+      padding:0 18px;
+      border-radius:14px;
+      border:1px solid rgba(255,213,106,.22);
+      font-weight:1000;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .nda-btn-gold{
+      background:linear-gradient(135deg,#fff1b8,#ffd56a,#c9961a);
+      color:#111;
+      box-shadow:0 0 18px rgba(255,213,106,.14);
+    }
+
+    .nda-btn-dark{
+      background:#111;
+      color:#ffd56a;
+    }
+
+    .nda-note{
+      color:#bfa977;
+      font-size:12px;
+      line-height:1.65;
+      margin-top:10px;
+    }
+
     @media (max-width:980px){
-      .grid,.feature-grid{grid-template-columns:1fr}
+      .grid,.feature-grid{
+        grid-template-columns:1fr;
+      }
     }
   </style>
 </head>
@@ -152,7 +481,7 @@
       <div class="cta">
         <a class="gold-btn" href="tel:0858999934">📞 Gọi trực tiếp</a>
         <a class="dark-btn" href="https://zalo.me/0858999934" target="_blank">💬 Zalo</a>
-        <a class="dark-btn" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank">📘 Facebook</a>
+        <button class="dark-btn" type="button" onclick="openNDA('Tài sản lõi Quận 1 - 1.250 tỷ')">📄 Nhận hồ sơ NDA</button>
       </div>
 
       <div class="grid">
@@ -199,7 +528,9 @@
       <div class="section-head">
         <div class="mini">giá trị cốt lõi</div>
         <h2>TÀI SẢN NÀY NỔI BẬT Ở CHẤT LÕI, KHÔNG PHẢI Ở SỰ ĐẠI TRÀ</h2>
-        <p>Sản phẩm lõi trung tâm luôn cần cách trình bày riêng: kín hơn, gọn hơn, đẳng cấp hơn và nhắm đúng đến nhóm khách thực sự phù hợp.</p>
+        <p>
+          Sản phẩm lõi trung tâm luôn cần cách trình bày riêng: kín hơn, gọn hơn, đẳng cấp hơn và nhắm đúng đến nhóm khách thực sự phù hợp.
+        </p>
       </div>
 
       <div class="feature-grid">
@@ -228,5 +559,105 @@
     <a class="dark" href="https://zalo.me/0858999934" target="_blank">💬 Zalo</a>
     <a class="dark" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank">📘 Facebook</a>
   </div>
+
+  <!-- NDA POPUP -->
+  <div class="nda-overlay" id="ndaOverlay">
+    <div class="nda-modal">
+      <div class="nda-head">
+        <div>
+          <div class="nda-title">NDA • NHẬN HỒ SƠ TÀI SẢN</div>
+          <div class="nda-sub">
+            Vui lòng điền thông tin chính xác để nhận hồ sơ phù hợp. Các dữ liệu chuyên sâu chỉ chia sẻ cho khách có nhu cầu thật và đồng ý nguyên tắc bảo mật.
+          </div>
+        </div>
+        <button class="nda-close" type="button" onclick="closeNDA()">×</button>
+      </div>
+
+      <div class="nda-box">
+        <strong>Nguyên tắc bảo mật</strong>
+        <ul>
+          <li>Thông tin tài sản chỉ phục vụ mục đích tiếp cận và đánh giá giao dịch.</li>
+          <li>Không chia sẻ lại hồ sơ, hình ảnh, dữ liệu hoặc nội dung trao đổi cho bên thứ ba khi chưa được đồng ý.</li>
+          <li>Thông tin cung cấp cần trung thực để đảm bảo quá trình chọn lọc và hỗ trợ phù hợp.</li>
+        </ul>
+      </div>
+
+      <div class="nda-box">
+        <strong>Thông tin đăng ký tiếp cận</strong>
+        <p>Vui lòng điền đầy đủ để hệ thống ghi nhận nhu cầu và hỗ trợ đúng nhóm tài sản anh/chị quan tâm.</p>
+      </div>
+
+      <form class="nda-form" action="https://formspree.io/f/mpqykgzk" method="POST">
+        <input type="hidden" name="_subject" value="Lead NDA - Tài sản lõi Quận 1 - 1.250 tỷ">
+        <input type="hidden" name="nguon_trang" id="ndaSourcePage" value="">
+        <input type="hidden" name="tai_san_quan_tam" id="ndaAssetName" value="">
+
+        <input type="text" name="ho_ten" placeholder="Họ và tên" required>
+        <input type="text" name="so_dien_thoai" placeholder="Số điện thoại" required>
+        <input type="email" name="email" placeholder="Email" required>
+
+        <select name="nhu_cau" required>
+          <option value="">Chọn nhu cầu quan tâm</option>
+          <option>Bình Tân 135 tỷ</option>
+          <option selected>Quận 1 - 1.250 tỷ</option>
+          <option>Tài sản VIP 42 tỷ</option>
+          <option>Nhận toàn bộ kho BĐS phù hợp</option>
+        </select>
+
+        <textarea name="ghi_chu" placeholder="Ghi chú ngắn về nhu cầu, ngân sách, mục đích mua hoặc khu vực quan tâm"></textarea>
+
+        <label class="nda-check">
+          <input type="checkbox" name="dong_y_nda" required>
+          <span>Tôi xác nhận đã đọc và đồng ý nguyên tắc bảo mật, cam kết sử dụng thông tin tài sản đúng mục đích tiếp cận giao dịch và không tự ý chia sẻ cho bên thứ ba.</span>
+        </label>
+
+        <div class="nda-actions">
+          <button class="nda-btn nda-btn-gold" type="submit">GỬI THÔNG TIN & NHẬN HỒ SƠ</button>
+          <button class="nda-btn nda-btn-dark" type="button" onclick="closeNDA()">Đóng</button>
+        </div>
+
+        <div class="nda-note">
+          * Sau khi gửi, thông tin sẽ được chuyển về hệ thống nhận lead. Bộ phận phụ trách có thể liên hệ lại để xác nhận nhu cầu và cấp quyền tiếp cận sâu hơn.
+        </div>
+      </form>
+    </div>
+  </div>
+    <script>
+    function openNDA(assetName){
+      const overlay = document.getElementById('ndaOverlay');
+      const assetInput = document.getElementById('ndaAssetName');
+      const sourceInput = document.getElementById('ndaSourcePage');
+
+      if(assetInput){
+        assetInput.value = assetName || document.title;
+      }
+      if(sourceInput){
+        sourceInput.value = window.location.href;
+      }
+      if(overlay){
+        overlay.classList.add('show');
+      }
+    }
+
+    function closeNDA(){
+      const overlay = document.getElementById('ndaOverlay');
+      if(overlay){
+        overlay.classList.remove('show');
+      }
+    }
+
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){
+        closeNDA();
+      }
+    });
+
+    document.addEventListener('click', function(e){
+      const overlay = document.getElementById('ndaOverlay');
+      if(e.target === overlay){
+        closeNDA();
+      }
+    });
+  </script>
 </body>
 </html>
