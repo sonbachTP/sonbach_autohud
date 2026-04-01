@@ -4,50 +4,52 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Tài sản VIP 42 TỶ | Sơn Bạch VIP PRO</title>
-  <meta name="description" content="Tài sản VIP 42 tỷ. Landing riêng theo phong cách cao cấp, phù hợp nhóm khách tìm bất động sản tầm trung cao cấp." />
+  <meta name="description" content="Tài sản VIP 42 tỷ. Bất động sản tầm trung cao cấp, trình bày chuyên nghiệp, phù hợp khách cần sản phẩm rõ ràng, đẹp và dễ tiếp cận nhanh." />
   <meta name="theme-color" content="#0b0b0b" />
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png" />
 
   <style>
     :root{
-      --bg:#070707;
-      --bg2:#111;
+      --bg:#060606;
+      --card:#101010;
+      --card2:#151515;
       --gold:#ffd56a;
       --gold2:#c9961a;
-      --gold3:#fff0b6;
+      --gold3:#fff1b8;
       --text:#f6f0de;
-      --muted:#d6c39a;
+      --muted:#d9c79e;
       --line:rgba(255,213,106,.18);
       --line2:rgba(255,213,106,.08);
       --shadow:0 18px 48px rgba(0,0,0,.34);
       --glow:0 0 14px rgba(255,213,106,.16);
-      --glowStrong:0 0 24px rgba(255,213,106,.18);
+      --glowStrong:0 0 26px rgba(255,213,106,.22);
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-      background:linear-gradient(180deg,#050505,#0b0b0b);
+      background:linear-gradient(180deg,#040404,#0b0b0b);
       color:var(--text);
       overflow-x:hidden;
+      padding-bottom:118px;
     }
 
     a{text-decoration:none;color:inherit}
     img{display:block;max-width:100%}
-    .container{width:min(1180px,92%);margin:auto}
+    .container{width:min(1160px,92%);margin:auto}
 
     .topbar{
       position:sticky;
       top:0;
       z-index:999;
-      background:rgba(8,8,8,.84);
       backdrop-filter:blur(14px);
+      background:rgba(8,8,8,.84);
       border-bottom:1px solid var(--line);
     }
 
     .topbar-wrap{
-      min-height:78px;
+      min-height:82px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -61,13 +63,13 @@
     }
 
     .brand img{
-      width:52px;
-      height:52px;
+      width:56px;
+      height:56px;
       border-radius:50%;
       object-fit:cover;
-      border:1px solid rgba(255,213,106,.34);
-      box-shadow:var(--glow);
+      border:1px solid rgba(255,213,106,.35);
       background:#111;
+      box-shadow:var(--glow);
     }
 
     .brand strong{
@@ -79,27 +81,28 @@
 
     .brand span{
       display:block;
-      color:#d9c58f;
+      color:#d8c48f;
       font-size:11px;
       letter-spacing:2px;
       text-transform:uppercase;
+      margin-top:3px;
     }
 
     .back-btn,.gold-btn,.dark-btn{
-      min-height:52px;
+      min-height:54px;
       padding:0 20px;
       border-radius:16px;
-      font-weight:1000;
       display:inline-flex;
       align-items:center;
       justify-content:center;
       border:1px solid rgba(255,213,106,.24);
+      font-weight:1000;
       cursor:pointer;
     }
 
     .back-btn,.dark-btn{
-      color:var(--gold);
       background:#111;
+      color:var(--gold);
     }
 
     .gold-btn{
@@ -112,12 +115,22 @@
       position:relative;
       min-height:100vh;
       background:
-        linear-gradient(90deg, rgba(0,0,0,.84) 0%, rgba(0,0,0,.46) 48%, rgba(0,0,0,.20) 100%),
+        linear-gradient(90deg, rgba(0,0,0,.84) 0%, rgba(0,0,0,.48) 48%, rgba(0,0,0,.20) 100%),
         url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
     }
 
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at 22% 22%, rgba(255,213,106,.12), transparent 24%);
+      pointer-events:none;
+    }
+
     .hero-content{
-      padding:60px 0 42px;
+      position:relative;
+      z-index:1;
+      padding:56px 0 36px;
     }
 
     .tag{
@@ -134,25 +147,25 @@
 
     h1{
       font-size:clamp(38px,6vw,78px);
-      line-height:1.01;
+      line-height:1.02;
       margin-bottom:14px;
       letter-spacing:-1px;
     }
 
     .price{
       font-size:clamp(42px,7vw,90px);
+      line-height:1;
       font-weight:1000;
       color:#ffe089;
       text-shadow:0 0 18px rgba(255,213,106,.24);
       margin:10px 0 18px;
-      line-height:1;
     }
 
     .sub{
-      max-width:840px;
+      max-width:860px;
       color:#f0dfb8;
       font-size:20px;
-      line-height:1.65;
+      line-height:1.68;
     }
 
     .cta{
@@ -162,37 +175,8 @@
       margin-top:24px;
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-      margin-top:28px;
-    }
-
-    .box{
-      background:rgba(10,10,10,.78);
-      border:1px solid var(--line);
-      border-radius:24px;
-      padding:22px;
-      box-shadow:var(--shadow);
-    }
-
-    .box h3{
-      color:var(--gold);
-      font-size:24px;
-      margin-bottom:12px;
-    }
-
-    .box p,.box li{
-      color:var(--muted);
-      line-height:1.85;
-      font-size:16px;
-    }
-
-    ul{padding-left:18px}
-
     .section{
-      padding:58px 0;
+      padding:56px 0;
       border-top:1px solid var(--line2);
     }
 
@@ -211,7 +195,7 @@
     }
 
     .section-head h2{
-      font-size:clamp(28px,4.5vw,54px);
+      font-size:clamp(28px,4.5vw,56px);
       line-height:1.04;
       margin-bottom:10px;
     }
@@ -224,30 +208,98 @@
       line-height:1.75;
     }
 
+    .accordion-stack{
+      display:grid;
+      gap:16px;
+    }
+
+    .accordion-item{
+      background:rgba(10,10,10,.80);
+      border:1px solid var(--line);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .accordion-btn{
+      width:100%;
+      border:none;
+      background:transparent;
+      color:#fff;
+      text-align:left;
+      padding:22px 22px;
+      font-size:clamp(22px,4vw,34px);
+      font-weight:1000;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      cursor:pointer;
+    }
+
+    .accordion-btn span{
+      color:var(--gold);
+      flex:0 0 auto;
+      font-size:28px;
+      line-height:1;
+    }
+
+    .accordion-title{
+      color:var(--gold);
+      line-height:1.15;
+    }
+
+    .accordion-panel{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .35s ease;
+    }
+
+    .accordion-item.open .accordion-panel{
+      max-height:1000px;
+    }
+
+    .accordion-inner{
+      padding:0 22px 22px;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.85;
+    }
+
+    .accordion-inner ul{
+      padding-left:22px;
+    }
+
+    .accordion-inner li{
+      margin-bottom:10px;
+    }
+
     .feature-grid{
       display:grid;
-      grid-template-columns:repeat(4,1fr);
+      grid-template-columns:repeat(2,1fr);
       gap:16px;
     }
 
     .feature{
       background:#101010;
       border:1px solid var(--line);
-      border-radius:20px;
-      padding:18px;
+      border-radius:22px;
+      padding:20px;
+      box-shadow:0 14px 24px rgba(0,0,0,.18);
     }
 
     .feature strong{
       display:block;
       color:var(--gold);
-      font-size:18px;
-      margin-bottom:8px;
+      font-size:22px;
+      margin-bottom:10px;
+      line-height:1.2;
     }
 
     .feature p{
       color:var(--muted);
-      font-size:15px;
-      line-height:1.75;
+      font-size:17px;
+      line-height:1.8;
     }
 
     .float{
@@ -259,7 +311,7 @@
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:10px;
-      background:rgba(11,11,11,.86);
+      background:rgba(11,11,11,.88);
       backdrop-filter:blur(12px);
       border:1px solid rgba(255,213,106,.18);
       border-radius:24px;
@@ -276,6 +328,7 @@
       justify-content:center;
       font-weight:1000;
       border:1px solid rgba(255,213,106,.22);
+      font-size:18px;
     }
 
     .float .gold{
@@ -398,9 +451,10 @@
     }
 
     .nda-check{
-      display:flex;
-      align-items:flex-start;
+      display:grid;
+      grid-template-columns:22px 1fr;
       gap:10px;
+      align-items:start;
       color:#decda7;
       line-height:1.7;
       font-size:14px;
@@ -409,7 +463,7 @@
 
     .nda-check input{
       margin-top:4px;
-      transform:scale(1.1);
+      transform:scale(1.08);
     }
 
     .nda-actions{
@@ -449,13 +503,26 @@
     }
 
     @media (max-width:980px){
-      .grid,.feature-grid{
+      .feature-grid{
         grid-template-columns:1fr;
       }
     }
+
+    @media (max-width:680px){
+      .cta{flex-direction:column}
+      .gold-btn,.dark-btn{width:100%}
+      .float a{font-size:16px}
+      .accordion-btn{font-size:28px}
+      .accordion-inner{font-size:16px}
+      .feature strong{font-size:20px}
+      .feature p{font-size:16px}
+      .nda-actions{flex-direction:column}
+      .nda-btn{width:100%}
+      .nda-title{font-size:22px}
+    }
   </style>
 </head>
-<body>
+  <body>
   <div class="topbar">
     <div class="container topbar-wrap">
       <a href="index.html" class="back-btn">← Về kho BĐS</a>
@@ -475,7 +542,7 @@
       <h1>TÀI SẢN VIP<br>42 TỶ</h1>
       <div class="price">42 TỶ</div>
       <div class="sub">
-        Landing riêng cho nhóm tài sản cao cấp tầm giá 42 tỷ, phù hợp với khách cần sản phẩm chỉnh chu, rõ nội dung, dễ tiếp cận nhanh và vẫn giữ được phong cách trình bày sang trọng, chuyên nghiệp.
+        Tài sản VIP 42 tỷ phù hợp với nhóm khách cần một sản phẩm cao cấp, bố cục rõ ràng, dễ xem nhanh trên điện thoại và vẫn giữ được cảm giác sang trọng, chỉn chu, chuyên nghiệp khi gửi trực tiếp cho khách.
       </div>
 
       <div class="cta">
@@ -483,40 +550,76 @@
         <a class="dark-btn" href="https://zalo.me/0858999934" target="_blank">💬 Zalo</a>
         <button class="dark-btn" type="button" onclick="openNDA('Tài sản VIP 42 tỷ')">📄 Nhận hồ sơ NDA</button>
       </div>
+    </div>
+  </section>
 
-      <div class="grid">
-        <div class="box">
-          <h3>Tổng quan tài sản</h3>
-          <ul>
-            <li>Nhóm tài sản: bất động sản VIP tầm trung cao cấp</li>
-            <li>Mức giá chào: 42 tỷ</li>
-            <li>Phong cách trình bày: gọn, đẹp, chuyên nghiệp, phù hợp gửi khách nhanh</li>
-            <li>Thích hợp cho nhóm khách cần sản phẩm rõ ràng và quyết định nhanh</li>
-          </ul>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">nội dung chính</div>
+        <h2>CÁC MỤC ĐƯỢC ẨN SẴN, BẤM VÀO MỚI HIỆN</h2>
+        <p>
+          Cách trình bày này giúp trang nhìn gọn, sang và có cảm giác chọn lọc hơn thay vì lộ hết chữ ngay từ đầu.
+        </p>
+      </div>
+
+      <div class="accordion-stack">
+        <div class="accordion-item open">
+          <button class="accordion-btn" type="button">
+            <div class="accordion-title">Tổng quan tài sản</div>
+            <span>+</span>
+          </button>
+          <div class="accordion-panel">
+            <div class="accordion-inner">
+              <ul>
+                <li>Nhóm tài sản: bất động sản VIP tầm trung cao cấp</li>
+                <li>Mức giá chào: 42 tỷ</li>
+                <li>Phong cách trình bày: gọn, đẹp, chuyên nghiệp, phù hợp gửi khách nhanh</li>
+                <li>Thích hợp cho nhóm khách cần sản phẩm rõ ràng và quyết định nhanh</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <div class="box">
-          <h3>Điểm mạnh nổi bật</h3>
-          <ul>
-            <li>Mức giá nằm trong phân khúc dễ tiếp cận hơn nhóm hàng cực lớn</li>
-            <li>Landing gọn, dễ xem trên điện thoại</li>
-            <li>CTA rõ, phù hợp dùng khi trao đổi khách thật</li>
-            <li>Giữ đúng nhận diện thương hiệu của toàn hệ thống Sơn Bạch VIP PRO</li>
-          </ul>
+        <div class="accordion-item">
+          <button class="accordion-btn" type="button">
+            <div class="accordion-title">Điểm mạnh nổi bật</div>
+            <span>+</span>
+          </button>
+          <div class="accordion-panel">
+            <div class="accordion-inner">
+              <ul>
+                <li>Mức giá nằm trong phân khúc dễ tiếp cận hơn nhóm hàng cực lớn</li>
+                <li>Landing gọn, dễ xem trên điện thoại</li>
+                <li>CTA rõ, phù hợp dùng khi trao đổi khách thật</li>
+                <li>Giữ đúng nhận diện thương hiệu của toàn hệ thống Sơn Bạch VIP PRO</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <div class="box">
-          <h3>Góc nhìn thị trường</h3>
-          <p>
-            Với phân khúc 42 tỷ, nhóm khách thường quan tâm nhiều đến tính cân bằng giữa vị thế tài sản, mức giá, khả năng sử dụng và tính thanh khoản. Vì vậy cách trình bày phải đủ sang nhưng vẫn rõ ràng, trực diện và dễ hiểu.
-          </p>
+        <div class="accordion-item">
+          <button class="accordion-btn" type="button">
+            <div class="accordion-title">Góc nhìn thị trường</div>
+            <span>+</span>
+          </button>
+          <div class="accordion-panel">
+            <div class="accordion-inner">
+              Với phân khúc 42 tỷ, nhóm khách thường quan tâm nhiều đến tính cân bằng giữa vị thế tài sản, mức giá, khả năng sử dụng và tính thanh khoản. Vì vậy cách trình bày phải đủ sang nhưng vẫn rõ ràng, trực diện và dễ hiểu.
+            </div>
+          </div>
         </div>
 
-        <div class="box">
-          <h3>Phù hợp với nhóm khách nào</h3>
-          <p>
-            Tài sản này phù hợp với khách mua tích sản, khách mua khai thác giá trị sử dụng, khách muốn sản phẩm cao cấp nhưng không đi vào nhóm siêu lớn, đồng thời phù hợp cho các cuộc trao đổi cần gửi link nhanh và rõ.
-          </p>
+        <div class="accordion-item">
+          <button class="accordion-btn" type="button">
+            <div class="accordion-title">Phù hợp với nhóm khách nào</div>
+            <span>+</span>
+          </button>
+          <div class="accordion-panel">
+            <div class="accordion-inner">
+              Tài sản này phù hợp với khách mua tích sản, khách mua khai thác giá trị sử dụng, khách muốn sản phẩm cao cấp nhưng không đi vào nhóm siêu lớn, đồng thời phù hợp cho các cuộc trao đổi cần gửi link nhanh và rõ.
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -537,17 +640,20 @@
           <strong>Dễ xem trên mobile</strong>
           <p>Khách mở bằng điện thoại vẫn thấy rõ bố cục, giá và các điểm chính của tài sản.</p>
         </div>
+
         <div class="feature">
           <strong>Dễ gửi khách nhanh</strong>
           <p>Trang gọn, rõ và đủ sang để dùng ngay trong tư vấn, nhắn Zalo hoặc Facebook.</p>
         </div>
+
         <div class="feature">
           <strong>Giữ đúng chất thương hiệu</strong>
           <p>Đen vàng kim, CTA rõ, phong cách chỉn chu, đồng bộ với toàn bộ hệ thống Sơn Bạch.</p>
         </div>
+
         <div class="feature">
           <strong>Tối ưu cho chốt lead</strong>
-          <p>Các nút gọi, Zalo, Facebook luôn sẵn để khách quyết định và liên hệ ngay.</p>
+          <p>Các nút gọi, Zalo, Facebook và NDA luôn sẵn để khách có thể ra quyết định và liên hệ ngay.</p>
         </div>
       </div>
     </div>
@@ -621,7 +727,14 @@
       </form>
     </div>
   </div>
-    <script>
+      <script>
+    document.querySelectorAll('.accordion-btn').forEach(btn=>{
+      btn.addEventListener('click', function(){
+        const item = this.parentElement;
+        item.classList.toggle('open');
+      });
+    });
+
     function openNDA(assetName){
       const overlay = document.getElementById('ndaOverlay');
       const assetInput = document.getElementById('ndaAssetName');
@@ -660,3 +773,4 @@
   </script>
 </body>
 </html>
+    
