@@ -2,57 +2,128 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Bình Tân 3.419m² - 135 TỶ | Sơn Bạch VIP PRO</title>
+  <meta name="description" content="Quỹ đất Bình Tân 3.419m² giá 135 tỷ. Tài sản chọn lọc, quy mô lớn, phù hợp nhà đầu tư cần quỹ đất giá trị tại khu Tây TP.HCM." />
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png" />
   <style>
     :root{
-      --bg:#070707;--gold:#ffd56a;--gold2:#c9961a;--gold3:#fff0b6;--text:#f7f0de;--muted:#d3c29c;--line:rgba(255,213,106,.18);
+      --bg:#070707;--bg2:#111;--gold:#ffd56a;--gold2:#c9961a;--gold3:#fff0b6;
+      --text:#f6f0de;--muted:#d6c39a;--line:rgba(255,213,106,.18);--shadow:0 18px 48px rgba(0,0,0,.34);
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#070707;color:var(--text)}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,#050505,#0b0b0b);
+      color:var(--text);
+      overflow-x:hidden;
+    }
     a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .container{width:min(1120px,92%);margin:auto}
-    .hero{
-      position:relative;min-height:100vh;
-      background:
-        linear-gradient(90deg, rgba(0,0,0,.82), rgba(0,0,0,.38)),
-        url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-    }
+    img{display:block;max-width:100%}
+    .container{width:min(1180px,92%);margin:auto}
     .topbar{
-      position:sticky;top:0;background:rgba(8,8,8,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:99;
+      position:sticky;top:0;z-index:999;
+      background:rgba(8,8,8,.84);backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
     }
-    .topbar-wrap{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .topbar-wrap{
+      min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:14px;
+    }
     .brand{display:flex;align-items:center;gap:14px}
-    .brand img{width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,213,106,.35)}
-    .brand strong{display:block;color:var(--gold);font-size:22px}
-    .brand span{display:block;color:#d8c28f;font-size:11px;letter-spacing:2px;text-transform:uppercase}
+    .brand img{
+      width:52px;height:52px;border-radius:50%;object-fit:cover;
+      border:1px solid rgba(255,213,106,.34);
+      box-shadow:0 0 14px rgba(255,213,106,.14);
+      background:#111;
+    }
+    .brand strong{display:block;color:var(--gold);font-size:22px;line-height:1.02}
+    .brand span{display:block;color:#d9c58f;font-size:11px;letter-spacing:2px;text-transform:uppercase}
     .back-btn,.gold-btn,.dark-btn{
-      min-height:52px;padding:0 20px;border-radius:16px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;
-      border:1px solid rgba(255,213,106,.24)
+      min-height:52px;padding:0 20px;border-radius:16px;font-weight:1000;
+      display:inline-flex;align-items:center;justify-content:center;
+      border:1px solid rgba(255,213,106,.24);
     }
     .back-btn,.dark-btn{color:var(--gold);background:#111}
-    .gold-btn{background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));color:#111}
-    .hero-content{padding:58px 0 40px}
-    .tag{display:inline-block;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,213,106,.24);color:var(--gold);background:rgba(10,10,10,.52);margin-bottom:18px;font-weight:900}
-    h1{font-size:clamp(36px,6vw,76px);line-height:1.02;margin-bottom:14px}
-    .price{font-size:clamp(40px,7vw,88px);font-weight:1000;color:#ffe088;text-shadow:0 0 18px rgba(255,213,106,.22);margin:10px 0 18px}
-    .sub{max-width:820px;color:#efdfb8;font-size:20px;line-height:1.6}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
-    .box{background:rgba(10,10,10,.76);border:1px solid var(--line);border-radius:24px;padding:22px}
-    .box h3{color:var(--gold);font-size:24px;margin-bottom:12px}
-    .box p,.box li{color:var(--muted);line-height:1.8;font-size:16px}
-    ul{padding-left:18px}
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-    .float{
-      position:fixed;left:50%;transform:translateX(-50%);bottom:12px;width:min(780px,94%);display:grid;grid-template-columns:repeat(3,1fr);
-      gap:10px;background:rgba(11,11,11,.84);backdrop-filter:blur(12px);border:1px solid rgba(255,213,106,.18);border-radius:24px;padding:10px;
+    .gold-btn{
+      background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));
+      color:#111;box-shadow:0 0 18px rgba(255,213,106,.16);
     }
-    .float a{min-height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-weight:1000;border:1px solid rgba(255,213,106,.22)}
+    .hero{
+      position:relative;
+      min-height:100vh;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.84) 0%, rgba(0,0,0,.46) 48%, rgba(0,0,0,.20) 100%),
+        url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
+    .hero-content{padding:60px 0 42px}
+    .tag{
+      display:inline-block;padding:11px 16px;border-radius:999px;
+      border:1px solid rgba(255,213,106,.22);color:var(--gold);
+      background:rgba(10,10,10,.55);font-weight:1000;margin-bottom:18px;
+    }
+    h1{
+      font-size:clamp(38px,6vw,78px);
+      line-height:1.01;
+      margin-bottom:14px;
+      letter-spacing:-1px;
+    }
+    .price{
+      font-size:clamp(42px,7vw,90px);
+      font-weight:1000;color:#ffe089;
+      text-shadow:0 0 18px rgba(255,213,106,.24);
+      margin:10px 0 18px;
+      line-height:1;
+    }
+    .sub{
+      max-width:840px;color:#f0dfb8;
+      font-size:20px;line-height:1.65;
+    }
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px;
+    }
+    .box{
+      background:rgba(10,10,10,.78);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+    .box h3{color:var(--gold);font-size:24px;margin-bottom:12px}
+    .box p,.box li{color:var(--muted);line-height:1.85;font-size:16px}
+    ul{padding-left:18px}
+    .section{padding:58px 0;border-top:1px solid rgba(255,213,106,.08)}
+    .section-head{text-align:center;margin-bottom:28px}
+    .section-head .mini{
+      color:var(--gold);text-transform:uppercase;letter-spacing:4px;
+      font-size:12px;font-weight:1000;margin-bottom:10px;
+    }
+    .section-head h2{font-size:clamp(28px,4.5vw,54px);line-height:1.04;margin-bottom:10px}
+    .section-head p{max-width:840px;margin:auto;color:var(--muted);font-size:18px;line-height:1.75}
+    .feature-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+    }
+    .feature{
+      background:#101010;border:1px solid var(--line);border-radius:20px;padding:18px;
+    }
+    .feature strong{display:block;color:var(--gold);font-size:18px;margin-bottom:8px}
+    .feature p{color:var(--muted);font-size:15px;line-height:1.75}
+    .float{
+      position:fixed;left:50%;transform:translateX(-50%);bottom:12px;
+      width:min(820px,94%);display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+      background:rgba(11,11,11,.86);backdrop-filter:blur(12px);
+      border:1px solid rgba(255,213,106,.18);border-radius:24px;padding:10px;z-index:999;
+    }
+    .float a{
+      min-height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;
+      font-weight:1000;border:1px solid rgba(255,213,106,.22);
+    }
     .float .gold{background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));color:#111}
     .float .dark{background:#111;color:var(--gold)}
-    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+    @media (max-width:980px){
+      .grid,.feature-grid{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
@@ -61,22 +132,25 @@
       <a href="index.html" class="back-btn">← Về kho BĐS</a>
       <div class="brand">
         <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png" alt="Logo">
-        <div><strong>SƠN BẠCH VIP PRO</strong><span>Bất động sản chọn lọc</span></div>
+        <div>
+          <strong>SƠN BẠCH VIP PRO</strong>
+          <span>Bất động sản chọn lọc</span>
+        </div>
       </div>
     </div>
   </div>
 
   <section class="hero">
     <div class="container hero-content">
-      <div class="tag">QUỸ ĐẤT LỚN • KHU TÂY SÀI GÒN • HÀNG CHỌN LỌC</div>
-      <h1>BÌNH TÂN<br>3.419m²</h1>
+      <div class="tag">QUỸ ĐẤT LỚN • BÌNH TÂN • KHU TÂY TP.HCM</div>
+      <h1>KHU ĐẤT BÌNH TÂN<br>3.419m²</h1>
       <div class="price">135 TỶ</div>
       <div class="sub">
-        Tài sản quỹ đất lớn theo phong cách giới thiệu đầu tư. Phù hợp nhà đầu tư cần sản phẩm diện tích lớn, dễ khai thác giá trị, giữ tiền và phát triển dài hạn.
+        Tài sản quy mô lớn tại Bình Tân, phù hợp với nhóm khách đang tìm quỹ đất có diện tích nổi bật, dễ xây câu chuyện đầu tư và có khả năng gia tăng giá trị theo hạ tầng, mật độ dân cư và tốc độ phát triển khu Tây Sài Gòn.
       </div>
 
       <div class="cta">
-        <a class="gold-btn" href="tel:0858999934">📞 Gọi ngay</a>
+        <a class="gold-btn" href="tel:0858999934">📞 Gọi trực tiếp</a>
         <a class="dark-btn" href="https://zalo.me/0858999934" target="_blank">💬 Zalo</a>
         <a class="dark-btn" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank">📘 Facebook</a>
       </div>
@@ -85,35 +159,65 @@
         <div class="box">
           <h3>Tổng quan tài sản</h3>
           <ul>
+            <li>Loại tài sản: quỹ đất quy mô lớn</li>
             <li>Diện tích: 3.419m²</li>
-            <li>Nhóm tài sản: quỹ đất lớn</li>
-            <li>Phù hợp: giữ tiền, phát triển, gom quỹ đất</li>
-            <li>Phong cách tiếp cận: chọn lọc khách thật</li>
+            <li>Khu vực: Bình Tân – TP.HCM</li>
+            <li>Mức giá chào: 135 tỷ</li>
+            <li>Phù hợp nhóm khách đầu tư dài hạn, tích sản, phát triển dự án hoặc gom quỹ đất giá trị</li>
           </ul>
         </div>
 
         <div class="box">
           <h3>Điểm mạnh nổi bật</h3>
           <ul>
-            <li>Diện tích lớn, hiếm với mặt bằng sản phẩm phổ thông</li>
-            <li>Dễ định vị như tài sản lõi khu Tây</li>
-            <li>Phù hợp đưa vào kho hàng VIP của anh</li>
-            <li>Dễ nâng cấp thêm phần NDA và pháp lý tóm tắt sau này</li>
+            <li>Quy mô diện tích lớn, tạo khác biệt rõ so với phần lớn sản phẩm phổ thông trên thị trường</li>
+            <li>Dễ định vị theo hướng tài sản giữ tiền và mở rộng giá trị trong trung hạn</li>
+            <li>Phù hợp với nhà đầu tư cần quỹ đất có tầm nhìn phát triển</li>
+            <li>Dễ xây dựng hồ sơ tiếp cận chuyên nghiệp cho khách thật</li>
           </ul>
         </div>
 
         <div class="box">
-          <h3>Thông điệp đầu tư</h3>
+          <h3>Góc nhìn đầu tư</h3>
           <p>
-            Đây là dạng tài sản mà nhà đầu tư lớn thường quan tâm vì có biên độ làm câu chuyện giá trị rõ hơn web rao vặt thường. Bản landing này giúp anh gửi link chuyên nghiệp hơn khi chốt khách.
+            Với nhóm sản phẩm quỹ đất lớn, điều quan trọng không chỉ là mức giá hiện tại mà còn là khả năng khai thác giá trị trong tương lai. Bình Tân là khu vực có dân cư đông, nhu cầu thương mại – dịch vụ cao và sức hút lớn với nhà đầu tư tìm tài sản vừa có quy mô vừa có tính thực tế trong khai thác.
           </p>
         </div>
 
         <div class="box">
-          <h3>Hướng nâng tiếp</h3>
+          <h3>Phù hợp với nhóm khách nào</h3>
           <p>
-            Sau này anh chỉ cần thay ảnh thật, vị trí thật, pháp lý thật, mặt tiền thật và gắn NDA thật là landing này sẽ lên level chốt khách rất mạnh.
+            Tài sản này phù hợp với nhà đầu tư thích quỹ đất lớn, khách muốn gom sản phẩm giá trị ở khu Tây, khách có xu hướng tích sản bằng tài sản thực và khách ưu tiên những sản phẩm có độ hiếm về quy mô.
           </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">giá trị chính</div>
+        <h2>VÌ SAO TÀI SẢN NÀY ĐÁNG ĐƯỢC QUAN TÂM</h2>
+        <p>Điểm mạnh của sản phẩm quỹ đất quy mô lớn là khả năng tạo biên độ kể chuyện đầu tư tốt hơn, dễ định vị trong nhóm hàng giá trị và phù hợp với khách thực sự có tầm nhìn.</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature">
+          <strong>Diện tích tạo lợi thế</strong>
+          <p>3.419m² là quy mô đủ lớn để tạo khác biệt ngay trong lần tiếp cận đầu tiên.</p>
+        </div>
+        <div class="feature">
+          <strong>Khu Tây còn dư địa</strong>
+          <p>Bình Tân vẫn là điểm đến thực tế cho nhóm khách cần hạ tầng, dân cư và thanh khoản khu vực.</p>
+        </div>
+        <div class="feature">
+          <strong>Dễ làm hồ sơ VIP</strong>
+          <p>Dạng tài sản này rất phù hợp trình bày theo phong cách chọn lọc, kín và chuyên nghiệp.</p>
+        </div>
+        <div class="feature">
+          <strong>Phù hợp giữ tài sản</strong>
+          <p>Sản phẩm quy mô lớn luôn có sức hút riêng với nhóm khách coi trọng giá trị lưu giữ.</p>
         </div>
       </div>
     </div>
