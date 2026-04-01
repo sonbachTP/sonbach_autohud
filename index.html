@@ -45,11 +45,6 @@
     img{display:block;max-width:100%}
     .container{width:min(var(--max),92%);margin:auto}
 
-    .gold-text{
-      color:var(--gold);
-      text-shadow:0 0 10px rgba(255,213,106,.18);
-    }
-
     .section{
       padding:64px 0;
       border-top:1px solid var(--line2);
@@ -82,7 +77,6 @@
       line-height:1.75;
     }
 
-    /* HEADER */
     .header{
       position:sticky;
       top:0;
@@ -176,7 +170,6 @@
       box-shadow:var(--glow);
     }
 
-    /* HERO */
     .hero{
       position:relative;
       overflow:hidden;
@@ -280,6 +273,7 @@
       font-size:16px;
       font-weight:1000;
       transition:.25s ease;
+      cursor:pointer;
     }
 
     .btn:hover{transform:translateY(-2px)}
@@ -379,7 +373,6 @@
       margin-top:10px;
     }
 
-    /* TRUST */
     .trust-wrap{
       background:linear-gradient(180deg, rgba(255,213,106,.03), transparent);
       border-top:1px solid var(--line2);
@@ -414,7 +407,6 @@
       line-height:1.6;
     }
 
-    /* FILTER BAR */
     .filter-wrap{
       display:flex;
       justify-content:center;
@@ -434,7 +426,6 @@
       box-shadow:0 8px 18px rgba(0,0,0,.14);
     }
 
-    /* LISTINGS */
     .listing-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -538,7 +529,6 @@
       margin-top:14px;
     }
 
-    /* HIDDEN PANELS */
     .hidden-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -590,7 +580,6 @@
       padding:0 18px 18px;
     }
 
-    /* FEATURE STRIP */
     .feature-grid{
       display:grid;
       grid-template-columns:repeat(4,1fr);
@@ -618,7 +607,6 @@
       font-size:15px;
     }
 
-    /* PRIVATE */
     .private-box{
       max-width:960px;
       margin:0 auto;
@@ -658,7 +646,6 @@
       display:block;
     }
 
-    /* PROCESS */
     .process-grid{
       display:grid;
       grid-template-columns:repeat(4,1fr);
@@ -700,7 +687,6 @@
       font-size:15px;
     }
 
-    /* FOOTER */
     .footer{
       padding:44px 0 120px;
       background:#080808;
@@ -726,7 +712,6 @@
       line-height:1.85;
     }
 
-    /* FLOAT CTA */
     .float-cta{
       position:fixed;
       left:50%;
@@ -772,7 +757,147 @@
       color:var(--gold);
     }
 
-    /* RESPONSIVE */
+    /* ===== NDA SYSTEM ===== */
+    .nda-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.82);
+      backdrop-filter:blur(8px);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:9999;
+      padding:16px;
+    }
+    .nda-overlay.show{
+      display:flex;
+    }
+    .nda-modal{
+      width:min(720px,96%);
+      max-height:90vh;
+      overflow:auto;
+      background:linear-gradient(180deg,#111,#0b0b0b);
+      border:1px solid rgba(255,213,106,.22);
+      border-radius:22px;
+      padding:22px;
+      box-shadow:0 0 30px rgba(255,213,106,.12), 0 24px 60px rgba(0,0,0,.45);
+    }
+    .nda-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:14px;
+    }
+    .nda-title{
+      color:#ffd56a;
+      font-size:26px;
+      font-weight:1000;
+      line-height:1.05;
+    }
+    .nda-sub{
+      color:#d6c08a;
+      margin-top:8px;
+      line-height:1.7;
+      font-size:14px;
+    }
+    .nda-close{
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      border:1px solid rgba(255,213,106,.18);
+      background:#171717;
+      color:#ffd56a;
+      font-size:24px;
+      cursor:pointer;
+      flex:0 0 auto;
+    }
+    .nda-box{
+      background:#121212;
+      border:1px solid rgba(255,213,106,.12);
+      border-radius:18px;
+      padding:16px;
+      margin-bottom:14px;
+    }
+    .nda-box strong{
+      display:block;
+      color:#ffd56a;
+      font-size:17px;
+      margin-bottom:8px;
+    }
+    .nda-box p,
+    .nda-box li{
+      color:#d7c49a;
+      line-height:1.8;
+      font-size:15px;
+    }
+    .nda-box ul{
+      padding-left:18px;
+    }
+    .nda-form input,
+    .nda-form select,
+    .nda-form textarea{
+      width:100%;
+      margin-bottom:12px;
+      min-height:52px;
+      border-radius:14px;
+      background:#111;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.08);
+      padding:0 14px;
+      outline:none;
+      font-size:15px;
+    }
+    .nda-form textarea{
+      min-height:90px;
+      padding:12px 14px;
+      resize:vertical;
+    }
+    .nda-check{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      color:#decda7;
+      line-height:1.7;
+      font-size:14px;
+      margin:8px 0 14px;
+    }
+    .nda-check input{
+      margin-top:4px;
+      transform:scale(1.1);
+    }
+    .nda-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .nda-btn{
+      min-height:52px;
+      padding:0 18px;
+      border-radius:14px;
+      border:1px solid rgba(255,213,106,.22);
+      font-weight:1000;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .nda-btn-gold{
+      background:linear-gradient(135deg,#fff1b8,#ffd56a,#c9961a);
+      color:#111;
+      box-shadow:0 0 18px rgba(255,213,106,.14);
+    }
+    .nda-btn-dark{
+      background:#111;
+      color:#ffd56a;
+    }
+    .nda-note{
+      color:#bfa977;
+      font-size:12px;
+      line-height:1.65;
+      margin-top:10px;
+    }
+
     @media (max-width:1080px){
       .hero-grid,
       .listing-grid,
@@ -799,6 +924,9 @@
       .btn{width:100%}
       .listing-top{flex-direction:column}
       .float-link{font-size:16px;min-height:56px}
+      .nda-title{font-size:22px}
+      .nda-actions{flex-direction:column}
+      .nda-btn{width:100%}
     }
   </style>
 </head>
@@ -823,7 +951,7 @@
         <button class="nav-btn active" data-target="home">Trang chủ</button>
         <button class="nav-btn" data-target="featured">Kho BĐS</button>
         <button class="nav-btn" data-target="overview">Tổng quan</button>
-        <button class="nav-btn" data-target="private">Thông tin ẩn</button>
+        <button class="nav-btn" data-target="private">Thông tin kín</button>
         <button class="nav-btn" data-target="process">Quy trình</button>
         <button class="nav-btn" data-target="contact">Liên hệ</button>
         <a class="hotline" href="tel:0858999934">📞 0858 999 934</a>
@@ -839,35 +967,35 @@
         <h1>KHO BẤT ĐỘNG SẢN<br>ĐẲNG CẤP CỦA SƠN BẠCH</h1>
 
         <div class="hero-sub">
-          Đây không còn là một landing rời rạc, mà là một hệ thống trình bày tài sản theo phong cách web lớn: rõ cấu trúc, có trang chủ, có kho BĐS, có landing riêng từng căn, có logic lọc khách và có nhận diện thương hiệu riêng.
+          Hệ thống kho bất động sản chọn lọc được xây dựng theo hướng trình bày chuyên nghiệp, phân tầng thông tin, giữ cảm giác giao dịch kín và phù hợp với nhóm khách thực sự quan tâm đến tài sản giá trị.
         </div>
 
         <div class="price-glow">135 TỶ / 1.250 TỶ / 42 TỶ</div>
 
         <div class="hero-actions">
           <a href="#featured" class="btn btn-gold">Xem kho BĐS ngay</a>
-          <a href="#private" class="btn btn-dark">Mở thông tin ẩn</a>
+          <a href="javascript:void(0)" class="btn btn-dark" onclick="openNDA('Kho BĐS Sơn Bạch VIP PRO')">Nhận hồ sơ kín</a>
         </div>
 
         <div class="hero-stats">
           <div class="hero-stat">
-            <strong>3 căn</strong>
-            <span>Đã tách ra thành các trang riêng để nhìn giống một nền tảng thật, không còn là một trang đơn lẻ.</span>
+            <strong>3 tài sản</strong>
+            <span>Đã được tách thành các landing riêng để tạo cảm giác như một hệ thống thật, không còn là một trang đơn lẻ.</span>
           </div>
           <div class="hero-stat">
-            <strong>VIP</strong>
-            <span>Định vị đen vàng kim, nhấn mạnh giao dịch kín, tài sản lõi, phân tầng thông tin và cảm giác hàng chọn lọc.</span>
+            <strong>Định vị VIP</strong>
+            <span>Tone đen vàng kim, card sắc nét, nội dung đủ lớp, phù hợp định vị môi giới chọn lọc và hàng giá trị.</span>
           </div>
           <div class="hero-stat">
-            <strong>MỞ RỘNG</strong>
-            <span>Sau này chỉ cần copy thêm landing mới rồi gắn lại vào trang chủ là kho BĐS của anh sẽ lớn dần rất nhanh.</span>
+            <strong>Mở rộng lâu dài</strong>
+            <span>Sau này chỉ cần thêm landing mới rồi gắn lại vào kho là hệ thống sẽ lớn dần rất nhanh.</span>
           </div>
         </div>
       </div>
 
       <div class="lead-card">
-        <h3>Nhận hồ sơ tài sản kín</h3>
-        <p>Khách để lại thông tin để nhận hồ sơ phù hợp. Bước tiếp theo có thể nối Formspree và NDA thật để lead gửi trực tiếp về email anh.</p>
+        <h3>Nhận thông tin tài sản phù hợp</h3>
+        <p>Điền thông tin để hệ thống ghi nhận nhu cầu. Phần hồ sơ sâu sẽ được chia sẻ theo đúng nhóm tài sản và mức độ quan tâm thực tế của khách.</p>
 
         <input type="text" placeholder="Họ và tên">
         <input type="text" placeholder="Số điện thoại">
@@ -879,10 +1007,10 @@
           <option>Tài sản VIP 42 tỷ</option>
         </select>
 
-        <a href="#featured" class="btn btn-gold" style="width:100%;">XEM CÁC TÀI SẢN</a>
+        <button class="btn btn-gold" style="width:100%;" onclick="openNDA('Đăng ký nhận hồ sơ từ trang chủ')">MỞ FORM NDA & NHẬN HỒ SƠ</button>
 
         <div class="lead-note">
-          * Đây là phần form giao diện chuẩn bị cho bước gắn lead thật. Hiện tại nó giúp web nhìn chuyên nghiệp và đầy đủ hơn như một web lớn.
+          * Thông tin chuyên sâu được chia sẻ theo hướng chọn lọc để đảm bảo chất lượng tiếp cận và giữ đúng tinh thần giao dịch kín.
         </div>
       </div>
     </div>
@@ -891,20 +1019,20 @@
   <div class="trust-wrap">
     <div class="container trust-grid">
       <div class="trust-item">
-        <strong>Tài sản lõi</strong>
-        <span>Ưu tiên hàng hiếm, tài sản trung tâm, quỹ đất lớn, hàng có câu chuyện giá trị rõ ràng.</span>
+        <strong>Tài sản lõi & quỹ đất lớn</strong>
+        <span>Ưu tiên những sản phẩm có khả năng kể câu chuyện đầu tư, giữ giá trị và phù hợp nhóm khách có năng lực thực.</span>
       </div>
       <div class="trust-item">
-        <strong>Trình bày đẳng cấp</strong>
-        <span>Không chỉ rao bán, mà trình bày như hồ sơ đầu tư tiếp cận, nhìn vào đã khác web thường.</span>
+        <strong>Trình bày chuyên nghiệp</strong>
+        <span>Không chỉ rao bán, mà trình bày như một hệ thống tiếp cận tài sản chọn lọc, đủ độ sáng, rõ và có cấp độ.</span>
       </div>
       <div class="trust-item">
-        <strong>Lọc khách thật</strong>
-        <span>Kết hợp CTA, form, NDA, nội dung ẩn/hiện để giữ trải nghiệm kín và chọn lọc hơn.</span>
+        <strong>Giữ cảm giác giao dịch kín</strong>
+        <span>Nội dung chia lớp, có NDA, có khối ẩn/hiện và có điều hướng để khách đi sâu đúng mức thay vì lộ toàn bộ ngay.</span>
       </div>
       <div class="trust-item">
-        <strong>Hệ thống mở rộng</strong>
-        <span>Có thể thêm nhiều căn, nhiều landing riêng, nhiều cấp độ nội dung và nhiều điểm chốt khách.</span>
+        <strong>Phù hợp phát triển lâu dài</strong>
+        <span>Từ nền này có thể mở rộng thành kho BĐS, landing riêng, hệ thống lead, hệ thống NDA và lọc khách theo từng nhóm tài sản.</span>
       </div>
     </div>
   </div>
@@ -914,14 +1042,14 @@
       <div class="section-head">
         <div class="mini">kho bđs thật</div>
         <h2>BẤM VÀO TỪNG CĂN ĐỂ XEM TRANG RIÊNG</h2>
-        <p>Giờ web đã đi đúng hướng nền tảng hơn: có trang chủ kho BĐS, có card chuẩn, có mô tả rõ, có link sang landing riêng từng căn, phù hợp gửi khách và chốt khách chuyên nghiệp hơn nhiều.</p>
+        <p>Mỗi tài sản đều có một trang riêng để trình bày đúng tính chất sản phẩm, giúp khách đọc dễ hơn, cảm nhận rõ giá trị hơn và giúp anh gửi link đúng nhu cầu của từng nhóm khách.</p>
       </div>
 
       <div class="filter-wrap">
         <div class="chip">Quỹ đất lớn</div>
         <div class="chip">Tài sản lõi trung tâm</div>
-        <div class="chip">Landing riêng từng căn</div>
-        <div class="chip">Khách VIP / NDA</div>
+        <div class="chip">Bất động sản VIP</div>
+        <div class="chip">Giao dịch kín / NDA</div>
       </div>
 
       <div class="listing-grid">
@@ -938,16 +1066,16 @@
             <div class="badge-row">
               <div class="badge">3.419m²</div>
               <div class="badge">Quỹ đất lớn</div>
-              <div class="badge">Khu Tây Sài Gòn</div>
+              <div class="badge">Khu Tây TP.HCM</div>
             </div>
 
             <div class="listing-meta">
-              Khu đất diện tích lớn, phù hợp định vị theo hướng quỹ đất giá trị, hàng giữ tiền, phát triển dài hạn và dễ xây thành tài sản lõi khu Tây Sài Gòn trong kho hàng VIP của anh.
+              Khu đất diện tích lớn tại Bình Tân, phù hợp với nhóm khách cần sản phẩm có quy mô, dễ xây câu chuyện đầu tư và có thể nhìn thấy dư địa phát triển trong dài hạn.
             </div>
 
             <div class="listing-buttons">
               <a class="btn btn-gold" href="dat-binh-tan-3419m2-135-ty.html">Chi tiết</a>
-              <a class="btn btn-dark" href="dat-binh-tan-3419m2-135-ty.html">Vào trang riêng</a>
+              <a class="btn btn-dark" href="javascript:void(0)" onclick="openNDA('Bình Tân 3.419m² - 135 tỷ')">NDA</a>
             </div>
           </div>
         </article>
@@ -969,12 +1097,12 @@
             </div>
 
             <div class="listing-meta">
-              Tài sản lõi trung tâm theo phong cách trophy asset, phù hợp nhà đầu tư lớn, tạo cảm giác biểu tượng, lưu giữ giá trị lâu dài và rất hợp với cách tiếp cận hàng kín, hàng cấp độ cao.
+              Tài sản lõi trung tâm theo phong cách trophy asset, phù hợp nhà đầu tư lớn cần sản phẩm có vị thế, có câu chuyện giá trị và có tiêu chuẩn tiếp cận khác biệt.
             </div>
 
             <div class="listing-buttons">
               <a class="btn btn-gold" href="tai-san-loi-q1-1250-ty.html">Chi tiết</a>
-              <a class="btn btn-dark" href="tai-san-loi-q1-1250-ty.html">Vào trang riêng</a>
+              <a class="btn btn-dark" href="javascript:void(0)" onclick="openNDA('Tài sản lõi Quận 1 - 1.250 tỷ')">NDA</a>
             </div>
           </div>
         </article>
@@ -990,18 +1118,18 @@
             </div>
 
             <div class="badge-row">
-              <div class="badge">Landing mẫu</div>
               <div class="badge">Tầm trung cao cấp</div>
-              <div class="badge">Nhân bản nhanh</div>
+              <div class="badge">Landing riêng</div>
+              <div class="badge">CTA mạnh</div>
             </div>
 
             <div class="listing-meta">
-              Đây là landing mẫu cho nhóm căn tầm trung cao cấp. Mục đích là để anh có một xương mạnh, chỉ cần thay dữ liệu thật, ảnh thật và mô tả thật là có thêm sản phẩm mới ngay.
+              Tài sản VIP 42 tỷ phù hợp với nhóm khách muốn một sản phẩm rõ ràng, sang trọng, dễ xem trên điện thoại và dễ quyết định nhanh khi đã đúng nhu cầu.
             </div>
 
             <div class="listing-buttons">
               <a class="btn btn-gold" href="tai-san-vip-42-ty.html">Chi tiết</a>
-              <a class="btn btn-dark" href="tai-san-vip-42-ty.html">Vào trang riêng</a>
+              <a class="btn btn-dark" href="javascript:void(0)" onclick="openNDA('Tài sản VIP 42 tỷ')">NDA</a>
             </div>
           </div>
         </article>
@@ -1013,26 +1141,26 @@
     <div class="container">
       <div class="section-head">
         <div class="mini">tổng quan hệ thống</div>
-        <h2>MỘT WEB LỚN CẦN ĐỦ NỘI DUNG, ĐỦ TẦNG VÀ ĐỦ CẢM GIÁC</h2>
-        <p>Điểm khác giữa một web nhìn “demo” và một web nhìn “như nền tảng thật” nằm ở chỗ: nội dung phải đầy, khối phải rõ, màu phải sắc, card phải sống động, CTA phải mạnh và thông tin phải có tầng ẩn/hiện hợp lý.</p>
+        <h2>MỘT WEB LỚN CẦN ĐỦ NỘI DUNG, ĐỦ CẤU TRÚC VÀ ĐỦ CẢM GIÁC</h2>
+        <p>Điểm khác giữa một trang demo và một hệ thống nhìn như nền tảng thật nằm ở chỗ: nội dung phải đủ lớp, các khối phải rõ, màu sắc phải sắc nét, điều hướng phải mượt và mỗi tài sản phải có lý do tồn tại riêng trong cả hệ thống.</p>
       </div>
 
       <div class="feature-grid">
         <div class="feature-box">
-          <strong>Nhận diện thương hiệu</strong>
-          <p>Logo, màu sắc, tiêu đề, nút bấm và cảm giác nhìn vào phải nhận ra ngay đây là hệ thống của Sơn Bạch.</p>
+          <strong>Nhận diện thương hiệu rõ</strong>
+          <p>Màu đen vàng kim, logo, CTA và tiêu đề lớn giúp khách nhìn vào là nhận ra ngay hệ thống của Sơn Bạch.</p>
         </div>
         <div class="feature-box">
-          <strong>Kho dữ liệu rõ ràng</strong>
-          <p>Có trang chủ, có card chuẩn, có landing riêng từng căn, có cấu trúc để thêm căn mới mà không bị rối.</p>
+          <strong>Kho tài sản phân tầng</strong>
+          <p>Mỗi căn có nhóm riêng, giá riêng, mục tiêu khách riêng và landing riêng để không bị lẫn lộn như web rao vặt thường.</p>
         </div>
         <div class="feature-box">
-          <strong>Tầng thông tin thông minh</strong>
-          <p>Không show toàn bộ quá sớm. Phải có phần giới thiệu, phần điểm mạnh, phần ẩn/hiện và phần CTA để lọc khách.</p>
+          <strong>Nội dung đủ sâu</strong>
+          <p>Không chỉ có giá và ảnh. Mỗi khối đều nói rõ tính chất sản phẩm, đối tượng phù hợp và hướng tiếp cận.</p>
         </div>
         <div class="feature-box">
-          <strong>Trải nghiệm mobile mạnh</strong>
-          <p>Nhìn sắc nét trên điện thoại, nút to dễ bấm, chữ đủ lớn, không bị cảm giác như một file HTML đơn giản.</p>
+          <strong>Tối ưu chốt khách</strong>
+          <p>CTA rõ, NDA rõ, link rõ, form rõ, giúp khách không bị ngợp mà vẫn thấy được sự chuyên nghiệp của hệ thống.</p>
         </div>
       </div>
     </div>
@@ -1041,30 +1169,30 @@
   <section class="section">
     <div class="container">
       <div class="section-head">
-        <div class="mini">khối ẩn hiện chuyên nghiệp</div>
-        <h2>BẤM MỚI HIỆN – TẠO CẢM GIÁC WEB LỚN, KÍN VÀ CHỌN LỌC</h2>
-        <p>Các khối bên dưới không chỉ để đẹp mà còn giúp web có chiều sâu hơn, khách đọc cảm thấy đây là hệ thống thực sự có logic tiếp cận chứ không phải một bài đăng thông thường.</p>
+        <div class="mini">khối ẩn hiện</div>
+        <h2>BẤM MỚI HIỆN – TẠO CHIỀU SÂU CHO TOÀN HỆ THỐNG</h2>
+        <p>Thay vì lộ toàn bộ thông tin ngay từ đầu, các khối dưới đây giúp khách đi từng bước, đọc từng tầng, qua đó web nhìn có chiều sâu hơn và giữ được cảm giác chọn lọc.</p>
       </div>
 
       <div class="hidden-grid">
         <div class="hidden-card active">
           <button class="hidden-toggle"><span>Bình Tân 135 tỷ</span> +</button>
           <div class="hidden-content">
-            Tài sản này phù hợp nhóm nhà đầu tư cần quỹ đất lớn, thích hàng giữ tiền, hàng có thể phát triển và cần một sản phẩm đủ độ hiếm để tạo câu chuyện đầu tư mạnh.
+            Tài sản này phù hợp với khách thích quỹ đất lớn, thích sản phẩm giữ tiền và có xu hướng đánh giá tài sản qua quy mô, khả năng phát triển và vị trí khu vực.
           </div>
         </div>
 
         <div class="hidden-card">
           <button class="hidden-toggle"><span>Quận 1 - 1.250 tỷ</span> +</button>
           <div class="hidden-content">
-            Đây là nhóm tài sản lõi trung tâm, đi theo hướng trophy asset. Mấu chốt không chỉ là giá trị tài sản mà còn là đẳng cấp trình bày và mức độ chọn lọc khi tiếp cận khách.
+            Đây là nhóm tài sản trung tâm có tính biểu tượng. Mức độ tiếp cận phù hợp hơn với nhà đầu tư lớn, khách VIP và các giao dịch cần hồ sơ trình bày đẳng cấp.
           </div>
         </div>
 
         <div class="hidden-card">
           <button class="hidden-toggle"><span>Tài sản VIP 42 tỷ</span> +</button>
           <div class="hidden-content">
-            Căn mẫu này giúp anh chuẩn hóa cách làm sản phẩm tầm trung cao cấp. Sau này chỉ cần thay dữ liệu là anh có thêm trang mới mà vẫn giữ nguyên chất thương hiệu.
+            Tài sản này đi theo hướng rõ ràng, tinh gọn, dễ xem và dễ chốt hơn, phù hợp khách cần sản phẩm cao cấp nhưng muốn tiếp cận nhanh và thực tế.
           </div>
         </div>
       </div>
@@ -1074,23 +1202,16 @@
   <section class="section" id="private">
     <div class="container">
       <div class="section-head">
-        <div class="mini">thông tin ẩn</div>
-        <h2>BẤM MỚI HIỆN – ĐÚNG CHẤT WEB BĐS CHUYÊN NGHIỆP</h2>
-        <p>Đây là phần cực quan trọng để web nhìn giống web Batdongsan chuyên nghiệp hơn: có lớp thông tin công khai và có lớp thông tin chỉ hiện khi khách chủ động bấm xem.</p>
+        <div class="mini">thông tin kín</div>
+        <h2>BẤM MỞ THÔNG TIN KÍN – GIỮ ĐÚNG CHẤT GIAO DỊCH CHỌN LỌC</h2>
+        <p>Đây là phần giúp hệ thống không chỉ đẹp mà còn có logic tiếp cận: khách xem thông tin mở trước, sau đó nếu thực sự quan tâm thì mới đi sâu vào hồ sơ kín và dữ liệu chi tiết.</p>
       </div>
 
       <div class="private-box">
         <button class="private-button" onclick="togglePrivateInfo()">MỞ THÔNG TIN KÍN</button>
 
         <div class="private-content" id="privateContent">
-          Đây là vùng thông tin chỉ hiện khi khách chủ động bấm xem. Sau này anh có thể thay bằng:
-          <br><br>
-          • vị trí tổng quan<br>
-          • diện tích / mặt tiền / kết cấu<br>
-          • điểm hiếm và tiềm năng tăng giá<br>
-          • ảnh hiện trạng / ảnh tương lai<br>
-          • pháp lý tóm tắt<br>
-          • nút NDA / nhận hồ sơ / đặt lịch xem / gọi trực tiếp
+          Hồ sơ kín có thể bao gồm vị trí tổng quan, diện tích chi tiết, kết cấu, mặt tiền, định hướng khai thác, góc nhìn đầu tư, hình ảnh sâu hơn, mức độ tiếp cận và các ghi chú cần thiết cho từng nhóm khách phù hợp.
         </div>
       </div>
     </div>
@@ -1099,34 +1220,34 @@
   <section class="section" id="process">
     <div class="container">
       <div class="section-head">
-        <div class="mini">quy trình chốt lead</div>
-        <h2>FORM • NDA • LỌC KHÁCH • MỞ SÂU HỒ SƠ</h2>
-        <p>Web lớn không chỉ có giao diện đẹp. Nó còn phải có logic vận hành: khách xem, để lại thông tin, xác nhận mức độ quan tâm rồi mới đi sâu hơn vào tài sản.</p>
+        <div class="mini">quy trình tiếp cận</div>
+        <h2>TỪ XEM KHO BĐS ĐẾN NHẬN HỒ SƠ CHUYÊN SÂU</h2>
+        <p>Hệ thống này đi theo đúng logic của một web BĐS chọn lọc: xem tổng quan, chọn tài sản đúng nhu cầu, xác nhận NDA, nhận hồ sơ sâu và từ đó mới tiến hành trao đổi trực tiếp.</p>
       </div>
 
       <div class="process-grid">
         <div class="step">
           <div class="step-num">1</div>
-          <strong>Xem phần giới thiệu</strong>
-          <p>Khách vào trang chủ và cảm nhận ngay độ chuyên nghiệp, mức độ chọn lọc và đẳng cấp của hệ thống.</p>
+          <strong>Xem tổng quan hệ thống</strong>
+          <p>Khách vào trang chủ để hiểu phong cách, định vị, cấu trúc và nhóm tài sản mà anh đang quản lý.</p>
         </div>
 
         <div class="step">
           <div class="step-num">2</div>
           <strong>Chọn đúng tài sản</strong>
-          <p>Khách bấm vào từng card để xem đúng landing riêng của căn mình quan tâm thay vì xem tất cả lẫn lộn.</p>
+          <p>Mỗi card tài sản được viết rõ bản chất, giúp khách chọn đúng nhu cầu thay vì phải hỏi lại từ đầu.</p>
         </div>
 
         <div class="step">
           <div class="step-num">3</div>
-          <strong>Để lại thông tin</strong>
-          <p>Khách điền form hoặc bấm CTA liên hệ, từ đó tạo data lead và phân nhóm khách quan tâm thật.</p>
+          <strong>Xác nhận bảo mật</strong>
+          <p>Khi khách cần hồ sơ sâu hơn, hệ thống chuyển sang NDA để giữ chất lượng tiếp cận và lọc khách thật.</p>
         </div>
 
         <div class="step">
           <div class="step-num">4</div>
-          <strong>Mở sâu & chốt lịch</strong>
-          <p>Sau khi lọc khách đúng, anh có thể mới gửi hồ sơ sâu, NDA hoặc mời đi xem trực tiếp.</p>
+          <strong>Nhận hồ sơ & trao đổi</strong>
+          <p>Sau khi để lại thông tin, khách có thể được hỗ trợ sâu hơn theo đúng tài sản phù hợp và mức độ quan tâm thực tế.</p>
         </div>
       </div>
     </div>
@@ -1137,7 +1258,7 @@
       <div>
         <div class="footer-title">SƠN BẠCH VIP PRO</div>
         <div class="footer-text">
-          Hệ thống kho bất động sản chọn lọc theo phong cách nền tảng lớn, phù hợp nhà đầu tư cần tài sản giá trị, giao dịch kín và cách tiếp cận đẳng cấp hơn web thường.
+          Kho bất động sản chọn lọc theo phong cách nền tảng chuyên nghiệp, phù hợp với khách cần tài sản giá trị, cách tiếp cận gọn, rõ và có tính chọn lọc cao.
         </div>
       </div>
 
@@ -1145,12 +1266,12 @@
         <div class="footer-title">Liên hệ</div>
         <div class="footer-text">
           Hotline: 0858 999 934<br>
-          Facebook / Zalo / Call luôn sẵn ở thanh nổi phía dưới để khách thao tác nhanh hơn.
+          Facebook / Zalo / Call luôn sẵn ở thanh nổi phía dưới để thao tác nhanh và trực tiếp.
         </div>
       </div>
 
       <div>
-        <div class="footer-title">Tài sản hiện có</div>
+        <div class="footer-title">Nhóm tài sản</div>
         <div class="footer-text">
           Bình Tân 135 tỷ<br>
           Quận 1 - 1.250 tỷ<br>
@@ -1159,9 +1280,9 @@
       </div>
 
       <div>
-        <div class="footer-title">Hướng nâng tiếp</div>
+        <div class="footer-title">Hướng phát triển</div>
         <div class="footer-text">
-          Gắn lead thật • gắn NDA thật • thêm thư viện ảnh • thêm video • thêm nhiều landing mới • phát triển thành kho BĐS Sơn Bạch hoàn chỉnh.
+          Từ nền này có thể nâng thành hệ thống lead thật, NDA thật, landing nâng cao, thư viện ảnh, video và kho BĐS mở rộng theo từng nhóm khách.
         </div>
       </div>
     </div>
@@ -1171,6 +1292,69 @@
     <a class="float-link gold" href="tel:0858999934">📞 Gọi</a>
     <a class="float-link dark" href="https://zalo.me/0858999934" target="_blank">💬 Zalo</a>
     <a class="float-link dark" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank">📘 Facebook</a>
+  </div>
+
+  <!-- NDA POPUP -->
+  <div class="nda-overlay" id="ndaOverlay">
+    <div class="nda-modal">
+      <div class="nda-head">
+        <div>
+          <div class="nda-title">NDA • NHẬN HỒ SƠ TÀI SẢN</div>
+          <div class="nda-sub">
+            Vui lòng điền thông tin chính xác để nhận hồ sơ phù hợp. Các dữ liệu chuyên sâu chỉ chia sẻ cho khách có nhu cầu thật và đồng ý nguyên tắc bảo mật.
+          </div>
+        </div>
+        <button class="nda-close" type="button" onclick="closeNDA()">×</button>
+      </div>
+
+      <div class="nda-box">
+        <strong>Nguyên tắc bảo mật</strong>
+        <ul>
+          <li>Thông tin tài sản chỉ phục vụ mục đích tiếp cận và đánh giá giao dịch.</li>
+          <li>Không chia sẻ lại hồ sơ, hình ảnh, dữ liệu hoặc nội dung trao đổi cho bên thứ ba khi chưa được đồng ý.</li>
+          <li>Thông tin cung cấp cần trung thực để đảm bảo quá trình chọn lọc và hỗ trợ phù hợp.</li>
+        </ul>
+      </div>
+
+      <div class="nda-box">
+        <strong>Thông tin đăng ký tiếp cận</strong>
+        <p>Vui lòng điền đầy đủ để hệ thống ghi nhận nhu cầu và hỗ trợ đúng nhóm tài sản anh/chị quan tâm.</p>
+      </div>
+
+      <form class="nda-form" action="https://formspree.io/f/mpqykgzk" method="POST">
+        <input type="hidden" name="_subject" value="Lead NDA - Sơn Bạch VIP PRO">
+        <input type="hidden" name="nguon_trang" id="ndaSourcePage" value="">
+        <input type="hidden" name="tai_san_quan_tam" id="ndaAssetName" value="">
+
+        <input type="text" name="ho_ten" placeholder="Họ và tên" required>
+        <input type="text" name="so_dien_thoai" placeholder="Số điện thoại" required>
+        <input type="email" name="email" placeholder="Email" required>
+
+        <select name="nhu_cau" required>
+          <option value="">Chọn nhu cầu quan tâm</option>
+          <option>Bình Tân 135 tỷ</option>
+          <option>Quận 1 - 1.250 tỷ</option>
+          <option>Tài sản VIP 42 tỷ</option>
+          <option>Nhận toàn bộ kho BĐS phù hợp</option>
+        </select>
+
+        <textarea name="ghi_chu" placeholder="Ghi chú ngắn về nhu cầu, ngân sách, mục đích mua hoặc khu vực quan tâm"></textarea>
+
+        <label class="nda-check">
+          <input type="checkbox" name="dong_y_nda" required>
+          <span>Tôi xác nhận đã đọc và đồng ý nguyên tắc bảo mật, cam kết sử dụng thông tin tài sản đúng mục đích tiếp cận giao dịch và không tự ý chia sẻ cho bên thứ ba.</span>
+        </label>
+
+        <div class="nda-actions">
+          <button class="nda-btn nda-btn-gold" type="submit">GỬI THÔNG TIN & NHẬN HỒ SƠ</button>
+          <button class="nda-btn nda-btn-dark" type="button" onclick="closeNDA()">Đóng</button>
+        </div>
+
+        <div class="nda-note">
+          * Sau khi gửi, thông tin sẽ được chuyển về hệ thống nhận lead. Bộ phận phụ trách có thể liên hệ lại để xác nhận nhu cầu và cấp quyền tiếp cận sâu hơn.
+        </div>
+      </form>
+    </div>
   </div>
     <script>
     document.querySelectorAll('.nav-btn').forEach(btn=>{
@@ -1194,6 +1378,42 @@
     function togglePrivateInfo(){
       document.getElementById('privateContent').classList.toggle('show');
     }
+
+    function openNDA(assetName){
+      const overlay = document.getElementById('ndaOverlay');
+      const assetInput = document.getElementById('ndaAssetName');
+      const sourceInput = document.getElementById('ndaSourcePage');
+
+      if(assetInput){
+        assetInput.value = assetName || document.title;
+      }
+      if(sourceInput){
+        sourceInput.value = window.location.href;
+      }
+      if(overlay){
+        overlay.classList.add('show');
+      }
+    }
+
+    function closeNDA(){
+      const overlay = document.getElementById('ndaOverlay');
+      if(overlay){
+        overlay.classList.remove('show');
+      }
+    }
+
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){
+        closeNDA();
+      }
+    });
+
+    document.addEventListener('click', function(e){
+      const overlay = document.getElementById('ndaOverlay');
+      if(e.target === overlay){
+        closeNDA();
+      }
+    });
   </script>
 
 </body>
