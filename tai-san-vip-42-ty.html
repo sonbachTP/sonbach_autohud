@@ -2,47 +2,128 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Tài sản VIP 42 TỶ | Sơn Bạch VIP PRO</title>
+  <meta name="description" content="Tài sản VIP 42 tỷ. Landing riêng theo phong cách cao cấp, phù hợp nhóm khách tìm bất động sản tầm trung cao cấp." />
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png" />
   <style>
-    :root{--bg:#070707;--gold:#ffd56a;--gold2:#c9961a;--gold3:#fff0b6;--text:#f7f0de;--muted:#d3c29c;--line:rgba(255,213,106,.18);}
+    :root{
+      --bg:#070707;--bg2:#111;--gold:#ffd56a;--gold2:#c9961a;--gold3:#fff0b6;
+      --text:#f6f0de;--muted:#d6c39a;--line:rgba(255,213,106,.18);--shadow:0 18px 48px rgba(0,0,0,.34);
+    }
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#070707;color:var(--text)}
-    a{text-decoration:none;color:inherit} img{max-width:100%;display:block}
-    .container{width:min(1120px,92%);margin:auto}
-    .hero{
-      min-height:100vh;
-      background:linear-gradient(90deg, rgba(0,0,0,.84), rgba(0,0,0,.42)), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    html{scroll-behavior:smooth}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,#050505,#0b0b0b);
+      color:var(--text);
+      overflow-x:hidden;
     }
-    .topbar{position:sticky;top:0;background:rgba(8,8,8,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:99}
-    .topbar-wrap{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    .container{width:min(1180px,92%);margin:auto}
+    .topbar{
+      position:sticky;top:0;z-index:999;
+      background:rgba(8,8,8,.84);backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar-wrap{
+      min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:14px;
+    }
     .brand{display:flex;align-items:center;gap:14px}
-    .brand img{width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,213,106,.35)}
-    .brand strong{display:block;color:var(--gold);font-size:22px}
-    .brand span{display:block;color:#d8c28f;font-size:11px;letter-spacing:2px;text-transform:uppercase}
-    .back-btn,.gold-btn,.dark-btn{min-height:52px;padding:0 20px;border-radius:16px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,213,106,.24)}
-    .back-btn,.dark-btn{color:var(--gold);background:#111}
-    .gold-btn{background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));color:#111}
-    .hero-content{padding:58px 0 40px}
-    .tag{display:inline-block;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,213,106,.24);color:var(--gold);background:rgba(10,10,10,.52);margin-bottom:18px;font-weight:900}
-    h1{font-size:clamp(36px,6vw,76px);line-height:1.02;margin-bottom:14px}
-    .price{font-size:clamp(40px,7vw,88px);font-weight:1000;color:#ffe088;text-shadow:0 0 18px rgba(255,213,106,.22);margin:10px 0 18px}
-    .sub{max-width:820px;color:#efdfb8;font-size:20px;line-height:1.6}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
-    .box{background:rgba(10,10,10,.76);border:1px solid var(--line);border-radius:24px;padding:22px}
-    .box h3{color:var(--gold);font-size:24px;margin-bottom:12px}
-    .box p,.box li{color:var(--muted);line-height:1.8;font-size:16px}
-    ul{padding-left:18px}
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-    .float{
-      position:fixed;left:50%;transform:translateX(-50%);bottom:12px;width:min(780px,94%);display:grid;grid-template-columns:repeat(3,1fr);
-      gap:10px;background:rgba(11,11,11,.84);backdrop-filter:blur(12px);border:1px solid rgba(255,213,106,.18);border-radius:24px;padding:10px;
+    .brand img{
+      width:52px;height:52px;border-radius:50%;object-fit:cover;
+      border:1px solid rgba(255,213,106,.34);
+      box-shadow:0 0 14px rgba(255,213,106,.14);
+      background:#111;
     }
-    .float a{min-height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-weight:1000;border:1px solid rgba(255,213,106,.22)}
+    .brand strong{display:block;color:var(--gold);font-size:22px;line-height:1.02}
+    .brand span{display:block;color:#d9c58f;font-size:11px;letter-spacing:2px;text-transform:uppercase}
+    .back-btn,.gold-btn,.dark-btn{
+      min-height:52px;padding:0 20px;border-radius:16px;font-weight:1000;
+      display:inline-flex;align-items:center;justify-content:center;
+      border:1px solid rgba(255,213,106,.24);
+    }
+    .back-btn,.dark-btn{color:var(--gold);background:#111}
+    .gold-btn{
+      background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));
+      color:#111;box-shadow:0 0 18px rgba(255,213,106,.16);
+    }
+    .hero{
+      position:relative;
+      min-height:100vh;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.84) 0%, rgba(0,0,0,.46) 48%, rgba(0,0,0,.20) 100%),
+        url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
+    .hero-content{padding:60px 0 42px}
+    .tag{
+      display:inline-block;padding:11px 16px;border-radius:999px;
+      border:1px solid rgba(255,213,106,.22);color:var(--gold);
+      background:rgba(10,10,10,.55);font-weight:1000;margin-bottom:18px;
+    }
+    h1{
+      font-size:clamp(38px,6vw,78px);
+      line-height:1.01;
+      margin-bottom:14px;
+      letter-spacing:-1px;
+    }
+    .price{
+      font-size:clamp(42px,7vw,90px);
+      font-weight:1000;color:#ffe089;
+      text-shadow:0 0 18px rgba(255,213,106,.24);
+      margin:10px 0 18px;
+      line-height:1;
+    }
+    .sub{
+      max-width:840px;color:#f0dfb8;
+      font-size:20px;line-height:1.65;
+    }
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px;
+    }
+    .box{
+      background:rgba(10,10,10,.78);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+    .box h3{color:var(--gold);font-size:24px;margin-bottom:12px}
+    .box p,.box li{color:var(--muted);line-height:1.85;font-size:16px}
+    ul{padding-left:18px}
+    .section{padding:58px 0;border-top:1px solid rgba(255,213,106,.08)}
+    .section-head{text-align:center;margin-bottom:28px}
+    .section-head .mini{
+      color:var(--gold);text-transform:uppercase;letter-spacing:4px;
+      font-size:12px;font-weight:1000;margin-bottom:10px;
+    }
+    .section-head h2{font-size:clamp(28px,4.5vw,54px);line-height:1.04;margin-bottom:10px}
+    .section-head p{max-width:840px;margin:auto;color:var(--muted);font-size:18px;line-height:1.75}
+    .feature-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+    }
+    .feature{
+      background:#101010;border:1px solid var(--line);border-radius:20px;padding:18px;
+    }
+    .feature strong{display:block;color:var(--gold);font-size:18px;margin-bottom:8px}
+    .feature p{color:var(--muted);font-size:15px;line-height:1.75}
+    .float{
+      position:fixed;left:50%;transform:translateX(-50%);bottom:12px;
+      width:min(820px,94%);display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+      background:rgba(11,11,11,.86);backdrop-filter:blur(12px);
+      border:1px solid rgba(255,213,106,.18);border-radius:24px;padding:10px;z-index:999;
+    }
+    .float a{
+      min-height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;
+      font-weight:1000;border:1px solid rgba(255,213,106,.22);
+    }
     .float .gold{background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));color:#111}
     .float .dark{background:#111;color:var(--gold)}
-    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+    @media (max-width:980px){
+      .grid,.feature-grid{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
@@ -51,59 +132,91 @@
       <a href="index.html" class="back-btn">← Về kho BĐS</a>
       <div class="brand">
         <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png" alt="Logo">
-        <div><strong>SƠN BẠCH VIP PRO</strong><span>Bất động sản chọn lọc</span></div>
+        <div>
+          <strong>SƠN BẠCH VIP PRO</strong>
+          <span>Bất động sản chọn lọc</span>
+        </div>
       </div>
     </div>
   </div>
 
   <section class="hero">
     <div class="container hero-content">
-      <div class="tag">TÀI SẢN VIP • MẪU NHÂN BẢN • TẦM TRUNG CAO CẤP</div>
+      <div class="tag">TÀI SẢN VIP • TẦM TRUNG CAO CẤP • GIÁ TRỊ THỰC</div>
       <h1>TÀI SẢN VIP<br>42 TỶ</h1>
       <div class="price">42 TỶ</div>
       <div class="sub">
-        Đây là landing mẫu để anh dùng làm xương cho nhóm căn tầm trung cao cấp. Khi có dữ liệu thật, chỉ cần thay ảnh, thông số và mô tả là thành một landing mới ngay.
+        Landing riêng cho nhóm tài sản cao cấp tầm giá 42 tỷ, phù hợp với khách cần sản phẩm chỉnh chu, rõ nội dung, dễ tiếp cận nhanh và vẫn giữ được phong cách trình bày sang trọng, chuyên nghiệp.
       </div>
 
       <div class="cta">
-        <a class="gold-btn" href="tel:0858999934">📞 Gọi ngay</a>
+        <a class="gold-btn" href="tel:0858999934">📞 Gọi trực tiếp</a>
         <a class="dark-btn" href="https://zalo.me/0858999934" target="_blank">💬 Zalo</a>
         <a class="dark-btn" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank">📘 Facebook</a>
       </div>
 
       <div class="grid">
         <div class="box">
-          <h3>Công dụng của landing này</h3>
+          <h3>Tổng quan tài sản</h3>
           <ul>
-            <li>Làm mẫu chuẩn cho nhóm căn 20–60 tỷ</li>
-            <li>Dễ thay ảnh, giá, diện tích, vị trí</li>
-            <li>Dễ gắn form và NDA sau này</li>
-            <li>Dễ đưa vào kho BĐS trung tâm của anh</li>
+            <li>Nhóm tài sản: bất động sản VIP tầm trung cao cấp</li>
+            <li>Mức giá chào: 42 tỷ</li>
+            <li>Phong cách trình bày: gọn, đẹp, chuyên nghiệp, phù hợp gửi khách nhanh</li>
+            <li>Thích hợp cho nhóm khách cần sản phẩm rõ ràng và quyết định nhanh</li>
           </ul>
         </div>
 
         <div class="box">
-          <h3>Điểm mạnh</h3>
+          <h3>Điểm mạnh nổi bật</h3>
           <ul>
-            <li>Bố cục gọn, dễ nhìn trên điện thoại</li>
-            <li>Đen vàng kim giữ đúng màu thương hiệu</li>
-            <li>Có thanh CTA nổi để chốt khách nhanh</li>
-            <li>Dễ nhân bản thêm nhiều trang mới</li>
+            <li>Mức giá nằm trong phân khúc dễ tiếp cận hơn nhóm hàng cực lớn</li>
+            <li>Landing gọn, dễ xem trên điện thoại</li>
+            <li>CTA rõ, phù hợp dùng khi trao đổi khách thật</li>
+            <li>Giữ đúng nhận diện thương hiệu của toàn hệ thống Sơn Bạch VIP PRO</li>
           </ul>
         </div>
 
         <div class="box">
-          <h3>Khi nào dùng</h3>
+          <h3>Góc nhìn thị trường</h3>
           <p>
-            Dùng khi anh có căn mới mà chưa muốn viết lại từ đầu. Chỉ cần copy file này, đổi tên file, đổi nội dung, gắn ảnh và thêm link từ trang chủ kho BĐS là xong.
+            Với phân khúc 42 tỷ, nhóm khách thường quan tâm nhiều đến tính cân bằng giữa vị thế tài sản, mức giá, khả năng sử dụng và tính thanh khoản. Vì vậy cách trình bày phải đủ sang nhưng vẫn rõ ràng, trực diện và dễ hiểu.
           </p>
         </div>
 
         <div class="box">
-          <h3>Hướng nâng tiếp</h3>
+          <h3>Phù hợp với nhóm khách nào</h3>
           <p>
-            Có thể thêm thư viện ảnh, video, sơ đồ mặt bằng, pháp lý tóm tắt, nút tải hồ sơ và form NDA thật để tăng mức độ chuyên nghiệp khi gửi khách.
+            Tài sản này phù hợp với khách mua tích sản, khách mua khai thác giá trị sử dụng, khách muốn sản phẩm cao cấp nhưng không đi vào nhóm siêu lớn, đồng thời phù hợp cho các cuộc trao đổi cần gửi link nhanh và rõ.
           </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">giá trị thực tế</div>
+        <h2>LANDING NÀY HƯỚNG TỚI SỰ RÕ RÀNG, ĐẸP VÀ DỄ CHỐT KHÁCH</h2>
+        <p>Khác với nhóm hàng siêu lớn cần tiếp cận kín sâu, nhóm tài sản 42 tỷ cần tốc độ, sự rõ ràng và cảm giác chuyên nghiệp ngay từ lần xem đầu tiên.</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature">
+          <strong>Dễ xem trên mobile</strong>
+          <p>Khách mở bằng điện thoại vẫn thấy rõ bố cục, giá và các điểm chính của tài sản.</p>
+        </div>
+        <div class="feature">
+          <strong>Dễ gửi khách nhanh</strong>
+          <p>Trang gọn, rõ và đủ sang để dùng ngay trong tư vấn, nhắn Zalo hoặc Facebook.</p>
+        </div>
+        <div class="feature">
+          <strong>Giữ đúng chất thương hiệu</strong>
+          <p>Đen vàng kim, CTA rõ, phong cách chỉn chu, đồng bộ với toàn bộ hệ thống Sơn Bạch.</p>
+        </div>
+        <div class="feature">
+          <strong>Tối ưu cho chốt lead</strong>
+          <p>Các nút gọi, Zalo, Facebook luôn sẵn để khách quyết định và liên hệ ngay.</p>
         </div>
       </div>
     </div>
