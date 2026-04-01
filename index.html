@@ -3,220 +3,802 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>SƠN BẠCH VIP PRO | Kho BĐS Chọn Lọc</title>
-  <meta name="description" content="Kho bất động sản chọn lọc của Sơn Bạch VIP PRO. Tài sản lõi, giao dịch kín, NDA, chỉ tiếp khách thực." />
+  <title>SƠN BẠCH VIP PRO | KHO BĐS CHỌN LỌC</title>
+  <meta name="description" content="Kho bất động sản chọn lọc của Sơn Bạch VIP PRO. Giao dịch kín, NDA, tài sản lõi, nhà đầu tư lớn." />
   <meta name="theme-color" content="#0b0b0b" />
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png" />
 
   <style>
     :root{
-      --bg:#070707;
+      --bg:#060606;
       --bg2:#0d0d0d;
       --card:#111111;
-      --card2:#151515;
+      --card2:#171717;
       --gold:#ffd56a;
-      --gold2:#c9961a;
-      --gold3:#fff0b6;
-      --text:#f7f0de;
-      --muted:#cbb98a;
-      --line:rgba(255,213,106,.20);
-      --line2:rgba(255,213,106,.10);
-      --shadow:0 0 18px rgba(255,213,106,.16);
-      --shadowStrong:0 0 28px rgba(255,213,106,.28);
-      --max:1180px;
+      --gold2:#d1a123;
+      --gold3:#fff1b8;
+      --text:#f7f1df;
+      --muted:#d8c59b;
+      --muted2:#bfa872;
+      --line:rgba(255,213,106,.18);
+      --line2:rgba(255,213,106,.08);
+      --glow:0 0 12px rgba(255,213,106,.28),0 0 26px rgba(255,213,106,.12);
+      --glowStrong:0 0 14px rgba(255,213,106,.45),0 0 32px rgba(255,213,106,.20);
+      --shadow:0 18px 55px rgba(0,0,0,.42);
+      --max:1220px;
+      --radius:24px;
     }
+
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top right, rgba(255,213,106,.08), transparent 25%),
-        radial-gradient(circle at bottom left, rgba(255,213,106,.05), transparent 20%),
-        linear-gradient(180deg,#040404 0%,#0b0b0b 100%);
+        radial-gradient(circle at top right, rgba(255,213,106,.07), transparent 22%),
+        radial-gradient(circle at bottom left, rgba(255,213,106,.05), transparent 18%),
+        linear-gradient(180deg,#040404 0%,#0a0a0a 100%);
       overflow-x:hidden;
     }
+
     a{text-decoration:none;color:inherit}
     img{display:block;max-width:100%}
     .container{width:min(var(--max),92%);margin:auto}
 
+    .gold-text{
+      color:var(--gold);
+      text-shadow:0 0 10px rgba(255,213,106,.18);
+    }
+
+    .section{
+      padding:64px 0;
+      border-top:1px solid var(--line2);
+      position:relative;
+    }
+
+    .section-head{
+      text-align:center;
+      margin-bottom:30px;
+    }
+    .section-head .mini{
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:4px;
+      font-size:13px;
+      font-weight:900;
+      margin-bottom:10px;
+    }
+    .section-head h2{
+      font-size:clamp(30px,4.8vw,58px);
+      line-height:1.04;
+      margin-bottom:10px;
+      letter-spacing:-1px;
+    }
+    .section-head p{
+      max-width:860px;
+      margin:auto;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.75;
+    }
+
+    /* HEADER */
     .header{
-      position:sticky;top:0;z-index:999;
-      backdrop-filter:blur(14px);
+      position:sticky;
+      top:0;
+      z-index:999;
+      backdrop-filter:blur(16px);
       background:rgba(8,8,8,.82);
       border-bottom:1px solid var(--line);
     }
+
     .header-wrap{
-      min-height:82px;
-      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      min-height:84px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
     }
-    .brand{display:flex;align-items:center;gap:14px;min-width:0}
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+
     .brand-logo{
-      width:58px;height:58px;border-radius:50%;object-fit:cover;background:#0d0d0d;
-      border:1px solid rgba(255,213,106,.35);
-      box-shadow:0 0 10px rgba(255,213,106,.18),0 0 24px rgba(255,213,106,.12);
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      object-fit:cover;
+      background:#0e0e0e;
+      border:1px solid rgba(255,213,106,.34);
+      box-shadow:var(--glow);
       flex:0 0 auto;
     }
+
     .brand-text strong{
-      display:block;color:var(--gold);font-size:clamp(18px,2.1vw,28px);
-      line-height:1.05;letter-spacing:.4px;text-shadow:0 0 14px rgba(255,213,106,.18);
-    }
-    .brand-text span{
-      display:block;color:#d8c28f;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-top:4px;
-    }
-    .nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-    .nav-btn{
-      border:none;background:transparent;color:#f3ebd2;font-size:14px;font-weight:800;
-      padding:11px 15px;border-radius:999px;cursor:pointer;transition:.25s ease;border:1px solid transparent;
-    }
-    .nav-btn:hover,.nav-btn.active{
-      color:#111;background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));
-      box-shadow:0 0 10px rgba(255,213,106,.35),0 0 20px rgba(255,213,106,.16);
-      border-color:rgba(255,213,106,.42);
-    }
-    .hotline{
-      padding:11px 15px;border-radius:999px;border:1px solid rgba(255,213,106,.28);
-      color:var(--gold);font-weight:900;box-shadow:var(--shadow);white-space:nowrap;
+      display:block;
+      color:var(--gold);
+      font-size:clamp(20px,2vw,28px);
+      line-height:1.04;
+      letter-spacing:.4px;
+      text-shadow:0 0 10px rgba(255,213,106,.18);
     }
 
+    .brand-text span{
+      display:block;
+      color:#d9c48f;
+      font-size:12px;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      margin-top:4px;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .nav-btn{
+      border:none;
+      background:transparent;
+      color:#f7efd6;
+      font-size:14px;
+      font-weight:900;
+      padding:11px 15px;
+      border-radius:999px;
+      cursor:pointer;
+      transition:.28s ease;
+      border:1px solid transparent;
+    }
+
+    .nav-btn:hover,
+    .nav-btn.active{
+      color:#111;
+      background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));
+      border-color:rgba(255,213,106,.42);
+      box-shadow:var(--glowStrong);
+      transform:translateY(-1px);
+    }
+
+    .hotline{
+      padding:11px 16px;
+      border-radius:999px;
+      border:1px solid rgba(255,213,106,.26);
+      color:var(--gold);
+      font-weight:1000;
+      white-space:nowrap;
+      box-shadow:var(--glow);
+    }
+
+    /* HERO */
     .hero{
-      position:relative;overflow:hidden;border-bottom:1px solid var(--line2);
+      position:relative;
+      overflow:hidden;
+      border-bottom:1px solid var(--line2);
     }
+
     .hero::before{
-      content:"";position:absolute;inset:0;
+      content:"";
+      position:absolute;
+      inset:0;
       background:
-        linear-gradient(90deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.46) 48%, rgba(0,0,0,.20) 100%),
-        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        linear-gradient(90deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.48) 48%, rgba(0,0,0,.20) 100%),
+        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
       z-index:-2;
+      transform:scale(1.02);
     }
+
     .hero::after{
-      content:"";position:absolute;inset:0;
-      background:radial-gradient(circle at 25% 25%, rgba(255,213,106,.14), transparent 28%);
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 24% 24%, rgba(255,213,106,.16), transparent 24%),
+        linear-gradient(180deg, transparent 0%, rgba(0,0,0,.12) 100%);
       z-index:-1;
     }
+
     .hero-grid{
-      display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:center;
-      min-height:640px;padding:54px 0 34px;
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:24px;
+      align-items:center;
+      min-height:760px;
+      padding:56px 0 40px;
     }
-    .tagline{
-      display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;
-      background:rgba(20,20,20,.40);border:1px solid rgba(255,213,106,.28);box-shadow:var(--shadow);
-      color:var(--gold);font-size:14px;font-weight:900;margin-bottom:18px;
+
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:12px 18px;
+      border-radius:999px;
+      color:var(--gold);
+      border:1px solid rgba(255,213,106,.28);
+      background:rgba(14,14,14,.38);
+      box-shadow:var(--glow);
+      font-size:14px;
+      font-weight:1000;
+      margin-bottom:20px;
     }
-    h1{
-      font-size:clamp(36px,6vw,76px);line-height:1.02;letter-spacing:-1.2px;max-width:820px;margin-bottom:16px;
+
+    .hero h1{
+      font-size:clamp(40px,6.5vw,84px);
+      line-height:1.01;
+      letter-spacing:-1.4px;
+      margin-bottom:16px;
+      max-width:840px;
     }
+
     .hero-sub{
-      max-width:760px;color:#f0e2bd;font-size:20px;line-height:1.55;margin-bottom:18px;
+      color:#f0e2be;
+      font-size:20px;
+      line-height:1.65;
+      max-width:780px;
+      margin-bottom:18px;
     }
+
     .price-glow{
-      font-size:clamp(42px,7vw,92px);line-height:1;font-weight:1000;color:#ffe088;margin:10px 0 20px;
-      text-shadow:0 0 10px rgba(255,213,106,.42),0 0 22px rgba(255,213,106,.26),0 0 42px rgba(255,213,106,.14);
+      font-size:clamp(42px,7vw,96px);
+      font-weight:1000;
+      line-height:1;
+      color:#ffe08b;
+      text-shadow:
+        0 0 10px rgba(255,213,106,.38),
+        0 0 24px rgba(255,213,106,.22),
+        0 0 42px rgba(255,213,106,.12);
+      margin:12px 0 22px;
+      animation:pulseGold 1.8s infinite alternate;
     }
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+
+    @keyframes pulseGold{
+      from{opacity:.92;transform:translateY(0)}
+      to{opacity:1;transform:translateY(-1px)}
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:22px;
+    }
+
     .btn{
-      min-height:56px;padding:0 24px;border-radius:18px;display:inline-flex;align-items:center;justify-content:center;
-      font-size:16px;font-weight:900;border:1px solid rgba(255,213,106,.26);transition:.25s ease;
+      min-height:58px;
+      padding:0 24px;
+      border-radius:18px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid rgba(255,213,106,.24);
+      font-size:16px;
+      font-weight:1000;
+      transition:.25s ease;
     }
+
+    .btn:hover{transform:translateY(-2px)}
+
     .btn-gold{
-      color:#111;background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));box-shadow:var(--shadowStrong);
+      background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));
+      color:#111;
+      box-shadow:var(--glowStrong);
     }
-    .btn-dark{color:var(--gold);background:rgba(10,10,10,.52)}
-    .quick-stats{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px;max-width:860px;
-    }
-    .stat{
-      padding:16px;background:rgba(9,9,9,.60);border:1px solid var(--line);border-radius:18px;backdrop-filter:blur(4px);
-    }
-    .stat strong{display:block;color:var(--gold);font-size:24px;margin-bottom:4px}
-    .stat span{color:#d7c49b;font-size:14px;line-height:1.5}
 
-    .hero-card{
-      background:rgba(10,10,10,.72);border:1px solid var(--line);border-radius:28px;padding:22px;
-      box-shadow:0 0 28px rgba(0,0,0,.22);position:relative;overflow:hidden;
+    .btn-dark{
+      background:rgba(10,10,10,.55);
+      color:var(--gold);
     }
-    .hero-card h3{color:var(--gold);font-size:28px;margin-bottom:8px}
-    .hero-card p{color:#decba1;line-height:1.6;margin-bottom:18px}
-    .hero-card input,.hero-card select{
-      width:100%;min-height:54px;border:none;outline:none;background:#151515;color:#fff;
-      border:1px solid rgba(255,255,255,.06);border-radius:15px;padding:0 16px;margin-bottom:12px;font-size:15px;
-    }
-    .note{color:#ccb887;font-size:12px;line-height:1.6;margin-top:10px}
 
-    section{padding:58px 0;border-top:1px solid rgba(255,213,106,.06)}
-    .section-head{text-align:center;margin-bottom:30px}
-    .section-head .mini{
-      color:var(--gold);text-transform:uppercase;letter-spacing:4px;font-size:13px;font-weight:900;margin-bottom:10px;
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      max-width:860px;
     }
-    .section-head h2{font-size:clamp(30px,4.5vw,56px);line-height:1.05;margin-bottom:10px}
-    .section-head p{max-width:820px;margin:auto;color:#d5c39d;line-height:1.7;font-size:18px}
 
-    .listing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .hero-stat{
+      background:rgba(10,10,10,.62);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:16px;
+      backdrop-filter:blur(6px);
+      box-shadow:0 10px 22px rgba(0,0,0,.18);
+    }
+
+    .hero-stat strong{
+      display:block;
+      color:var(--gold);
+      font-size:24px;
+      margin-bottom:6px;
+    }
+
+    .hero-stat span{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+    }
+
+    .lead-card{
+      background:rgba(10,10,10,.74);
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .lead-card::before{
+      content:"";
+      position:absolute;
+      width:280px;height:280px;
+      border-radius:50%;
+      top:-130px;right:-80px;
+      background:radial-gradient(circle, rgba(255,213,106,.14), transparent 68%);
+      pointer-events:none;
+    }
+
+    .lead-card h3{
+      color:var(--gold);
+      font-size:30px;
+      margin-bottom:8px;
+    }
+
+    .lead-card p{
+      color:#dcc89c;
+      line-height:1.65;
+      margin-bottom:18px;
+      font-size:15px;
+    }
+
+    .lead-card input,
+    .lead-card select{
+      width:100%;
+      min-height:56px;
+      border:none;
+      outline:none;
+      background:#151515;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:16px;
+      padding:0 16px;
+      margin-bottom:12px;
+      font-size:15px;
+    }
+
+    .lead-note{
+      color:#cbb684;
+      font-size:12px;
+      line-height:1.65;
+      margin-top:10px;
+    }
+
+    /* TRUST */
+    .trust-wrap{
+      background:linear-gradient(180deg, rgba(255,213,106,.03), transparent);
+      border-top:1px solid var(--line2);
+      border-bottom:1px solid var(--line2);
+    }
+
+    .trust-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      padding:18px 0;
+    }
+
+    .trust-item{
+      background:rgba(14,14,14,.95);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px 18px;
+      box-shadow:0 10px 24px rgba(0,0,0,.16);
+    }
+
+    .trust-item strong{
+      display:block;
+      color:var(--gold);
+      font-size:18px;
+      margin-bottom:6px;
+    }
+
+    .trust-item span{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    /* FILTER BAR */
+    .filter-wrap{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:18px 0 8px;
+    }
+
+    .chip{
+      padding:12px 16px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#101010;
+      color:#edd9a1;
+      font-size:14px;
+      font-weight:900;
+      box-shadow:0 8px 18px rgba(0,0,0,.14);
+    }
+
+    /* LISTINGS */
+    .listing-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
     .listing-card{
-      background:linear-gradient(180deg,#111,#0d0d0d);border:1px solid var(--line);border-radius:24px;overflow:hidden;
-      transition:.25s ease;box-shadow:0 0 16px rgba(255,213,106,.06);
+      background:linear-gradient(180deg,#111,#0d0d0d);
+      border:1px solid var(--line);
+      border-radius:24px;
+      overflow:hidden;
+      transition:.28s ease;
+      box-shadow:0 16px 34px rgba(0,0,0,.24);
+      position:relative;
     }
+
     .listing-card:hover{
-      transform:translateY(-4px);box-shadow:0 0 28px rgba(255,213,106,.12);border-color:rgba(255,213,106,.35);
+      transform:translateY(-5px);
+      border-color:rgba(255,213,106,.34);
+      box-shadow:0 20px 40px rgba(0,0,0,.34), 0 0 26px rgba(255,213,106,.10);
     }
-    .listing-img{aspect-ratio:16/10;background:#111;overflow:hidden}
-    .listing-img img{width:100%;height:100%;object-fit:cover}
-    .listing-body{padding:18px}
+
+    .listing-img{
+      aspect-ratio:16/10;
+      overflow:hidden;
+      background:#111;
+      position:relative;
+    }
+
+    .listing-img::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, transparent 0%, rgba(0,0,0,.18) 100%);
+    }
+
+    .listing-img img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .45s ease;
+    }
+
+    .listing-card:hover .listing-img img{
+      transform:scale(1.05);
+    }
+
+    .listing-body{
+      padding:18px;
+    }
+
     .listing-top{
-      display:flex;gap:12px;justify-content:space-between;align-items:flex-start;margin-bottom:8px;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      margin-bottom:10px;
     }
-    .listing-top h3{font-size:28px;line-height:1.05}
+
+    .listing-top h3{
+      font-size:28px;
+      line-height:1.04;
+    }
+
     .listing-price{
-      color:var(--gold);font-size:40px;font-weight:1000;white-space:nowrap;text-shadow:0 0 14px rgba(255,213,106,.18);
+      color:var(--gold);
+      font-size:40px;
+      font-weight:1000;
+      white-space:nowrap;
+      text-shadow:0 0 12px rgba(255,213,106,.16);
     }
-    .badge-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 14px}
+
+    .badge-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:12px 0 14px;
+    }
+
     .badge{
-      padding:7px 10px;border-radius:999px;border:1px solid rgba(255,213,106,.18);
-      color:#f0d89b;font-size:12px;font-weight:800;background:#121212;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,213,106,.18);
+      background:#121212;
+      color:#efdca5;
+      font-size:12px;
+      font-weight:900;
     }
-    .listing-meta{color:#d8c8a1;line-height:1.7;font-size:15px;min-height:120px}
-    .listing-buttons{display:flex;gap:10px;flex-wrap:wrap}
 
-    .feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-    .feature-box{background:#101010;border:1px solid var(--line);border-radius:20px;padding:18px}
-    .feature-box strong{display:block;color:var(--gold);font-size:18px;margin-bottom:8px}
-    .feature-box p{color:#d6c59c;line-height:1.7;font-size:15px}
-
-    footer{
-      padding:40px 0 120px;background:#080808;border-top:1px solid var(--line);
+    .listing-meta{
+      color:var(--muted);
+      line-height:1.75;
+      font-size:15px;
+      min-height:140px;
     }
-    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr .8fr;gap:18px}
-    .footer-title{color:var(--gold);font-size:20px;font-weight:1000;margin-bottom:12px}
-    .footer-text{color:#d3c29c;line-height:1.8;font-size:15px}
 
+    .listing-buttons{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+
+    /* HIDDEN PANELS */
+    .hidden-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .hidden-card{
+      background:#101010;
+      border:1px solid var(--line);
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 12px 24px rgba(0,0,0,.18);
+    }
+
+    .hidden-toggle{
+      width:100%;
+      background:transparent;
+      border:none;
+      color:#fff;
+      text-align:left;
+      padding:18px;
+      font-size:20px;
+      font-weight:1000;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+
+    .hidden-toggle span{
+      color:var(--gold);
+      text-shadow:0 0 10px rgba(255,213,106,.16);
+    }
+
+    .hidden-content{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .35s ease, padding .35s ease;
+      padding:0 18px;
+      color:#decfae;
+      line-height:1.8;
+      font-size:15px;
+    }
+
+    .hidden-card.active .hidden-content{
+      max-height:320px;
+      padding:0 18px 18px;
+    }
+
+    /* FEATURE STRIP */
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .feature-box{
+      background:#101010;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:18px;
+      box-shadow:0 14px 24px rgba(0,0,0,.18);
+    }
+
+    .feature-box strong{
+      display:block;
+      color:var(--gold);
+      font-size:18px;
+      margin-bottom:8px;
+    }
+
+    .feature-box p{
+      color:var(--muted);
+      line-height:1.75;
+      font-size:15px;
+    }
+
+    /* PRIVATE */
+    .private-box{
+      max-width:960px;
+      margin:0 auto;
+      background:linear-gradient(180deg,#121212,#0e0e0e);
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .private-button{
+      width:100%;
+      min-height:68px;
+      border:none;
+      border-radius:20px;
+      cursor:pointer;
+      font-size:22px;
+      font-weight:1000;
+      color:#111;
+      background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));
+      box-shadow:var(--glowStrong);
+    }
+
+    .private-content{
+      display:none;
+      margin-top:18px;
+      border:1px solid rgba(255,213,106,.14);
+      border-radius:20px;
+      background:#151515;
+      padding:20px;
+      color:#eadfc1;
+      line-height:1.9;
+      font-size:16px;
+    }
+
+    .private-content.show{
+      display:block;
+    }
+
+    /* PROCESS */
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .step{
+      background:#101010;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:20px;
+      box-shadow:0 14px 24px rgba(0,0,0,.18);
+    }
+
+    .step-num{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));
+      color:#111;
+      font-weight:1000;
+      margin-bottom:12px;
+      box-shadow:var(--glow);
+    }
+
+    .step strong{
+      display:block;
+      color:var(--gold);
+      font-size:18px;
+      margin-bottom:8px;
+    }
+
+    .step p{
+      color:var(--muted);
+      line-height:1.75;
+      font-size:15px;
+    }
+
+    /* FOOTER */
+    .footer{
+      padding:44px 0 120px;
+      background:#080808;
+      border-top:1px solid var(--line);
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr .8fr .8fr;
+      gap:18px;
+    }
+
+    .footer-title{
+      color:var(--gold);
+      font-size:20px;
+      font-weight:1000;
+      margin-bottom:12px;
+    }
+
+    .footer-text{
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.85;
+    }
+
+    /* FLOAT CTA */
     .float-cta{
-      position:fixed;left:50%;transform:translateX(-50%);bottom:12px;z-index:999;width:min(820px,94%);
-      display:grid;grid-template-columns:repeat(3,1fr);gap:10px;background:rgba(11,11,11,.84);backdrop-filter:blur(12px);
-      border:1px solid rgba(255,213,106,.18);border-radius:24px;padding:10px;box-shadow:0 0 24px rgba(0,0,0,.35);
+      position:fixed;
+      left:50%;
+      transform:translateX(-50%);
+      bottom:12px;
+      z-index:999;
+      width:min(840px,94%);
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      background:rgba(11,11,11,.86);
+      backdrop-filter:blur(14px);
+      border:1px solid rgba(255,213,106,.18);
+      border-radius:24px;
+      padding:10px;
+      box-shadow:0 18px 35px rgba(0,0,0,.35);
     }
-    .float-link{
-      min-height:58px;border-radius:16px;display:flex;align-items:center;justify-content:center;
-      font-size:18px;font-weight:1000;border:1px solid rgba(255,213,106,.22);
-    }
-    .float-link.gold{background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));color:#111}
-    .float-link.dark{background:#111;color:var(--gold)}
 
-    @media (max-width:1080px){
-      .hero-grid,.listing-grid,.feature-grid,.footer-grid{grid-template-columns:1fr}
-      .nav{display:none}
-      .hero-grid{min-height:auto;padding:38px 0 30px}
-      .quick-stats{grid-template-columns:1fr}
+    .float-link{
+      min-height:58px;
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:18px;
+      font-weight:1000;
+      border:1px solid rgba(255,213,106,.22);
+      transition:.25s ease;
     }
+
+    .float-link:hover{
+      transform:translateY(-1px);
+    }
+
+    .float-link.gold{
+      background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));
+      color:#111;
+      box-shadow:var(--glow);
+    }
+
+    .float-link.dark{
+      background:#111;
+      color:var(--gold);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width:1080px){
+      .hero-grid,
+      .listing-grid,
+      .hidden-grid,
+      .feature-grid,
+      .process-grid,
+      .footer-grid,
+      .trust-grid{
+        grid-template-columns:1fr;
+      }
+
+      .nav{display:none}
+      .hero-grid{min-height:auto;padding:40px 0 34px}
+      .hero-stats{grid-template-columns:1fr}
+    }
+
     @media (max-width:680px){
       .header-wrap{min-height:76px}
       .brand-logo{width:50px;height:50px}
-      .brand-text span{letter-spacing:2px;font-size:11px}
+      .brand-text span{font-size:11px;letter-spacing:2px}
       .hero-sub{font-size:17px}
       .listing-price{font-size:32px}
-      .float-link{font-size:16px;min-height:56px}
-      .btn{width:100%}
       .hero-actions{flex-direction:column}
+      .btn{width:100%}
       .listing-top{flex-direction:column}
+      .float-link{font-size:16px;min-height:56px}
     }
   </style>
 </head>
@@ -225,8 +807,12 @@
   <header class="header">
     <div class="container header-wrap">
       <a href="#home" class="brand">
-        <img class="brand-logo" src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png" alt="Sơn Bạch Logo"
-        onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/sonbachTP/sonbach_autohud@main/logo-sb-vip-pro.png';">
+        <img
+          class="brand-logo"
+          src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png"
+          alt="Sơn Bạch Logo"
+          onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/sonbachTP/sonbach_autohud@main/logo-sb-vip-pro.png';"
+        >
         <div class="brand-text">
           <strong>SƠN BẠCH VIP PRO</strong>
           <span>Bất động sản chọn lọc</span>
@@ -236,7 +822,9 @@
       <nav class="nav">
         <button class="nav-btn active" data-target="home">Trang chủ</button>
         <button class="nav-btn" data-target="featured">Kho BĐS</button>
-        <button class="nav-btn" data-target="strengths">Điểm mạnh</button>
+        <button class="nav-btn" data-target="overview">Tổng quan</button>
+        <button class="nav-btn" data-target="private">Thông tin ẩn</button>
+        <button class="nav-btn" data-target="process">Quy trình</button>
         <button class="nav-btn" data-target="contact">Liên hệ</button>
         <a class="hotline" href="tel:0858999934">📞 0858 999 934</a>
       </nav>
@@ -246,37 +834,41 @@
   <section class="hero" id="home">
     <div class="container hero-grid">
       <div>
-        <div class="tagline">GIAO DỊCH KÍN • NDA • CHỈ TIẾP KHÁCH THỰC</div>
-        <h1>KHO BẤT ĐỘNG SẢN<br>CHỌN LỌC CỦA SƠN BẠCH</h1>
+        <div class="hero-badge">GIAO DỊCH KÍN • NDA • CHỈ TIẾP KHÁCH THỰC</div>
+
+        <h1>KHO BẤT ĐỘNG SẢN<br>ĐẲNG CẤP CỦA SƠN BẠCH</h1>
+
         <div class="hero-sub">
-          Giao diện theo phong cách nền tảng lớn: rõ cấu trúc, tách căn nổi bật, có đường dẫn vào từng landing riêng, phù hợp xây thương hiệu môi giới cao cấp lâu dài.
+          Đây không còn là một landing rời rạc, mà là một hệ thống trình bày tài sản theo phong cách web lớn: rõ cấu trúc, có trang chủ, có kho BĐS, có landing riêng từng căn, có logic lọc khách và có nhận diện thương hiệu riêng.
         </div>
+
         <div class="price-glow">135 TỶ / 1.250 TỶ / 42 TỶ</div>
 
         <div class="hero-actions">
-          <a href="#featured" class="btn btn-gold">Xem kho BĐS</a>
-          <a href="tel:0858999934" class="btn btn-dark">Gọi ngay</a>
+          <a href="#featured" class="btn btn-gold">Xem kho BĐS ngay</a>
+          <a href="#private" class="btn btn-dark">Mở thông tin ẩn</a>
         </div>
 
-        <div class="quick-stats">
-          <div class="stat">
-            <strong>3</strong>
-            <span>Tài sản đã tách riêng thành trang chi tiết, nhìn giống nền tảng thật hơn landing đơn lẻ.</span>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong>3 căn</strong>
+            <span>Đã tách ra thành các trang riêng để nhìn giống một nền tảng thật, không còn là một trang đơn lẻ.</span>
           </div>
-          <div class="stat">
+          <div class="hero-stat">
             <strong>VIP</strong>
-            <span>Định vị đen vàng kim, nhấn mạnh giao dịch kín, tài sản lõi, chọn lọc khách thật.</span>
+            <span>Định vị đen vàng kim, nhấn mạnh giao dịch kín, tài sản lõi, phân tầng thông tin và cảm giác hàng chọn lọc.</span>
           </div>
-          <div class="stat">
+          <div class="hero-stat">
             <strong>MỞ RỘNG</strong>
-            <span>Sau này chỉ cần nhân bản thêm file mới là kho BĐS anh sẽ lớn dần rất nhanh.</span>
+            <span>Sau này chỉ cần copy thêm landing mới rồi gắn lại vào trang chủ là kho BĐS của anh sẽ lớn dần rất nhanh.</span>
           </div>
         </div>
       </div>
 
-      <div class="hero-card">
+      <div class="lead-card">
         <h3>Nhận hồ sơ tài sản kín</h3>
-        <p>Khách để lại thông tin để nhận hồ sơ phù hợp. Khi cần, em sẽ nối tiếp Formspree để gửi lead thật về email anh.</p>
+        <p>Khách để lại thông tin để nhận hồ sơ phù hợp. Bước tiếp theo có thể nối Formspree và NDA thật để lead gửi trực tiếp về email anh.</p>
+
         <input type="text" placeholder="Họ và tên">
         <input type="text" placeholder="Số điện thoại">
         <input type="email" placeholder="Email">
@@ -286,18 +878,50 @@
           <option>Quận 1 - 1.250 tỷ</option>
           <option>Tài sản VIP 42 tỷ</option>
         </select>
+
         <a href="#featured" class="btn btn-gold" style="width:100%;">XEM CÁC TÀI SẢN</a>
-        <div class="note">* Đây là bản kho BĐS thật. Mỗi căn bên dưới có nút dẫn sang landing riêng.</div>
+
+        <div class="lead-note">
+          * Đây là phần form giao diện chuẩn bị cho bước gắn lead thật. Hiện tại nó giúp web nhìn chuyên nghiệp và đầy đủ hơn như một web lớn.
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="featured">
+  <div class="trust-wrap">
+    <div class="container trust-grid">
+      <div class="trust-item">
+        <strong>Tài sản lõi</strong>
+        <span>Ưu tiên hàng hiếm, tài sản trung tâm, quỹ đất lớn, hàng có câu chuyện giá trị rõ ràng.</span>
+      </div>
+      <div class="trust-item">
+        <strong>Trình bày đẳng cấp</strong>
+        <span>Không chỉ rao bán, mà trình bày như hồ sơ đầu tư tiếp cận, nhìn vào đã khác web thường.</span>
+      </div>
+      <div class="trust-item">
+        <strong>Lọc khách thật</strong>
+        <span>Kết hợp CTA, form, NDA, nội dung ẩn/hiện để giữ trải nghiệm kín và chọn lọc hơn.</span>
+      </div>
+      <div class="trust-item">
+        <strong>Hệ thống mở rộng</strong>
+        <span>Có thể thêm nhiều căn, nhiều landing riêng, nhiều cấp độ nội dung và nhiều điểm chốt khách.</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" id="featured">
     <div class="container">
       <div class="section-head">
         <div class="mini">kho bđs thật</div>
         <h2>BẤM VÀO TỪNG CĂN ĐỂ XEM TRANG RIÊNG</h2>
-        <p>Từ đây web của anh không còn là 1 landing đơn, mà là 1 kho BĐS có trang chủ và các landing riêng cho từng tài sản.</p>
+        <p>Giờ web đã đi đúng hướng nền tảng hơn: có trang chủ kho BĐS, có card chuẩn, có mô tả rõ, có link sang landing riêng từng căn, phù hợp gửi khách và chốt khách chuyên nghiệp hơn nhiều.</p>
+      </div>
+
+      <div class="filter-wrap">
+        <div class="chip">Quỹ đất lớn</div>
+        <div class="chip">Tài sản lõi trung tâm</div>
+        <div class="chip">Landing riêng từng căn</div>
+        <div class="chip">Khách VIP / NDA</div>
       </div>
 
       <div class="listing-grid">
@@ -310,14 +934,17 @@
               <h3>Bình Tân</h3>
               <div class="listing-price">135 TỶ</div>
             </div>
+
             <div class="badge-row">
               <div class="badge">3.419m²</div>
               <div class="badge">Quỹ đất lớn</div>
               <div class="badge">Khu Tây Sài Gòn</div>
             </div>
+
             <div class="listing-meta">
-              Khu đất diện tích lớn, phù hợp định vị theo hướng quỹ đất giá trị, tài sản giữ tiền, phát triển dài hạn và dễ đưa vào kho tài sản lõi của nhà đầu tư.
+              Khu đất diện tích lớn, phù hợp định vị theo hướng quỹ đất giá trị, hàng giữ tiền, phát triển dài hạn và dễ xây thành tài sản lõi khu Tây Sài Gòn trong kho hàng VIP của anh.
             </div>
+
             <div class="listing-buttons">
               <a class="btn btn-gold" href="dat-binh-tan-3419m2-135-ty.html">Chi tiết</a>
               <a class="btn btn-dark" href="dat-binh-tan-3419m2-135-ty.html">Vào trang riêng</a>
@@ -334,14 +961,17 @@
               <h3>Quận 1</h3>
               <div class="listing-price">1.250 TỶ</div>
             </div>
+
             <div class="badge-row">
               <div class="badge">1.317,3m²</div>
               <div class="badge">16 tầng + 3 hầm</div>
               <div class="badge">Trophy Asset</div>
             </div>
+
             <div class="listing-meta">
-              Tài sản lõi trung tâm theo phong cách trophy asset, phù hợp nhà đầu tư lớn, mang tính biểu tượng và đẳng cấp lưu giữ giá trị lâu dài.
+              Tài sản lõi trung tâm theo phong cách trophy asset, phù hợp nhà đầu tư lớn, tạo cảm giác biểu tượng, lưu giữ giá trị lâu dài và rất hợp với cách tiếp cận hàng kín, hàng cấp độ cao.
             </div>
+
             <div class="listing-buttons">
               <a class="btn btn-gold" href="tai-san-loi-q1-1250-ty.html">Chi tiết</a>
               <a class="btn btn-dark" href="tai-san-loi-q1-1250-ty.html">Vào trang riêng</a>
@@ -358,14 +988,17 @@
               <h3>Tài sản VIP</h3>
               <div class="listing-price">42 TỶ</div>
             </div>
+
             <div class="badge-row">
               <div class="badge">Landing mẫu</div>
               <div class="badge">Tầm trung cao cấp</div>
               <div class="badge">Nhân bản nhanh</div>
             </div>
+
             <div class="listing-meta">
-              Căn này dùng làm mẫu chuẩn để sau này anh thay dữ liệu thật, ảnh thật, vị trí thật và nhân bản thêm nhiều căn mới cực nhanh.
+              Đây là landing mẫu cho nhóm căn tầm trung cao cấp. Mục đích là để anh có một xương mạnh, chỉ cần thay dữ liệu thật, ảnh thật và mô tả thật là có thêm sản phẩm mới ngay.
             </div>
+
             <div class="listing-buttons">
               <a class="btn btn-gold" href="tai-san-vip-42-ty.html">Chi tiết</a>
               <a class="btn btn-dark" href="tai-san-vip-42-ty.html">Vào trang riêng</a>
@@ -376,50 +1009,146 @@
     </div>
   </section>
 
-  <section id="strengths">
+  <section class="section" id="overview">
     <div class="container">
       <div class="section-head">
-        <div class="mini">một web lớn cần có</div>
-        <h2>CẤU TRÚC NỀN TẢNG THẬT</h2>
-        <p>Bản này đã đi đúng hướng nền tảng hơn: có trang chủ, có kho tài sản, có link vào từng căn riêng, có nhận diện thương hiệu và có thể mở rộng lâu dài.</p>
+        <div class="mini">tổng quan hệ thống</div>
+        <h2>MỘT WEB LỚN CẦN ĐỦ NỘI DUNG, ĐỦ TẦNG VÀ ĐỦ CẢM GIÁC</h2>
+        <p>Điểm khác giữa một web nhìn “demo” và một web nhìn “như nền tảng thật” nằm ở chỗ: nội dung phải đầy, khối phải rõ, màu phải sắc, card phải sống động, CTA phải mạnh và thông tin phải có tầng ẩn/hiện hợp lý.</p>
       </div>
 
       <div class="feature-grid">
         <div class="feature-box">
-          <strong>Trang chủ kho BĐS</strong>
-          <p>Khách vào thấy tổng quan hệ thống, định vị thương hiệu và các tài sản nổi bật ngay từ đầu.</p>
+          <strong>Nhận diện thương hiệu</strong>
+          <p>Logo, màu sắc, tiêu đề, nút bấm và cảm giác nhìn vào phải nhận ra ngay đây là hệ thống của Sơn Bạch.</p>
         </div>
         <div class="feature-box">
-          <strong>Trang riêng từng căn</strong>
-          <p>Mỗi căn có 1 landing riêng để anh chốt khách, gửi link, chạy quảng bá và nâng cấp sâu hơn sau này.</p>
+          <strong>Kho dữ liệu rõ ràng</strong>
+          <p>Có trang chủ, có card chuẩn, có landing riêng từng căn, có cấu trúc để thêm căn mới mà không bị rối.</p>
         </div>
         <div class="feature-box">
-          <strong>Dễ nhân bản</strong>
-          <p>Khi có căn mới, chỉ cần copy 1 file landing rồi đổi nội dung là anh có thêm sản phẩm mới trong kho.</p>
+          <strong>Tầng thông tin thông minh</strong>
+          <p>Không show toàn bộ quá sớm. Phải có phần giới thiệu, phần điểm mạnh, phần ẩn/hiện và phần CTA để lọc khách.</p>
         </div>
         <div class="feature-box">
-          <strong>Dễ nâng lên NDA thật</strong>
-          <p>Bước tiếp theo có thể nối form nhận lead, form NDA và phân tầng khách thật sâu hơn.</p>
+          <strong>Trải nghiệm mobile mạnh</strong>
+          <p>Nhìn sắc nét trên điện thoại, nút to dễ bấm, chữ đủ lớn, không bị cảm giác như một file HTML đơn giản.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <footer id="contact">
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">khối ẩn hiện chuyên nghiệp</div>
+        <h2>BẤM MỚI HIỆN – TẠO CẢM GIÁC WEB LỚN, KÍN VÀ CHỌN LỌC</h2>
+        <p>Các khối bên dưới không chỉ để đẹp mà còn giúp web có chiều sâu hơn, khách đọc cảm thấy đây là hệ thống thực sự có logic tiếp cận chứ không phải một bài đăng thông thường.</p>
+      </div>
+
+      <div class="hidden-grid">
+        <div class="hidden-card active">
+          <button class="hidden-toggle"><span>Bình Tân 135 tỷ</span> +</button>
+          <div class="hidden-content">
+            Tài sản này phù hợp nhóm nhà đầu tư cần quỹ đất lớn, thích hàng giữ tiền, hàng có thể phát triển và cần một sản phẩm đủ độ hiếm để tạo câu chuyện đầu tư mạnh.
+          </div>
+        </div>
+
+        <div class="hidden-card">
+          <button class="hidden-toggle"><span>Quận 1 - 1.250 tỷ</span> +</button>
+          <div class="hidden-content">
+            Đây là nhóm tài sản lõi trung tâm, đi theo hướng trophy asset. Mấu chốt không chỉ là giá trị tài sản mà còn là đẳng cấp trình bày và mức độ chọn lọc khi tiếp cận khách.
+          </div>
+        </div>
+
+        <div class="hidden-card">
+          <button class="hidden-toggle"><span>Tài sản VIP 42 tỷ</span> +</button>
+          <div class="hidden-content">
+            Căn mẫu này giúp anh chuẩn hóa cách làm sản phẩm tầm trung cao cấp. Sau này chỉ cần thay dữ liệu là anh có thêm trang mới mà vẫn giữ nguyên chất thương hiệu.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="private">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">thông tin ẩn</div>
+        <h2>BẤM MỚI HIỆN – ĐÚNG CHẤT WEB BĐS CHUYÊN NGHIỆP</h2>
+        <p>Đây là phần cực quan trọng để web nhìn giống web Batdongsan chuyên nghiệp hơn: có lớp thông tin công khai và có lớp thông tin chỉ hiện khi khách chủ động bấm xem.</p>
+      </div>
+
+      <div class="private-box">
+        <button class="private-button" onclick="togglePrivateInfo()">MỞ THÔNG TIN KÍN</button>
+
+        <div class="private-content" id="privateContent">
+          Đây là vùng thông tin chỉ hiện khi khách chủ động bấm xem. Sau này anh có thể thay bằng:
+          <br><br>
+          • vị trí tổng quan<br>
+          • diện tích / mặt tiền / kết cấu<br>
+          • điểm hiếm và tiềm năng tăng giá<br>
+          • ảnh hiện trạng / ảnh tương lai<br>
+          • pháp lý tóm tắt<br>
+          • nút NDA / nhận hồ sơ / đặt lịch xem / gọi trực tiếp
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini">quy trình chốt lead</div>
+        <h2>FORM • NDA • LỌC KHÁCH • MỞ SÂU HỒ SƠ</h2>
+        <p>Web lớn không chỉ có giao diện đẹp. Nó còn phải có logic vận hành: khách xem, để lại thông tin, xác nhận mức độ quan tâm rồi mới đi sâu hơn vào tài sản.</p>
+      </div>
+
+      <div class="process-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <strong>Xem phần giới thiệu</strong>
+          <p>Khách vào trang chủ và cảm nhận ngay độ chuyên nghiệp, mức độ chọn lọc và đẳng cấp của hệ thống.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <strong>Chọn đúng tài sản</strong>
+          <p>Khách bấm vào từng card để xem đúng landing riêng của căn mình quan tâm thay vì xem tất cả lẫn lộn.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <strong>Để lại thông tin</strong>
+          <p>Khách điền form hoặc bấm CTA liên hệ, từ đó tạo data lead và phân nhóm khách quan tâm thật.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <strong>Mở sâu & chốt lịch</strong>
+          <p>Sau khi lọc khách đúng, anh có thể mới gửi hồ sơ sâu, NDA hoặc mời đi xem trực tiếp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="contact">
     <div class="container footer-grid">
       <div>
         <div class="footer-title">SƠN BẠCH VIP PRO</div>
         <div class="footer-text">
-          Kho bất động sản chọn lọc theo phong cách nền tảng lớn, phù hợp nhà đầu tư cần tài sản giá trị, giao dịch kín và đẳng cấp.
+          Hệ thống kho bất động sản chọn lọc theo phong cách nền tảng lớn, phù hợp nhà đầu tư cần tài sản giá trị, giao dịch kín và cách tiếp cận đẳng cấp hơn web thường.
         </div>
       </div>
+
       <div>
         <div class="footer-title">Liên hệ</div>
         <div class="footer-text">
           Hotline: 0858 999 934<br>
-          Facebook / Zalo / Call hiện sẵn ở thanh nổi phía dưới.
+          Facebook / Zalo / Call luôn sẵn ở thanh nổi phía dưới để khách thao tác nhanh hơn.
         </div>
       </div>
+
       <div>
         <div class="footer-title">Tài sản hiện có</div>
         <div class="footer-text">
@@ -428,10 +1157,11 @@
           Tài sản VIP 42 tỷ
         </div>
       </div>
+
       <div>
-        <div class="footer-title">Hướng phát triển</div>
+        <div class="footer-title">Hướng nâng tiếp</div>
         <div class="footer-text">
-          Thêm nhiều căn mới • gắn NDA thật • thu lead thật • xây hệ thống VIP riêng của Sơn Bạch.
+          Gắn lead thật • gắn NDA thật • thêm thư viện ảnh • thêm video • thêm nhiều landing mới • phát triển thành kho BĐS Sơn Bạch hoàn chỉnh.
         </div>
       </div>
     </div>
@@ -442,8 +1172,7 @@
     <a class="float-link dark" href="https://zalo.me/0858999934" target="_blank">💬 Zalo</a>
     <a class="float-link dark" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank">📘 Facebook</a>
   </div>
-
-  <script>
+    <script>
     document.querySelectorAll('.nav-btn').forEach(btn=>{
       btn.addEventListener('click', function(){
         document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
@@ -455,6 +1184,17 @@
         }
       });
     });
+
+    document.querySelectorAll('.hidden-toggle').forEach(btn=>{
+      btn.addEventListener('click', function(){
+        this.parentElement.classList.toggle('active');
+      });
+    });
+
+    function togglePrivateInfo(){
+      document.getElementById('privateContent').classList.toggle('show');
+    }
   </script>
+
 </body>
 </html>
