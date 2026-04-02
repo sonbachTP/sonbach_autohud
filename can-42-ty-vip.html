@@ -8,12 +8,9 @@
   <style>
     :root{
       --bg:#030303;
-      --bg2:#090909;
       --card:#0a0a0d;
-      --card2:#101014;
       --gold:#ffd56a;
       --gold-2:#e8bc47;
-      --gold-deep:#b88919;
       --text:#f8efd0;
       --muted:#cfbc86;
       --line:rgba(255,213,106,.16);
@@ -166,7 +163,7 @@
       text-transform:uppercase;
       letter-spacing:.16em;
       font-size:20px;
-      line-height:1.8;
+      line-height:1.75;
       font-weight:900;
     }
 
@@ -192,14 +189,31 @@
     .hero-sub{
       margin:18px auto 0;
       max-width:560px;
-      color:#ead9a8;
-      font-size:clamp(22px,2.8vw,38px);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:4px;
+      line-height:1.1;
+    }
+
+    .price-main-line{
+      color:#f0dfad;
+      font-size:clamp(34px,4.6vw,58px);
+      font-weight:1000;
+      letter-spacing:-.03em;
+      text-transform:uppercase;
+    }
+
+    .price-sub-line{
+      color:#d8bf7b;
+      font-size:clamp(15px,2vw,24px);
       font-weight:900;
-      line-height:1.28;
+      letter-spacing:.28em;
+      text-transform:uppercase;
     }
 
     .hero-price-wrap{
-      margin-top:22px;
+      margin-top:18px;
       display:flex;
       justify-content:center;
     }
@@ -261,13 +275,13 @@
     }
 
     .hero-note{
-      max-width:980px;
-      margin:28px auto 0;
+      max-width:920px;
+      margin:24px auto 0;
       color:#d3bd83;
       text-transform:uppercase;
       letter-spacing:.16em;
       font-size:15px;
-      line-height:1.85;
+      line-height:1.8;
     }
 
     .hero-actions{
@@ -757,11 +771,6 @@
         line-height:1.55;
       }
 
-      .hero-sub{
-        font-size:20px;
-        max-width:330px;
-      }
-
       .hero-price{
         font-size:96px;
         white-space:normal;
@@ -835,7 +844,12 @@
 
         <div class="hero-center">
           <h1 class="hero-title">BIỆT THỰ PHÁP</h1>
-          <div class="hero-sub">42 tỷ thương lượng</div>
+
+          <div class="hero-sub">
+            <span class="price-main-line">42 TỶ</span>
+            <span class="price-sub-line">THƯƠNG LƯỢNG</span>
+          </div>
+
           <div class="hero-price-wrap">
             <div class="hero-price">42 TỶ</div>
           </div>
@@ -843,13 +857,13 @@
 
         <div class="hero-side right">
           VỊ THẾ SANG TRỌNG<br>
-          CẢM XÚC THỊ GIÁC MẠNH<br>
-          PHÙ HỢP NHÓM KHÁCH CÓ GU
+          KHÍ CHẤT QUÝ HIẾM<br>
+          ĐÚNG TỆP KHÁCH VIP
         </div>
       </div>
 
       <div class="hero-note">
-        BIỆT THỰ PHÁP QUÝ HIẾM · GIÁ TRỊ GIỮ TIỀN BỀN VỮNG · TIỀM NĂNG TĂNG GIÁ MẠNH KHI ĐẶT ĐÚNG VÀO TỆP KHÁCH PHÙ HỢP
+        BIỆT THỰ PHÁP QUÝ HIẾM · GIỮ TIỀN TỐT · TIỀM NĂNG TĂNG GIÁ MẠNH
       </div>
 
       <div class="hero-actions">
@@ -888,7 +902,7 @@
                 </div>
                 <div class="asset-box">
                   <strong>Giữ tiền</strong>
-                  Phù hợp với nhà đầu tư ưu tiên tài sản vừa có giá trị sử dụng thực, vừa có khả năng bảo toàn vốn, nâng tầm danh mục và đón nhịp tăng giá mạnh khi thị trường hồi phục đúng phân khúc.
+                  Phù hợp với nhà đầu tư ưu tiên tài sản vừa có giá trị sử dụng thực, vừa có khả năng bảo toàn vốn và đón nhịp tăng giá mạnh khi thị trường trở lại đúng phân khúc.
                 </div>
               </div>
             </div>
@@ -905,15 +919,15 @@
               <div class="asset-grid">
                 <div class="asset-box">
                   <strong>Hình khối đẹp</strong>
-                  Kiến trúc và tỷ lệ mặt tiền tạo cảm giác sang trọng, dễ gây ấn tượng mạnh về mặt thị giác và nâng giá trị cảm nhận khi xuất hiện trước đúng tệp khách hàng cao cấp.
+                  Kiến trúc và tỷ lệ mặt tiền tạo cảm giác sang trọng, dễ gây ấn tượng mạnh về mặt thị giác khi xuất hiện trước đúng tệp khách hàng cao cấp.
                 </div>
                 <div class="asset-box">
                   <strong>Dễ tạo vị thế</strong>
-                  Khi được đặt vào đúng bối cảnh trình bày, tài sản này dễ bật lên cảm giác khác biệt, tạo độ tin cậy cao và hình thành vị thế rõ rệt so với mặt bằng chung cùng tầm giá.
+                  Khi được đặt vào đúng bối cảnh trình bày, tài sản này dễ bật lên cảm giác khác biệt và hình thành vị thế rõ rệt so với mặt bằng chung cùng tầm giá.
                 </div>
                 <div class="asset-box">
                   <strong>Tệp khách rõ</strong>
-                  Hướng đến nhóm khách có gu thẩm mỹ, tiêu chuẩn cao và nhu cầu sở hữu tài sản có bản sắc, thay vì những lựa chọn phổ thông thiếu chiều sâu giá trị.
+                  Hướng đến nhóm khách có gu thẩm mỹ, tiêu chuẩn cao và nhu cầu sở hữu tài sản có bản sắc thay vì những lựa chọn phổ thông thiếu chiều sâu giá trị.
                 </div>
               </div>
             </div>
@@ -937,17 +951,17 @@
 
                 <div class="segment-panel active" id="seg1">
                   <strong>Tài sản phù hợp: dưới 50 tỷ</strong>
-                  Đây là phân khúc dành cho nhóm khách cần tài sản đẹp, quý hiếm, có cảm xúc tốt, dễ khai thác giá trị sử dụng và có dư địa tăng giá mạnh khi thị trường quay lại đúng nhịp.
+                  Đây là phân khúc dành cho nhóm khách cần tài sản đẹp, quý hiếm, có cảm xúc tốt, dễ giữ giá trị và có dư địa tăng giá mạnh khi thị trường quay lại đúng nhịp.
                 </div>
 
                 <div class="segment-panel" id="seg2">
                   <strong>Tài sản phù hợp: 50 – 150 tỷ</strong>
-                  Phân khúc này phù hợp với nhóm tài sản sang trọng, vị thế rõ, có thể vừa khẳng định đẳng cấp sở hữu vừa mở ra biên độ tăng giá hấp dẫn trong chu kỳ tiếp theo.
+                  Phân khúc này phù hợp với nhóm tài sản sang trọng, vị thế rõ, vừa khẳng định đẳng cấp sở hữu vừa mở ra biên độ tăng giá hấp dẫn trong chu kỳ tiếp theo.
                 </div>
 
                 <div class="segment-panel" id="seg3">
                   <strong>Tài sản phù hợp: 150 – 500 tỷ</strong>
-                  Đây là vùng tài sản lõi, quỹ đất chiến lược và các sản phẩm đầu tư đòi hỏi hồ sơ tinh gọn, cách tiếp cận chọn lọc và độ tin cậy cao để giữ vị thế thương lượng.
+                  Đây là vùng tài sản lõi và sản phẩm đầu tư đòi hỏi hồ sơ tinh gọn, cách tiếp cận chọn lọc và độ tin cậy cao để giữ vị thế thương lượng.
                 </div>
 
                 <div class="segment-panel" id="seg4">
@@ -980,13 +994,6 @@
           <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/IMG_6541.jpeg?v=999" alt="Góc nhìn tương lai">
           <div class="image-caption">GÓC NHÌN TƯƠNG LAI</div>
         </div>
-      </div>
-
-      <div class="panel" style="margin-top:24px;">
-        <h3>Câu chốt tài sản</h3>
-        <p>
-          Tài sản đẹp không đợi số đông nhìn ra giá trị. Nhóm khách đủ tầm sẽ nhận ra ngay đây là cơ hội sở hữu một biệt thự quý hiếm, giữ tiền tốt và có dư địa tăng giá mạnh trong tương lai.
-        </p>
       </div>
     </div>
   </section>
@@ -1042,24 +1049,27 @@
         </div>
 
         <div class="panel">
-          <h3>Chốt vị thế bằng đúng tài sản</h3>
+          <h3>Sơn Bạch Signature</h3>
           <p>
-            Một tài sản đẹp không chỉ nằm ở giá chào bán, mà nằm ở khả năng khiến đúng người mua phải dừng lại, cảm nhận được giá trị và muốn tiếp cận sâu hơn ngay từ lần xem đầu tiên.
+            Biệt thự Pháp quý hiếm không cần nói nhiều để tạo giá trị. Đúng khách sẽ nhìn ra ngay đây là dòng tài sản vừa giữ vị thế, vừa giữ tiền, vừa mở ra biên độ tăng giá mạnh khi thị trường trở lại đúng nhịp.
           </p>
 
           <div class="info-list">
             <div class="info-item">
-              <strong>Giá trị nổi bật</strong>
-              Biệt thự Pháp thuộc nhóm tài sản quý hiếm, giàu cảm xúc thị giác và dễ tạo ấn tượng mạnh với khách có tiêu chuẩn cao.
+              <strong>Dấu ấn tài sản</strong>
+              Kiến trúc đẹp, cảm xúc thị giác mạnh, phù hợp nhóm khách đề cao đẳng cấp sở hữu và chuẩn sống khác biệt.
             </div>
+
             <div class="info-item">
-              <strong>Triển vọng tương lai</strong>
-              Khi thị trường quay lại đúng nhịp, nhóm tài sản có vị thế đẹp, hình khối sang và câu chuyện rõ ràng thường là nhóm bật giá nhanh hơn mặt bằng chung.
+              <strong>Giá trị tương lai</strong>
+              Tài sản quý hiếm luôn đi trước một bước: ít xuất hiện, khó thay thế và thường bật giá nhanh khi dòng tiền quay lại phân khúc đẹp.
             </div>
+
             <div class="info-item">
-              <strong>Câu chốt</strong>
-              Đây không chỉ là một bất động sản để sở hữu, mà là một vị thế để giữ giá trị, nâng chuẩn danh mục và đón sóng tăng trưởng ở phân khúc đẹp nhất của thị trường.
+              <strong>Câu chốt thương hiệu</strong>
+              SƠN BẠCH SIGNATURE — tài sản quý hiếm chỉ dành cho người đủ tầm nhìn ra giá trị trước khi thị trường kịp nhận ra.
             </div>
+
             <div class="info-item">
               <strong>Hotline ưu tiên</strong>
               <div class="hotline">0858 999 934</div>
