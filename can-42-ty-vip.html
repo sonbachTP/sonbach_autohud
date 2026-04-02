@@ -3,21 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sơn Bạch Signature | Tài sản 42 Tỷ</title>
-  <meta name="description" content="Private Asset Presentation - Tài sản 42 tỷ. Tiếp cận chọn lọc, ưu tiên khách phù hợp." />
+  <title>Sơn Bạch Signature | Biệt thự Pháp 42 tỷ thương lượng</title>
+  <meta name="description" content="Biệt thự Pháp 42 tỷ thương lượng - hồ sơ tài sản chọn lọc, tiếp cận đúng khách phù hợp." />
   <style>
     :root{
       --bg:#030303;
       --bg2:#090909;
-      --card:#0d0d0f;
-      --card2:#121214;
+      --card:#0b0b0d;
+      --card2:#101013;
       --gold:#ffd56a;
-      --gold2:#c99a1e;
-      --goldSoft:#e6c978;
+      --gold-2:#e9bc45;
+      --gold-deep:#b88919;
       --text:#f8efd0;
-      --muted:#cdbb87;
+      --muted:#ccb983;
       --line:rgba(255,213,106,.16);
-      --shadow:0 14px 40px rgba(0,0,0,.45);
+      --shadow:0 14px 40px rgba(0,0,0,.46);
+      --green:#22c55e;
+      --blue:#2f7bff;
     }
 
     *{box-sizing:border-box}
@@ -26,19 +28,19 @@
       margin:0;
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
       background:
-        radial-gradient(circle at 50% 12%, rgba(255,213,106,.08), transparent 22%),
-        radial-gradient(circle at 50% 38%, rgba(255,213,106,.06), transparent 18%),
-        linear-gradient(180deg,#020202 0%,#060606 42%,#020202 100%);
+        radial-gradient(circle at 50% 12%, rgba(255,213,106,.10), transparent 22%),
+        radial-gradient(circle at 50% 42%, rgba(255,213,106,.06), transparent 20%),
+        linear-gradient(180deg,#020202 0%,#060606 45%,#020202 100%);
       color:var(--text);
       overflow-x:hidden;
     }
 
     img{display:block;max-width:100%}
     a{text-decoration:none;color:inherit}
-    input,textarea,button{font:inherit}
+    button,input,textarea{font:inherit}
 
     .container{
-      width:min(1160px, calc(100% - 32px));
+      width:min(1180px, calc(100% - 32px));
       margin:0 auto;
     }
 
@@ -49,7 +51,7 @@
       justify-content:center;
       position:relative;
       overflow:hidden;
-      padding:28px 0 96px;
+      padding:22px 0 92px;
     }
 
     .hero::before{
@@ -57,7 +59,7 @@
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at 50% 42%, rgba(255,213,106,.10), transparent 19%),
+        radial-gradient(circle at 50% 42%, rgba(255,213,106,.10), transparent 20%),
         linear-gradient(180deg, rgba(255,213,106,.03), transparent 14%, transparent 84%, rgba(255,213,106,.02));
       pointer-events:none;
     }
@@ -66,20 +68,20 @@
       content:"";
       position:absolute;
       left:50%;
-      top:44%;
+      top:48%;
       transform:translate(-50%,-50%);
-      width:min(780px, 95vw);
-      height:min(780px, 95vw);
+      width:min(860px, 96vw);
+      height:min(860px, 96vw);
       border-radius:50%;
-      background:radial-gradient(circle, rgba(255,213,106,.08), transparent 62%);
-      filter:blur(18px);
+      background:radial-gradient(circle, rgba(255,213,106,.07), transparent 64%);
+      filter:blur(20px);
       pointer-events:none;
     }
 
     .hero-inner{
       position:relative;
       z-index:2;
-      width:min(1160px, calc(100% - 32px));
+      width:min(1180px, calc(100% - 32px));
       margin:0 auto;
       text-align:center;
     }
@@ -92,7 +94,7 @@
       border-radius:50%;
       display:grid;
       place-items:center;
-      animation:logoPulse 2.8s ease-in-out infinite;
+      animation:logoPulse 2.6s ease-in-out infinite;
     }
 
     .logo-ring::before{
@@ -100,20 +102,20 @@
       position:absolute;
       inset:0;
       border-radius:50%;
-      border:1px solid rgba(255,213,106,.22);
+      border:1px solid rgba(255,213,106,.24);
       box-shadow:
-        0 0 18px rgba(255,213,106,.24),
-        0 0 46px rgba(255,213,106,.12),
+        0 0 20px rgba(255,213,106,.30),
+        0 0 56px rgba(255,213,106,.12),
         inset 0 0 18px rgba(255,213,106,.06);
     }
 
     .logo-ring::after{
       content:"";
       position:absolute;
-      inset:-12px;
+      inset:-14px;
       border-radius:50%;
-      background:radial-gradient(circle, rgba(255,213,106,.24), rgba(255,213,106,.06) 42%, transparent 70%);
-      filter:blur(12px);
+      background:radial-gradient(circle, rgba(255,213,106,.28), rgba(255,213,106,.08) 42%, transparent 72%);
+      filter:blur(14px);
     }
 
     .logo-ring img{
@@ -123,121 +125,148 @@
       height:98px;
       object-fit:contain;
       border-radius:50%;
-      background:rgba(0,0,0,.30);
+      background:rgba(0,0,0,.28);
       padding:8px;
       box-shadow:
-        0 0 16px rgba(255,213,106,.38),
-        0 0 38px rgba(255,213,106,.16);
+        0 0 18px rgba(255,213,106,.40),
+        0 0 42px rgba(255,213,106,.16);
     }
 
     @keyframes logoPulse{
       0%,100%{transform:scale(1);filter:brightness(1);opacity:.96}
-      50%{transform:scale(1.05);filter:brightness(1.15);opacity:1}
+      50%{transform:scale(1.06);filter:brightness(1.18);opacity:1}
     }
 
     .hero-kicker{
       margin:0 0 10px;
       color:var(--gold);
       text-transform:uppercase;
-      letter-spacing:.40em;
+      letter-spacing:.36em;
       font-size:12px;
     }
 
     .hero-brand{
-      margin:0 0 22px;
-      color:#e2cf97;
+      margin:0 0 26px;
+      color:#e2cd93;
       text-transform:uppercase;
-      letter-spacing:.28em;
+      letter-spacing:.22em;
       font-size:13px;
     }
 
-    .hero-grid{
-      display:flex;
+    .hero-row{
+      display:grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items:center;
-      justify-content:center;
-      gap:34px;
-      flex-wrap:wrap;
+      gap:28px;
+      max-width:1080px;
+      margin:0 auto;
     }
 
-    .hero-left{
-      min-width:220px;
-      text-align:right;
-    }
-
-    .hero-left .en{
-      color:#b99c5a;
+    .hero-side{
+      color:#c6a75c;
       text-transform:uppercase;
-      letter-spacing:.34em;
-      font-size:18px;
+      letter-spacing:.18em;
+      font-size:20px;
       line-height:1.8;
+      font-weight:800;
     }
+
+    .hero-side.left{text-align:right}
+    .hero-side.right{text-align:left}
 
     .hero-center{
       text-align:center;
-      min-width:240px;
+      min-width:280px;
     }
 
-    .hero-center h1{
+    .hero-title{
       margin:0;
-      font-size:clamp(48px,7vw,98px);
-      line-height:.92;
+      color:#f7e9c0;
       font-weight:1000;
       letter-spacing:-.05em;
-      color:#f5e6bc;
+      line-height:.92;
       text-transform:uppercase;
-      text-shadow:0 0 18px rgba(255,213,106,.06);
+      font-size:clamp(48px,6.6vw,92px);
+      text-shadow:0 0 18px rgba(255,213,106,.08);
     }
 
-    .hero-center .sub{
-      margin:16px auto 0;
-      max-width:260px;
-      color:#d8c38d;
-      font-size:clamp(18px,2.3vw,31px);
-      font-weight:800;
-      line-height:1.42;
+    .hero-sub{
+      margin:18px auto 0;
+      max-width:560px;
+      color:#e9d9a8;
+      font-size:clamp(22px,2.8vw,38px);
+      font-weight:900;
+      line-height:1.28;
     }
 
-    .hero-right{
-      min-width:220px;
-      text-align:left;
+    .hero-price-wrap{
+      margin-top:22px;
+      display:flex;
+      justify-content:center;
     }
 
-    .hero-right .price{
-      font-size:clamp(78px,12vw,176px);
-      line-height:.84;
+    .hero-price{
+      position:relative;
+      display:inline-block;
+      font-size:clamp(88px,14vw,210px);
+      line-height:.82;
       font-weight:1000;
       letter-spacing:-.08em;
       color:var(--gold);
+      text-transform:uppercase;
       text-shadow:
-        0 0 18px rgba(255,213,106,.58),
-        0 0 40px rgba(255,213,106,.24),
-        0 0 86px rgba(255,213,106,.12);
-      animation:priceGlow 2.3s ease-in-out infinite;
+        0 0 18px rgba(255,213,106,.60),
+        0 0 42px rgba(255,213,106,.26),
+        0 0 90px rgba(255,213,106,.12);
+      animation:goldPulse 2.2s ease-in-out infinite;
+      overflow:hidden;
+      white-space:nowrap;
     }
 
-    @keyframes priceGlow{
+    .hero-price::after{
+      content:"";
+      position:absolute;
+      top:-18%;
+      bottom:-18%;
+      left:-28%;
+      width:22%;
+      transform:skewX(-20deg);
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,.78), transparent);
+      filter:blur(2px);
+      animation:shinePass 3.2s ease-in-out infinite;
+      pointer-events:none;
+    }
+
+    @keyframes goldPulse{
       0%,100%{
         opacity:.96;
         text-shadow:
-          0 0 18px rgba(255,213,106,.48),
-          0 0 40px rgba(255,213,106,.20),
-          0 0 86px rgba(255,213,106,.10);
+          0 0 18px rgba(255,213,106,.55),
+          0 0 42px rgba(255,213,106,.22),
+          0 0 90px rgba(255,213,106,.10);
       }
       50%{
         opacity:1;
         text-shadow:
-          0 0 26px rgba(255,213,106,.76),
-          0 0 60px rgba(255,213,106,.30),
-          0 0 102px rgba(255,213,106,.16);
+          0 0 28px rgba(255,213,106,.82),
+          0 0 62px rgba(255,213,106,.34),
+          0 0 120px rgba(255,213,106,.18);
       }
     }
 
+    @keyframes shinePass{
+      0%{left:-30%;opacity:0}
+      12%{opacity:1}
+      45%{left:108%;opacity:1}
+      60%,100%{left:108%;opacity:0}
+    }
+
     .hero-note{
-      max-width:940px;
-      margin:30px auto 0;
-      color:#d2bc84;
+      max-width:980px;
+      margin:28px auto 0;
+      color:#d3bd83;
       text-transform:uppercase;
-      letter-spacing:.17em;
+      letter-spacing:.16em;
       font-size:15px;
       line-height:1.85;
     }
@@ -264,11 +293,11 @@
     .btn:hover{transform:translateY(-2px)}
 
     .btn-primary{
-      color:#101010;
+      color:#111;
       background:linear-gradient(180deg,#ffe38b 0%,#ffd56a 56%,#e8bc47 100%);
       box-shadow:
         0 12px 30px rgba(0,0,0,.38),
-        0 0 20px rgba(255,213,106,.18);
+        0 0 22px rgba(255,213,106,.22);
     }
 
     .btn-secondary{
@@ -337,10 +366,10 @@
       align-items:center;
       justify-content:space-between;
       gap:16px;
-      padding:28px;
+      padding:26px 28px;
       cursor:pointer;
       text-align:left;
-      font-size:clamp(22px,3vw,34px);
+      font-size:clamp(21px,3vw,32px);
       font-weight:1000;
     }
 
@@ -355,6 +384,7 @@
       color:var(--gold);
       background:rgba(255,213,106,.06);
       border:1px solid rgba(255,213,106,.14);
+      box-shadow:0 0 14px rgba(255,213,106,.10);
     }
 
     .acc-body{
@@ -370,7 +400,82 @@
       line-height:1.7;
     }
 
-    .acc-item.active .acc-body{max-height:600px}
+    .acc-item.active .acc-body{max-height:900px}
+
+    .asset-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+      margin-top:6px;
+    }
+
+    .asset-box{
+      padding:16px 16px;
+      border-radius:18px;
+      border:1px solid rgba(255,213,106,.12);
+      background:rgba(255,213,106,.03);
+      color:#f1dfae;
+      font-weight:800;
+      line-height:1.55;
+      min-height:100%;
+    }
+
+    .asset-box strong{
+      display:block;
+      color:#ffe5a2;
+      margin-bottom:6px;
+      font-size:15px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .segment-wrap{
+      display:grid;
+      gap:14px;
+      margin-top:6px;
+    }
+
+    .segment-tabs{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .segment-tab{
+      padding:11px 16px;
+      border-radius:999px;
+      border:1px solid rgba(255,213,106,.14);
+      background:rgba(255,213,106,.04);
+      color:#f2dfab;
+      font-weight:900;
+      cursor:pointer;
+      transition:.22s ease;
+    }
+
+    .segment-tab.active{
+      color:#111;
+      background:linear-gradient(180deg,#ffe38b 0%,#ffd56a 56%,#e8bc47 100%);
+      box-shadow:0 0 18px rgba(255,213,106,.18);
+    }
+
+    .segment-panel{
+      display:none;
+      border:1px solid rgba(255,213,106,.12);
+      background:rgba(255,213,106,.03);
+      border-radius:22px;
+      padding:18px;
+      color:#ecd9a4;
+      line-height:1.7;
+    }
+
+    .segment-panel.active{display:block}
+
+    .segment-panel strong{
+      display:block;
+      font-size:18px;
+      color:#fff0c4;
+      margin-bottom:8px;
+    }
 
     .card-grid{
       display:grid;
@@ -380,8 +485,7 @@
     }
 
     .image-card,
-    .panel,
-    .closing{
+    .panel{
       background:linear-gradient(180deg, rgba(10,10,12,.98), rgba(6,6,8,.98));
       border:1px solid var(--line);
       border-radius:30px;
@@ -404,15 +508,13 @@
 
     .nda-wrap{
       display:grid;
-      grid-template-columns:1.05fr .95fr;
+      grid-template-columns:1.1fr .9fr;
       gap:26px;
       margin-top:30px;
       align-items:start;
     }
 
-    .panel{
-      padding:28px;
-    }
+    .panel{padding:28px}
 
     .panel h3{
       margin:0 0 16px;
@@ -426,6 +528,27 @@
       color:var(--muted);
       font-size:16px;
       line-height:1.7;
+    }
+
+    .info-list{
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .info-item{
+      padding:16px 16px;
+      border-radius:18px;
+      border:1px solid rgba(255,213,106,.12);
+      background:rgba(255,213,106,.03);
+      color:#ecd9a4;
+      line-height:1.65;
+    }
+
+    .info-item strong{
+      display:block;
+      color:#fff0c4;
+      margin-bottom:5px;
     }
 
     .form-row{
@@ -488,47 +611,17 @@
     }
 
     .hotline{
-      margin-top:14px;
-      color:var(--muted);
-      font-size:16px;
-      font-weight:700;
-    }
-
-    .closing{
       margin-top:22px;
-      padding:40px 28px;
-      text-align:center;
-    }
-
-    .closing h3{
-      margin:0;
-      font-size:clamp(34px,5vw,64px);
-      line-height:1.02;
-      color:#fff4cf;
-      text-shadow:
-        0 0 14px rgba(255,213,106,.20),
-        0 0 34px rgba(255,213,106,.08);
-    }
-
-    .closing p{
-      margin:16px auto 0;
-      max-width:820px;
-      color:var(--gold);
-      text-transform:uppercase;
-      letter-spacing:.18em;
-      font-size:16px;
-      line-height:1.8;
-    }
-
-    .closing .phone{
-      margin-top:22px;
-      font-size:clamp(44px,8vw,86px);
+      font-size:clamp(30px,4vw,46px);
       font-weight:1000;
       line-height:1;
+      letter-spacing:.02em;
       color:var(--gold);
       text-shadow:
-        0 0 12px rgba(255,213,106,.30),
-        0 0 28px rgba(255,213,106,.12);
+        0 0 16px rgba(255,213,106,.54),
+        0 0 36px rgba(255,213,106,.20);
+      animation:goldPulse 2.2s ease-in-out infinite;
+      white-space:nowrap;
     }
 
     .floating-bar{
@@ -551,20 +644,75 @@
       border-radius:22px;
       font-size:18px;
       font-weight:1000;
-      border:1px solid rgba(255,213,106,.16);
       box-shadow:0 10px 26px rgba(0,0,0,.36);
       backdrop-filter:blur(10px);
       -webkit-backdrop-filter:blur(10px);
+      position:relative;
+      overflow:hidden;
+      isolation:isolate;
     }
 
-    .floating-btn.primary{
+    .floating-btn::after{
+      content:"";
+      position:absolute;
+      top:-20%;
+      bottom:-20%;
+      left:-30%;
+      width:24%;
+      transform:skewX(-20deg);
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,.52), transparent);
+      filter:blur(2px);
+      animation:shinePass 3.2s ease-in-out infinite;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .floating-btn span{
+      position:relative;
+      z-index:1;
+    }
+
+    .floating-btn.call{
       color:#111;
       background:linear-gradient(180deg,#ffe38b 0%,#ffd56a 56%,#e8bc47 100%);
+      border:1px solid rgba(255,213,106,.26);
+      box-shadow:
+        0 0 22px rgba(255,213,106,.22),
+        0 10px 26px rgba(0,0,0,.34);
+      animation:btnPulseGold 2.1s ease-in-out infinite;
     }
 
-    .floating-btn.dark{
-      color:#fff0c8;
-      background:rgba(15,15,18,.88);
+    .floating-btn.zalo{
+      color:#fff;
+      background:linear-gradient(180deg, rgba(31,88,255,.96), rgba(19,58,180,.96));
+      border:1px solid rgba(111,160,255,.30);
+      box-shadow:
+        0 0 22px rgba(47,123,255,.24),
+        0 10px 26px rgba(0,0,0,.34);
+      animation:btnPulseBlue 2.2s ease-in-out infinite;
+    }
+
+    .floating-btn.facebook{
+      color:#fff;
+      background:linear-gradient(180deg, rgba(24,24,28,.96), rgba(7,7,10,.96));
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:
+        0 0 20px rgba(255,255,255,.08),
+        0 10px 26px rgba(0,0,0,.34);
+      animation:btnPulseDark 2.4s ease-in-out infinite;
+    }
+
+    @keyframes btnPulseGold{
+      0%,100%{filter:brightness(1)}
+      50%{filter:brightness(1.12)}
+    }
+    @keyframes btnPulseBlue{
+      0%,100%{filter:brightness(1)}
+      50%{filter:brightness(1.14)}
+    }
+    @keyframes btnPulseDark{
+      0%,100%{filter:brightness(1)}
+      50%{filter:brightness(1.08)}
     }
 
     footer{
@@ -577,13 +725,18 @@
     }
 
     @media (max-width:980px){
-      .card-grid,.nda-wrap{grid-template-columns:1fr}
+      .card-grid,.nda-wrap,.asset-grid{grid-template-columns:1fr}
+      .hero-row{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+      .hero-side.left,.hero-side.right{text-align:center}
     }
 
     @media (max-width:768px){
       .hero{
         min-height:auto;
-        padding:22px 0 74px;
+        padding:20px 0 74px;
       }
 
       .logo-ring{
@@ -597,26 +750,20 @@
         height:76px;
       }
 
-      .hero-grid{
-        display:grid;
-        grid-template-columns:1fr;
-        gap:10px;
+      .hero-side{
+        font-size:15px;
+        letter-spacing:.14em;
+        line-height:1.55;
       }
 
-      .hero-left,.hero-center,.hero-right{
-        text-align:center;
-        min-width:auto;
+      .hero-sub{
+        font-size:20px;
+        max-width:330px;
       }
 
-      .hero-left .en{
-        font-size:16px;
-        letter-spacing:.28em;
-        line-height:1.6;
-      }
-
-      .hero-center .sub{
-        max-width:320px;
-        margin-top:14px;
+      .hero-price{
+        font-size:96px;
+        white-space:normal;
       }
 
       .section{
@@ -642,6 +789,11 @@
       .image-caption{
         font-size:22px;
         padding:18px 18px 22px;
+      }
+
+      .hotline{
+        font-size:28px;
+        white-space:nowrap;
       }
 
       .floating-bar{
@@ -670,33 +822,33 @@
         <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png" alt="Logo Sơn Bạch">
       </div>
 
-      <p class="hero-kicker">Private Asset Presentation</p>
+      <p class="hero-kicker">Hồ sơ tài sản chọn lọc</p>
       <p class="hero-brand">Sơn Bạch Signature</p>
 
-      <div class="hero-grid">
-        <div class="hero-left">
-          <div class="en">
-            PRIVATE<br>
-            ASSET<br>
-            PRESENTATION
-          </div>
+      <div class="hero-row">
+        <div class="hero-side left">
+          BIỆT THỰ PHÁP<br>
+          HÀNG GIỮ TIỀN<br>
+          TIẾP CẬN CHỌN LỌC
         </div>
 
         <div class="hero-center">
-          <h1>TÀI SẢN<br>42 TỶ</h1>
-          <div class="sub">
-            Tiếp cận chọn lọc ·<br>
-            Ưu tiên khách phù hợp
+          <h1 class="hero-title">BIỆT THỰ PHÁP</h1>
+          <div class="hero-sub">42 tỷ thương lượng</div>
+          <div class="hero-price-wrap">
+            <div class="hero-price">42 TỶ</div>
           </div>
         </div>
 
-        <div class="hero-right">
-          <div class="price">42<br>TỶ</div>
+        <div class="hero-side right">
+          ƯU TIÊN ĐÚNG KHÁCH<br>
+          GIỮ ĐÚNG VỊ THẾ<br>
+          MỞ ĐÚNG THỜI ĐIỂM
         </div>
       </div>
 
       <div class="hero-note">
-        HỒ SƠ TRÌNH BÀY CHỌN LỌC · GIỮ ĐÚNG NHỊP TIẾP CẬN · MỞ THEO TỪNG LỚP THÔNG TIN
+        HỒ SƠ TRÌNH BÀY CHỌN LỌC · NHẤN MẠNH GIÁ TRỊ TÀI SẢN · ƯU TIÊN TRAO ĐỔI VỚI NHÓM KHÁCH PHÙ HỢP
       </div>
 
       <div class="hero-actions">
@@ -713,42 +865,95 @@
       <p class="gold-mini">Mở theo từng lớp</p>
       <h2 class="section-title">Bấm vào từng mục để xem chi tiết</h2>
       <p class="section-sub">
-        Trình bày gọn, chọn lọc, không lộ quá sớm. Khách quan tâm đúng phân khúc sẽ thấy đúng thông tin cần thiết.
+        Cách trình bày dành cho nhóm khách cần nhìn đúng vị thế tài sản, điểm hút cốt lõi và phân khúc phù hợp thay vì xem thông tin đại trà.
       </p>
 
       <div class="accordion">
-        <div class="acc-item active">
+        <div class="acc-item">
           <button class="acc-head" type="button">
             <span>VỊ THẾ TÀI SẢN</span>
             <span class="acc-sign">+</span>
           </button>
           <div class="acc-body">
             <div class="acc-body-inner">
-              Tài sản được trình bày theo hướng private presentation nhằm giữ đúng nhịp tiếp cận, đúng khách phù hợp và tránh lộ thông tin quá sớm. Cách thể hiện này phù hợp với nhóm khách có nhu cầu thật, coi trọng trải nghiệm, vị thế và chất lượng trao đổi.
+              <div class="asset-grid">
+                <div class="asset-box">
+                  <strong>Đắc địa</strong>
+                  Tài sản thuộc nhóm dễ tạo ấn tượng ngay từ lần tiếp cận đầu tiên, phù hợp tệp khách coi trọng vị trí, hình khối và đẳng cấp sử dụng.
+                </div>
+                <div class="asset-box">
+                  <strong>Quý hiếm</strong>
+                  Không phải dạng hàng xuất hiện dày trên thị trường. Giá trị nằm ở sự khác biệt, cảm nhận thực tế và khả năng giữ vị thế lâu dài.
+                </div>
+                <div class="asset-box">
+                  <strong>Giữ tiền</strong>
+                  Phù hợp với nhóm khách tìm tài sản có tính lưu giữ giá trị, nâng chuẩn hình ảnh danh mục và tạo chỗ đứng trong phân khúc cao cấp.
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="acc-item">
           <button class="acc-head" type="button">
-            <span>ĐIỂM HÚT CHÍNH</span>
+            <span>ĐIỂM HÚT TÀI SẢN</span>
             <span class="acc-sign">+</span>
           </button>
           <div class="acc-body">
             <div class="acc-body-inner">
-              Giá trị tài sản không chỉ nằm ở mức giá mà còn ở cảm nhận tổng thể, hình khối hiện trạng, khả năng nâng cấp hình ảnh và mức độ phù hợp với tệp khách có gu rõ ràng. Đây là kiểu hàng cần được nhìn bằng bức tranh tổng thể thay vì đánh giá rời rạc.
+              <div class="asset-grid">
+                <div class="asset-box">
+                  <strong>Hình khối đẹp</strong>
+                  Phù hợp nhóm khách cần tài sản có cảm xúc thị giác tốt, lên hình đẹp và dễ nâng giá trị cảm nhận khi tiếp thị đúng cách.
+                </div>
+                <div class="asset-box">
+                  <strong>Dễ tạo vị thế</strong>
+                  Đây là kiểu hàng khi trình bày đúng, khách dễ cảm nhận sự khác biệt ngay từ giao diện, hình ảnh cho tới trải nghiệm trao đổi.
+                </div>
+                <div class="asset-box">
+                  <strong>Tệp khách rõ</strong>
+                  Không hướng đến số đông. Tài sản phù hợp hơn với nhóm khách có gu, có tiêu chuẩn và ưu tiên tài sản chất lượng thay vì hàng đại trà.
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="acc-item">
           <button class="acc-head" type="button">
-            <span>PHÂN KHÚC GIÁ</span>
+            <span>PHÂN KHÚC ĐẦU TƯ</span>
             <span class="acc-sign">+</span>
           </button>
           <div class="acc-body">
             <div class="acc-body-inner">
-              Mức 42 tỷ đòi hỏi cách tiếp cận chỉn chu hơn: giao diện phải sang, nội dung phải gọn, trải nghiệm phải đủ khác biệt để khách cảm nhận ngay đây không phải một tin đăng đại trà.
+              <div class="segment-wrap">
+                <div class="segment-tabs">
+                  <button class="segment-tab active" data-segment="seg1">Dưới 50 tỷ</button>
+                  <button class="segment-tab" data-segment="seg2">50 – 150 tỷ</button>
+                  <button class="segment-tab" data-segment="seg3">150 – 500 tỷ</button>
+                  <button class="segment-tab" data-segment="seg4">500 – 1500 tỷ</button>
+                </div>
+
+                <div class="segment-panel active" id="seg1">
+                  <strong>Tài sản phù hợp: dưới 50 tỷ</strong>
+                  Nhóm khách trong phân khúc này ưu tiên biệt thự đẹp, tài sản có cảm xúc tốt, dễ ở, dễ giữ tiền và đủ khác biệt để không bị hòa vào mặt bằng chung.
+                </div>
+
+                <div class="segment-panel" id="seg2">
+                  <strong>Tài sản phù hợp: 50 – 150 tỷ</strong>
+                  Phân khúc này thường ưu tiên nhà phố lớn, biệt thự giá trị cao, tài sản mặt tiền hoặc hàng khai thác được cả yếu tố vị thế lẫn tính thương mại.
+                </div>
+
+                <div class="segment-panel" id="seg3">
+                  <strong>Tài sản phù hợp: 150 – 500 tỷ</strong>
+                  Đây là nhóm tài sản lõi, quỹ đất hiếm, khách sạn, building hoặc hàng đầu tư cần hồ sơ chọn lọc, quy trình tiếp cận chặt và thẩm mỹ cao.
+                </div>
+
+                <div class="segment-panel" id="seg4">
+                  <strong>Tài sản phù hợp: 500 – 1500 tỷ</strong>
+                  Phù hợp nhóm core asset, trophy asset, quỹ đất chiến lược và tài sản biểu tượng cần tiếp cận theo mô hình kín, ưu tiên đúng khách và đúng thời điểm.
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -793,7 +998,7 @@
             Biểu mẫu này dùng để lọc đúng khách, đúng nhu cầu và đúng nhịp trao đổi. Nội dung tiếp theo sẽ được mở theo mức độ phù hợp của từng yêu cầu.
           </p>
 
-          <form id="ndaForm" action="https://formspree.io/f/mpqykgzk" method="POST">
+          <form action="https://formspree.io/f/mpqykgzk" method="POST">
             <div class="form-row">
               <label for="name">Họ và tên</label>
               <input id="name" name="name" type="text" placeholder="Nhập họ và tên" required>
@@ -825,23 +1030,28 @@
               <button class="btn btn-primary" type="submit">TÔI ĐỒNG Ý NDA</button>
               <a class="btn btn-secondary" href="tel:0858999934">GỌI NGAY</a>
             </div>
-
-            <div class="hotline">Hotline tiếp nhận: <strong>0858 999 934</strong></div>
           </form>
         </div>
 
         <div class="panel">
-          <h3>Tài sản không dành cho số đông</h3>
+          <h3>Tiếp cận đúng khách phù hợp</h3>
           <p>
-            Ưu tiên đúng khách · Giữ đúng vị thế · Mở đúng thời điểm. Đây là cách tiếp cận dành cho nhóm khách cần trải nghiệm hồ sơ rõ ràng, thẩm mỹ tốt và trao đổi trực tiếp với người phụ trách.
+            Hồ sơ này được dựng theo hướng chọn lọc để khách nhìn rõ tính chất tài sản, phân khúc phù hợp và mức độ tiếp cận cần thiết trước khi đi sâu vào thông tin chi tiết.
           </p>
 
-          <div class="closing">
-            <h3>TÀI SẢN KHÔNG DÀNH CHO SỐ ĐÔNG</h3>
-            <p>
-              ƯU TIÊN ĐÚNG KHÁCH · GIỮ ĐÚNG VỊ THẾ · MỞ ĐÚNG THỜI ĐIỂM
-            </p>
-            <div class="phone">0858 999 934</div>
+          <div class="info-list">
+            <div class="info-item">
+              <strong>Nhịp tiếp cận</strong>
+              Trình bày theo lớp để giữ đúng giá trị cảm nhận của tài sản và tránh loãng thông tin ở bước đầu.
+            </div>
+            <div class="info-item">
+              <strong>Tệp khách</strong>
+              Phù hợp với nhóm khách coi trọng vị thế, gu thẩm mỹ và cách làm việc rõ ràng, chuyên nghiệp.
+            </div>
+            <div class="info-item">
+              <strong>Hotline ưu tiên</strong>
+              <div class="hotline">0858 999 934</div>
+            </div>
           </div>
         </div>
       </div>
@@ -849,13 +1059,13 @@
   </section>
 
   <footer>
-    SƠN BẠCH SIGNATURE · PRIVATE ASSET PRESENTATION
+    SƠN BẠCH SIGNATURE · HỒ SƠ TÀI SẢN CHỌN LỌC
   </footer>
 
   <div class="floating-bar">
-    <a class="floating-btn primary" href="tel:0858999934">GỌI NGAY</a>
-    <a class="floating-btn dark" href="https://zalo.me/0858999934" target="_blank" rel="noopener">ZALO</a>
-    <a class="floating-btn dark" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank" rel="noopener">FACEBOOK</a>
+    <a class="floating-btn call" href="tel:0858999934"><span>GỌI NGAY</span></a>
+    <a class="floating-btn zalo" href="https://zalo.me/0858999934" target="_blank" rel="noopener"><span>ZALO</span></a>
+    <a class="floating-btn facebook" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank" rel="noopener"><span>FACEBOOK</span></a>
   </div>
 
   <script>
@@ -863,6 +1073,19 @@
       const btn = item.querySelector(".acc-head");
       btn.addEventListener("click", () => {
         item.classList.toggle("active");
+      });
+    });
+
+    const tabs = document.querySelectorAll(".segment-tab");
+    const panels = document.querySelectorAll(".segment-panel");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        panels.forEach(p => p.classList.remove("active"));
+        tab.classList.add("active");
+        const target = document.getElementById(tab.dataset.segment);
+        if (target) target.classList.add("active");
       });
     });
   </script>
