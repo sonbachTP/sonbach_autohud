@@ -4,22 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sơn Bạch Signature | Biệt thự Pháp 42 tỷ thương lượng</title>
-  <meta name="description" content="Biệt thự Pháp 42 tỷ thương lượng - hồ sơ tài sản chọn lọc, tiếp cận đúng khách phù hợp." />
+  <meta name="description" content="Biệt thự Pháp 42 tỷ thương lượng - tài sản quý hiếm, giữ tiền tốt, tiếp cận chọn lọc." />
   <style>
     :root{
       --bg:#030303;
       --bg2:#090909;
-      --card:#0b0b0d;
-      --card2:#101013;
+      --card:#0a0a0d;
+      --card2:#101014;
       --gold:#ffd56a;
-      --gold-2:#e9bc45;
+      --gold-2:#e8bc47;
       --gold-deep:#b88919;
       --text:#f8efd0;
-      --muted:#ccb983;
+      --muted:#cfbc86;
       --line:rgba(255,213,106,.16);
       --shadow:0 14px 40px rgba(0,0,0,.46);
-      --green:#22c55e;
-      --blue:#2f7bff;
+      --blue:#2563ff;
     }
 
     *{box-sizing:border-box}
@@ -30,7 +29,7 @@
       background:
         radial-gradient(circle at 50% 12%, rgba(255,213,106,.10), transparent 22%),
         radial-gradient(circle at 50% 42%, rgba(255,213,106,.06), transparent 20%),
-        linear-gradient(180deg,#020202 0%,#060606 45%,#020202 100%);
+        linear-gradient(180deg,#020202 0%,#060606 46%,#020202 100%);
       color:var(--text);
       overflow-x:hidden;
     }
@@ -59,7 +58,7 @@
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at 50% 42%, rgba(255,213,106,.10), transparent 20%),
+        radial-gradient(circle at 50% 44%, rgba(255,213,106,.10), transparent 20%),
         linear-gradient(180deg, rgba(255,213,106,.03), transparent 14%, transparent 84%, rgba(255,213,106,.02));
       pointer-events:none;
     }
@@ -68,7 +67,7 @@
       content:"";
       position:absolute;
       left:50%;
-      top:48%;
+      top:50%;
       transform:translate(-50%,-50%);
       width:min(860px, 96vw);
       height:min(860px, 96vw);
@@ -155,7 +154,7 @@
 
     .hero-row{
       display:grid;
-      grid-template-columns: 1fr auto 1fr;
+      grid-template-columns:1fr auto 1fr;
       align-items:center;
       gap:28px;
       max-width:1080px;
@@ -165,10 +164,10 @@
     .hero-side{
       color:#c6a75c;
       text-transform:uppercase;
-      letter-spacing:.18em;
+      letter-spacing:.16em;
       font-size:20px;
       line-height:1.8;
-      font-weight:800;
+      font-weight:900;
     }
 
     .hero-side.left{text-align:right}
@@ -193,7 +192,7 @@
     .hero-sub{
       margin:18px auto 0;
       max-width:560px;
-      color:#e9d9a8;
+      color:#ead9a8;
       font-size:clamp(22px,2.8vw,38px);
       font-weight:900;
       line-height:1.28;
@@ -215,9 +214,9 @@
       color:var(--gold);
       text-transform:uppercase;
       text-shadow:
-        0 0 18px rgba(255,213,106,.60),
-        0 0 42px rgba(255,213,106,.26),
-        0 0 90px rgba(255,213,106,.12);
+        0 0 22px rgba(255,213,106,.72),
+        0 0 52px rgba(255,213,106,.32),
+        0 0 110px rgba(255,213,106,.18);
       animation:goldPulse 2.2s ease-in-out infinite;
       overflow:hidden;
       white-space:nowrap;
@@ -241,16 +240,16 @@
       0%,100%{
         opacity:.96;
         text-shadow:
-          0 0 18px rgba(255,213,106,.55),
-          0 0 42px rgba(255,213,106,.22),
-          0 0 90px rgba(255,213,106,.10);
+          0 0 22px rgba(255,213,106,.68),
+          0 0 52px rgba(255,213,106,.28),
+          0 0 110px rgba(255,213,106,.16);
       }
       50%{
         opacity:1;
         text-shadow:
-          0 0 28px rgba(255,213,106,.82),
-          0 0 62px rgba(255,213,106,.34),
-          0 0 120px rgba(255,213,106,.18);
+          0 0 30px rgba(255,213,106,.88),
+          0 0 68px rgba(255,213,106,.38),
+          0 0 132px rgba(255,213,106,.22);
       }
     }
 
@@ -341,6 +340,7 @@
       color:var(--muted);
       font-size:16px;
       max-width:760px;
+      line-height:1.7;
     }
 
     .accordion{
@@ -400,7 +400,7 @@
       line-height:1.7;
     }
 
-    .acc-item.active .acc-body{max-height:900px}
+    .acc-item.active .acc-body{max-height:1200px}
 
     .asset-grid{
       display:grid;
@@ -410,7 +410,7 @@
     }
 
     .asset-box{
-      padding:16px 16px;
+      padding:16px;
       border-radius:18px;
       border:1px solid rgba(255,213,106,.12);
       background:rgba(255,213,106,.03);
@@ -497,6 +497,7 @@
       width:100%;
       aspect-ratio:16/10;
       object-fit:cover;
+      background:#050506;
     }
 
     .image-caption{
@@ -537,7 +538,7 @@
     }
 
     .info-item{
-      padding:16px 16px;
+      padding:16px;
       border-radius:18px;
       border:1px solid rgba(255,213,106,.12);
       background:rgba(255,213,106,.03);
@@ -611,7 +612,7 @@
     }
 
     .hotline{
-      margin-top:22px;
+      margin-top:12px;
       font-size:clamp(30px,4vw,46px);
       font-weight:1000;
       line-height:1;
@@ -819,7 +820,7 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="logo-ring">
-        <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png" alt="Logo Sơn Bạch">
+        <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png?v=999" alt="Logo Sơn Bạch">
       </div>
 
       <p class="hero-kicker">Hồ sơ tài sản chọn lọc</p>
@@ -827,9 +828,9 @@
 
       <div class="hero-row">
         <div class="hero-side left">
-          BIỆT THỰ PHÁP<br>
-          HÀNG GIỮ TIỀN<br>
-          TIẾP CẬN CHỌN LỌC
+          TÀI SẢN QUÝ HIẾM<br>
+          BIỆT THỰ GIÁ TRỊ CAO<br>
+          TRIỂN VỌNG TĂNG GIÁ MẠNH
         </div>
 
         <div class="hero-center">
@@ -841,14 +842,14 @@
         </div>
 
         <div class="hero-side right">
-          ƯU TIÊN ĐÚNG KHÁCH<br>
-          GIỮ ĐÚNG VỊ THẾ<br>
-          MỞ ĐÚNG THỜI ĐIỂM
+          VỊ THẾ SANG TRỌNG<br>
+          CẢM XÚC THỊ GIÁC MẠNH<br>
+          PHÙ HỢP NHÓM KHÁCH CÓ GU
         </div>
       </div>
 
       <div class="hero-note">
-        HỒ SƠ TRÌNH BÀY CHỌN LỌC · NHẤN MẠNH GIÁ TRỊ TÀI SẢN · ƯU TIÊN TRAO ĐỔI VỚI NHÓM KHÁCH PHÙ HỢP
+        BIỆT THỰ PHÁP QUÝ HIẾM · GIÁ TRỊ GIỮ TIỀN BỀN VỮNG · TIỀM NĂNG TĂNG GIÁ MẠNH KHI ĐẶT ĐÚNG VÀO TỆP KHÁCH PHÙ HỢP
       </div>
 
       <div class="hero-actions">
@@ -879,15 +880,15 @@
               <div class="asset-grid">
                 <div class="asset-box">
                   <strong>Đắc địa</strong>
-                  Tài sản thuộc nhóm dễ tạo ấn tượng ngay từ lần tiếp cận đầu tiên, phù hợp tệp khách coi trọng vị trí, hình khối và đẳng cấp sử dụng.
+                  Thuộc nhóm tài sản có vị thế nổi bật, dễ tạo cảm giác giá trị ngay từ lần tiếp cận đầu tiên và phù hợp với khách hàng đề cao chuẩn sống lẫn đẳng cấp sở hữu.
                 </div>
                 <div class="asset-box">
                   <strong>Quý hiếm</strong>
-                  Không phải dạng hàng xuất hiện dày trên thị trường. Giá trị nằm ở sự khác biệt, cảm nhận thực tế và khả năng giữ vị thế lâu dài.
+                  Không nằm trong nhóm tài sản xuất hiện thường xuyên. Giá trị đến từ độ khan hiếm, bản sắc riêng và khả năng tạo lợi thế cạnh tranh rõ rệt trong tương lai.
                 </div>
                 <div class="asset-box">
                   <strong>Giữ tiền</strong>
-                  Phù hợp với nhóm khách tìm tài sản có tính lưu giữ giá trị, nâng chuẩn hình ảnh danh mục và tạo chỗ đứng trong phân khúc cao cấp.
+                  Phù hợp với nhà đầu tư ưu tiên tài sản vừa có giá trị sử dụng thực, vừa có khả năng bảo toàn vốn, nâng tầm danh mục và đón nhịp tăng giá mạnh khi thị trường hồi phục đúng phân khúc.
                 </div>
               </div>
             </div>
@@ -904,15 +905,15 @@
               <div class="asset-grid">
                 <div class="asset-box">
                   <strong>Hình khối đẹp</strong>
-                  Phù hợp nhóm khách cần tài sản có cảm xúc thị giác tốt, lên hình đẹp và dễ nâng giá trị cảm nhận khi tiếp thị đúng cách.
+                  Kiến trúc và tỷ lệ mặt tiền tạo cảm giác sang trọng, dễ gây ấn tượng mạnh về mặt thị giác và nâng giá trị cảm nhận khi xuất hiện trước đúng tệp khách hàng cao cấp.
                 </div>
                 <div class="asset-box">
                   <strong>Dễ tạo vị thế</strong>
-                  Đây là kiểu hàng khi trình bày đúng, khách dễ cảm nhận sự khác biệt ngay từ giao diện, hình ảnh cho tới trải nghiệm trao đổi.
+                  Khi được đặt vào đúng bối cảnh trình bày, tài sản này dễ bật lên cảm giác khác biệt, tạo độ tin cậy cao và hình thành vị thế rõ rệt so với mặt bằng chung cùng tầm giá.
                 </div>
                 <div class="asset-box">
                   <strong>Tệp khách rõ</strong>
-                  Không hướng đến số đông. Tài sản phù hợp hơn với nhóm khách có gu, có tiêu chuẩn và ưu tiên tài sản chất lượng thay vì hàng đại trà.
+                  Hướng đến nhóm khách có gu thẩm mỹ, tiêu chuẩn cao và nhu cầu sở hữu tài sản có bản sắc, thay vì những lựa chọn phổ thông thiếu chiều sâu giá trị.
                 </div>
               </div>
             </div>
@@ -936,22 +937,22 @@
 
                 <div class="segment-panel active" id="seg1">
                   <strong>Tài sản phù hợp: dưới 50 tỷ</strong>
-                  Nhóm khách trong phân khúc này ưu tiên biệt thự đẹp, tài sản có cảm xúc tốt, dễ ở, dễ giữ tiền và đủ khác biệt để không bị hòa vào mặt bằng chung.
+                  Đây là phân khúc dành cho nhóm khách cần tài sản đẹp, quý hiếm, có cảm xúc tốt, dễ khai thác giá trị sử dụng và có dư địa tăng giá mạnh khi thị trường quay lại đúng nhịp.
                 </div>
 
                 <div class="segment-panel" id="seg2">
                   <strong>Tài sản phù hợp: 50 – 150 tỷ</strong>
-                  Phân khúc này thường ưu tiên nhà phố lớn, biệt thự giá trị cao, tài sản mặt tiền hoặc hàng khai thác được cả yếu tố vị thế lẫn tính thương mại.
+                  Phân khúc này phù hợp với nhóm tài sản sang trọng, vị thế rõ, có thể vừa khẳng định đẳng cấp sở hữu vừa mở ra biên độ tăng giá hấp dẫn trong chu kỳ tiếp theo.
                 </div>
 
                 <div class="segment-panel" id="seg3">
                   <strong>Tài sản phù hợp: 150 – 500 tỷ</strong>
-                  Đây là nhóm tài sản lõi, quỹ đất hiếm, khách sạn, building hoặc hàng đầu tư cần hồ sơ chọn lọc, quy trình tiếp cận chặt và thẩm mỹ cao.
+                  Đây là vùng tài sản lõi, quỹ đất chiến lược và các sản phẩm đầu tư đòi hỏi hồ sơ tinh gọn, cách tiếp cận chọn lọc và độ tin cậy cao để giữ vị thế thương lượng.
                 </div>
 
                 <div class="segment-panel" id="seg4">
                   <strong>Tài sản phù hợp: 500 – 1500 tỷ</strong>
-                  Phù hợp nhóm core asset, trophy asset, quỹ đất chiến lược và tài sản biểu tượng cần tiếp cận theo mô hình kín, ưu tiên đúng khách và đúng thời điểm.
+                  Đây là nhóm trophy asset và core asset mang tính biểu tượng, chỉ phù hợp với quy trình tiếp cận kín, thẩm mỹ cao, đúng khách và đúng thời điểm mở thông tin.
                 </div>
               </div>
             </div>
@@ -971,14 +972,21 @@
 
       <div class="card-grid">
         <div class="image-card">
-          <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/IMG_6540.jpeg" alt="Hình ảnh hiện trạng">
+          <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/IMG_6540.jpeg?v=999" alt="Hình ảnh hiện trạng">
           <div class="image-caption">HÌNH ẢNH THỰC TẾ</div>
         </div>
 
         <div class="image-card">
-          <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/IMG_6541.jpeg" alt="Góc nhìn tương lai">
+          <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/IMG_6541.jpeg?v=999" alt="Góc nhìn tương lai">
           <div class="image-caption">GÓC NHÌN TƯƠNG LAI</div>
         </div>
+      </div>
+
+      <div class="panel" style="margin-top:24px;">
+        <h3>Câu chốt tài sản</h3>
+        <p>
+          Tài sản đẹp không đợi số đông nhìn ra giá trị. Nhóm khách đủ tầm sẽ nhận ra ngay đây là cơ hội sở hữu một biệt thự quý hiếm, giữ tiền tốt và có dư địa tăng giá mạnh trong tương lai.
+        </p>
       </div>
     </div>
   </section>
@@ -1034,19 +1042,23 @@
         </div>
 
         <div class="panel">
-          <h3>Tiếp cận đúng khách phù hợp</h3>
+          <h3>Chốt vị thế bằng đúng tài sản</h3>
           <p>
-            Hồ sơ này được dựng theo hướng chọn lọc để khách nhìn rõ tính chất tài sản, phân khúc phù hợp và mức độ tiếp cận cần thiết trước khi đi sâu vào thông tin chi tiết.
+            Một tài sản đẹp không chỉ nằm ở giá chào bán, mà nằm ở khả năng khiến đúng người mua phải dừng lại, cảm nhận được giá trị và muốn tiếp cận sâu hơn ngay từ lần xem đầu tiên.
           </p>
 
           <div class="info-list">
             <div class="info-item">
-              <strong>Nhịp tiếp cận</strong>
-              Trình bày theo lớp để giữ đúng giá trị cảm nhận của tài sản và tránh loãng thông tin ở bước đầu.
+              <strong>Giá trị nổi bật</strong>
+              Biệt thự Pháp thuộc nhóm tài sản quý hiếm, giàu cảm xúc thị giác và dễ tạo ấn tượng mạnh với khách có tiêu chuẩn cao.
             </div>
             <div class="info-item">
-              <strong>Tệp khách</strong>
-              Phù hợp với nhóm khách coi trọng vị thế, gu thẩm mỹ và cách làm việc rõ ràng, chuyên nghiệp.
+              <strong>Triển vọng tương lai</strong>
+              Khi thị trường quay lại đúng nhịp, nhóm tài sản có vị thế đẹp, hình khối sang và câu chuyện rõ ràng thường là nhóm bật giá nhanh hơn mặt bằng chung.
+            </div>
+            <div class="info-item">
+              <strong>Câu chốt</strong>
+              Đây không chỉ là một bất động sản để sở hữu, mà là một vị thế để giữ giá trị, nâng chuẩn danh mục và đón sóng tăng trưởng ở phân khúc đẹp nhất của thị trường.
             </div>
             <div class="info-item">
               <strong>Hotline ưu tiên</strong>
@@ -1059,7 +1071,7 @@
   </section>
 
   <footer>
-    SƠN BẠCH SIGNATURE · HỒ SƠ TÀI SẢN CHỌN LỌC
+    SƠN BẠCH SIGNATURE · BIỆT THỰ PHÁP 42 TỶ THƯƠNG LƯỢNG
   </footer>
 
   <div class="floating-bar">
