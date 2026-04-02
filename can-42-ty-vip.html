@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sơn Bạch Signature | Biệt Thự Pháp 42 Tỷ</title>
+<title>Sơn Bạch Signature | 42 Tỷ</title>
 
 <style>
 body{
@@ -15,59 +15,89 @@ body{
   text-align:center;
 }
 
-.hero{
-  padding:60px 20px 40px;
+/* ===== LOGO GLOW ===== */
+.logo-wrap{
+  margin-top:40px;
+  animation:pulse 3s infinite;
 }
-
 .logo{
-  width:110px;
+  width:120px;
   border-radius:50%;
-  box-shadow:0 0 60px rgba(255,215,120,0.8);
-  margin-bottom:20px;
+  box-shadow:0 0 60px #ffd56a;
+}
+@keyframes pulse{
+  0%{transform:scale(1);opacity:1}
+  50%{transform:scale(1.08);opacity:.9}
+  100%{transform:scale(1);opacity:1}
 }
 
+/* ===== TEXT ===== */
 .subtitle{
-  letter-spacing:4px;
+  margin-top:20px;
+  letter-spacing:3px;
   font-size:12px;
-  opacity:0.7;
+  opacity:.7;
 }
-
 .title{
   font-size:42px;
   font-weight:bold;
   margin:20px 0;
 }
 
+/* ===== PRICE GLOW ===== */
 .price{
   font-size:70px;
   font-weight:bold;
   color:#ffd56a;
-  text-shadow:0 0 25px #ffd56a;
+  position:relative;
+  animation:glow 2s infinite;
+}
+@keyframes glow{
+  0%{text-shadow:0 0 10px #ffd56a}
+  50%{text-shadow:0 0 40px #ffd56a}
+  100%{text-shadow:0 0 10px #ffd56a}
+}
+
+/* ===== LIGHT SWEEP ===== */
+.price::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation:sweep 3s infinite;
+}
+@keyframes sweep{
+  0%{left:-100%}
+  100%{left:120%}
 }
 
 .note{
-  font-size:14px;
-  opacity:0.8;
-  margin-top:6px;
+  margin-top:5px;
+  opacity:.8;
 }
 
 .section{
   padding:40px 20px;
 }
 
-.box{
-  background:#0c0c0c;
-  border:1px solid rgba(255,215,120,0.2);
-  border-radius:16px;
-  padding:20px;
-  margin-top:20px;
-}
-
 .img{
-  width:100%;
   border-radius:16px;
 }
 
+/* ===== FILTER BOX ===== */
+.filter button{
+  margin:5px;
+  padding:10px 15px;
+  border-radius:20px;
+  border:1px solid #ffd56a;
+  background:none;
+  color:#ffd56a;
+}
+
+/* ===== CTA ===== */
 .cta{
   position:fixed;
   bottom:15px;
@@ -80,33 +110,18 @@ body{
 
 .btn{
   padding:12px 18px;
-  border-radius:10px;
+  border-radius:12px;
   font-weight:bold;
-  color:white;
+  animation:btnGlow 2s infinite;
 }
-
 .call{background:#ffd56a;color:black;}
-.zalo{background:#1e5bff;}
-.fb{background:#111;}
+.zalo{background:#2e5bff;}
+.fb{background:#111;color:#fff;}
 
-input,textarea{
-  width:100%;
-  padding:12px;
-  margin-top:10px;
-  background:#111;
-  border:1px solid #333;
-  color:#fff;
-  border-radius:10px;
-}
-
-button{
-  width:100%;
-  padding:14px;
-  margin-top:15px;
-  background:#ffd56a;
-  border:none;
-  font-weight:bold;
-  border-radius:10px;
+@keyframes btnGlow{
+  0%{box-shadow:0 0 5px #ffd56a}
+  50%{box-shadow:0 0 20px #ffd56a}
+  100%{box-shadow:0 0 5px #ffd56a}
 }
 
 </style>
@@ -115,9 +130,9 @@ button{
 <body>
 
 <!-- HERO -->
-<div class="hero">
-
+<div class="logo-wrap">
 <img class="logo" src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png">
+</div>
 
 <div class="subtitle">HỒ SƠ TÀI SẢN CHỌN LỌC</div>
 
@@ -126,59 +141,45 @@ button{
 <div class="price">42 TỶ</div>
 <div class="note">Thương lượng</div>
 
-<p style="margin-top:20px">
-Tài sản giá trị cao · Giữ tiền bền vững · Khả năng tăng giá mạnh khi tiếp cận đúng tệp khách phù hợp
+<p>
+Tài sản quý hiếm · Giữ giá trị · Khả năng tăng giá mạnh trong tương lai
 </p>
-
-</div>
 
 <!-- HIỆN TRẠNG -->
 <div class="section">
-
-<h2>Hiện trạng tài sản</h2>
-
+<h2>Hiện trạng</h2>
 <img class="img" src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/IMG_6540.jpeg">
-
 </div>
 
 <!-- TƯƠNG LAI -->
 <div class="section">
-
-<h2>Góc nhìn tương lai</h2>
-
+<h2>Tương lai</h2>
 <img class="img" src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/IMG_6541.jpeg">
-
 </div>
 
-<!-- CÂU CHỐT VIP -->
-<div class="section">
+<!-- PHÂN KHÚC -->
+<div class="section filter">
+<h2>Phân khúc đầu tư</h2>
 
-<div class="box">
-<strong>
-Đây không đơn thuần là một bất động sản,
-mà là một vị thế giữ giá trị và đón sóng tăng trưởng đúng thời điểm.
-</strong>
-</div>
+<button onclick="show('a')">Dưới 50 tỷ</button>
+<button onclick="show('b')">50 - 150 tỷ</button>
+<button onclick="show('c')">150 - 500 tỷ</button>
+<button onclick="show('d')">500 - 1500 tỷ</button>
 
+<div id="result" style="margin-top:20px"></div>
 </div>
 
 <!-- NDA -->
 <div class="section">
-
-<h2>Đăng ký NDA để nhận thông tin chi tiết</h2>
+<h2>Đăng ký NDA</h2>
 
 <form action="https://formspree.io/f/mpqykgzk" method="POST">
-
 <input name="name" placeholder="Họ và tên" required>
 <input name="phone" placeholder="Số điện thoại" required>
 <input name="email" placeholder="Email">
-
-<textarea name="note" placeholder="Nhu cầu / Ghi chú"></textarea>
-
-<button type="submit">TÔI ĐỒNG Ý NDA</button>
-
+<textarea name="note" placeholder="Nhu cầu"></textarea>
+<button>TÔI ĐỒNG Ý NDA</button>
 </form>
-
 </div>
 
 <!-- CTA -->
@@ -187,6 +188,17 @@ mà là một vị thế giữ giá trị và đón sóng tăng trưởng đúng
 <a href="https://zalo.me/0858999934" class="btn zalo">ZALO</a>
 <a href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" class="btn fb">FACEBOOK</a>
 </div>
+
+<script>
+function show(x){
+  let text="";
+  if(x=="a") text="Biệt thự đẹp - dễ giữ tiền - phù hợp đầu tư an toàn";
+  if(x=="b") text="Tài sản cao cấp - tăng trưởng tốt";
+  if(x=="c") text="Hàng hiếm - biên độ tăng giá mạnh";
+  if(x=="d") text="Tài sản lõi - dành cho nhà đầu tư lớn";
+  document.getElementById("result").innerHTML=text;
+}
+</script>
 
 </body>
 </html>
