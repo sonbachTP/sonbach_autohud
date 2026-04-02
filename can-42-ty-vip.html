@@ -1,204 +1,1183 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sơn Bạch Signature | Biệt thự Pháp 42 Tỷ</title>
+  <meta name="description" content="Biệt thự Pháp 42 tỷ thương lượng - hồ sơ tài sản chọn lọc, tiếp cận đúng khách phù hợp." />
+  <style>
+    :root{
+      --bg:#040404;
+      --bg-soft:#0b0b0d;
+      --card:#0c0c10;
+      --line:rgba(255,213,106,.16);
+      --gold:#ffd56a;
+      --gold-2:#e7bb45;
+      --gold-3:#fff1bf;
+      --text:#f7efd2;
+      --muted:#d2be87;
+      --shadow:0 18px 46px rgba(0,0,0,.48);
+      --blue1:#2e67ff;
+      --blue2:#163fbe;
+      --dark1:#17171b;
+      --dark2:#07070b;
+    }
 
-<title>Sơn Bạch Signature | 42 Tỷ</title>
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(circle at 50% 10%, rgba(255,213,106,.10), transparent 22%),
+        radial-gradient(circle at 50% 48%, rgba(255,213,106,.05), transparent 20%),
+        linear-gradient(180deg,#020202 0%, #060606 42%, #020202 100%);
+      color:var(--text);
+      overflow-x:hidden;
+    }
 
-<style>
-body{
-  margin:0;
-  font-family:Arial;
-  background:#050505;
-  color:#f5e6c8;
-  text-align:center;
-}
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+    button,input,textarea{font:inherit}
+    input,textarea,button{-webkit-appearance:none;appearance:none}
 
-/* ===== LOGO GLOW ===== */
-.logo-wrap{
-  margin-top:40px;
-  animation:pulse 3s infinite;
-}
-.logo{
-  width:120px;
-  border-radius:50%;
-  box-shadow:0 0 60px #ffd56a;
-}
-@keyframes pulse{
-  0%{transform:scale(1);opacity:1}
-  50%{transform:scale(1.08);opacity:.9}
-  100%{transform:scale(1);opacity:1}
-}
+    .container{
+      width:min(1180px, calc(100% - 32px));
+      margin:0 auto;
+    }
 
-/* ===== TEXT ===== */
-.subtitle{
-  margin-top:20px;
-  letter-spacing:3px;
-  font-size:12px;
-  opacity:.7;
-}
-.title{
-  font-size:42px;
-  font-weight:bold;
-  margin:20px 0;
-}
+    .section{
+      padding:88px 0;
+      position:relative;
+    }
 
-/* ===== PRICE GLOW ===== */
-.price{
-  font-size:70px;
-  font-weight:bold;
-  color:#ffd56a;
-  position:relative;
-  animation:glow 2s infinite;
-}
-@keyframes glow{
-  0%{text-shadow:0 0 10px #ffd56a}
-  50%{text-shadow:0 0 40px #ffd56a}
-  100%{text-shadow:0 0 10px #ffd56a}
-}
+    .eyebrow{
+      margin:0 0 10px;
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:.28em;
+      font-size:13px;
+      line-height:1.6;
+    }
 
-/* ===== LIGHT SWEEP ===== */
-.price::after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
-  background:linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
-  animation:sweep 3s infinite;
-}
-@keyframes sweep{
-  0%{left:-100%}
-  100%{left:120%}
-}
+    .section-title{
+      margin:0 0 16px;
+      font-size:clamp(34px,5vw,68px);
+      line-height:.98;
+      font-weight:1000;
+      letter-spacing:-.04em;
+      color:#fff3cb;
+    }
 
-.note{
-  margin-top:5px;
-  opacity:.8;
-}
+    .section-sub{
+      margin:0;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.7;
+      max-width:880px;
+    }
 
-.section{
-  padding:40px 20px;
-}
+    /* HERO */
+    .hero{
+      min-height:100svh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      padding:28px 0 92px;
+      overflow:hidden;
+    }
 
-.img{
-  border-radius:16px;
-}
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 50% 46%, rgba(255,213,106,.10), transparent 19%),
+        linear-gradient(180deg, rgba(255,213,106,.03), transparent 14%, transparent 84%, rgba(255,213,106,.02));
+      pointer-events:none;
+    }
 
-/* ===== FILTER BOX ===== */
-.filter button{
-  margin:5px;
-  padding:10px 15px;
-  border-radius:20px;
-  border:1px solid #ffd56a;
-  background:none;
-  color:#ffd56a;
-}
+    .hero::after{
+      content:"";
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+      width:min(900px, 96vw);
+      height:min(900px, 96vw);
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(255,213,106,.08), transparent 64%);
+      filter:blur(18px);
+      pointer-events:none;
+    }
 
-/* ===== CTA ===== */
-.cta{
-  position:fixed;
-  bottom:15px;
-  left:0;
-  right:0;
-  display:flex;
-  justify-content:center;
-  gap:10px;
-}
+    .hero-inner{
+      width:min(1180px, calc(100% - 32px));
+      margin:0 auto;
+      position:relative;
+      z-index:2;
+      text-align:center;
+    }
 
-.btn{
-  padding:12px 18px;
-  border-radius:12px;
-  font-weight:bold;
-  animation:btnGlow 2s infinite;
-}
-.call{background:#ffd56a;color:black;}
-.zalo{background:#2e5bff;}
-.fb{background:#111;color:#fff;}
+    .logo-ring{
+      width:172px;
+      height:172px;
+      margin:0 auto 22px;
+      position:relative;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      animation:logoPulse 2.8s ease-in-out infinite;
+    }
 
-@keyframes btnGlow{
-  0%{box-shadow:0 0 5px #ffd56a}
-  50%{box-shadow:0 0 20px #ffd56a}
-  100%{box-shadow:0 0 5px #ffd56a}
-}
+    .logo-ring::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:50%;
+      border:1px solid rgba(255,213,106,.24);
+      box-shadow:
+        0 0 24px rgba(255,213,106,.28),
+        0 0 64px rgba(255,213,106,.14),
+        inset 0 0 24px rgba(255,213,106,.08);
+    }
 
-</style>
+    .logo-ring::after{
+      content:"";
+      position:absolute;
+      inset:-16px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(255,213,106,.30), rgba(255,213,106,.08) 42%, transparent 72%);
+      filter:blur(18px);
+      z-index:0;
+    }
+
+    .logo-ring img{
+      position:relative;
+      z-index:2;
+      width:112px;
+      height:112px;
+      object-fit:contain;
+      border-radius:50%;
+      background:#fff;
+      padding:10px;
+      box-shadow:
+        0 0 16px rgba(255,255,255,.18),
+        0 0 28px rgba(255,213,106,.28),
+        0 0 54px rgba(255,213,106,.16);
+    }
+
+    @keyframes logoPulse{
+      0%,100%{transform:scale(1);filter:brightness(1);opacity:.97}
+      50%{transform:scale(1.06);filter:brightness(1.16);opacity:1}
+    }
+
+    .hero-kicker{
+      margin:0 0 10px;
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:.34em;
+      font-size:12px;
+    }
+
+    .hero-brand{
+      margin:0 0 28px;
+      color:#e4d09a;
+      text-transform:uppercase;
+      letter-spacing:.24em;
+      font-size:13px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1fr auto 1fr;
+      align-items:center;
+      gap:28px;
+      max-width:1080px;
+      margin:0 auto;
+    }
+
+    .hero-side{
+      color:#c8aa61;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      font-size:20px;
+      line-height:1.74;
+      font-weight:1000;
+    }
+
+    .hero-side.left{text-align:right}
+    .hero-side.right{text-align:left}
+
+    .hero-center{
+      min-width:280px;
+      text-align:center;
+    }
+
+    .hero-title{
+      margin:0;
+      font-size:clamp(50px,6.8vw,98px);
+      line-height:.92;
+      font-weight:1000;
+      letter-spacing:-.05em;
+      color:#f8e9bf;
+      text-transform:uppercase;
+      text-shadow:0 0 20px rgba(255,213,106,.08);
+    }
+
+    .hero-sub{
+      margin:20px auto 0;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:6px;
+      line-height:1.08;
+    }
+
+    .price-main-line{
+      color:#f1dfad;
+      font-size:clamp(36px,4.8vw,60px);
+      font-weight:1000;
+      letter-spacing:-.03em;
+      text-transform:uppercase;
+    }
+
+    .price-sub-line{
+      color:#d8bf7b;
+      font-size:clamp(15px,2vw,24px);
+      font-weight:900;
+      letter-spacing:.30em;
+      text-transform:uppercase;
+    }
+
+    .hero-price-wrap{
+      margin-top:18px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .hero-price{
+      position:relative;
+      display:inline-block;
+      font-size:clamp(96px,14vw,220px);
+      line-height:.82;
+      font-weight:1000;
+      letter-spacing:-.08em;
+      color:var(--gold);
+      text-transform:uppercase;
+      white-space:nowrap;
+      text-shadow:
+        0 0 22px rgba(255,213,106,.72),
+        0 0 58px rgba(255,213,106,.34),
+        0 0 118px rgba(255,213,106,.18);
+      animation:goldPulse 2.2s ease-in-out infinite;
+      overflow:hidden;
+      isolation:isolate;
+    }
+
+    .hero-price::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:8px;
+      background:linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.16), rgba(255,255,255,0));
+      filter:blur(12px);
+      opacity:.5;
+      z-index:-1;
+    }
+
+    .hero-price::after{
+      content:"";
+      position:absolute;
+      top:-18%;
+      bottom:-18%;
+      left:-28%;
+      width:22%;
+      transform:skewX(-20deg);
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,.82), transparent);
+      filter:blur(2px);
+      animation:shinePass 3.2s ease-in-out infinite;
+      pointer-events:none;
+    }
+
+    @keyframes goldPulse{
+      0%,100%{
+        opacity:.97;
+        text-shadow:
+          0 0 22px rgba(255,213,106,.68),
+          0 0 58px rgba(255,213,106,.30),
+          0 0 118px rgba(255,213,106,.16);
+      }
+      50%{
+        opacity:1;
+        text-shadow:
+          0 0 30px rgba(255,213,106,.90),
+          0 0 78px rgba(255,213,106,.40),
+          0 0 146px rgba(255,213,106,.24);
+      }
+    }
+
+    @keyframes shinePass{
+      0%{left:-30%;opacity:0}
+      12%{opacity:1}
+      46%{left:108%;opacity:1}
+      62%,100%{left:108%;opacity:0}
+    }
+
+    .hero-note{
+      max-width:920px;
+      margin:26px auto 0;
+      color:#d6c287;
+      font-size:15px;
+      line-height:1.9;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    .hero-actions{
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
+
+    .btn{
+      border:none;
+      cursor:pointer;
+      border-radius:999px;
+      padding:15px 28px;
+      min-width:184px;
+      font-size:17px;
+      font-weight:1000;
+      transition:.25s ease;
+    }
+
+    .btn:hover{transform:translateY(-2px)}
+
+    .btn-primary{
+      color:#111;
+      background:linear-gradient(180deg,#ffe38b 0%, #ffd56a 56%, #e8bc47 100%);
+      box-shadow:
+        0 12px 30px rgba(0,0,0,.38),
+        0 0 22px rgba(255,213,106,.22);
+    }
+
+    .btn-secondary{
+      color:#fff2c9;
+      background:linear-gradient(180deg, rgba(22,22,26,.96), rgba(10,10,14,.96));
+      border:1px solid rgba(255,213,106,.16);
+      box-shadow:var(--shadow);
+    }
+
+    .hero-scroll{
+      margin-top:24px;
+      color:#927d49;
+      text-transform:uppercase;
+      letter-spacing:.26em;
+      font-size:13px;
+    }
+
+    /* CARDS */
+    .card{
+      background:linear-gradient(180deg, rgba(12,12,16,.98), rgba(7,7,10,.98));
+      border:1px solid var(--line);
+      border-radius:30px;
+      box-shadow:var(--shadow);
+    }
+
+    .image-card{
+      overflow:hidden;
+    }
+
+    .image-card img{
+      width:100%;
+      aspect-ratio:16 / 10;
+      object-fit:cover;
+      background:#070707;
+    }
+
+    .image-caption{
+      padding:22px 24px 26px;
+      font-size:clamp(24px,3vw,40px);
+      font-weight:1000;
+      color:#fff2c8;
+    }
+
+    .card-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:24px;
+      margin-top:28px;
+    }
+
+    .statement{
+      margin-top:24px;
+      padding:34px 26px;
+      font-size:clamp(24px,3vw,40px);
+      line-height:1.4;
+      font-weight:1000;
+      color:#fff0c7;
+      text-align:center;
+    }
+
+    /* ACCORDION */
+    .accordion{
+      display:grid;
+      gap:18px;
+      margin-top:28px;
+    }
+
+    .acc-item{
+      background:linear-gradient(180deg, rgba(10,10,12,.98), rgba(6,6,8,.98));
+      border:1px solid var(--line);
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .acc-head{
+      width:100%;
+      border:none;
+      background:transparent;
+      color:#fff0c5;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:26px 28px;
+      cursor:pointer;
+      text-align:left;
+      font-size:clamp(21px,3vw,32px);
+      font-weight:1000;
+    }
+
+    .acc-sign{
+      width:48px;
+      height:48px;
+      flex:0 0 auto;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      font-size:34px;
+      color:var(--gold);
+      background:rgba(255,213,106,.06);
+      border:1px solid rgba(255,213,106,.14);
+      box-shadow:0 0 14px rgba(255,213,106,.10);
+    }
+
+    .acc-body{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .35s ease;
+    }
+
+    .acc-body-inner{
+      padding:0 28px 28px;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.75;
+    }
+
+    .acc-item.active .acc-body{max-height:1400px}
+
+    .asset-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+      margin-top:6px;
+    }
+
+    .asset-box{
+      min-height:100%;
+      padding:16px;
+      border-radius:18px;
+      border:1px solid rgba(255,213,106,.12);
+      background:rgba(255,213,106,.03);
+      color:#f1dfae;
+      font-weight:800;
+      line-height:1.6;
+    }
+
+    .asset-box strong{
+      display:block;
+      margin-bottom:6px;
+      color:#ffe5a2;
+      font-size:15px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    /* SEGMENT */
+    .segment-wrap{
+      display:grid;
+      gap:14px;
+      margin-top:6px;
+    }
+
+    .segment-tabs{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .segment-tab{
+      padding:11px 16px;
+      border-radius:999px;
+      border:1px solid rgba(255,213,106,.14);
+      background:rgba(255,213,106,.04);
+      color:#f2dfab;
+      font-weight:1000;
+      cursor:pointer;
+      transition:.22s ease;
+      box-shadow:none;
+    }
+
+    .segment-tab.active{
+      color:#111;
+      background:linear-gradient(180deg,#ffe38b 0%, #ffd56a 56%, #e8bc47 100%);
+      box-shadow:0 0 18px rgba(255,213,106,.18);
+    }
+
+    .segment-panel{
+      display:none;
+      border:1px solid rgba(255,213,106,.12);
+      background:rgba(255,213,106,.03);
+      border-radius:22px;
+      padding:18px;
+      color:#ecd9a4;
+      line-height:1.75;
+    }
+
+    .segment-panel.active{display:block}
+
+    .segment-panel strong{
+      display:block;
+      font-size:18px;
+      color:#fff0c4;
+      margin-bottom:8px;
+    }
+
+    /* NDA */
+    .nda-wrap{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:26px;
+      margin-top:30px;
+      align-items:start;
+    }
+
+    .panel{
+      padding:28px;
+    }
+
+    .panel h3{
+      margin:0 0 16px;
+      font-size:clamp(28px,4vw,44px);
+      line-height:1.04;
+      color:#fff1c7;
+    }
+
+    .panel p{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.75;
+    }
+
+    .form-row{
+      display:grid;
+      gap:10px;
+      margin-bottom:16px;
+    }
+
+    label{
+      font-size:15px;
+      color:var(--muted);
+      font-weight:700;
+      text-align:left;
+    }
+
+    input,textarea{
+      width:100%;
+      background:#07070a;
+      color:#fff0c8;
+      border:1px solid rgba(255,213,106,.16);
+      border-radius:22px;
+      padding:18px;
+      outline:none;
+    }
+
+    textarea{
+      min-height:150px;
+      resize:vertical;
+    }
+
+    input::placeholder, textarea::placeholder{
+      color:#9e987f;
+    }
+
+    .confirm-box{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      background:rgba(255,213,106,.04);
+      border:1px solid rgba(255,213,106,.14);
+      border-radius:22px;
+      padding:16px;
+      margin:16px 0 20px;
+      text-align:left;
+    }
+
+    .confirm-box input{
+      width:22px;
+      height:22px;
+      margin-top:2px;
+      accent-color:#ffd56a;
+      flex:0 0 auto;
+    }
+
+    .confirm-box span{
+      color:#f0e0b1;
+      font-weight:700;
+      line-height:1.6;
+    }
+
+    .form-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:6px;
+    }
+
+    .info-list{
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .info-item{
+      padding:16px;
+      border-radius:18px;
+      border:1px solid rgba(255,213,106,.12);
+      background:rgba(255,213,106,.03);
+      color:#ecd9a4;
+      line-height:1.7;
+      text-align:left;
+    }
+
+    .info-item strong{
+      display:block;
+      color:#fff0c4;
+      margin-bottom:5px;
+    }
+
+    .hotline{
+      margin-top:10px;
+      font-size:clamp(30px,4vw,46px);
+      font-weight:1000;
+      line-height:1;
+      letter-spacing:.02em;
+      color:var(--gold);
+      text-shadow:
+        0 0 16px rgba(255,213,106,.54),
+        0 0 36px rgba(255,213,106,.20);
+      animation:goldPulse 2.2s ease-in-out infinite;
+      white-space:nowrap;
+    }
+
+    /* CTA */
+    .floating-bar{
+      position:fixed;
+      left:50%;
+      bottom:14px;
+      transform:translateX(-50%);
+      z-index:999;
+      width:min(980px, calc(100% - 18px));
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+
+    .floating-btn{
+      position:relative;
+      overflow:hidden;
+      isolation:isolate;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:66px;
+      border-radius:22px;
+      font-size:18px;
+      font-weight:1000;
+      box-shadow:0 10px 26px rgba(0,0,0,.36);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+
+    .floating-btn::after{
+      content:"";
+      position:absolute;
+      top:-20%;
+      bottom:-20%;
+      left:-30%;
+      width:24%;
+      transform:skewX(-20deg);
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent);
+      filter:blur(2px);
+      animation:shinePass 3.2s ease-in-out infinite;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .floating-btn span{
+      position:relative;
+      z-index:1;
+    }
+
+    .floating-btn.call{
+      color:#111;
+      background:linear-gradient(180deg,#ffe38b 0%, #ffd56a 56%, #e8bc47 100%);
+      border:1px solid rgba(255,213,106,.26);
+      box-shadow:
+        0 0 22px rgba(255,213,106,.22),
+        0 10px 26px rgba(0,0,0,.34);
+      animation:btnPulseGold 2.1s ease-in-out infinite;
+    }
+
+    .floating-btn.zalo{
+      color:#fff;
+      background:linear-gradient(180deg, var(--blue1), var(--blue2));
+      border:1px solid rgba(111,160,255,.30);
+      box-shadow:
+        0 0 22px rgba(47,123,255,.24),
+        0 10px 26px rgba(0,0,0,.34);
+      animation:btnPulseBlue 2.2s ease-in-out infinite;
+    }
+
+    .floating-btn.facebook{
+      color:#fff;
+      background:linear-gradient(180deg, var(--dark1), var(--dark2));
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:
+        0 0 20px rgba(255,255,255,.08),
+        0 10px 26px rgba(0,0,0,.34);
+      animation:btnPulseDark 2.4s ease-in-out infinite;
+    }
+
+    @keyframes btnPulseGold{
+      0%,100%{filter:brightness(1)}
+      50%{filter:brightness(1.12)}
+    }
+
+    @keyframes btnPulseBlue{
+      0%,100%{filter:brightness(1)}
+      50%{filter:brightness(1.14)}
+    }
+
+    @keyframes btnPulseDark{
+      0%,100%{filter:brightness(1)}
+      50%{filter:brightness(1.08)}
+    }
+
+    footer{
+      padding:36px 0 120px;
+      color:#85754c;
+      text-align:center;
+      font-size:13px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    @media (max-width:980px){
+      .card-grid,.nda-wrap,.asset-grid{grid-template-columns:1fr}
+      .hero-grid{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+      .hero-side.left,.hero-side.right{text-align:center}
+    }
+
+    @media (max-width:768px){
+      .hero{
+        min-height:auto;
+        padding:22px 0 74px;
+      }
+
+      .logo-ring{
+        width:124px;
+        height:124px;
+        margin-bottom:14px;
+      }
+
+      .logo-ring img{
+        width:82px;
+        height:82px;
+      }
+
+      .hero-side{
+        font-size:15px;
+        line-height:1.58;
+        letter-spacing:.14em;
+      }
+
+      .hero-price{
+        font-size:104px;
+        white-space:normal;
+      }
+
+      .section{
+        padding:66px 0;
+      }
+
+      .acc-head{
+        padding:22px 20px;
+        font-size:18px;
+      }
+
+      .acc-sign{
+        width:42px;
+        height:42px;
+        font-size:28px;
+      }
+
+      .acc-body-inner,.panel{
+        padding-left:20px;
+        padding-right:20px;
+      }
+
+      .image-caption{
+        font-size:22px;
+        padding:18px 18px 22px;
+      }
+
+      .hotline{
+        font-size:28px;
+        white-space:nowrap;
+      }
+
+      .floating-bar{
+        bottom:10px;
+        gap:10px;
+        width:calc(100% - 14px);
+      }
+
+      .floating-btn{
+        min-height:58px;
+        font-size:16px;
+        border-radius:20px;
+      }
+
+      footer{
+        padding-bottom:104px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<div class="logo-wrap">
-<img class="logo" src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png">
-</div>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="logo-ring">
+        <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png?v=999" alt="Logo Sơn Bạch">
+      </div>
 
-<div class="subtitle">HỒ SƠ TÀI SẢN CHỌN LỌC</div>
+      <p class="hero-kicker">Hồ sơ tài sản chọn lọc</p>
+      <p class="hero-brand">Sơn Bạch Signature</p>
 
-<div class="title">BIỆT THỰ PHÁP</div>
+      <div class="hero-grid">
+        <div class="hero-side left">
+          TÀI SẢN QUÝ HIẾM<br>
+          BIỆT THỰ GIÁ TRỊ CAO<br>
+          TRIỂN VỌNG TĂNG GIÁ MẠNH
+        </div>
 
-<div class="price">42 TỶ</div>
-<div class="note">Thương lượng</div>
+        <div class="hero-center">
+          <h1 class="hero-title">BIỆT THỰ PHÁP</h1>
 
-<p>
-Tài sản quý hiếm · Giữ giá trị · Khả năng tăng giá mạnh trong tương lai
-</p>
+          <div class="hero-sub">
+            <span class="price-main-line">42 TỶ</span>
+            <span class="price-sub-line">THƯƠNG LƯỢNG</span>
+          </div>
 
-<!-- HIỆN TRẠNG -->
-<div class="section">
-<h2>Hiện trạng</h2>
-<img class="img" src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/IMG_6540.jpeg">
-</div>
+          <div class="hero-price-wrap">
+            <div class="hero-price">42 TỶ</div>
+          </div>
+        </div>
 
-<!-- TƯƠNG LAI -->
-<div class="section">
-<h2>Tương lai</h2>
-<img class="img" src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/IMG_6541.jpeg">
-</div>
+        <div class="hero-side right">
+          VỊ THẾ SANG TRỌNG<br>
+          KHÍ CHẤT QUÝ HIẾM<br>
+          ĐÚNG TỆP KHÁCH VIP
+        </div>
+      </div>
 
-<!-- PHÂN KHÚC -->
-<div class="section filter">
-<h2>Phân khúc đầu tư</h2>
+      <div class="hero-note">
+        TÀI SẢN GIÁ TRỊ CAO · GIỮ TIỀN BỀN VỮNG · KHẢ NĂNG TĂNG GIÁ MẠNH KHI TIẾP CẬN ĐÚNG TỆP KHÁCH PHÙ HỢP
+      </div>
 
-<button onclick="show('a')">Dưới 50 tỷ</button>
-<button onclick="show('b')">50 - 150 tỷ</button>
-<button onclick="show('c')">150 - 500 tỷ</button>
-<button onclick="show('d')">500 - 1500 tỷ</button>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#nda">NHẬN QUYỀN TRUY CẬP</a>
+        <a class="btn btn-secondary" href="tel:0858999934">GỌI NGAY</a>
+      </div>
 
-<div id="result" style="margin-top:20px"></div>
-</div>
+      <div class="hero-scroll">Kéo xuống để xem chi tiết</div>
+    </div>
+  </section>
 
-<!-- NDA -->
-<div class="section">
-<h2>Đăng ký NDA</h2>
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Mở theo từng lớp</p>
+      <h2 class="section-title">Hồ sơ tài sản trình bày theo chuẩn chọn lọc</h2>
+      <p class="section-sub">
+        Khối thông tin được chia theo lớp để khách bấm mới mở sâu hơn. Cách này giữ trải nghiệm gọn, sang, đúng nhịp tiếp cận và tạo cảm giác chuyên nghiệp ngay từ lần xem đầu tiên.
+      </p>
 
-<form action="https://formspree.io/f/mpqykgzk" method="POST">
-<input name="name" placeholder="Họ và tên" required>
-<input name="phone" placeholder="Số điện thoại" required>
-<input name="email" placeholder="Email">
-<textarea name="note" placeholder="Nhu cầu"></textarea>
-<button>TÔI ĐỒNG Ý NDA</button>
-</form>
-</div>
+      <div class="accordion">
+        <div class="acc-item">
+          <button class="acc-head" type="button">
+            <span>VỊ THẾ TÀI SẢN</span>
+            <span class="acc-sign">+</span>
+          </button>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <div class="asset-grid">
+                <div class="asset-box">
+                  <strong>Đắc địa</strong>
+                  Thuộc nhóm tài sản dễ tạo ấn tượng mạnh ngay từ lần tiếp cận đầu tiên, phù hợp tệp khách đề cao vị thế, chuẩn sống và giá trị sở hữu lâu dài.
+                </div>
+                <div class="asset-box">
+                  <strong>Khan hiếm</strong>
+                  Không xuất hiện dày trên thị trường. Giá trị nằm ở sự khác biệt, khí chất kiến trúc và khả năng giữ lợi thế rõ rệt trong tương lai.
+                </div>
+                <div class="asset-box">
+                  <strong>Giữ tiền</strong>
+                  Phù hợp với nhóm khách ưu tiên tài sản vừa có giá trị sử dụng thực, vừa có nền tảng giữ giá trị và mở biên độ tăng trưởng tốt theo chu kỳ thị trường.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<!-- CTA -->
-<div class="cta">
-<a href="tel:0858999934" class="btn call">GỌI NGAY</a>
-<a href="https://zalo.me/0858999934" class="btn zalo">ZALO</a>
-<a href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" class="btn fb">FACEBOOK</a>
-</div>
+        <div class="acc-item">
+          <button class="acc-head" type="button">
+            <span>ĐIỂM HÚT TÀI SẢN</span>
+            <span class="acc-sign">+</span>
+          </button>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <div class="asset-grid">
+                <div class="asset-box">
+                  <strong>Hình khối đẹp</strong>
+                  Kiến trúc biệt thự Pháp tạo cảm xúc thị giác mạnh, sang trọng và dễ nâng giá trị cảm nhận khi xuất hiện trước đúng tệp khách hàng cao cấp.
+                </div>
+                <div class="asset-box">
+                  <strong>Dễ bật vị thế</strong>
+                  Khi được đặt đúng ngữ cảnh trình bày, tài sản này dễ bật lên sự khác biệt, nâng độ tin cậy và khiến khách nhìn ra giá trị ngay từ giao diện.
+                </div>
+                <div class="asset-box">
+                  <strong>Tệp khách rõ</strong>
+                  Hướng đến nhóm khách có gu thẩm mỹ, tiêu chuẩn sống cao và nhu cầu sở hữu tài sản có bản sắc thay vì lựa chọn phổ thông đại trà.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<script>
-function show(x){
-  let text="";
-  if(x=="a") text="Biệt thự đẹp - dễ giữ tiền - phù hợp đầu tư an toàn";
-  if(x=="b") text="Tài sản cao cấp - tăng trưởng tốt";
-  if(x=="c") text="Hàng hiếm - biên độ tăng giá mạnh";
-  if(x=="d") text="Tài sản lõi - dành cho nhà đầu tư lớn";
-  document.getElementById("result").innerHTML=text;
-}
-</script>
+        <div class="acc-item active">
+          <button class="acc-head" type="button">
+            <span>PHÂN KHÚC GIÁ</span>
+            <span class="acc-sign">+</span>
+          </button>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <div class="segment-wrap">
+                <div class="segment-tabs">
+                  <button class="segment-tab active" data-segment="seg1">Dưới 50 tỷ</button>
+                  <button class="segment-tab" data-segment="seg2">50 – 150 tỷ</button>
+                  <button class="segment-tab" data-segment="seg3">150 – 500 tỷ</button>
+                  <button class="segment-tab" data-segment="seg4">500 – 1500 tỷ</button>
+                </div>
+
+                <div class="segment-panel active" id="seg1">
+                  <strong>Tài sản phù hợp: dưới 50 tỷ</strong>
+                  Đây là vùng giá dành cho nhóm khách cần một biệt thự đẹp, quý hiếm, dễ ở, dễ giữ giá trị và có dư địa tăng giá mạnh khi thị trường quay lại đúng nhịp.
+                </div>
+
+                <div class="segment-panel" id="seg2">
+                  <strong>Tài sản phù hợp: 50 – 150 tỷ</strong>
+                  Phân khúc này phù hợp với nhóm tài sản sang trọng, vị thế rõ, vừa khẳng định đẳng cấp sở hữu vừa mở ra biên độ tăng giá hấp dẫn trong chu kỳ tiếp theo.
+                </div>
+
+                <div class="segment-panel" id="seg3">
+                  <strong>Tài sản phù hợp: 150 – 500 tỷ</strong>
+                  Đây là vùng tài sản lõi và sản phẩm đầu tư đòi hỏi hồ sơ tinh gọn, cách tiếp cận chọn lọc và độ tin cậy cao để giữ vị thế thương lượng.
+                </div>
+
+                <div class="segment-panel" id="seg4">
+                  <strong>Tài sản phù hợp: 500 – 1500 tỷ</strong>
+                  Đây là nhóm trophy asset và core asset mang tính biểu tượng, chỉ phù hợp với quy trình tiếp cận kín, thẩm mỹ cao, đúng khách và đúng thời điểm mở thông tin.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-head" type="button">
+            <span>ĐỊNH VỊ GIÁ TRỊ TƯƠNG LAI</span>
+            <span class="acc-sign">+</span>
+          </button>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              Nhóm tài sản có vị thế đẹp, hình khối sang và câu chuyện sở hữu rõ ràng thường là nhóm bật giá nhanh hơn mặt bằng chung khi dòng tiền quay lại đúng phân khúc. Biệt thự Pháp quý hiếm không chỉ giữ giá trị ở hiện tại mà còn tạo lợi thế rõ rệt ở các chu kỳ tăng trưởng tiếp theo.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Hình ảnh trực quan</p>
+      <h2 class="section-title">Hiện trạng &amp; góc nhìn tương lai</h2>
+      <p class="section-sub">
+        Trình bày song song hình ảnh hiện hữu và định hướng tương lai để khách nhìn ra ngay giá trị thực tế lẫn tiềm năng nâng chuẩn tài sản.
+      </p>
+
+      <div class="card-grid">
+        <div class="card image-card">
+          <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/IMG_6540.jpeg?v=999" alt="Hình ảnh hiện trạng">
+          <div class="image-caption">HIỆN TRẠNG TÀI SẢN</div>
+        </div>
+
+        <div class="card image-card">
+          <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/IMG_6541.jpeg?v=999" alt="Góc nhìn tương lai">
+          <div class="image-caption">GÓC NHÌN TƯƠNG LAI</div>
+        </div>
+      </div>
+
+      <div class="card statement">
+        Đây không đơn thuần là một bất động sản, mà là một vị thế giữ giá trị và đón sóng tăng trưởng đúng thời điểm.
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="nda">
+    <div class="container">
+      <p class="eyebrow">Bước tiếp cận tiếp theo</p>
+      <h2 class="section-title">Đăng ký NDA để nhận thông tin chi tiết</h2>
+      <p class="section-sub">
+        Khách để lại thông tin nghiêm túc sẽ được ưu tiên mở sâu hơn hồ sơ tài sản và nội dung chi tiết liên quan.
+      </p>
+
+      <div class="nda-wrap">
+        <div class="card panel">
+          <h3>Biểu mẫu tiếp nhận chọn lọc</h3>
+          <p>
+            Quy trình tiếp nhận được dựng theo hướng gọn, sang và rõ ràng để lọc đúng khách, đúng nhu cầu và đúng nhịp trao đổi ngay từ bước đầu tiên.
+          </p>
+
+          <form action="https://formspree.io/f/mpqykgzk" method="POST" style="margin-top:18px;">
+            <div class="form-row">
+              <label for="name">Họ và tên</label>
+              <input id="name" name="name" type="text" placeholder="Nhập họ và tên" required>
+            </div>
+
+            <div class="form-row">
+              <label for="phone">Số điện thoại</label>
+              <input id="phone" name="phone" type="tel" placeholder="Nhập số điện thoại" required>
+            </div>
+
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="Nhập email">
+            </div>
+
+            <div class="form-row">
+              <label for="note">Nhu cầu / Ghi chú</label>
+              <textarea id="note" name="note" placeholder="Nhập nhu cầu quan tâm"></textarea>
+            </div>
+
+            <div class="confirm-box">
+              <input id="agree" type="checkbox" required>
+              <span>
+                Tôi xác nhận thông tin cung cấp là nghiêm túc, đồng ý nguyên tắc bảo mật dữ liệu được tiếp cận và chịu trách nhiệm đối với việc sử dụng thông tin sai mục đích.
+              </span>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">TÔI ĐỒNG Ý NDA</button>
+              <a class="btn btn-secondary" href="tel:0858999934">GỌI NGAY</a>
+            </div>
+          </form>
+        </div>
+
+        <div class="card panel">
+          <h3>Sơn Bạch Signature</h3>
+          <p>
+            Biệt thự Pháp quý hiếm không cần nói nhiều để tạo giá trị. Đúng khách sẽ nhìn ra ngay đây là dòng tài sản vừa giữ vị thế, vừa giữ tiền, vừa mở biên độ tăng giá mạnh khi thị trường trở lại đúng nhịp.
+          </p>
+
+          <div class="info-list">
+            <div class="info-item">
+              <strong>Dấu ấn tài sản</strong>
+              Kiến trúc đẹp, cảm xúc thị giác mạnh, phù hợp nhóm khách đề cao đẳng cấp sở hữu và chuẩn sống khác biệt.
+            </div>
+
+            <div class="info-item">
+              <strong>Giá trị tương lai</strong>
+              Tài sản quý hiếm luôn đi trước một bước: ít xuất hiện, khó thay thế và thường bật giá nhanh khi dòng tiền quay lại phân khúc đẹp.
+            </div>
+
+            <div class="info-item">
+              <strong>Câu chốt thương hiệu</strong>
+              SƠN BẠCH SIGNATURE — tài sản quý hiếm chỉ dành cho người đủ tầm nhìn ra giá trị trước khi thị trường kịp nhận ra.
+            </div>
+
+            <div class="info-item">
+              <strong>Hotline ưu tiên</strong>
+              <div class="hotline">0858 999 934</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    SƠN BẠCH SIGNATURE · BIỆT THỰ PHÁP 42 TỶ THƯƠNG LƯỢNG
+  </footer>
+
+  <div class="floating-bar">
+    <a class="floating-btn call" href="tel:0858999934"><span>GỌI NGAY</span></a>
+    <a class="floating-btn zalo" href="https://zalo.me/0858999934" target="_blank" rel="noopener"><span>ZALO</span></a>
+    <a class="floating-btn facebook" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank" rel="noopener"><span>FACEBOOK</span></a>
+  </div>
+
+  <script>
+    document.querySelectorAll(".acc-item").forEach(item => {
+      const btn = item.querySelector(".acc-head");
+      btn.addEventListener("click", () => {
+        item.classList.toggle("active");
+      });
+    });
+
+    const tabs = document.querySelectorAll(".segment-tab");
+    const panels = document.querySelectorAll(".segment-panel");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        panels.forEach(p => p.classList.remove("active"));
+        tab.classList.add("active");
+        const target = document.getElementById(tab.dataset.segment);
+        if (target) target.classList.add("active");
+      });
+    });
+  </script>
 
 </body>
 </html>
