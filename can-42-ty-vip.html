@@ -30,7 +30,7 @@
       background:
         radial-gradient(circle at top, rgba(255,215,106,.09), transparent 28%),
         linear-gradient(180deg, #040404 0%, #090909 34%, #050505 100%);
-      color:var(--text);
+        color:var(--text);
       line-height:1.6;
       overflow-x:hidden;
     }
@@ -76,6 +76,33 @@
     @keyframes spinBg{
       from{transform:rotate(0deg)}
       to{transform:rotate(360deg)}
+    }
+
+    .logo-top{
+      width:110px;
+      height:110px;
+      margin:0 auto 18px;
+      border-radius:50%;
+      object-fit:contain;
+      filter:
+        drop-shadow(0 0 8px rgba(255,215,106,.35))
+        drop-shadow(0 0 18px rgba(255,215,106,.28))
+        drop-shadow(0 0 34px rgba(255,215,106,.18));
+      animation:logoGlow 2.8s ease-in-out infinite;
+      background:rgba(255,215,106,.03);
+      padding:6px;
+      border:1px solid rgba(255,215,106,.16);
+    }
+
+    @keyframes logoGlow{
+      0%,100%{transform:scale(1);opacity:1;filter:
+        drop-shadow(0 0 8px rgba(255,215,106,.35))
+        drop-shadow(0 0 18px rgba(255,215,106,.28))
+        drop-shadow(0 0 34px rgba(255,215,106,.18));}
+      50%{transform:scale(1.03);opacity:.96;filter:
+        drop-shadow(0 0 10px rgba(255,215,106,.45))
+        drop-shadow(0 0 24px rgba(255,215,106,.34))
+        drop-shadow(0 0 44px rgba(255,215,106,.24));}
     }
 
     .logo-watermark{
@@ -285,12 +312,13 @@
 
     .section-title{
       font-size:24px;
-      margin:0 0 14px;
+      margin:0 0 8px;
       color:var(--gold3);
     }
 
     .muted{
       color:var(--muted);
+      margin:0 0 8px;
     }
 
     .accordion{
@@ -670,6 +698,7 @@
       .btn{width:100%}
       .hero-cta{gap:10px}
       .floating-btn{font-size:13px}
+      .logo-top{width:92px;height:92px}
     }
   </style>
 </head>
@@ -679,15 +708,17 @@
     <img class="logo-watermark" src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png" alt="Logo Sơn Bạch">
 
     <div class="hero-inner">
+      <img class="logo-top" src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png" alt="Logo SB">
+
       <div class="eyebrow">SƠN BẠCH VIP PRO • OFF-MARKET • QUẬN 1</div>
 
       <h1>
         BIỆT THỰ PHÁP – 2 MẶT TIỀN Q1<br>
-        <span class="gold">TÀI SẢN HIẾM – KHÔNG ĐẠI TRÀ</span>
+        <span class="gold">TÀI SẢN HIẾM – DÀNH CHO KHÁCH MUA ĐỦ TẦM</span>
       </h1>
 
       <p class="sub">
-        Chỉ tiếp khách thực. Hồ sơ chọn lọc. Nội dung sâu hơn sẽ mở khi khách điền NDA.
+        Hồ sơ chọn lọc dành cho khách thực. Thông tin sâu hơn sẽ mở khi khách điền NDA.
       </p>
 
       <div class="price">42 TỶ</div>
@@ -695,7 +726,7 @@
 
       <div class="hero-cta">
         <a class="btn primary" href="#nda">NHẬN NDA</a>
-        <a class="btn" href="#thong-tin-an">XEM THÔNG TIN ẨN</a>
+        <a class="btn" href="#thong-tin-an">XEM THÔNG TIN</a>
       </div>
     </div>
   </section>
@@ -709,8 +740,8 @@
   <section class="section" id="thong-tin-an">
     <div class="container">
       <div class="panel">
-        <h2 class="section-title">Thông tin được làm gọn dạng nút ẩn</h2>
-        <p class="muted">Tất cả mục đều thu gọn để nhìn sang, không lộ quá nhiều chữ.</p>
+        <h2 class="section-title">THÔNG TIN TÀI SẢN</h2>
+        <p class="muted">Thông tin tài sản vui lòng bấm vào từng mục để xem chi tiết.</p>
 
         <div class="accordion">
           <details class="box">
@@ -798,9 +829,7 @@
           </div>
           <div class="image-body">
             <h3 class="image-title">Tài sản hiện tại</h3>
-            <p class="image-text">
-              Hình ảnh hiện trạng được gắn trực tiếp vào code để mở web là thấy ngay.
-            </p>
+            <p class="image-text">Tài sản hiện tại</p>
           </div>
         </article>
 
@@ -810,9 +839,9 @@
             <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/IMG_6541.jpeg" alt="Tiềm năng tương lai">
           </div>
           <div class="image-body">
-            <h3 class="image-title">Hình dung giá trị tương lai</h3>
+            <h3 class="image-title">Giá trị tương lai</h3>
             <p class="image-text">
-              Không chỉ là một căn nhà, đây là nền tảng để nâng cấp thành tài sản có tính biểu tượng giữa trung tâm.
+              Hình dung một tài sản được nâng tầm đúng vị thế, đúng giá trị và đúng đẳng cấp trung tâm.
             </p>
           </div>
         </article>
@@ -860,7 +889,7 @@
           <button class="btn primary" type="submit">TÔI ĐỒNG Ý NDA</button>
 
           <div class="unlock-note">
-            Sau khi gửi thông tin, Sơn Bạch sẽ ưu tiên liên hệ và sàng lọc theo mức độ phù hợp của khách.
+            Sau khi gửi thông tin, Sơn Bạch sẽ ưu tiên liên hệ và hỗ trợ A/C.
           </div>
         </form>
       </div>
