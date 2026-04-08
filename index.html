@@ -1,1 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KHO BĐS SƠN BẠCH VIP PRO</title>
 
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#050505;
+  color:#fff;
+}
+
+/* HEADER */
+.header{
+  text-align:center;
+  padding:50px 20px;
+  background:#000;
+}
+
+.header h1{
+  color:#FFD700;
+  font-size:32px;
+}
+
+/* LIST */
+.container{
+  padding:20px;
+}
+
+/* ITEM */
+.item{
+  border-bottom:1px solid #222;
+  padding:15px 0;
+  cursor:pointer;
+}
+
+.title{
+  font-size:20px;
+  color:#FFD700;
+}
+
+.detail{
+  display:none;
+  margin-top:10px;
+  color:#ccc;
+}
+
+/* SUB */
+.sub{
+  margin-top:10px;
+  cursor:pointer;
+  color:#FFD700;
+}
+
+.sub-content{
+  display:none;
+  color:#aaa;
+  margin-top:5px;
+}
+
+/* CTA */
+.cta{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  display:flex;
+}
+
+.cta a{
+  flex:1;
+  text-align:center;
+  padding:12px;
+  background:#FFD700;
+  color:#000;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h1>KHO BĐS SƠN BẠCH</h1>
+<p>Hàng kín – NDA – chỉ tiếp khách thực</p>
+</div>
+
+<div class="container">
+
+<!-- 21 phòng -->
+<div class="item" onclick="toggle(this)">
+<div class="title">21 PHÒNG CHDV – CHỢ RẪY</div>
+<div class="detail">
+
+<div class="sub" onclick="subToggle(event,this)">+ Thông tin</div>
+<div class="sub-content">Khai thác dòng tiền ổn định – vị trí bệnh viện</div>
+
+<div class="sub" onclick="subToggle(event,this)">+ Xem chi tiết</div>
+<div class="sub-content">
+<a href="https://sonbachtp.github.io/sonbach_autohud/q11-cho-ray-21-phong-dich-vu.html">Mở link</a>
+</div>
+
+</div>
+</div>
+
+<!-- 24 tỷ -->
+<div class="item" onclick="toggle(this)">
+<div class="title">KHÁCH SẠN – 24 TỶ</div>
+<div class="detail">
+
+<div class="sub" onclick="subToggle(event,this)">+ Thông tin</div>
+<div class="sub-content">Khai thác ngay – khu Tên Lửa</div>
+
+<div class="sub" onclick="subToggle(event,this)">+ Xem</div>
+<div class="sub-content">
+<a href="https://sonbachtp.github.io/sonbach_autohud/khach-san-ten-lua-24-ty-vip.html">Mở</a>
+</div>
+
+</div>
+</div>
+
+<!-- 34 tỷ -->
+<div class="item" onclick="toggle(this)">
+<div class="title">MẶT TIỀN PHAN ANH – 34 TỶ</div>
+<div class="detail">
+
+<div class="sub" onclick="subToggle(event,this)">+ Thông tin</div>
+<div class="sub-content">Trục kinh doanh mạnh</div>
+
+<div class="sub" onclick="subToggle(event,this)">+ Xem</div>
+<div class="sub-content">
+<a href="https://sonbachtp.github.io/sonbach_autohud/mat-tien-phan-anh-34-ty.html">Mở</a>
+</div>
+
+</div>
+</div>
+
+<!-- 42 tỷ -->
+<div class="item" onclick="toggle(this)">
+<div class="title">BIỆT THỰ PHÁP Q1 – 42 TỶ</div>
+<div class="detail">
+
+<div class="sub" onclick="subToggle(event,this)">+ Thông tin</div>
+<div class="sub-content">2 mặt tiền – tài sản lõi</div>
+
+<div class="sub" onclick="subToggle(event,this)">+ Xem</div>
+<div class="sub-content">
+<a href="can-42-ty-vip.html">Mở</a>
+</div>
+
+</div>
+</div>
+
+<!-- 46.9 -->
+<div class="item" onclick="toggle(this)">
+<div class="title">BIỆT THỰ TÊN LỬA – 46.9 TỶ</div>
+<div class="detail">
+
+<div class="sub" onclick="subToggle(event,this)">+ Xem</div>
+<div class="sub-content">
+<a href="https://sonbachtp.github.io/sonbach_autohud/biet-thu-ten-lua-46-9-ty-vip.html">Mở</a>
+</div>
+
+</div>
+</div>
+
+<!-- 63 -->
+<div class="item" onclick="toggle(this)">
+<div class="title">KHÁCH SẠN – 63 TỶ</div>
+<div class="detail">
+<a href="https://sonbachtp.github.io/sonbach_autohud/khach-san-ten-lua-63-ty-vip.html">Xem</a>
+</div>
+</div>
+
+<!-- 80 -->
+<div class="item" onclick="toggle(this)">
+<div class="title">TÊN LỬA VIP – 80 TỶ</div>
+<div class="detail">
+<a href="https://sonbachtp.github.io/sonbach_autohud/ten-lua-80-ty-vip.html">Xem</a>
+</div>
+</div>
+
+<!-- 90 -->
+<div class="item" onclick="toggle(this)">
+<div class="title">LÔ GÓC 547m² – 90 TỶ</div>
+<div class="detail">
+<a href="https://sonbachtp.github.io/sonbach_autohud/lo-goc-ten-lua-547m2-90-ty.html">Xem</a>
+</div>
+</div>
+
+<!-- 135 -->
+<div class="item" onclick="toggle(this)">
+<div class="title">ĐẤT 3.419m² – 135 TỶ</div>
+<div class="detail">
+<a href="dat-binh-tan-3419m2-135-ty.html">Xem</a>
+</div>
+</div>
+
+<!-- 500 -->
+<div class="item" onclick="toggle(this)">
+<div class="title">BẾN THÀNH – 500 TỶ</div>
+<div class="detail">
+<a href="ben-thanh-500-ty-vip.html">Xem</a>
+</div>
+</div>
+
+<!-- 1250 -->
+<div class="item" onclick="toggle(this)">
+<div class="title">CORE Q1 – 1.250 TỶ</div>
+<div class="detail">
+<a href="mau-landing-vip.html">Xem</a>
+</div>
+</div>
+
+</div>
+
+<div class="cta">
+<a href="tel:0858999934">GỌI</a>
+<a href="https://zalo.me/0858999934">ZALO</a>
+<a href="#">FACEBOOK</a>
+</div>
+
+<script>
+function toggle(el){
+let detail=el.querySelector('.detail');
+detail.style.display = detail.style.display==='block'?'none':'block';
+}
+
+function subToggle(e,el){
+e.stopPropagation();
+let content=el.nextElementSibling;
+content.style.display = content.style.display==='block'?'block':'block';
+}
+</script>
+
+</body>
+</html>
