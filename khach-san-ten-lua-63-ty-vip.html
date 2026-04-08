@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sơn Bạch VIP PRO | Khách sạn Khu Tên Lửa 63 Tỷ</title>
+  <meta name="description" content="Bán khách sạn khu Tên Lửa 400m2, 50 phòng, doanh thu 350 triệu/tháng, 6 tầng, sổ hồng hoàn công đầy đủ, pháp lý rõ ràng." />
+  <style>
+    :root{
+      --bg:#050505;
+      --bg2:#0d0d0d;
+      --line:rgba(255,215,106,.18);
+      --gold:#f6d67a;
+      --gold2:#c9971a;
+      --gold3:#fff3c8;
+      --text:#f7f1dc;
+      --muted:#cbb77a;
+      --shadow:0 0 20px rgba(246,214,122,.10);
+      --radius2:26px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(255,215,106,.09), transparent 28%),
+        linear-gradient(180deg, #040404 0%, #090909 34%, #050505 100%);
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+
+    .container{
+      width:min(1120px, calc(100% - 28px));
+      margin:auto;
+    }
+
+    .hero{
+      position:relative;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:88px 0 56px;
+      overflow:hidden;
+      border-bottom:1px solid var(--line);
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:-20%;
+      background:
+        radial-gradient(circle, rgba(255,215,106,.08) 0%, transparent 45%),
+        conic-gradient(from 0deg, rgba(255,215,106,.03), transparent, rgba(255,215,106,.03), transparent);
+      animation:spinBg 18s linear infinite;
+      pointer-events:none;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.45));
+      pointer-events:none;
+    }
+
+    @keyframes spinBg{
+      from{transform:rotate(0deg)}
+      to{transform:rotate(360deg)}
+    }
+
+    .logo-top{
+      width:110px;
+      height:110px;
+      margin:0 auto 18px;
+      border-radius:50%;
+      object-fit:contain;
+      filter:
+        drop-shadow(0 0 8px rgba(255,215,106,.35))
+        drop-shadow(0 0 18px rgba(255,215,106,.28))
+        drop-shadow(0 0 34px rgba(255,215,106,.18));
+      animation:logoGlow 2.8s ease-in-out infinite;
+      background:rgba(255,215,106,.03);
+      padding:6px;
+      border:1px solid rgba(255,215,106,.16);
+    }
+
+    @keyframes logoGlow{
+      0%,100%{transform:scale(1);opacity:1;filter:
+        drop-shadow(0 0 8px rgba(255,215,106,.35))
+        drop-shadow(0 0 18px rgba(255,215,106,.28))
+        drop-shadow(0 0 34px rgba(255,215,106,.18));}
+      50%{transform:scale(1.03);opacity:.96;filter:
+        drop-shadow(0 0 10px rgba(255,215,106,.45))
+        drop-shadow(0 0 24px rgba(255,215,106,.34))
+        drop-shadow(0 0 44px rgba(255,215,106,.24));}
+    }
+
+    .logo-watermark{
+      position:absolute;
+      width:min(58vw,420px);
+      aspect-ratio:1/1;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+      opacity:.05;
+      z-index:1;
+      filter:drop-shadow(0 0 18px rgba(246,214,122,.25));
+      animation:logoSpin 24s linear infinite;
+      border-radius:50%;
+      object-fit:contain;
+      pointer-events:none;
+    }
+
+    @keyframes logoSpin{
+      from{transform:translate(-50%,-50%) rotate(0deg)}
+      to{transform:translate(-50%,-50%) rotate(360deg)}
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:2;
+      width:min(980px, calc(100% - 28px));
+      margin:auto;
+      text-align:center;
+      padding:28px 20px;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:8px 14px;
+      border:1px solid rgba(255,215,106,.25);
+      border-radius:999px;
+      color:var(--gold3);
+      background:rgba(255,215,106,.05);
+      font-size:12px;
+      letter-spacing:1.8px;
+      text-transform:uppercase;
+      backdrop-filter:blur(6px);
+      box-shadow:var(--shadow);
+    }
+
+    .hero h1{
+      margin:18px auto 8px;
+      font-size:clamp(28px, 5vw, 58px);
+      line-height:1.08;
+      max-width:980px;
+      letter-spacing:.5px;
+    }
+
+    .hero h1 .gold{
+      background:linear-gradient(180deg, #fff7d8 0%, #f6d67a 40%, #b98010 100%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      text-shadow:0 0 24px rgba(246,214,122,.12);
+    }
+
+    .sub{
+      max-width:920px;
+      margin:0 auto 16px;
+      color:#e7d8ad;
+      font-size:15px;
+    }
+
+    .price{
+      position:relative;
+      display:inline-block;
+      margin:20px 0 6px;
+      font-size:clamp(48px, 10vw, 96px);
+      line-height:1;
+      font-weight:900;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      background:linear-gradient(180deg, #fff9df 0%, #ffe8a0 20%, #f6d67a 45%, #d4a434 70%, #8e5a00 100%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      text-shadow:
+        0 0 12px rgba(246,214,122,.22),
+        0 0 28px rgba(246,214,122,.14),
+        0 0 48px rgba(246,214,122,.10);
+      animation:pricePulse 1.8s ease-in-out infinite;
+      overflow:hidden;
+    }
+
+    .price::before{
+      content:"";
+      position:absolute;
+      top:-25%;
+      left:-35%;
+      width:28%;
+      height:160%;
+      background:linear-gradient(90deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,.08) 20%,
+        rgba(255,255,255,.95) 50%,
+        rgba(255,255,255,.08) 80%,
+        rgba(255,255,255,0) 100%);
+      transform:rotate(18deg);
+      filter:blur(1px);
+      animation:shineSweep 2.4s linear infinite;
+      pointer-events:none;
+      mix-blend-mode:screen;
+    }
+
+    @keyframes pricePulse{
+      0%,100%{transform:scale(1);filter:brightness(1);opacity:1}
+      50%{transform:scale(1.025);filter:brightness(1.22);opacity:.92}
+    }
+
+    @keyframes shineSweep{
+      0%{left:-40%}
+      100%{left:115%}
+    }
+
+    .price-note{
+      font-size:18px;
+      color:var(--gold3);
+      margin-bottom:18px;
+      letter-spacing:1.8px;
+      font-weight:800;
+    }
+
+    .hero-cta{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:12px;
+      margin-top:24px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:12px 18px;
+      border-radius:999px;
+      border:1px solid rgba(255,215,106,.26);
+      background:linear-gradient(180deg, rgba(255,215,106,.10), rgba(255,215,106,.04));
+      color:var(--gold3);
+      font-weight:700;
+      letter-spacing:.3px;
+      box-shadow:var(--shadow);
+      transition:.25s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 0 22px rgba(246,214,122,.16);
+    }
+
+    .btn.primary{
+      background:linear-gradient(180deg, #f6d67a, #bc8615);
+      color:#161616;
+      border-color:transparent;
+    }
+
+    .marquee-wrap{
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:rgba(255,215,106,.04);
+      overflow:hidden;
+      white-space:nowrap;
+    }
+
+    .marquee{
+      display:inline-block;
+      padding:10px 0;
+      min-width:100%;
+      animation:runText 22s linear infinite;
+      color:var(--gold3);
+      font-size:13px;
+      letter-spacing:1.2px;
+      text-transform:uppercase;
+    }
+
+    @keyframes runText{
+      from{transform:translateX(100%)}
+      to{transform:translateX(-100%)}
+    }
+
+    .section{
+      padding:32px 0;
+    }
+
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border:1px solid var(--line);
+      border-radius:var(--radius2);
+      padding:16px;
+      box-shadow:var(--shadow);
+    }
+
+    .section-title{
+      font-size:24px;
+      margin:0 0 8px;
+      color:var(--gold3);
+    }
+
+    .muted{
+      color:var(--muted);
+      margin:0 0 8px;
+    }
+
+    .accordion{
+      display:grid;
+      gap:12px;
+    }
+
+    details.box{
+      background:linear-gradient(180deg, rgba(255,215,106,.05), rgba(255,215,106,.02));
+      border:1px solid rgba(255,215,106,.14);
+      border-radius:18px;
+      overflow:hidden;
+    }
+
+    details.box[open]{
+      box-shadow:0 0 18px rgba(246,214,122,.08);
+    }
+
+    details.box summary{
+      list-style:none;
+      cursor:pointer;
+      padding:16px 18px;
+      font-weight:800;
+      color:var(--gold3);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      user-select:none;
+    }
+
+    details.box summary::-webkit-details-marker{display:none}
+
+    .sum-left{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex:1;
+      min-width:0;
+    }
+
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:linear-gradient(180deg, #fff2b9, #c48d18);
+      box-shadow:0 0 10px rgba(246,214,122,.35);
+      flex:0 0 auto;
+    }
+
+    .arrow{
+      font-size:18px;
+      transition:.25s ease;
+      color:var(--gold);
+      flex:0 0 auto;
+    }
+
+    details[open] .arrow{
+      transform:rotate(180deg);
+    }
+
+    .box-content{
+      padding:0 18px 18px;
+      color:#efe5c7;
+      border-top:1px solid rgba(255,215,106,.08);
+    }
+
+    .box-content p{
+      margin:12px 0 0;
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:12px;
+    }
+
+    .chip{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,215,106,.16);
+      background:rgba(255,215,106,.05);
+      color:var(--gold3);
+      font-weight:700;
+      font-size:14px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:16px;
+    }
+
+    .image-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border:1px solid var(--line);
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .image-wrap{
+      position:relative;
+      aspect-ratio:16/10;
+      overflow:hidden;
+      background:#111;
+    }
+
+    .image-wrap img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .5s ease;
+    }
+
+    .image-card:hover img{
+      transform:scale(1.04);
+    }
+
+    .tag{
+      position:absolute;
+      left:14px;
+      top:14px;
+      z-index:2;
+      background:rgba(0,0,0,.62);
+      color:var(--gold3);
+      border:1px solid rgba(255,215,106,.22);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:1px;
+    }
+
+    .image-body{
+      padding:14px 14px 18px;
+    }
+
+    .image-title{
+      margin:0 0 6px;
+      color:var(--gold3);
+      font-size:18px;
+    }
+
+    .image-text{
+      margin:0;
+      color:#e7d9af;
+      font-size:14px;
+    }
+
+    .nda-box{
+      background:
+        radial-gradient(circle at top, rgba(255,215,106,.07), transparent 35%),
+        linear-gradient(180deg, rgba(255,215,106,.06), rgba(255,215,106,.02));
+      border:1px solid rgba(255,215,106,.18);
+      border-radius:24px;
+      padding:18px;
+      box-shadow:var(--shadow);
+    }
+
+    .nda-box h3{
+      margin:0 0 8px;
+      color:var(--gold3);
+      font-size:24px;
+    }
+
+    .nda-box p{
+      margin:0 0 14px;
+      color:#eadcb4;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:12px;
+      margin-top:10px;
+    }
+
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .field label{
+      font-size:13px;
+      color:var(--gold3);
+      font-weight:700;
+    }
+
+    .field input{
+      width:100%;
+      min-height:46px;
+      border-radius:14px;
+      border:1px solid rgba(255,215,106,.18);
+      background:#0d0d0d;
+      color:#f7f1dc;
+      padding:12px 14px;
+      outline:none;
+    }
+
+    .field input:focus{
+      border-color:rgba(255,215,106,.44);
+      box-shadow:0 0 0 3px rgba(255,215,106,.08);
+    }
+
+    .check{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      margin:14px 0;
+      color:#e9dab0;
+      font-size:14px;
+    }
+
+    .check input{
+      margin-top:4px;
+      transform:scale(1.15);
+      accent-color:#d6ab3b;
+    }
+
+    .unlock-note{
+      margin-top:12px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .brand-quote{
+      font-size:clamp(20px, 3.5vw, 34px);
+      line-height:1.38;
+      text-align:center;
+      color:var(--gold3);
+      padding:18px 8px 6px;
+      font-weight:700;
+    }
+
+    .brand-quote small{
+      display:block;
+      font-size:14px;
+      color:var(--muted);
+      margin-top:12px;
+      letter-spacing:.5px;
+      text-transform:uppercase;
+    }
+
+    footer{
+      padding:36px 0 92px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+    }
+
+    .footer-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:20px 18px;
+      text-align:center;
+      box-shadow:var(--shadow);
+    }
+
+    .footer-title{
+      font-size:20px;
+      color:var(--gold3);
+      margin-bottom:8px;
+      font-weight:800;
+      letter-spacing:.6px;
+    }
+
+    .footer-hotline{
+      position:relative;
+      display:inline-block;
+      font-size:clamp(24px, 4vw, 34px);
+      font-weight:900;
+      letter-spacing:.8px;
+      background:linear-gradient(180deg, #fff9df 0%, #ffe8a0 22%, #f6d67a 48%, #d6a332 70%, #8e5a00 100%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      text-shadow:
+        0 0 10px rgba(246,214,122,.18),
+        0 0 24px rgba(246,214,122,.12);
+      overflow:hidden;
+      animation:footerPulse 2.2s ease-in-out infinite;
+    }
+
+    .footer-hotline::before{
+      content:"";
+      position:absolute;
+      top:-25%;
+      left:-35%;
+      width:24%;
+      height:160%;
+      background:linear-gradient(90deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,.08) 20%,
+        rgba(255,255,255,.95) 50%,
+        rgba(255,255,255,.08) 80%,
+        rgba(255,255,255,0) 100%);
+      transform:rotate(18deg);
+      animation:shineSweep 2.8s linear infinite;
+      mix-blend-mode:screen;
+      pointer-events:none;
+    }
+
+    @keyframes footerPulse{
+      0%,100%{filter:brightness(1);opacity:1}
+      50%{filter:brightness(1.18);opacity:.95}
+    }
+
+    .footer-text{
+      margin-top:10px;
+      color:#e5d6aa;
+    }
+
+    .floating-bar{
+      position:fixed;
+      left:50%;
+      bottom:12px;
+      transform:translateX(-50%);
+      width:min(900px, calc(100% - 16px));
+      z-index:999;
+      background:rgba(10,10,10,.92);
+      border:1px solid rgba(255,215,106,.18);
+      border-radius:18px;
+      box-shadow:0 0 24px rgba(0,0,0,.35), 0 0 16px rgba(246,214,122,.10);
+      backdrop-filter:blur(10px);
+      overflow:hidden;
+    }
+
+    .floating-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:0;
+    }
+
+    .floating-btn{
+      min-height:56px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px;
+      color:var(--gold3);
+      font-weight:800;
+      border-right:1px solid rgba(255,215,106,.10);
+      background:linear-gradient(180deg, rgba(255,215,106,.07), rgba(255,215,106,.03));
+    }
+
+    .floating-btn:last-child{border-right:none}
+
+    @media (max-width:900px){
+      .grid-2,
+      .form-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero{
+        min-height:auto;
+        padding-top:92px;
+      }
+
+      .price-note{font-size:18px}
+    }
+
+    @media (max-width:640px){
+      .container{
+        width:min(100% - 16px, 1120px);
+      }
+
+      .hero-inner{
+        width:min(100% - 16px, 980px);
+        padding:22px 8px;
+      }
+
+      .eyebrow{font-size:11px}
+      .sub{font-size:14px}
+      .btn{width:100%}
+      .hero-cta{gap:10px}
+      .floating-btn{font-size:13px}
+      .logo-top{width:92px;height:92px}
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <img class="logo-watermark" src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png" alt="Logo Sơn Bạch">
+
+    <div class="hero-inner">
+      <img class="logo-top" src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/main/logo-sb-vip-pro.png" alt="Logo SB">
+
+      <div class="eyebrow">SƠN BẠCH VIP PRO • OFF-MARKET • KHU TÊN LỬA</div>
+
+      <h1>
+        KHÁCH SẠN KHU TÊN LỬA 400M²<br>
+        <span class="gold">50 PHÒNG – DOANH THU 350 TRIỆU/THÁNG – 6 TẦNG</span>
+      </h1>
+
+      <p class="sub">
+        Tài sản khách sạn quy mô lớn, phù hợp cho nhà đầu tư ưu tiên dòng tiền, vận hành thực tế và sở hữu pháp lý hoàn chỉnh.
+      </p>
+
+      <div class="price">63 TỶ</div>
+      <div class="price-note">THƯƠNG LƯỢNG</div>
+
+      <div class="hero-cta">
+        <a class="btn primary" href="#nda">NHẬN NDA</a>
+        <a class="btn" href="#thong-tin-an">XEM THÔNG TIN</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee-wrap">
+    <div class="marquee">
+      KHÁCH SẠN KHU TÊN LỬA • 400M² • 50 PHÒNG • DOANH THU 350 TRIỆU/THÁNG • 6 TẦNG • SỔ HỒNG • HOÀN CÔNG ĐẦY ĐỦ • PHÁP LÝ RÕ RÀNG • 63 TỶ THƯƠNG LƯỢNG •
+    </div>
+  </div>
+
+  <section class="section" id="thong-tin-an">
+    <div class="container">
+      <div class="panel">
+        <h2 class="section-title">THÔNG TIN TÀI SẢN</h2>
+        <p class="muted">Thông tin tài sản vui lòng bấm vào từng mục để xem chi tiết.</p>
+
+        <div class="accordion">
+          <details class="box">
+            <summary>
+              <span class="sum-left"><span class="dot"></span> PHÂN KHÚC GIÁ</span>
+              <span class="arrow">⌄</span>
+            </summary>
+            <div class="box-content">
+              <div class="chips">
+                <span class="chip">Dưới 50 tỷ</span>
+                <span class="chip">50 – 100 tỷ</span>
+                <span class="chip">100 – 200 tỷ</span>
+                <span class="chip">200 – 500 tỷ</span>
+                <span class="chip">500 – 1000 tỷ</span>
+                <span class="chip">1000 – 1500 tỷ</span>
+              </div>
+            </div>
+          </details>
+
+          <details class="box">
+            <summary>
+              <span class="sum-left"><span class="dot"></span> THÔNG SỐ TÀI SẢN</span>
+              <span class="arrow">⌄</span>
+            </summary>
+            <div class="box-content">
+              <div class="chips">
+                <span class="chip">400m²</span>
+                <span class="chip">50 phòng</span>
+                <span class="chip">6 tầng</span>
+                <span class="chip">Khu Tên Lửa</span>
+              </div>
+            </div>
+          </details>
+
+          <details class="box">
+            <summary>
+              <span class="sum-left"><span class="dot"></span> HIỆN TRẠNG KHAI THÁC</span>
+              <span class="arrow">⌄</span>
+            </summary>
+            <div class="box-content">
+              <p>
+                Khách sạn đang có quy mô vận hành lớn, phù hợp với nhóm khách mua tài sản dòng tiền và tài sản có hiệu suất khai thác thực tế.
+              </p>
+            </div>
+          </details>
+
+          <details class="box">
+            <summary>
+              <span class="sum-left"><span class="dot"></span> GIÁ TRỊ CỐT LÕI</span>
+              <span class="arrow">⌄</span>
+            </summary>
+            <div class="box-content">
+              <p>
+                Doanh thu tốt hàng tháng, số lượng phòng lớn và tài sản hoàn chỉnh giúp phù hợp với nhà đầu tư muốn mua về tiếp tục khai thác ngay.
+              </p>
+            </div>
+          </details>
+
+          <details class="box">
+            <summary>
+              <span class="sum-left"><span class="dot"></span> PHÁP LÝ</span>
+              <span class="arrow">⌄</span>
+            </summary>
+            <div class="box-content">
+              <p>
+                Sổ hồng, hoàn công đầy đủ, pháp lý rõ ràng.
+              </p>
+            </div>
+          </details>
+
+          <details class="box">
+            <summary>
+              <span class="sum-left"><span class="dot"></span> CHÍNH SÁCH TIẾP KHÁCH</span>
+              <span class="arrow">⌄</span>
+            </summary>
+            <div class="box-content">
+              <p>
+                Chỉ ưu tiên khách thực, nhà đầu tư có nhu cầu rõ ràng và sẵn sàng làm việc theo NDA để bảo mật thông tin tài sản.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-2">
+        <article class="image-card">
+          <div class="image-wrap">
+            <span class="tag">HIỆN TRẠNG</span>
+            <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/5530E89F-335B-4575-99D0-CF95E585A8BE.png" alt="Khách sạn hiện tại">
+          </div>
+          <div class="image-body">
+            <h3 class="image-title">Khách sạn hiện tại</h3>
+            <p class="image-text">Mẫu khách sạn hiện trạng quy mô lớn, mặt tiền rõ, khai thác thực tế và không trùng mẫu các căn trước.</p>
+          </div>
+        </article>
+
+        <article class="image-card">
+          <div class="image-wrap">
+            <span class="tag">HÌNH ẢNH TƯƠNG LAI</span>
+            <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/849BBA51-9BCE-4235-95BE-E74D3A4D3C69.png" alt="Hình ảnh tương lai">
+          </div>
+          <div class="image-body">
+            <h3 class="image-title">Hình ảnh tương lai</h3>
+            <p class="image-text">Mô phỏng hình ảnh nhận diện tài sản sang trọng hơn, tăng sức hút và cảm giác quy mô khi tiếp khách.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="nda">
+    <div class="container">
+      <div class="nda-box">
+        <h3>NDA • MỞ KHÓA THÔNG TIN SÂU</h3>
+        <p>
+          Điền thông tin để xác nhận nhu cầu thực. Sau bước này mới tiếp tục trao đổi hồ sơ chi tiết hơn.
+        </p>
+
+        <form action="https://formspree.io/f/mpqykgzk" method="POST">
+          <input type="hidden" name="_subject" value="Lead NDA - Khách sạn Khu Tên Lửa 63 Tỷ - Sơn Bạch VIP PRO">
+          <input type="hidden" name="property" value="Khách sạn khu Tên Lửa 400m2">
+          <input type="hidden" name="price" value="63 Tỷ thương lượng">
+
+          <div class="form-grid">
+            <div class="field">
+              <label>Họ và tên</label>
+              <input type="text" name="ho_ten" placeholder="Nhập họ và tên" required>
+            </div>
+
+            <div class="field">
+              <label>Số điện thoại</label>
+              <input type="tel" name="so_dien_thoai" placeholder="Nhập số điện thoại" required>
+            </div>
+
+            <div class="field">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="Nhập email" required>
+            </div>
+          </div>
+
+          <label class="check">
+            <input type="checkbox" name="dong_y_nda" required>
+            <span>
+              Tôi xác nhận thông tin cung cấp là thật và đồng ý bảo mật thông tin tài sản trong quá trình tiếp cận hồ sơ.
+            </span>
+          </label>
+
+          <button class="btn primary" type="submit">TÔI ĐỒNG Ý NDA</button>
+
+          <div class="unlock-note">
+            Sau khi gửi thông tin, Sơn Bạch sẽ ưu tiên liên hệ và hỗ trợ A/C.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="panel">
+        <div class="brand-quote">
+          “Sơn Bạch không bán đại trà.<br>
+          Sơn Bạch chọn lọc những tài sản đủ giá trị để xứng đáng với những người mua đủ tầm.”
+          <small>SƠN BẠCH VIP PRO • TÀI SẢN CHỌN LỌC • GIAO DỊCH KÍN</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-card">
+        <div class="footer-title">LIÊN HỆ TRỰC TIẾP</div>
+        <div class="footer-hotline">Mr. Sơn Bạch: 0858 999 934</div>
+        <div class="footer-text">Tài sản dòng tiền • NDA • Chỉ tiếp khách thực • Làm việc kín</div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-bar">
+    <div class="floating-grid">
+      <a class="floating-btn" href="tel:0858999934">📞 GỌI NGAY</a>
+      <a class="floating-btn" href="https://zalo.me/0858999934" target="_blank" rel="noopener">💬 ZALO</a>
+      <a class="floating-btn" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank" rel="noopener">📘 FACEBOOK</a>
+    </div>
+  </div>
+
+</body>
+</html>
