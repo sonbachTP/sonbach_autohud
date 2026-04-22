@@ -3,32 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sơn Bạch VIP PRO | Lô góc 2 tiền Bình Tân</title>
-  <meta name="description" content="Siêu phẩm lô góc 2 tiền trung tâm Bình Tân, 400m2, 6 tầng, giá 110 tỷ thương lượng." />
+  <title>Sơn Bạch VIP PRO | Siêu phẩm lô góc 2 tiền Bình Tân</title>
+  <meta name="description" content="Siêu phẩm lô góc 2 tiền trung tâm Bình Tân, 400m2, 6 tầng, 110 tỷ thương lượng, khai thác mạnh và tăng giá bền vững." />
   <style>
     :root{
       --bg:#050505;
-      --bg2:#0c0c0c;
-      --card:#0f0f0f;
+      --bg2:#0b0b0b;
+      --card:#101010;
       --gold:#f4d06f;
-      --gold2:#c9992e;
-      --gold3:#fff1bd;
-      --text:#f5f1e6;
-      --muted:#cbbf97;
-      --line:rgba(244,208,111,.18);
-      --shadow:0 0 26px rgba(244,208,111,.10);
-      --radius:24px;
+      --gold2:#d6a63b;
+      --gold3:#fff1c2;
+      --text:#f7f2e8;
+      --muted:#d4c59a;
+      --line:rgba(244,208,111,.17);
+      --shadow:0 0 28px rgba(244,208,111,.10);
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(244,208,111,.08), transparent 18%),
+        radial-gradient(circle at top right, rgba(244,208,111,.07), transparent 18%),
         radial-gradient(circle at top left, rgba(244,208,111,.04), transparent 16%),
         linear-gradient(180deg,#030303 0%, #090909 45%, #040404 100%);
       color:var(--text);
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
       line-height:1.55;
       overflow-x:hidden;
     }
@@ -41,242 +40,205 @@
     .top-marquee{
       position:sticky;
       top:0;
-      z-index:70;
+      z-index:80;
       overflow:hidden;
       border-bottom:1px solid rgba(244,208,111,.18);
-      background:linear-gradient(90deg,#151004,#0a0a0a 35%,#151004);
+      background:linear-gradient(90deg,#171105,#0a0a0a 35%,#171105);
+      box-shadow:0 8px 24px rgba(0,0,0,.35);
     }
+
     .marquee-track{
       display:flex;
-      gap:50px;
-      width:max-content;
+      gap:56px;
       white-space:nowrap;
+      width:max-content;
       padding:10px 0;
-      animation:run 24s linear infinite;
+      animation:marquee 24s linear infinite;
+      color:var(--gold3);
       font-size:13px;
       font-weight:800;
-      letter-spacing:.9px;
+      letter-spacing:1px;
       text-transform:uppercase;
-      color:var(--gold3);
     }
-    @keyframes run{
+
+    @keyframes marquee{
       from{transform:translateX(0)}
       to{transform:translateX(-50%)}
     }
 
     .hero{
-      padding:20px 0 14px;
+      padding:18px 0 14px;
     }
 
     .hero-box{
-      position:relative;
-      overflow:hidden;
       border:1px solid var(--line);
       border-radius:30px;
+      padding:22px 16px 18px;
       background:
-        linear-gradient(180deg, rgba(244,208,111,.05), rgba(255,255,255,.01)),
-        #0a0a0a;
-      box-shadow:0 18px 60px rgba(0,0,0,.38), var(--shadow);
-      padding:18px;
+        radial-gradient(circle at center, rgba(244,208,111,.06), transparent 48%),
+        linear-gradient(180deg, rgba(244,208,111,.03), rgba(255,255,255,.01)),
+        #070707;
+      box-shadow:0 18px 46px rgba(0,0,0,.36), var(--shadow);
+      text-align:center;
+      position:relative;
+      overflow:hidden;
     }
 
-    .hero::before{
+    .hero-box::before{
       content:"";
       position:absolute;
-      width:320px;
-      height:320px;
-      background:radial-gradient(circle, rgba(244,208,111,.12), transparent 65%);
-      top:-110px;
-      right:-110px;
+      inset:auto -120px -120px auto;
+      width:280px;
+      height:280px;
+      background:radial-gradient(circle, rgba(244,208,111,.08), transparent 70%);
       pointer-events:none;
-      filter:blur(8px);
     }
 
-    .brand-head{
+    .logo-wrap{
       display:flex;
-      align-items:center;
       justify-content:center;
-      flex-direction:column;
-      gap:14px;
-      padding:10px 0 6px;
-      text-align:center;
+      align-items:center;
+      margin:6px 0 10px;
     }
 
-    .logo-shell{
-      position:relative;
+    .logo-glow{
       width:112px;
       height:112px;
       border-radius:50%;
       display:flex;
       align-items:center;
       justify-content:center;
-      background:radial-gradient(circle, rgba(255,255,255,.98) 0%, rgba(255,250,235,.96) 50%, rgba(244,208,111,.16) 76%, transparent 77%);
+      position:relative;
+      background:radial-gradient(circle, rgba(255,214,102,.18) 0%, rgba(255,214,102,.07) 46%, rgba(255,214,102,.02) 68%, transparent 76%);
       box-shadow:
-        0 0 0 1px rgba(244,208,111,.22),
-        0 0 34px rgba(244,208,111,.22),
-        inset 0 0 26px rgba(244,208,111,.12);
+        0 0 22px rgba(255,214,102,.18),
+        0 0 48px rgba(255,214,102,.10);
     }
 
-    .logo-shell::before{
+    .logo-glow::before{
       content:"";
       position:absolute;
       inset:-10px;
       border-radius:50%;
-      border:1px solid rgba(244,208,111,.18);
-      animation:spin 12s linear infinite;
+      border:1px solid rgba(255,214,102,.16);
+      box-shadow:0 0 16px rgba(255,214,102,.08);
+      animation:spin 14s linear infinite;
     }
 
-    .logo-shell::after{
+    .logo-glow::after{
       content:"";
       position:absolute;
       inset:-18px;
       border-radius:50%;
-      border:1px solid rgba(244,208,111,.10);
-      animation:spin 18s linear infinite reverse;
+      border:1px solid rgba(255,214,102,.09);
+      animation:spin 20s linear infinite reverse;
+    }
+
+    .logo-glow img{
+      width:88px;
+      height:88px;
+      object-fit:contain;
+      display:block;
+      border-radius:50%;
+      background:#fff;
     }
 
     @keyframes spin{
-      from{transform:rotate(0deg)}
+      from{transform:rotate(0)}
       to{transform:rotate(360deg)}
-    }
-
-    .logo-inner{
-      position:relative;
-      width:82px;
-      height:82px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .logo-house{
-      position:absolute;
-      inset:8px 10px 14px 10px;
-      border:3px solid var(--gold2);
-      border-top:none;
-      border-radius:8px;
-      opacity:.95;
-    }
-
-    .logo-roof{
-      position:absolute;
-      top:2px;
-      left:50%;
-      width:56px;
-      height:56px;
-      border-left:3px solid var(--gold2);
-      border-top:3px solid var(--gold2);
-      transform:translateX(-50%) rotate(45deg);
-      background:transparent;
-    }
-
-    .logo-sb{
-      position:relative;
-      z-index:2;
-      font-weight:900;
-      font-size:34px;
-      letter-spacing:-1px;
-      background:linear-gradient(180deg,#ffeb9a 0%, #d29929 100%);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      text-shadow:0 0 14px rgba(244,208,111,.18);
     }
 
     .brand-pill{
       width:100%;
       max-width:760px;
+      margin:0 auto 16px;
       padding:12px 18px;
       border:1px solid rgba(244,208,111,.18);
       border-radius:999px;
-      color:var(--gold3);
+      color:#fff0c0;
       font-size:13px;
       font-weight:800;
-      letter-spacing:3px;
+      letter-spacing:2.6px;
       text-transform:uppercase;
-      background:linear-gradient(180deg, rgba(244,208,111,.05), rgba(255,255,255,.01));
+      background:linear-gradient(180deg, rgba(244,208,111,.04), rgba(255,255,255,.01));
     }
 
     h1{
-      margin-top:8px;
-      text-align:center;
-      font-size:clamp(34px, 7vw, 68px);
+      margin:0 0 12px;
+      font-size:clamp(34px,7vw,64px);
+      line-height:1.05;
       font-weight:900;
-      line-height:1.04;
+      color:#fff5da;
       text-transform:uppercase;
-      color:#fff5d8;
-      text-shadow:0 0 24px rgba(244,208,111,.10);
+      text-shadow:0 0 18px rgba(244,208,111,.08);
     }
 
     .subhead{
-      margin:14px auto 0;
-      max-width:880px;
-      text-align:center;
-      font-size:clamp(17px,2.5vw,22px);
-      color:#ede3c7;
+      max-width:900px;
+      margin:0 auto 18px;
+      color:#eadfbe;
+      font-size:clamp(16px,2.8vw,22px);
       font-weight:700;
     }
 
     .price-wrap{
-      margin:22px auto 16px;
       display:flex;
       flex-direction:column;
       align-items:center;
-      justify-content:center;
       gap:8px;
+      margin-bottom:18px;
     }
 
     .price-box{
       position:relative;
-      display:inline-block;
       padding:10px 22px;
       border-radius:16px;
       overflow:hidden;
-      background:linear-gradient(180deg, rgba(255,232,166,.16), rgba(244,208,111,.08));
-      border:1px solid rgba(244,208,111,.22);
-      box-shadow:0 0 26px rgba(244,208,111,.10);
+      background:linear-gradient(180deg, rgba(255,232,166,.16), rgba(255,214,102,.08));
+      border:1px solid rgba(255,214,102,.22);
+      box-shadow:0 0 24px rgba(255,214,102,.10);
     }
 
     .price-box::after{
       content:"";
       position:absolute;
-      top:-30%;
-      left:-45%;
-      width:34%;
-      height:170%;
-      transform:skewX(-25deg);
-      background:linear-gradient(90deg, transparent, rgba(255,255,255,.48), transparent);
+      top:-20%;
+      left:-42%;
+      width:30%;
+      height:160%;
+      transform:skewX(-22deg);
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,.42), transparent);
       animation:sweep 4s linear infinite;
     }
 
     @keyframes sweep{
-      from{left:-45%}
-      to{left:135%}
+      from{left:-42%}
+      to{left:130%}
     }
 
     .price{
       position:relative;
       z-index:1;
-      font-size:clamp(52px, 11vw, 96px);
+      font-size:clamp(52px,11vw,92px);
       line-height:1;
       font-weight:900;
-      letter-spacing:1px;
-      color:var(--gold);
-      text-shadow:0 0 22px rgba(244,208,111,.28);
+      color:#f4d06f;
+      text-shadow:0 0 18px rgba(244,208,111,.20);
     }
 
     .price-note{
-      font-size:clamp(20px,3vw,34px);
+      font-size:clamp(19px,3vw,30px);
       font-weight:900;
-      color:#fff1c4;
-      text-transform:uppercase;
+      color:#fff1c6;
       letter-spacing:3px;
+      text-transform:uppercase;
     }
 
     .hero-actions{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:14px;
-      margin-top:22px;
+      margin-top:14px;
     }
 
     .btn{
@@ -296,6 +258,7 @@
       transition:.2s ease;
       padding:14px 18px;
     }
+
     .btn:hover{transform:translateY(-2px)}
 
     .btn-gold{
@@ -310,47 +273,104 @@
       border:1px solid rgba(244,208,111,.18);
     }
 
-    .floating-bar{
-      position:fixed;
-      left:50%;
-      bottom:10px;
-      transform:translateX(-50%);
-      width:min(980px, calc(100% - 12px));
-      z-index:90;
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:0;
-      border:1px solid rgba(244,208,111,.18);
-      border-radius:26px;
-      overflow:hidden;
-      background:rgba(10,10,10,.94);
-      backdrop-filter:blur(10px);
-      box-shadow:0 18px 42px rgba(0,0,0,.45);
+    .section{
+      padding:6px 0 100px;
     }
 
-    .float-btn{
-      min-height:68px;
-      text-decoration:none;
+    .accordion-group{
+      display:grid;
+      gap:14px;
+      margin-bottom:20px;
+    }
+
+    details.accordion{
+      border:1px solid rgba(244,208,111,.15);
+      border-radius:24px;
+      overflow:hidden;
+      background:rgba(255,255,255,.015);
+      box-shadow:var(--shadow);
+    }
+
+    details.accordion summary{
+      list-style:none;
+      cursor:pointer;
+      padding:20px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      background:linear-gradient(180deg, rgba(244,208,111,.05), rgba(255,255,255,.01));
+      font-weight:900;
+      color:#fff0c3;
+      text-transform:uppercase;
+      font-size:18px;
+      letter-spacing:.5px;
+    }
+
+    details.accordion summary::-webkit-details-marker{display:none}
+
+    .summary-left{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .dot{
+      width:14px;
+      height:14px;
+      border-radius:50%;
+      background:linear-gradient(180deg,#ffe79d,#d9a739);
+      box-shadow:0 0 12px rgba(244,208,111,.24);
+      flex:0 0 14px;
+    }
+
+    .plus{
+      width:38px;
+      height:38px;
+      flex:0 0 38px;
+      border-radius:50%;
+      border:1px solid rgba(244,208,111,.18);
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:10px;
-      font-size:18px;
-      font-weight:900;
+      color:var(--gold);
+      font-size:22px;
+      transition:.2s ease;
+    }
+
+    details[open] .plus{
+      transform:rotate(45deg);
+    }
+
+    .acc-body{
+      padding:0 18px 18px;
+    }
+
+    .acc-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+      margin-top:4px;
+    }
+
+    .acc-item{
+      border:1px solid rgba(244,208,111,.10);
+      border-radius:18px;
+      background:rgba(255,255,255,.02);
+      padding:16px;
+    }
+
+    .acc-item h3{
+      margin-bottom:8px;
+      color:var(--gold);
+      font-size:15px;
       text-transform:uppercase;
-      color:#f5efdd;
-      background:transparent;
-      border-right:1px solid rgba(244,208,111,.12);
-    }
-    .float-btn:last-child{border-right:none}
-
-    .float-btn.main{
-      background:linear-gradient(180deg,#f1cf72,#d9ab3a);
-      color:#171717;
+      letter-spacing:.6px;
     }
 
-    .section{
-      padding:18px 0 100px;
+    .acc-item p{
+      color:#eadfbe;
+      font-size:15px;
     }
 
     .vip-card{
@@ -391,7 +411,7 @@
     }
 
     .image-frame{
-      padding:0 0 18px;
+      padding:0 0 14px;
     }
 
     .image-frame img{
@@ -401,86 +421,7 @@
       object-fit:cover;
       border-top:1px solid rgba(244,208,111,.10);
       border-bottom:1px solid rgba(244,208,111,.10);
-    }
-
-    .accordion-group{
-      display:grid;
-      gap:14px;
-      margin:0 0 22px;
-    }
-
-    details.accordion{
-      border:1px solid rgba(244,208,111,.15);
-      border-radius:22px;
-      overflow:hidden;
-      background:rgba(255,255,255,.015);
-    }
-
-    details.accordion summary{
-      list-style:none;
-      cursor:pointer;
-      padding:20px 18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      background:linear-gradient(180deg, rgba(244,208,111,.05), rgba(255,255,255,.01));
-      font-weight:900;
-      color:#fff0c3;
-      text-transform:uppercase;
-      font-size:18px;
-      letter-spacing:.5px;
-    }
-
-    details.accordion summary::-webkit-details-marker{display:none}
-
-    .plus{
-      width:38px;
-      height:38px;
-      flex:0 0 38px;
-      border-radius:50%;
-      border:1px solid rgba(244,208,111,.18);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:var(--gold);
-      font-size:22px;
-      transition:.2s ease;
-    }
-
-    details[open] .plus{
-      transform:rotate(45deg);
-    }
-
-    .acc-body{
-      padding:0 18px 18px;
-    }
-
-    .acc-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:14px;
-      margin-top:2px;
-    }
-
-    .acc-item{
-      border:1px solid rgba(244,208,111,.10);
-      border-radius:18px;
-      background:rgba(255,255,255,.02);
-      padding:16px;
-    }
-
-    .acc-item h3{
-      margin-bottom:8px;
-      color:var(--gold);
-      font-size:15px;
-      text-transform:uppercase;
-      letter-spacing:.6px;
-    }
-
-    .acc-item p{
-      color:#eadfbe;
-      font-size:15px;
+      background:#0f0f0f;
     }
 
     .nda-modal{
@@ -497,7 +438,7 @@
     .nda-modal.active{display:flex}
 
     .nda-box{
-      width:min(680px,100%);
+      width:min(700px,100%);
       max-height:92vh;
       overflow:auto;
       border-radius:28px;
@@ -527,7 +468,16 @@
       gap:14px;
     }
 
-    .nda-form input{
+    .nda-form label.label{
+      font-size:15px;
+      font-weight:800;
+      color:#f2e6c2;
+      margin-bottom:-4px;
+    }
+
+    .nda-form input[type="text"],
+    .nda-form input[type="tel"],
+    .nda-form input[type="email"]{
       width:100%;
       min-height:58px;
       border-radius:18px;
@@ -552,7 +502,6 @@
     .nda-check input{
       width:22px;
       height:22px;
-      min-height:auto;
       flex:0 0 22px;
       margin-top:2px;
       accent-color:#e0b84f;
@@ -571,46 +520,127 @@
       margin-top:4px;
     }
 
+    .quote-card{
+      border:1px solid rgba(244,208,111,.15);
+      border-radius:28px;
+      background:linear-gradient(180deg, rgba(244,208,111,.04), rgba(255,255,255,.01));
+      padding:28px 18px;
+      text-align:center;
+      margin-bottom:20px;
+      box-shadow:var(--shadow);
+    }
+
+    .quote-card h2{
+      font-size:clamp(26px,5vw,46px);
+      line-height:1.2;
+      font-weight:900;
+      color:#fff4d8;
+      margin-bottom:14px;
+    }
+
+    .quote-card p{
+      font-size:clamp(18px,3vw,30px);
+      font-weight:900;
+      color:#fff1c5;
+      line-height:1.35;
+      max-width:860px;
+      margin:auto;
+    }
+
+    .contact-card{
+      border:1px solid rgba(244,208,111,.15);
+      border-radius:28px;
+      background:linear-gradient(180deg, rgba(244,208,111,.04), rgba(255,255,255,.01));
+      padding:28px 18px;
+      text-align:center;
+      box-shadow:var(--shadow);
+      margin-bottom:100px;
+    }
+
+    .contact-card h2{
+      font-size:clamp(24px,4vw,42px);
+      text-transform:uppercase;
+      color:#fff2cb;
+      margin-bottom:16px;
+      font-weight:900;
+    }
+
+    .contact-hotline{
+      font-size:clamp(34px,7vw,64px);
+      font-weight:900;
+      line-height:1.1;
+      color:var(--gold);
+      text-shadow:0 0 18px rgba(244,208,111,.18);
+      margin-bottom:14px;
+    }
+
+    .contact-sub{
+      color:#eadfbe;
+      font-size:clamp(18px,2.7vw,30px);
+      font-weight:700;
+    }
+
+    .floating-bar{
+      position:fixed;
+      left:50%;
+      bottom:10px;
+      transform:translateX(-50%);
+      width:min(980px, calc(100% - 12px));
+      z-index:90;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:0;
+      border:1px solid rgba(244,208,111,.18);
+      border-radius:26px;
+      overflow:hidden;
+      background:rgba(10,10,10,.94);
+      backdrop-filter:blur(10px);
+      box-shadow:0 18px 42px rgba(0,0,0,.45);
+    }
+
+    .float-btn{
+      min-height:68px;
+      text-decoration:none;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      font-size:18px;
+      font-weight:900;
+      text-transform:uppercase;
+      color:#f5efdd;
+      background:transparent;
+      border-right:1px solid rgba(244,208,111,.12);
+    }
+
+    .float-btn:last-child{border-right:none}
+
+    .float-btn.main{
+      background:linear-gradient(180deg,#f1cf72,#d9ab3a);
+      color:#171717;
+    }
+
     @media (max-width: 768px){
-      .wrap{width:min(100% - 12px, 100%)}
-      .hero-box{padding:14px}
+      .wrap{width:min(100% - 12px,100%)}
+      .hero-box{padding:18px 14px 16px}
       .brand-pill{font-size:12px;letter-spacing:2px}
       .hero-actions,
       .nda-actions,
       .acc-grid{
         grid-template-columns:1fr;
       }
-      .section-head{
-        align-items:flex-start;
-      }
-      .section-title{
-        font-size:22px;
-      }
-      .badge{
-        font-size:13px;
-        padding:10px 14px;
-      }
-      .btn{
-        min-height:60px;
-        font-size:17px;
-      }
-      .float-btn{
-        min-height:58px;
-        font-size:13px;
-        padding:10px 4px;
-      }
-      .floating-bar{
-        border-radius:20px;
-      }
-      .acc-item p{
-        font-size:14px;
-      }
-      .nda-box{
-        padding:18px 14px;
-      }
-      .nda-form input{
-        font-size:17px;
-      }
+      .section-head{align-items:flex-start}
+      .section-title{font-size:22px}
+      .badge{font-size:13px;padding:10px 14px}
+      .btn{min-height:60px;font-size:17px}
+      .float-btn{min-height:58px;font-size:13px;padding:10px 4px}
+      .floating-bar{border-radius:20px}
+      .acc-item p{font-size:14px}
+      .nda-box{padding:18px 14px}
+      .nda-form input[type="text"],
+      .nda-form input[type="tel"],
+      .nda-form input[type="email"]{font-size:17px}
+      .contact-card{margin-bottom:94px}
     }
   </style>
 </head>
@@ -626,35 +656,35 @@
   <section class="hero">
     <div class="wrap">
       <div class="hero-box">
-        <div class="brand-head">
-          <div class="logo-shell">
-            <div class="logo-inner">
-              <div class="logo-roof"></div>
-              <div class="logo-house"></div>
-              <div class="logo-sb">SB</div>
-            </div>
-          </div>
 
-          <div class="brand-pill">SƠN BẠCH VIP PRO • OFF-MARKET • TRUNG TÂM BÌNH TÂN</div>
-
-          <h1>SIÊU PHẨM LÔ GÓC 2 TIỀN</h1>
-
-          <div class="subhead">
-            Khu vực đẳng cấp nhất và là khu trung tâm của Bình Tân • Khai thác thương mại mạnh • Giữ giá trị bền vững
-          </div>
-
-          <div class="price-wrap">
-            <div class="price-box">
-              <div class="price">110 TỶ</div>
-            </div>
-            <div class="price-note">THƯƠNG LƯỢNG</div>
-          </div>
-
-          <div class="hero-actions">
-            <button class="btn btn-gold" onclick="openNDA()">NHẬN HỒ SƠ CHỌN LỌC</button>
-            <button class="btn btn-dark" onclick="scrollToInfo()">XEM THÔNG TIN</button>
+        <div class="logo-wrap">
+          <div class="logo-glow">
+            <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/logo-sb-vip-pro.png" alt="Logo Sơn Bạch VIP PRO">
           </div>
         </div>
+
+        <div class="brand-pill">
+          SƠN BẠCH VIP PRO • OFF-MARKET • TRUNG TÂM BÌNH TÂN
+        </div>
+
+        <h1>SIÊU PHẨM LÔ GÓC 2 TIỀN</h1>
+
+        <div class="subhead">
+          Khu vực đẳng cấp nhất Bình Tân • 400m² • 6 tầng • Khai thác dòng tiền mạnh • Tiềm năng tăng giá bền vững
+        </div>
+
+        <div class="price-wrap">
+          <div class="price-box">
+            <div class="price">110 TỶ</div>
+          </div>
+          <div class="price-note">THƯƠNG LƯỢNG</div>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn btn-gold" onclick="openNDA()">NHẬN NDA</button>
+          <button class="btn btn-dark" onclick="scrollToInfo()">XEM THÔNG TIN</button>
+        </div>
+
       </div>
     </div>
   </section>
@@ -663,20 +693,24 @@
     <div class="wrap">
 
       <div class="accordion-group">
+
         <details class="accordion">
           <summary>
-            <span>VỊ THẾ TÀI SẢN</span>
+            <div class="summary-left">
+              <span class="dot"></span>
+              <span>PHÂN KHÚC GIÁ</span>
+            </div>
             <span class="plus">+</span>
           </summary>
           <div class="acc-body">
             <div class="acc-grid">
               <div class="acc-item">
-                <h3>Khu trung tâm giá trị</h3>
-                <p>Nằm tại khu vực đẳng cấp và sôi động bậc nhất Bình Tân, nơi hội tụ dòng khách, sức mua và khả năng khai thác thương mại thực tế rất mạnh.</p>
+                <h3>Giá tiếp cận</h3>
+                <p>110 tỷ thương lượng. Đây là nhóm tài sản lõi dành cho khách thực, nhà đầu tư ưu tiên vị thế, công năng khai thác và độ khan hiếm của bất động sản trung tâm.</p>
               </div>
               <div class="acc-item">
-                <h3>Lô góc 2 tiền hiếm gặp</h3>
-                <p>Lợi thế 2 mặt thoáng giúp tài sản nổi bật tự nhiên, tăng nhận diện thương hiệu, tối ưu mặt bằng kinh doanh và luôn được đánh giá cao hơn tài sản thông thường.</p>
+                <h3>Biên độ giá trị</h3>
+                <p>Không chỉ là mức giá mua vào, mà còn là giá trị nắm giữ của một tài sản lô góc 2 tiền diện tích lớn, hiện hữu kết cấu và có thể khai thác ngay.</p>
               </div>
             </div>
           </div>
@@ -684,18 +718,21 @@
 
         <details class="accordion">
           <summary>
-            <span>THÔNG SỐ KHAI THÁC</span>
+            <div class="summary-left">
+              <span class="dot"></span>
+              <span>THÔNG SỐ TÀI SẢN</span>
+            </div>
             <span class="plus">+</span>
           </summary>
           <div class="acc-body">
             <div class="acc-grid">
               <div class="acc-item">
                 <h3>Quy mô hiện hữu</h3>
-                <p>Diện tích khoảng 400m², kết cấu 6 tầng, phù hợp khai thác showroom, văn phòng, trung tâm dịch vụ, hoặc mô hình thương mại đa tầng.</p>
+                <p>Diện tích khoảng 400m², kết cấu 6 tầng. Đây là dạng tài sản có thể tiếp cận theo góc nhìn khai thác vận hành, trưng bày thương hiệu hoặc nắm giữ tài sản lõi.</p>
               </div>
               <div class="acc-item">
-                <h3>Công năng đa dụng</h3>
-                <p>Tài sản phù hợp kinh doanh đa ngành nghề, vừa có thể vận hành dòng tiền, vừa phù hợp giữ làm tài sản lõi lâu dài cho nhà đầu tư thực chiến.</p>
+                <h3>Lô góc 2 tiền</h3>
+                <p>Lợi thế hai mặt thoáng giúp tăng độ nhận diện, tối ưu mặt bằng kinh doanh, tạo cảm giác bề thế và luôn thuộc nhóm tài sản được giới đầu tư ưu tiên săn tìm.</p>
               </div>
             </div>
           </div>
@@ -703,18 +740,21 @@
 
         <details class="accordion">
           <summary>
-            <span>DÒNG TIỀN & TIỀM NĂNG</span>
+            <div class="summary-left">
+              <span class="dot"></span>
+              <span>HIỆN TRẠNG KHAI THÁC</span>
+            </div>
             <span class="plus">+</span>
           </summary>
           <div class="acc-body">
             <div class="acc-grid">
               <div class="acc-item">
-                <h3>Khai thác dòng tiền mạnh</h3>
-                <p>Nhóm tài sản diện tích lớn, vị trí lõi, kết cấu sẵn luôn có lợi thế lớn về tính khai thác thực tế và khả năng tạo dòng tiền ổn định hơn mặt bằng chung.</p>
+                <h3>Khai thác đa ngành nghề</h3>
+                <p>Tài sản phù hợp kinh doanh đa ngành nghề, đặc biệt mạnh ở các mô hình cần vị thế góc, lưu lượng nhận diện cao và khả năng vận hành theo tầng.</p>
               </div>
               <div class="acc-item">
-                <h3>Tăng giá bền vững</h3>
-                <p>Đây là dạng tài sản vừa có nội lực khai thác, vừa có khả năng tăng giá theo sự phát triển hạ tầng và thương mại chung của toàn khu vực Bình Tân.</p>
+                <h3>Dòng tiền thực chiến</h3>
+                <p>Nhóm tài sản diện tích lớn tại khu trung tâm luôn có lợi thế về dòng tiền khai thác thực tế hơn so với phần lớn nhà phố quy mô nhỏ hơn trong cùng khu vực.</p>
               </div>
             </div>
           </div>
@@ -722,22 +762,70 @@
 
         <details class="accordion">
           <summary>
-            <span>PHƯƠNG THỨC TIẾP CẬN</span>
+            <div class="summary-left">
+              <span class="dot"></span>
+              <span>GIÁ TRỊ CỐT LÕI</span>
+            </div>
             <span class="plus">+</span>
           </summary>
           <div class="acc-body">
             <div class="acc-grid">
               <div class="acc-item">
-                <h3>Hồ sơ chọn lọc</h3>
-                <p>Thông tin sâu, vị trí sâu và phương án tiếp cận trực tiếp chỉ ưu tiên cho khách có nhu cầu thật, phù hợp phong cách làm việc chọn lọc và bảo mật.</p>
+                <h3>Vị thế trung tâm</h3>
+                <p>Nằm trong khu vực đẳng cấp nhất Bình Tân, nơi sức mua, lưu lượng giao thương và nhu cầu thương mại luôn duy trì ở mức cao và bền vững.</p>
               </div>
               <div class="acc-item">
-                <h3>Làm việc trực tiếp</h3>
-                <p>Sơn Bạch VIP PRO tập trung hàng giá trị thật, nội dung gọn, rõ, đúng trọng tâm để tiết kiệm thời gian cho khách hàng có năng lực và nhu cầu thực.</p>
+                <h3>Tăng giá dài hạn</h3>
+                <p>Đây là loại tài sản vừa có thể khai thác dòng tiền, vừa có tính giữ giá tốt và tăng giá bền vững theo quá trình phát triển chung của toàn khu vực.</p>
               </div>
             </div>
           </div>
         </details>
+
+        <details class="accordion">
+          <summary>
+            <div class="summary-left">
+              <span class="dot"></span>
+              <span>PHÁP LÝ</span>
+            </div>
+            <span class="plus">+</span>
+          </summary>
+          <div class="acc-body">
+            <div class="acc-grid">
+              <div class="acc-item">
+                <h3>Tiếp cận hồ sơ</h3>
+                <p>Phần hồ sơ sâu và nội dung tiếp cận chi tiết sẽ được trao đổi trực tiếp sau bước NDA, nhằm đảm bảo tính chọn lọc và bảo mật của tài sản.</p>
+              </div>
+              <div class="acc-item">
+                <h3>Làm việc kín</h3>
+                <p>Phù hợp phong cách làm việc gọn, rõ, đúng trọng tâm với khách có nhu cầu thật và năng lực thật, tránh phát tán thông tin không cần thiết.</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="accordion">
+          <summary>
+            <div class="summary-left">
+              <span class="dot"></span>
+              <span>CHÍNH SÁCH TIẾP KHÁCH</span>
+            </div>
+            <span class="plus">+</span>
+          </summary>
+          <div class="acc-body">
+            <div class="acc-grid">
+              <div class="acc-item">
+                <h3>Ưu tiên khách thực</h3>
+                <p>Sơn Bạch VIP PRO tập trung tài sản chọn lọc, ưu tiên làm việc trực tiếp với khách thực, tránh mất thời gian của cả hai bên.</p>
+              </div>
+              <div class="acc-item">
+                <h3>Tiếp cận theo lớp</h3>
+                <p>Khách để lại thông tin, xác nhận NDA, sau đó mới tiếp tục trao đổi hồ sơ sâu, vị trí sâu và phương án tiếp cận tài sản phù hợp.</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
       </div>
 
       <div class="vip-card">
@@ -760,6 +848,19 @@
         </div>
       </div>
 
+      <div class="quote-card">
+        <h2>“Sơn Bạch không bán đại trà.”</h2>
+        <p>
+          Sơn Bạch chọn lọc những tài sản đủ giá trị để xứng đáng với những người mua đủ tầm.
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <h2>LIÊN HỆ TRỰC TIẾP</h2>
+        <div class="contact-hotline">Mr. Sơn Bạch: 0858 999 934</div>
+        <div class="contact-sub">Tài sản dòng tiền • NDA • Chỉ tiếp khách thực • Làm việc kín</div>
+      </div>
+
     </div>
   </section>
 
@@ -771,15 +872,20 @@
 
   <div class="nda-modal" id="ndaModal">
     <div class="nda-box">
-      <div class="nda-title">NHẬN HỒ SƠ CHỌN LỌC</div>
+      <div class="nda-title">NDA • MỞ KHÓA THÔNG TIN SÂU</div>
       <div class="nda-desc">
-        Vui lòng để lại thông tin cơ bản để nhận hồ sơ sâu và nội dung tiếp cận tài sản theo cơ chế chọn lọc, bảo mật.
+        Điền thông tin để xác nhận nhu cầu thực. Sau bước này mới tiếp tục trao đổi hồ sơ chi tiết hơn.
       </div>
 
       <form class="nda-form" action="https://formspree.io/f/mpqykgzk" method="POST">
-        <input type="text" name="Họ tên" placeholder="Họ và tên" required>
-        <input type="tel" name="Số điện thoại" placeholder="Số điện thoại" required>
-        <input type="email" name="Email" placeholder="Email nhận hồ sơ" required>
+        <label class="label" for="hoten">Họ và tên</label>
+        <input id="hoten" type="text" name="Họ tên" placeholder="Nhập họ và tên" required>
+
+        <label class="label" for="sdt">Số điện thoại</label>
+        <input id="sdt" type="tel" name="Số điện thoại" placeholder="Nhập số điện thoại" required>
+
+        <label class="label" for="email">Email</label>
+        <input id="email" type="email" name="Email" placeholder="Nhập email" required>
 
         <input type="hidden" name="Tài sản" value="Siêu phẩm lô góc 2 tiền Bình Tân - 110 tỷ thương lượng">
         <input type="hidden" name="Nguồn" value="Landing page Sơn Bạch VIP PRO">
@@ -787,7 +893,7 @@
         <label class="nda-check">
           <input type="checkbox" required>
           <span>
-            Tôi xác nhận thông tin cung cấp là đúng và đồng ý tiếp cận hồ sơ theo cơ chế chọn lọc, bảo mật, không tự ý phát tán nội dung tài sản khi chưa được phép.
+            Tôi xác nhận thông tin cung cấp là thật và đồng ý bảo mật thông tin tài sản trong quá trình tiếp cận hồ sơ.
           </span>
         </label>
 
@@ -797,7 +903,7 @@
         </div>
 
         <div class="tiny">
-          Sau khi gửi thông tin, Sơn Bạch sẽ liên hệ trực tiếp để sàng lọc nhu cầu và hỗ trợ tiếp cận tài sản phù hợp.
+          Sau khi gửi thông tin, Sơn Bạch sẽ ưu tiên liên hệ và hỗ trợ A/C.
         </div>
       </form>
     </div>
