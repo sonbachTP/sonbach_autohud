@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sơn Bạch VIP PRO | Lô góc 2 tiền Bình Tân</title>
+  <meta name="description" content="Siêu phẩm lô góc 2 tiền trung tâm Bình Tân, 400m2, 6 tầng, giá 110 tỷ thương lượng." />
+  <style>
+    :root{
+      --bg:#050505;
+      --bg2:#0c0c0c;
+      --card:#0f0f0f;
+      --gold:#f4d06f;
+      --gold2:#c9992e;
+      --gold3:#fff1bd;
+      --text:#f5f1e6;
+      --muted:#cbbf97;
+      --line:rgba(244,208,111,.18);
+      --shadow:0 0 26px rgba(244,208,111,.10);
+      --radius:24px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      background:
+        radial-gradient(circle at top right, rgba(244,208,111,.08), transparent 18%),
+        radial-gradient(circle at top left, rgba(244,208,111,.04), transparent 16%),
+        linear-gradient(180deg,#030303 0%, #090909 45%, #040404 100%);
+      color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      line-height:1.55;
+      overflow-x:hidden;
+    }
+
+    .wrap{
+      width:min(1120px, calc(100% - 24px));
+      margin:auto;
+    }
+
+    .top-marquee{
+      position:sticky;
+      top:0;
+      z-index:70;
+      overflow:hidden;
+      border-bottom:1px solid rgba(244,208,111,.18);
+      background:linear-gradient(90deg,#151004,#0a0a0a 35%,#151004);
+    }
+    .marquee-track{
+      display:flex;
+      gap:50px;
+      width:max-content;
+      white-space:nowrap;
+      padding:10px 0;
+      animation:run 24s linear infinite;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.9px;
+      text-transform:uppercase;
+      color:var(--gold3);
+    }
+    @keyframes run{
+      from{transform:translateX(0)}
+      to{transform:translateX(-50%)}
+    }
+
+    .hero{
+      padding:20px 0 14px;
+    }
+
+    .hero-box{
+      position:relative;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:30px;
+      background:
+        linear-gradient(180deg, rgba(244,208,111,.05), rgba(255,255,255,.01)),
+        #0a0a0a;
+      box-shadow:0 18px 60px rgba(0,0,0,.38), var(--shadow);
+      padding:18px;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:320px;
+      height:320px;
+      background:radial-gradient(circle, rgba(244,208,111,.12), transparent 65%);
+      top:-110px;
+      right:-110px;
+      pointer-events:none;
+      filter:blur(8px);
+    }
+
+    .brand-head{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:14px;
+      padding:10px 0 6px;
+      text-align:center;
+    }
+
+    .logo-shell{
+      position:relative;
+      width:112px;
+      height:112px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:radial-gradient(circle, rgba(255,255,255,.98) 0%, rgba(255,250,235,.96) 50%, rgba(244,208,111,.16) 76%, transparent 77%);
+      box-shadow:
+        0 0 0 1px rgba(244,208,111,.22),
+        0 0 34px rgba(244,208,111,.22),
+        inset 0 0 26px rgba(244,208,111,.12);
+    }
+
+    .logo-shell::before{
+      content:"";
+      position:absolute;
+      inset:-10px;
+      border-radius:50%;
+      border:1px solid rgba(244,208,111,.18);
+      animation:spin 12s linear infinite;
+    }
+
+    .logo-shell::after{
+      content:"";
+      position:absolute;
+      inset:-18px;
+      border-radius:50%;
+      border:1px solid rgba(244,208,111,.10);
+      animation:spin 18s linear infinite reverse;
+    }
+
+    @keyframes spin{
+      from{transform:rotate(0deg)}
+      to{transform:rotate(360deg)}
+    }
+
+    .logo-inner{
+      position:relative;
+      width:82px;
+      height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .logo-house{
+      position:absolute;
+      inset:8px 10px 14px 10px;
+      border:3px solid var(--gold2);
+      border-top:none;
+      border-radius:8px;
+      opacity:.95;
+    }
+
+    .logo-roof{
+      position:absolute;
+      top:2px;
+      left:50%;
+      width:56px;
+      height:56px;
+      border-left:3px solid var(--gold2);
+      border-top:3px solid var(--gold2);
+      transform:translateX(-50%) rotate(45deg);
+      background:transparent;
+    }
+
+    .logo-sb{
+      position:relative;
+      z-index:2;
+      font-weight:900;
+      font-size:34px;
+      letter-spacing:-1px;
+      background:linear-gradient(180deg,#ffeb9a 0%, #d29929 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      text-shadow:0 0 14px rgba(244,208,111,.18);
+    }
+
+    .brand-pill{
+      width:100%;
+      max-width:760px;
+      padding:12px 18px;
+      border:1px solid rgba(244,208,111,.18);
+      border-radius:999px;
+      color:var(--gold3);
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      background:linear-gradient(180deg, rgba(244,208,111,.05), rgba(255,255,255,.01));
+    }
+
+    h1{
+      margin-top:8px;
+      text-align:center;
+      font-size:clamp(34px, 7vw, 68px);
+      font-weight:900;
+      line-height:1.04;
+      text-transform:uppercase;
+      color:#fff5d8;
+      text-shadow:0 0 24px rgba(244,208,111,.10);
+    }
+
+    .subhead{
+      margin:14px auto 0;
+      max-width:880px;
+      text-align:center;
+      font-size:clamp(17px,2.5vw,22px);
+      color:#ede3c7;
+      font-weight:700;
+    }
+
+    .price-wrap{
+      margin:22px auto 16px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+    }
+
+    .price-box{
+      position:relative;
+      display:inline-block;
+      padding:10px 22px;
+      border-radius:16px;
+      overflow:hidden;
+      background:linear-gradient(180deg, rgba(255,232,166,.16), rgba(244,208,111,.08));
+      border:1px solid rgba(244,208,111,.22);
+      box-shadow:0 0 26px rgba(244,208,111,.10);
+    }
+
+    .price-box::after{
+      content:"";
+      position:absolute;
+      top:-30%;
+      left:-45%;
+      width:34%;
+      height:170%;
+      transform:skewX(-25deg);
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,.48), transparent);
+      animation:sweep 4s linear infinite;
+    }
+
+    @keyframes sweep{
+      from{left:-45%}
+      to{left:135%}
+    }
+
+    .price{
+      position:relative;
+      z-index:1;
+      font-size:clamp(52px, 11vw, 96px);
+      line-height:1;
+      font-weight:900;
+      letter-spacing:1px;
+      color:var(--gold);
+      text-shadow:0 0 22px rgba(244,208,111,.28);
+    }
+
+    .price-note{
+      font-size:clamp(20px,3vw,34px);
+      font-weight:900;
+      color:#fff1c4;
+      text-transform:uppercase;
+      letter-spacing:3px;
+    }
+
+    .hero-actions{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:22px;
+    }
+
+    .btn{
+      appearance:none;
+      border:none;
+      text-decoration:none;
+      cursor:pointer;
+      min-height:64px;
+      border-radius:18px;
+      font-size:19px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.7px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:.2s ease;
+      padding:14px 18px;
+    }
+    .btn:hover{transform:translateY(-2px)}
+
+    .btn-gold{
+      color:#121212;
+      background:linear-gradient(180deg,#ffe79d 0%, #e0b84f 100%);
+      box-shadow:0 10px 26px rgba(244,208,111,.20);
+    }
+
+    .btn-dark{
+      color:#f9efcf;
+      background:#111;
+      border:1px solid rgba(244,208,111,.18);
+    }
+
+    .floating-bar{
+      position:fixed;
+      left:50%;
+      bottom:10px;
+      transform:translateX(-50%);
+      width:min(980px, calc(100% - 12px));
+      z-index:90;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:0;
+      border:1px solid rgba(244,208,111,.18);
+      border-radius:26px;
+      overflow:hidden;
+      background:rgba(10,10,10,.94);
+      backdrop-filter:blur(10px);
+      box-shadow:0 18px 42px rgba(0,0,0,.45);
+    }
+
+    .float-btn{
+      min-height:68px;
+      text-decoration:none;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      font-size:18px;
+      font-weight:900;
+      text-transform:uppercase;
+      color:#f5efdd;
+      background:transparent;
+      border-right:1px solid rgba(244,208,111,.12);
+    }
+    .float-btn:last-child{border-right:none}
+
+    .float-btn.main{
+      background:linear-gradient(180deg,#f1cf72,#d9ab3a);
+      color:#171717;
+    }
+
+    .section{
+      padding:18px 0 100px;
+    }
+
+    .vip-card{
+      border:1px solid var(--line);
+      border-radius:30px;
+      background:linear-gradient(180deg, rgba(244,208,111,.04), rgba(255,255,255,.01));
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      margin-bottom:20px;
+    }
+
+    .section-head{
+      padding:20px 20px 12px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .section-title{
+      font-size:clamp(24px,4vw,42px);
+      font-weight:900;
+      text-transform:uppercase;
+      line-height:1.05;
+      color:#fff1c7;
+    }
+
+    .badge{
+      padding:12px 18px;
+      border-radius:999px;
+      background:linear-gradient(180deg,#ffe6a0,#deaf47);
+      color:#161616;
+      font-size:15px;
+      font-weight:900;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    .image-frame{
+      padding:0 0 18px;
+    }
+
+    .image-frame img{
+      display:block;
+      width:100%;
+      aspect-ratio:16/10;
+      object-fit:cover;
+      border-top:1px solid rgba(244,208,111,.10);
+      border-bottom:1px solid rgba(244,208,111,.10);
+    }
+
+    .accordion-group{
+      display:grid;
+      gap:14px;
+      margin:0 0 22px;
+    }
+
+    details.accordion{
+      border:1px solid rgba(244,208,111,.15);
+      border-radius:22px;
+      overflow:hidden;
+      background:rgba(255,255,255,.015);
+    }
+
+    details.accordion summary{
+      list-style:none;
+      cursor:pointer;
+      padding:20px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      background:linear-gradient(180deg, rgba(244,208,111,.05), rgba(255,255,255,.01));
+      font-weight:900;
+      color:#fff0c3;
+      text-transform:uppercase;
+      font-size:18px;
+      letter-spacing:.5px;
+    }
+
+    details.accordion summary::-webkit-details-marker{display:none}
+
+    .plus{
+      width:38px;
+      height:38px;
+      flex:0 0 38px;
+      border-radius:50%;
+      border:1px solid rgba(244,208,111,.18);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--gold);
+      font-size:22px;
+      transition:.2s ease;
+    }
+
+    details[open] .plus{
+      transform:rotate(45deg);
+    }
+
+    .acc-body{
+      padding:0 18px 18px;
+    }
+
+    .acc-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+      margin-top:2px;
+    }
+
+    .acc-item{
+      border:1px solid rgba(244,208,111,.10);
+      border-radius:18px;
+      background:rgba(255,255,255,.02);
+      padding:16px;
+    }
+
+    .acc-item h3{
+      margin-bottom:8px;
+      color:var(--gold);
+      font-size:15px;
+      text-transform:uppercase;
+      letter-spacing:.6px;
+    }
+
+    .acc-item p{
+      color:#eadfbe;
+      font-size:15px;
+    }
+
+    .nda-modal{
+      position:fixed;
+      inset:0;
+      z-index:120;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:14px;
+      background:rgba(0,0,0,.74);
+    }
+
+    .nda-modal.active{display:flex}
+
+    .nda-box{
+      width:min(680px,100%);
+      max-height:92vh;
+      overflow:auto;
+      border-radius:28px;
+      border:1px solid rgba(244,208,111,.18);
+      background:linear-gradient(180deg,#111,#090909);
+      box-shadow:0 24px 70px rgba(0,0,0,.55);
+      padding:22px 18px;
+    }
+
+    .nda-title{
+      font-size:clamp(26px,5vw,38px);
+      font-weight:900;
+      line-height:1.08;
+      text-transform:uppercase;
+      color:#fff0c4;
+      margin-bottom:10px;
+    }
+
+    .nda-desc{
+      color:#eadfbe;
+      font-size:15px;
+      margin-bottom:16px;
+    }
+
+    .nda-form{
+      display:grid;
+      gap:14px;
+    }
+
+    .nda-form input{
+      width:100%;
+      min-height:58px;
+      border-radius:18px;
+      border:1px solid rgba(244,208,111,.16);
+      background:#0b0b0b;
+      color:#fff;
+      font-size:18px;
+      padding:14px 16px;
+      outline:none;
+    }
+
+    .nda-check{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      color:#eadfbe;
+      font-size:14px;
+      line-height:1.55;
+      padding:4px 2px 2px;
+    }
+
+    .nda-check input{
+      width:22px;
+      height:22px;
+      min-height:auto;
+      flex:0 0 22px;
+      margin-top:2px;
+      accent-color:#e0b84f;
+    }
+
+    .nda-actions{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:4px;
+    }
+
+    .tiny{
+      color:var(--muted);
+      font-size:12px;
+      margin-top:4px;
+    }
+
+    @media (max-width: 768px){
+      .wrap{width:min(100% - 12px, 100%)}
+      .hero-box{padding:14px}
+      .brand-pill{font-size:12px;letter-spacing:2px}
+      .hero-actions,
+      .nda-actions,
+      .acc-grid{
+        grid-template-columns:1fr;
+      }
+      .section-head{
+        align-items:flex-start;
+      }
+      .section-title{
+        font-size:22px;
+      }
+      .badge{
+        font-size:13px;
+        padding:10px 14px;
+      }
+      .btn{
+        min-height:60px;
+        font-size:17px;
+      }
+      .float-btn{
+        min-height:58px;
+        font-size:13px;
+        padding:10px 4px;
+      }
+      .floating-bar{
+        border-radius:20px;
+      }
+      .acc-item p{
+        font-size:14px;
+      }
+      .nda-box{
+        padding:18px 14px;
+      }
+      .nda-form input{
+        font-size:17px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-marquee">
+    <div class="marquee-track">
+      <span>SƠN BẠCH VIP PRO • SIÊU PHẨM LÔ GÓC 2 TIỀN • KHU VỰC ĐẲNG CẤP NHẤT BÌNH TÂN • 400M² • 6 TẦNG • 110 TỶ THƯƠNG LƯỢNG</span>
+      <span>SƠN BẠCH VIP PRO • SIÊU PHẨM LÔ GÓC 2 TIỀN • KHU VỰC ĐẲNG CẤP NHẤT BÌNH TÂN • 400M² • 6 TẦNG • 110 TỶ THƯƠNG LƯỢNG</span>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-box">
+        <div class="brand-head">
+          <div class="logo-shell">
+            <div class="logo-inner">
+              <div class="logo-roof"></div>
+              <div class="logo-house"></div>
+              <div class="logo-sb">SB</div>
+            </div>
+          </div>
+
+          <div class="brand-pill">SƠN BẠCH VIP PRO • OFF-MARKET • TRUNG TÂM BÌNH TÂN</div>
+
+          <h1>SIÊU PHẨM LÔ GÓC 2 TIỀN</h1>
+
+          <div class="subhead">
+            Khu vực đẳng cấp nhất và là khu trung tâm của Bình Tân • Khai thác thương mại mạnh • Giữ giá trị bền vững
+          </div>
+
+          <div class="price-wrap">
+            <div class="price-box">
+              <div class="price">110 TỶ</div>
+            </div>
+            <div class="price-note">THƯƠNG LƯỢNG</div>
+          </div>
+
+          <div class="hero-actions">
+            <button class="btn btn-gold" onclick="openNDA()">NHẬN HỒ SƠ CHỌN LỌC</button>
+            <button class="btn btn-dark" onclick="scrollToInfo()">XEM THÔNG TIN</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="infoSection">
+    <div class="wrap">
+
+      <div class="accordion-group">
+        <details class="accordion">
+          <summary>
+            <span>VỊ THẾ TÀI SẢN</span>
+            <span class="plus">+</span>
+          </summary>
+          <div class="acc-body">
+            <div class="acc-grid">
+              <div class="acc-item">
+                <h3>Khu trung tâm giá trị</h3>
+                <p>Nằm tại khu vực đẳng cấp và sôi động bậc nhất Bình Tân, nơi hội tụ dòng khách, sức mua và khả năng khai thác thương mại thực tế rất mạnh.</p>
+              </div>
+              <div class="acc-item">
+                <h3>Lô góc 2 tiền hiếm gặp</h3>
+                <p>Lợi thế 2 mặt thoáng giúp tài sản nổi bật tự nhiên, tăng nhận diện thương hiệu, tối ưu mặt bằng kinh doanh và luôn được đánh giá cao hơn tài sản thông thường.</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="accordion">
+          <summary>
+            <span>THÔNG SỐ KHAI THÁC</span>
+            <span class="plus">+</span>
+          </summary>
+          <div class="acc-body">
+            <div class="acc-grid">
+              <div class="acc-item">
+                <h3>Quy mô hiện hữu</h3>
+                <p>Diện tích khoảng 400m², kết cấu 6 tầng, phù hợp khai thác showroom, văn phòng, trung tâm dịch vụ, hoặc mô hình thương mại đa tầng.</p>
+              </div>
+              <div class="acc-item">
+                <h3>Công năng đa dụng</h3>
+                <p>Tài sản phù hợp kinh doanh đa ngành nghề, vừa có thể vận hành dòng tiền, vừa phù hợp giữ làm tài sản lõi lâu dài cho nhà đầu tư thực chiến.</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="accordion">
+          <summary>
+            <span>DÒNG TIỀN & TIỀM NĂNG</span>
+            <span class="plus">+</span>
+          </summary>
+          <div class="acc-body">
+            <div class="acc-grid">
+              <div class="acc-item">
+                <h3>Khai thác dòng tiền mạnh</h3>
+                <p>Nhóm tài sản diện tích lớn, vị trí lõi, kết cấu sẵn luôn có lợi thế lớn về tính khai thác thực tế và khả năng tạo dòng tiền ổn định hơn mặt bằng chung.</p>
+              </div>
+              <div class="acc-item">
+                <h3>Tăng giá bền vững</h3>
+                <p>Đây là dạng tài sản vừa có nội lực khai thác, vừa có khả năng tăng giá theo sự phát triển hạ tầng và thương mại chung của toàn khu vực Bình Tân.</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="accordion">
+          <summary>
+            <span>PHƯƠNG THỨC TIẾP CẬN</span>
+            <span class="plus">+</span>
+          </summary>
+          <div class="acc-body">
+            <div class="acc-grid">
+              <div class="acc-item">
+                <h3>Hồ sơ chọn lọc</h3>
+                <p>Thông tin sâu, vị trí sâu và phương án tiếp cận trực tiếp chỉ ưu tiên cho khách có nhu cầu thật, phù hợp phong cách làm việc chọn lọc và bảo mật.</p>
+              </div>
+              <div class="acc-item">
+                <h3>Làm việc trực tiếp</h3>
+                <p>Sơn Bạch VIP PRO tập trung hàng giá trị thật, nội dung gọn, rõ, đúng trọng tâm để tiết kiệm thời gian cho khách hàng có năng lực và nhu cầu thực.</p>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="vip-card">
+        <div class="section-head">
+          <div class="section-title">HÌNH ẢNH HIỆN TẠI</div>
+          <div class="badge">HIỆN TRẠNG</div>
+        </div>
+        <div class="image-frame">
+          <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/387CAC53-C58E-4043-B3D2-662822CA2A2C.png" alt="Nhà hiện tại">
+        </div>
+      </div>
+
+      <div class="vip-card">
+        <div class="section-head">
+          <div class="section-title">HÌNH ẢNH TƯƠNG LAI</div>
+          <div class="badge">TẦM NHÌN NÂNG CẤP</div>
+        </div>
+        <div class="image-frame">
+          <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/041A5672-16CE-4E77-BB5A-D22183C24FA4.png" alt="Nhà tương lai">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="floating-bar">
+    <a class="float-btn main" href="tel:0858999934">📞 GỌI NGAY</a>
+    <a class="float-btn" href="https://zalo.me/0858999934" target="_blank" rel="noopener">💬 ZALO</a>
+    <a class="float-btn" href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr" target="_blank" rel="noopener">📘 FACEBOOK</a>
+  </div>
+
+  <div class="nda-modal" id="ndaModal">
+    <div class="nda-box">
+      <div class="nda-title">NHẬN HỒ SƠ CHỌN LỌC</div>
+      <div class="nda-desc">
+        Vui lòng để lại thông tin cơ bản để nhận hồ sơ sâu và nội dung tiếp cận tài sản theo cơ chế chọn lọc, bảo mật.
+      </div>
+
+      <form class="nda-form" action="https://formspree.io/f/mpqykgzk" method="POST">
+        <input type="text" name="Họ tên" placeholder="Họ và tên" required>
+        <input type="tel" name="Số điện thoại" placeholder="Số điện thoại" required>
+        <input type="email" name="Email" placeholder="Email nhận hồ sơ" required>
+
+        <input type="hidden" name="Tài sản" value="Siêu phẩm lô góc 2 tiền Bình Tân - 110 tỷ thương lượng">
+        <input type="hidden" name="Nguồn" value="Landing page Sơn Bạch VIP PRO">
+
+        <label class="nda-check">
+          <input type="checkbox" required>
+          <span>
+            Tôi xác nhận thông tin cung cấp là đúng và đồng ý tiếp cận hồ sơ theo cơ chế chọn lọc, bảo mật, không tự ý phát tán nội dung tài sản khi chưa được phép.
+          </span>
+        </label>
+
+        <div class="nda-actions">
+          <button type="submit" class="btn btn-gold">TÔI ĐỒNG Ý NDA</button>
+          <button type="button" class="btn btn-dark" onclick="closeNDA()">ĐÓNG</button>
+        </div>
+
+        <div class="tiny">
+          Sau khi gửi thông tin, Sơn Bạch sẽ liên hệ trực tiếp để sàng lọc nhu cầu và hỗ trợ tiếp cận tài sản phù hợp.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const ndaModal = document.getElementById('ndaModal');
+
+    function openNDA(){
+      ndaModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeNDA(){
+      ndaModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function scrollToInfo(){
+      const target = document.getElementById('infoSection');
+      target.scrollIntoView({behavior:'smooth'});
+    }
+
+    ndaModal.addEventListener('click', function(e){
+      if(e.target === ndaModal){
+        closeNDA();
+      }
+    });
+
+    document.querySelectorAll('details.accordion').forEach((detail) => {
+      detail.addEventListener('toggle', function() {
+        if (this.open) {
+          document.querySelectorAll('details.accordion').forEach((other) => {
+            if (other !== this) other.open = false;
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
