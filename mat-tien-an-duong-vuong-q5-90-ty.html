@@ -25,52 +25,58 @@ body{
 }
 .ticker span{
   display:inline-block;
-  padding:18px 0;
+  padding:16px 0;
   animation:run 20s linear infinite;
 }
 @keyframes run{
   from{transform:translateX(100%)}
   to{transform:translateX(-100%)}
 }
+
 .hero{
-  padding:34px 22px 28px;
+  padding:28px 20px 30px;
   text-align:center;
-  background:radial-gradient(circle at top,#4b3509,#090909 55%,#000);
+  background:radial-gradient(circle at top,#3b2807,#080808 58%,#000);
   border-bottom:1px solid #6b4a12;
 }
+
+/* LOGO GỌN – KHÔNG ĐÈ CHỮ */
 .logo-wrap{
-  width:190px;
-  height:190px;
-  margin:0 auto 24px;
+  width:135px;
+  height:135px;
+  margin:0 auto 28px;
   border-radius:50%;
   background:#fff;
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:0 0 55px #e6b23c;
+  box-shadow:0 0 38px rgba(230,178,60,.75);
   position:relative;
 }
-.logo-wrap:before,.logo-wrap:after{
+.logo-wrap:before{
   content:"";
   position:absolute;
-  inset:-28px;
-  border:1px solid rgba(230,178,60,.45);
+  inset:-18px;
+  border:1px solid rgba(230,178,60,.38);
   border-radius:50%;
 }
-.logo-wrap:after{inset:-52px}
-.logo-wrap img{width:118px}
-.badge{
-  border:1px solid #8a631b;
-  border-radius:999px;
-  padding:18px 20px;
-  margin:20px auto 28px;
-  max-width:720px;
-  font-size:18px;
-  font-weight:900;
-  letter-spacing:5px;
+.logo-wrap:after{
+  content:"";
+  position:absolute;
+  inset:-34px;
+  border:1px solid rgba(230,178,60,.25);
+  border-radius:50%;
 }
+.logo-wrap img{
+  width:88px;
+  position:relative;
+  z-index:2;
+}
+
+/* BỎ KHỐI BADGE BỊ ĐÁNH DẤU */
+
 h1{
-  margin:0;
+  margin:36px 0 0;
   font-size:42px;
   line-height:1.15;
   color:#fff0b9;
@@ -84,6 +90,8 @@ h1{
   margin:24px auto;
   max-width:780px;
 }
+
+/* GIÁ KHÔNG CÓ VỆT SÁNG */
 .price-box{
   display:inline-block;
   padding:24px 55px;
@@ -92,7 +100,8 @@ h1{
   color:#ffd15d;
   font-size:52px;
   font-weight:900;
-  box-shadow:0 0 35px rgba(255,196,55,.35);
+  box-shadow:0 0 30px rgba(255,196,55,.28);
+  background:#070707;
 }
 .trade{
   margin:24px 0 20px;
@@ -110,6 +119,7 @@ h1{
   font-size:19px;
   border:none;
 }
+
 .wrap{
   padding:28px 18px;
   background:radial-gradient(circle at top,#392704,#050505 58%);
@@ -164,6 +174,7 @@ h1{
 }
 .acc-body ul{margin:0;padding-left:22px}
 .acc-body li{margin:10px 0}
+
 .photo-section{
   max-width:860px;
   margin:28px auto;
@@ -193,13 +204,14 @@ h1{
   border:1px solid #6b4a12;
   display:block;
 }
+
 .quote,.contact{
   max-width:860px;
   margin:28px auto;
   border:1px solid #6b4a12;
   border-radius:28px;
   background:#070707;
-  padding:48px 26px;
+  padding:46px 24px;
   text-align:center;
 }
 .quote h2{
@@ -216,15 +228,40 @@ h1{
   font-size:31px;
   margin:0 0 24px;
 }
-.phone{
+
+/* CUỐI TRANG – 1 HÀNG + VỆT SÁNG */
+.phone-line{
+  position:relative;
   display:inline-block;
-  background:linear-gradient(90deg,#402900,#fff2bd,#402900);
-  color:#ffd15d;
+  overflow:hidden;
+  white-space:nowrap;
+  max-width:100%;
+  background:linear-gradient(90deg,#2b1b00,#c99425,#fff0a7,#c99425,#2b1b00);
+  color:#111;
   font-size:28px;
   font-weight:900;
-  padding:8px 16px;
+  padding:12px 18px;
+  border-radius:8px;
   margin-bottom:24px;
+  box-shadow:0 0 26px rgba(255,205,70,.45);
 }
+.phone-line:after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-70%;
+  width:50%;
+  height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.9),transparent);
+  transform:skewX(-25deg);
+  animation:shine 3s infinite;
+}
+@keyframes shine{
+  0%{left:-70%}
+  55%{left:125%}
+  100%{left:125%}
+}
+
 .cta{
   position:fixed;
   left:0;
@@ -248,12 +285,15 @@ h1{
 .cta a:nth-child(3){background:#0758e8;color:#fff}
 
 @media(max-width:600px){
-  h1{font-size:34px}
+  .logo-wrap{width:118px;height:118px;margin-bottom:26px}
+  .logo-wrap img{width:76px}
+  h1{font-size:34px;margin-top:30px}
   .desc{font-size:19px}
   .price-box{font-size:46px;padding:22px 46px}
   .trade{font-size:30px}
   .acc-head{font-size:22px;padding:26px 22px}
   .photo-section h2{font-size:30px}
+  .phone-line{font-size:22px;padding:11px 12px}
   .cta a{font-size:19px}
 }
 </style>
@@ -271,8 +311,6 @@ h1{
   <div class="logo-wrap">
     <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/logo-sb-vip-pro.png" alt="Sơn Bạch VIP PRO">
   </div>
-
-  <div class="badge">SƠN BẠCH VIP PRO • OFF-MARKET • QUẬN 5</div>
 
   <h1>SIÊU PHẨM MẶT TIỀN<br>AN DƯƠNG VƯƠNG</h1>
 
@@ -297,7 +335,7 @@ h1{
       <ul>
         <li>Giá chào: <b>90 tỷ thương lượng</b>.</li>
         <li>Chủ cần tiền nên bán nhanh, ưu tiên khách thiện chí.</li>
-        <li>Tài sản phù hợp nhóm khách mua giữ tiền, khai thác kinh doanh hoặc làm tài sản thương hiệu.</li>
+        <li>Tài sản phù hợp khách mua giữ tiền, khai thác hoặc làm thương hiệu riêng.</li>
       </ul>
     </div>
   </div>
@@ -308,11 +346,11 @@ h1{
     </button>
     <div class="acc-body" id="spec">
       <ul>
-        <li>Vị trí: <b>Mặt tiền An Dương Vương – khu trung tâm Quận 5</b>.</li>
+        <li>Vị trí: <b>Mặt tiền An Dương Vương – trung tâm Quận 5</b>.</li>
         <li>Diện tích: <b>162m²</b>, form đất vuông vức.</li>
-        <li>Ngang: <b>hơn 8m</b>, lợi thế lớn cho nhận diện mặt tiền.</li>
+        <li>Ngang: <b>hơn 8m</b>.</li>
         <li>Hiện trạng: <b>7 tầng</b>.</li>
-        <li>Đường trước nhà lớn, thuận tiện xe hơi và khai thác thương mại.</li>
+        <li>Đường lớn, thuận tiện xe hơi và khai thác thương mại.</li>
       </ul>
     </div>
   </div>
@@ -323,9 +361,9 @@ h1{
     </button>
     <div class="acc-body" id="use">
       <ul>
-        <li>Nhà hiện trạng 7 tầng, có thể khai thác ngay hoặc nâng cấp nhận diện.</li>
-        <li>Phù hợp làm showroom, văn phòng công ty, spa, phòng khám, khách sạn mini hoặc trụ sở thương hiệu.</li>
-        <li>Bề ngang lớn tạo độ nổi bật rất tốt khi làm bảng hiệu và đón khách.</li>
+        <li>Nhà hiện trạng 7 tầng, phù hợp khai thác ngay.</li>
+        <li>Phù hợp showroom, văn phòng, spa, phòng khám, khách sạn mini hoặc trụ sở thương hiệu.</li>
+        <li>Bề ngang lớn tạo lợi thế nhận diện mặt tiền rất tốt.</li>
       </ul>
     </div>
   </div>
@@ -338,7 +376,7 @@ h1{
       <ul>
         <li>Mặt tiền trung tâm Q.5, khu vực có tính thương mại cao.</li>
         <li>Ngang hơn 8m là lợi thế hiếm trong phân khúc nhà mặt tiền trung tâm.</li>
-        <li>Diện tích 162m², dễ bố trí công năng và tối ưu khai thác.</li>
+        <li>Diện tích 162m², dễ bố trí công năng.</li>
         <li>Hiện trạng 7 tầng giúp tiết kiệm thời gian đầu tư ban đầu.</li>
       </ul>
     </div>
@@ -390,7 +428,7 @@ h1{
 
   <section class="contact" id="nda">
     <h2>LIÊN HỆ TRỰC TIẾP</h2>
-    <div class="phone">Mr. Sơn Bạch: 0858 999 934</div>
+    <div class="phone-line">Mr. Sơn Bạch: 0858 999 934</div>
     <p>Tài sản mặt tiền • NDA • Chỉ tiếp khách thực • Làm việc kín</p>
     <a class="gold-btn" href="tel:0858999934">GỌI NGAY</a>
   </section>
