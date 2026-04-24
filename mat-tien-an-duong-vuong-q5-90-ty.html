@@ -32,79 +32,94 @@ body{
   from{transform:translateX(100%)}
   to{transform:translateX(-100%)}
 }
-
 .hero{
-  padding:28px 20px 30px;
+  padding:38px 20px 34px;
   text-align:center;
   background:radial-gradient(circle at top,#3b2807,#080808 58%,#000);
   border-bottom:1px solid #6b4a12;
 }
-
-/* LOGO GỌN – KHÔNG ĐÈ CHỮ */
 .logo-wrap{
-  width:135px;
-  height:135px;
-  margin:0 auto 28px;
+  width:125px;
+  height:125px;
+  margin:0 auto 46px;
   border-radius:50%;
   background:#fff;
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:0 0 38px rgba(230,178,60,.75);
+  box-shadow:0 0 36px rgba(230,178,60,.75);
   position:relative;
 }
 .logo-wrap:before{
   content:"";
   position:absolute;
-  inset:-18px;
-  border:1px solid rgba(230,178,60,.38);
+  inset:-20px;
+  border:1px solid rgba(230,178,60,.35);
   border-radius:50%;
 }
 .logo-wrap:after{
   content:"";
   position:absolute;
-  inset:-34px;
-  border:1px solid rgba(230,178,60,.25);
+  inset:-38px;
+  border:1px solid rgba(230,178,60,.22);
   border-radius:50%;
 }
 .logo-wrap img{
-  width:88px;
+  width:82px;
   position:relative;
   z-index:2;
 }
-
-/* BỎ KHỐI BADGE BỊ ĐÁNH DẤU */
-
 h1{
-  margin:36px 0 0;
+  margin:0;
   font-size:42px;
   line-height:1.15;
   color:#fff0b9;
   text-transform:uppercase;
   text-shadow:0 0 18px rgba(255,214,100,.35);
 }
-.desc{
-  font-size:21px;
-  font-weight:800;
-  line-height:1.55;
-  margin:24px auto;
-  max-width:780px;
+.mini-info{
+  margin:24px auto 20px;
+  max-width:760px;
+  font-size:20px;
+  font-weight:900;
+  color:#ffe9a8;
+  line-height:1.5;
 }
-
-/* GIÁ KHÔNG CÓ VỆT SÁNG */
-.price-box{
+.shine-box{
+  position:relative;
+  overflow:hidden;
   display:inline-block;
-  padding:24px 55px;
+}
+.shine-box:after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-75%;
+  width:55%;
+  height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.95),transparent);
+  transform:skewX(-25deg);
+  animation:shine 3s infinite;
+}
+@keyframes shine{
+  0%{left:-75%}
+  55%{left:125%}
+  100%{left:125%}
+}
+.price-box{
+  padding:24px 58px;
   border:1px solid #9b6d1a;
   border-radius:34px;
   color:#ffd15d;
-  font-size:52px;
+  font-size:56px;
   font-weight:900;
-  box-shadow:0 0 30px rgba(255,196,55,.28);
+  box-shadow:0 0 36px rgba(255,196,55,.36);
   background:#070707;
 }
 .trade{
-  margin:24px 0 20px;
+  margin:28px auto 22px;
+  padding:10px 20px;
+  color:#fff2c2;
   font-size:34px;
   font-weight:900;
   letter-spacing:10px;
@@ -113,29 +128,30 @@ h1{
   display:inline-block;
   background:linear-gradient(135deg,#e2a916,#fff0a7,#d09112);
   color:#111;
-  padding:17px 48px;
+  padding:17px 52px;
   border-radius:999px;
   font-weight:900;
   font-size:19px;
   border:none;
+  box-shadow:0 0 26px rgba(255,205,70,.35);
 }
-
 .wrap{
   padding:28px 18px;
   background:radial-gradient(circle at top,#392704,#050505 58%);
 }
 .acc{
   border:1px solid #6b4a12;
-  border-radius:28px;
+  border-radius:30px;
   margin:18px auto;
   max-width:860px;
   background:#080808;
   overflow:hidden;
+  box-shadow:0 0 22px rgba(255,190,50,.08);
 }
 .acc-head{
   width:100%;
   padding:28px 30px;
-  background:#080808;
+  background:linear-gradient(90deg,#080808,#111,#080808);
   color:#fff0b9;
   border:0;
   display:flex;
@@ -144,6 +160,10 @@ h1{
   font-size:25px;
   font-weight:900;
   text-align:left;
+  cursor:pointer;
+}
+.acc-head:hover{
+  background:linear-gradient(90deg,#130d02,#211704,#130d02);
 }
 .dot{
   width:20px;
@@ -155,8 +175,8 @@ h1{
   margin-right:18px;
 }
 .plus{
-  width:52px;
-  height:52px;
+  width:54px;
+  height:54px;
   border-radius:50%;
   border:1px solid #8a631b;
   display:flex;
@@ -164,17 +184,27 @@ h1{
   justify-content:center;
   font-size:38px;
   color:#ffd15d;
+  box-shadow:0 0 18px rgba(255,205,70,.18);
+}
+.acc.active .plus{
+  transform:rotate(45deg);
+  background:#d69a10;
+  color:#111;
 }
 .acc-body{
   display:none;
-  padding:0 30px 28px;
+  padding:0 30px 30px;
   color:#f7e8bd;
   font-size:19px;
   line-height:1.65;
+  animation:drop .25s ease;
+}
+@keyframes drop{
+  from{opacity:0;transform:translateY(-8px)}
+  to{opacity:1;transform:translateY(0)}
 }
 .acc-body ul{margin:0;padding-left:22px}
 .acc-body li{margin:10px 0}
-
 .photo-section{
   max-width:860px;
   margin:28px auto;
@@ -204,7 +234,6 @@ h1{
   border:1px solid #6b4a12;
   display:block;
 }
-
 .quote,.contact{
   max-width:860px;
   margin:28px auto;
@@ -228,8 +257,6 @@ h1{
   font-size:31px;
   margin:0 0 24px;
 }
-
-/* CUỐI TRANG – 1 HÀNG + VỆT SÁNG */
 .phone-line{
   position:relative;
   display:inline-block;
@@ -252,16 +279,10 @@ h1{
   left:-70%;
   width:50%;
   height:100%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.9),transparent);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.95),transparent);
   transform:skewX(-25deg);
   animation:shine 3s infinite;
 }
-@keyframes shine{
-  0%{left:-70%}
-  55%{left:125%}
-  100%{left:125%}
-}
-
 .cta{
   position:fixed;
   left:0;
@@ -285,12 +306,12 @@ h1{
 .cta a:nth-child(3){background:#0758e8;color:#fff}
 
 @media(max-width:600px){
-  .logo-wrap{width:118px;height:118px;margin-bottom:26px}
-  .logo-wrap img{width:76px}
-  h1{font-size:34px;margin-top:30px}
-  .desc{font-size:19px}
-  .price-box{font-size:46px;padding:22px 46px}
-  .trade{font-size:30px}
+  .logo-wrap{width:112px;height:112px;margin-bottom:42px}
+  .logo-wrap img{width:72px}
+  h1{font-size:34px}
+  .mini-info{font-size:19px}
+  .price-box{font-size:48px;padding:22px 48px}
+  .trade{font-size:30px;letter-spacing:9px}
   .acc-head{font-size:22px;padding:26px 22px}
   .photo-section h2{font-size:30px}
   .phone-line{font-size:22px;padding:11px 12px}
@@ -303,7 +324,7 @@ h1{
 
 <div class="ticker">
   <span>
-    MẶT TIỀN AN DƯƠNG VƯƠNG Q.5 • NGANG HƠN 8M • 162M² • HIỆN TRẠNG 7 TẦNG • ĐƯỜNG LỚN TRUNG TÂM • GIÁ 90 TỶ THƯƠNG LƯỢNG •
+    MẶT TIỀN AN DƯƠNG VƯƠNG Q.5 • NGANG HƠN 8M • 162M² • 7 TẦNG • SỔ HỒNG HOÀN CÔNG • GIÁ 90 TỶ THƯƠNG LƯỢNG •
   </span>
 </div>
 
@@ -314,21 +335,26 @@ h1{
 
   <h1>SIÊU PHẨM MẶT TIỀN<br>AN DƯƠNG VƯƠNG</h1>
 
-  <div class="desc">
-    Trung tâm Q.5 • Ngang hơn 8m • Diện tích 162m² • Hiện trạng 7 tầng •
-    Sổ hồng hoàn công đầy đủ • Nhà chính chủ trước nay chưa qua mua bán.
+  <div class="mini-info">
+    Q.5 trung tâm • Ngang hơn 8m • 162m² • 7 tầng • Sổ hồng hoàn công
   </div>
 
-  <div class="price-box">90 TỶ</div>
-  <div class="trade">THƯƠNG LƯỢNG</div>
+  <div class="shine-box">
+    <div class="price-box">90 TỶ</div>
+  </div>
 
+  <div class="shine-box">
+    <div class="trade">THƯƠNG LƯỢNG</div>
+  </div>
+
+  <br>
   <button class="gold-btn" onclick="document.getElementById('nda').scrollIntoView({behavior:'smooth'})">NHẬN NDA</button>
 </section>
 
 <div class="wrap">
 
   <div class="acc">
-    <button class="acc-head" onclick="openBox('price')">
+    <button class="acc-head" onclick="openBox(this,'price')">
       <span><i class="dot"></i>PHÂN KHÚC GIÁ</span><span class="plus">+</span>
     </button>
     <div class="acc-body" id="price">
@@ -341,7 +367,7 @@ h1{
   </div>
 
   <div class="acc">
-    <button class="acc-head" onclick="openBox('spec')">
+    <button class="acc-head" onclick="openBox(this,'spec')">
       <span><i class="dot"></i>THÔNG SỐ TÀI SẢN</span><span class="plus">+</span>
     </button>
     <div class="acc-body" id="spec">
@@ -356,7 +382,7 @@ h1{
   </div>
 
   <div class="acc">
-    <button class="acc-head" onclick="openBox('use')">
+    <button class="acc-head" onclick="openBox(this,'use')">
       <span><i class="dot"></i>HIỆN TRẠNG KHAI THÁC</span><span class="plus">+</span>
     </button>
     <div class="acc-body" id="use">
@@ -369,7 +395,7 @@ h1{
   </div>
 
   <div class="acc">
-    <button class="acc-head" onclick="openBox('value')">
+    <button class="acc-head" onclick="openBox(this,'value')">
       <span><i class="dot"></i>GIÁ TRỊ CỐT LÕI</span><span class="plus">+</span>
     </button>
     <div class="acc-body" id="value">
@@ -383,7 +409,7 @@ h1{
   </div>
 
   <div class="acc">
-    <button class="acc-head" onclick="openBox('legal')">
+    <button class="acc-head" onclick="openBox(this,'legal')">
       <span><i class="dot"></i>PHÁP LÝ</span><span class="plus">+</span>
     </button>
     <div class="acc-body" id="legal">
@@ -397,7 +423,7 @@ h1{
   </div>
 
   <div class="acc">
-    <button class="acc-head" onclick="openBox('policy')">
+    <button class="acc-head" onclick="openBox(this,'policy')">
       <span><i class="dot"></i>CHÍNH SÁCH TIẾP KHÁCH</span><span class="plus">+</span>
     </button>
     <div class="acc-body" id="policy">
@@ -442,10 +468,20 @@ h1{
 </div>
 
 <script>
-function openBox(id){
+function openBox(btn,id){
+  document.querySelectorAll('.acc').forEach(function(box){
+    box.classList.remove('active');
+  });
+
   document.querySelectorAll('.acc-body').forEach(function(el){
     if(el.id === id){
-      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+      if(el.style.display === 'block'){
+        el.style.display = 'none';
+        btn.closest('.acc').classList.remove('active');
+      }else{
+        el.style.display = 'block';
+        btn.closest('.acc').classList.add('active');
+      }
     }else{
       el.style.display = 'none';
     }
