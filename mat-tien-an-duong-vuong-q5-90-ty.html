@@ -1,195 +1,710 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sơn Bạch VIP PRO | Mặt tiền An Dương Vương Q5</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style>
-body{
-  margin:0;
-  font-family:Arial;
-  background:#050505;
-  color:#fff;
-}
+  <title>Mặt tiền An Dương Vương Q.5 | Sơn Bạch VIP PRO</title>
 
-/* HERO */
-.hero{
-  position:relative;
-  text-align:center;
-}
-.hero img{
-  width:100%;
-  filter:brightness(0.6);
-}
+  <meta name="description" content="Bán gấp mặt tiền An Dương Vương khu trung tâm Quận 5, diện tích 162m2, ngang hơn 8m, hiện trạng 7 tầng, sổ hồng hoàn công đầy đủ, giá 90 tỷ thương lượng." />
 
-.hero-content{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-}
+  <style>
+    :root{
+      --bg:#050505;
+      --card:#111;
+      --card2:#171717;
+      --gold:#f6d36b;
+      --gold2:#b88925;
+      --text:#fff7df;
+      --muted:#c9b98a;
+      --line:rgba(246,211,107,.28);
+      --red:#b80000;
+    }
 
-.logo{
-  width:120px;
-  opacity:0.9;
-  margin-bottom:10px;
-}
+    *{box-sizing:border-box}
 
-.price{
-  font-size:48px;
-  color:gold;
-  font-weight:bold;
-  text-shadow:0 0 20px gold;
-}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top,#241a05 0%,#070707 42%,#000 100%);
+      color:var(--text);
+      padding-bottom:78px;
+    }
 
-.title{
-  font-size:26px;
-  margin-top:10px;
-}
+    a{text-decoration:none;color:inherit}
 
-/* BUTTON */
-.btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 25px;
-  background:gold;
-  color:#000;
-  font-weight:bold;
-  border-radius:6px;
-  cursor:pointer;
-}
+    .top-ticker{
+      background:linear-gradient(90deg,#000,#2d2108,#000);
+      color:var(--gold);
+      border-bottom:1px solid var(--line);
+      overflow:hidden;
+      white-space:nowrap;
+      font-weight:800;
+      letter-spacing:.8px;
+      font-size:13px;
+      padding:10px 0;
+    }
 
-/* SECTION */
-.section{
-  padding:20px;
-  border-bottom:1px solid #333;
-}
+    .ticker-inner{
+      display:inline-block;
+      padding-left:100%;
+      animation:ticker 22s linear infinite;
+    }
 
-.toggle{
-  font-size:18px;
-  color:gold;
-  cursor:pointer;
-}
+    @keyframes ticker{
+      from{transform:translateX(0)}
+      to{transform:translateX(-100%)}
+    }
 
-.content{
-  display:none;
-  margin-top:10px;
-}
+    .hero{
+      position:relative;
+      min-height:92vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      overflow:hidden;
+      border-bottom:1px solid var(--line);
+    }
 
-/* IMAGE */
-.img-box img{
-  width:100%;
-  border-radius:10px;
-  margin-top:10px;
-}
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,0,0,.72)),
+        url("https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/CBC75928-0BEC-487E-BC8A-F2C9BB2FD92A.png") center/cover no-repeat;
+      transform:scale(1.02);
+    }
 
-/* CTA */
-.cta{
-  position:fixed;
-  bottom:0;
-  width:100%;
-  display:flex;
-}
+    .hero:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at center,rgba(255,215,90,.12),transparent 55%);
+      pointer-events:none;
+    }
 
-.cta a{
-  flex:1;
-  text-align:center;
-  padding:15px;
-  background:gold;
-  color:#000;
-  font-weight:bold;
-  text-decoration:none;
-}
-</style>
+    .hero-box{
+      position:relative;
+      z-index:2;
+      max-width:980px;
+      padding:34px 18px;
+    }
 
-<script>
-function toggle(id){
-  var x=document.getElementById(id);
-  x.style.display = (x.style.display === "block") ? "none" : "block";
-}
-</script>
+    .brand-logo{
+      width:112px;
+      height:112px;
+      margin:0 auto 18px;
+      border-radius:50%;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.38);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 0 30px rgba(246,211,107,.38);
+      animation:logoGlow 2.6s ease-in-out infinite alternate;
+    }
 
+    .brand-logo img{
+      width:92px;
+      height:92px;
+      object-fit:contain;
+      border-radius:50%;
+    }
+
+    @keyframes logoGlow{
+      from{box-shadow:0 0 18px rgba(246,211,107,.25)}
+      to{box-shadow:0 0 46px rgba(246,211,107,.65)}
+    }
+
+    .label{
+      display:inline-block;
+      padding:9px 16px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--gold);
+      font-weight:800;
+      letter-spacing:1px;
+      background:rgba(0,0,0,.48);
+      margin-bottom:15px;
+      font-size:13px;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(30px,6vw,66px);
+      line-height:1.05;
+      text-transform:uppercase;
+      color:#fff0b8;
+      text-shadow:0 0 18px rgba(246,211,107,.45);
+    }
+
+    .sub-title{
+      margin:16px auto 0;
+      max-width:820px;
+      color:#f7e6b1;
+      font-size:clamp(16px,2.8vw,23px);
+      line-height:1.45;
+      font-weight:700;
+    }
+
+    .price{
+      position:relative;
+      display:inline-block;
+      margin:24px auto 8px;
+      padding:14px 26px;
+      font-size:clamp(38px,7vw,78px);
+      font-weight:900;
+      color:var(--gold);
+      letter-spacing:1px;
+      text-shadow:
+        0 0 8px rgba(246,211,107,.8),
+        0 0 30px rgba(246,211,107,.55);
+      overflow:hidden;
+    }
+
+    .price:after{
+      content:"";
+      position:absolute;
+      top:0;
+      left:-80%;
+      width:55%;
+      height:100%;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent);
+      transform:skewX(-25deg);
+      animation:sweep 3.2s infinite;
+    }
+
+    @keyframes sweep{
+      0%{left:-80%}
+      55%{left:130%}
+      100%{left:130%}
+    }
+
+    .price-note{
+      color:var(--muted);
+      font-weight:700;
+      font-size:15px;
+      margin-bottom:22px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:22px;
+    }
+
+    .btn{
+      border:none;
+      cursor:pointer;
+      padding:14px 20px;
+      border-radius:999px;
+      font-weight:900;
+      letter-spacing:.4px;
+      font-size:14px;
+      transition:.25s;
+    }
+
+    .btn-gold{
+      background:linear-gradient(135deg,#fff2a8,#d69b29,#fff0a4);
+      color:#160f00;
+      box-shadow:0 0 20px rgba(246,211,107,.35);
+    }
+
+    .btn-dark{
+      background:rgba(0,0,0,.62);
+      color:var(--gold);
+      border:1px solid var(--line);
+    }
+
+    .btn:hover{transform:translateY(-2px)}
+
+    .wrap{
+      max-width:1120px;
+      margin:auto;
+      padding:34px 16px;
+    }
+
+    .quick-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      margin-top:-52px;
+      position:relative;
+      z-index:3;
+    }
+
+    .quick-card{
+      background:linear-gradient(180deg,rgba(35,27,9,.96),rgba(10,10,10,.96));
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:18px;
+      text-align:center;
+      box-shadow:0 12px 40px rgba(0,0,0,.38);
+    }
+
+    .quick-card strong{
+      display:block;
+      color:var(--gold);
+      font-size:22px;
+      margin-bottom:6px;
+    }
+
+    .quick-card span{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .section-title{
+      text-align:center;
+      margin:34px 0 22px;
+    }
+
+    .section-title h2{
+      margin:0;
+      color:var(--gold);
+      font-size:clamp(24px,4vw,40px);
+      text-transform:uppercase;
+      text-shadow:0 0 16px rgba(246,211,107,.25);
+    }
+
+    .section-title p{
+      color:var(--muted);
+      max-width:780px;
+      margin:10px auto 0;
+      line-height:1.6;
+      font-size:15px;
+    }
+
+    .accordion{
+      background:linear-gradient(180deg,rgba(20,20,20,.96),rgba(8,8,8,.96));
+      border:1px solid var(--line);
+      border-radius:18px;
+      margin:14px 0;
+      overflow:hidden;
+    }
+
+    .acc-head{
+      width:100%;
+      background:transparent;
+      color:var(--gold);
+      border:none;
+      padding:18px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      font-weight:900;
+      font-size:16px;
+      cursor:pointer;
+      text-align:left;
+      letter-spacing:.4px;
+    }
+
+    .acc-head span:last-child{
+      font-size:22px;
+    }
+
+    .acc-body{
+      display:none;
+      padding:0 18px 20px;
+      color:#f5e8c1;
+      line-height:1.72;
+      font-size:15px;
+    }
+
+    .acc-body ul{
+      margin:10px 0 0;
+      padding-left:20px;
+    }
+
+    .acc-body li{margin:8px 0}
+
+    .image-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      margin-top:18px;
+    }
+
+    .photo-card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:0 18px 50px rgba(0,0,0,.42);
+    }
+
+    .photo-card img{
+      width:100%;
+      display:block;
+      aspect-ratio:4/5;
+      object-fit:cover;
+    }
+
+    .photo-caption{
+      padding:15px;
+      color:var(--gold);
+      font-weight:900;
+      text-transform:uppercase;
+      font-size:14px;
+      background:linear-gradient(90deg,#090909,#1e1605,#090909);
+      border-top:1px solid var(--line);
+    }
+
+    .nda-box{
+      background:
+        radial-gradient(circle at top right,rgba(246,211,107,.16),transparent 38%),
+        linear-gradient(180deg,#151515,#070707);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:0 20px 70px rgba(0,0,0,.55);
+      margin-top:26px;
+    }
+
+    .nda-box h2{
+      color:var(--gold);
+      margin:0 0 10px;
+      text-transform:uppercase;
+    }
+
+    .nda-box p{
+      color:#e7d8ac;
+      line-height:1.65;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    input, textarea{
+      width:100%;
+      padding:14px;
+      border-radius:12px;
+      border:1px solid rgba(246,211,107,.35);
+      background:#050505;
+      color:#fff;
+      outline:none;
+      font-size:14px;
+    }
+
+    textarea{
+      grid-column:1/3;
+      min-height:92px;
+      resize:vertical;
+    }
+
+    .check{
+      margin:14px 0;
+      color:#e6d8ae;
+      line-height:1.5;
+      font-size:14px;
+    }
+
+    .check input{width:auto;margin-right:8px}
+
+    .submit-btn{
+      width:100%;
+      padding:15px;
+      border:none;
+      border-radius:14px;
+      background:linear-gradient(135deg,#fff2a8,#d69b29,#fff0a4);
+      color:#120d00;
+      font-weight:900;
+      font-size:15px;
+      cursor:pointer;
+      box-shadow:0 0 24px rgba(246,211,107,.35);
+    }
+
+    .brand-close{
+      text-align:center;
+      margin:36px auto 18px;
+      padding:28px 18px;
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:linear-gradient(180deg,rgba(31,24,7,.9),rgba(0,0,0,.92));
+    }
+
+    .brand-close h2{
+      margin:0;
+      color:var(--gold);
+      font-size:clamp(22px,4vw,38px);
+      text-transform:uppercase;
+    }
+
+    .brand-close p{
+      color:#e9d9aa;
+      line-height:1.7;
+      max-width:820px;
+      margin:12px auto 0;
+    }
+
+    .floating-cta{
+      position:fixed;
+      left:0;
+      right:0;
+      bottom:0;
+      z-index:999;
+      display:flex;
+      background:#070707;
+      border-top:1px solid var(--line);
+      box-shadow:0 -8px 28px rgba(0,0,0,.55);
+    }
+
+    .floating-cta a{
+      flex:1;
+      text-align:center;
+      padding:14px 8px;
+      font-weight:900;
+      font-size:13px;
+      border-right:1px solid rgba(255,255,255,.12);
+    }
+
+    .floating-cta a:nth-child(1){
+      background:linear-gradient(135deg,#ffe68a,#c88a18);
+      color:#120d00;
+    }
+
+    .floating-cta a:nth-child(2){
+      background:#0068ff;
+      color:#fff;
+    }
+
+    .floating-cta a:nth-child(3){
+      background:#111;
+      color:var(--gold);
+    }
+
+    @media(max-width:820px){
+      .quick-grid{grid-template-columns:1fr 1fr;margin-top:-32px}
+      .image-grid{grid-template-columns:1fr}
+      .form-grid{grid-template-columns:1fr}
+      textarea{grid-column:1}
+      .hero{min-height:86vh}
+      .brand-logo{width:92px;height:92px}
+      .brand-logo img{width:76px;height:76px}
+    }
+
+    @media(max-width:480px){
+      .quick-grid{grid-template-columns:1fr}
+      .hero-actions{flex-direction:column}
+      .btn{width:100%}
+      .floating-cta a{font-size:12px;padding:13px 4px}
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/CBC75928-0BEC-487E-BC8A-F2C9BB2FD92A.png">
-  
-  <div class="hero-content">
-    <div class="price">90 TỶ</div>
-    <div class="title">MẶT TIỀN AN DƯƠNG VƯƠNG – Q.5</div>
-    <div class="btn" onclick="toggle('nda')">XEM THÔNG TIN (NDA)</div>
+  <div class="top-ticker">
+    <div class="ticker-inner">
+      SƠN BẠCH VIP PRO • MẶT TIỀN AN DƯƠNG VƯƠNG Q.5 • 162M² • NGANG HƠN 8M • HIỆN TRẠNG 7 TẦNG • SỔ HỒNG HOÀN CÔNG • GIÁ 90 TỶ THƯƠNG LƯỢNG •
+    </div>
   </div>
-</div>
 
-<!-- NDA -->
-<div id="nda" class="section content">
-  <h3>Thông tin bảo mật</h3>
-  <p>Đây là tài sản chọn lọc, chỉ cung cấp thông tin chi tiết cho khách hàng nghiêm túc.</p>
+  <section class="hero">
+    <div class="hero-box">
+      <div class="brand-logo">
+        <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/logo-sb-vip-pro.png" alt="Sơn Bạch VIP PRO">
+      </div>
 
-  <form action="https://formspree.io/f/mpqykgzk" method="POST">
-    <input type="text" name="name" placeholder="Họ tên" required style="width:100%;padding:10px;margin:5px 0;">
-    <input type="tel" name="phone" placeholder="Số điện thoại" required style="width:100%;padding:10px;margin:5px 0;">
-    <input type="email" name="email" placeholder="Email" required style="width:100%;padding:10px;margin:5px 0;">
-    
-    <label>
-      <input type="checkbox" required> Tôi đồng ý NDA
-    </label>
+      <div class="label">TÀI SẢN MẶT TIỀN TRUNG TÂM Q.5</div>
 
-    <button type="submit" class="btn">GỬI THÔNG TIN</button>
-  </form>
-</div>
+      <h1>Mặt tiền An Dương Vương</h1>
 
-<!-- THÔNG SỐ -->
-<div class="section">
-  <div class="toggle" onclick="toggle('ts')">THÔNG SỐ TÀI SẢN</div>
-  <div id="ts" class="content">
-    <p>Diện tích: 162m²</p>
-    <p>Ngang: hơn 8m</p>
-    <p>Kết cấu: 7 tầng</p>
-    <p>Pháp lý: Sổ hồng – hoàn công đầy đủ</p>
+      <div class="sub-title">
+        Ngang hơn 8m • Diện tích vuông vức 162m² • Hiện trạng 7 tầng • Phù hợp khai thác, giữ tài sản và nâng tầm thương hiệu.
+      </div>
+
+      <div class="price">90 TỶ</div>
+      <div class="price-note">Giá tốt cho khách thiện chí • Thương lượng trực tiếp</div>
+
+      <div class="hero-actions">
+        <button class="btn btn-gold" onclick="scrollToNDA()">NHẬN HỒ SƠ NDA</button>
+        <button class="btn btn-dark" onclick="openOnly('asset')">XEM THÔNG SỐ</button>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap">
+
+    <section class="quick-grid">
+      <div class="quick-card">
+        <strong>162m²</strong>
+        <span>Diện tích vuông vức</span>
+      </div>
+      <div class="quick-card">
+        <strong>&gt; 8m</strong>
+        <span>Ngang lớn hiếm</span>
+      </div>
+      <div class="quick-card">
+        <strong>7 tầng</strong>
+        <span>Hiện trạng khai thác</span>
+      </div>
+      <div class="quick-card">
+        <strong>90 tỷ</strong>
+        <span>Giá tốt thương lượng</span>
+      </div>
+    </section>
+
+    <section class="section-title">
+      <h2>Hồ sơ tài sản chọn lọc</h2>
+      <p>
+        Căn mặt tiền An Dương Vương thuộc khu trung tâm Quận 5, sở hữu bề ngang lớn, diện tích đẹp,
+        pháp lý rõ ràng và hiện trạng 7 tầng. Phù hợp khách mua giữ tài sản, khai thác kinh doanh,
+        làm văn phòng đại diện, showroom, phòng khám, khách sạn mini hoặc tài sản thương hiệu gia đình.
+      </p>
+    </section>
+
+    <section class="accordion">
+      <button class="acc-head" onclick="openOnly('asset')">
+        <span>01. THÔNG SỐ TÀI SẢN</span><span>+</span>
+      </button>
+      <div class="acc-body" id="asset">
+        <ul>
+          <li><b>Loại tài sản:</b> Nhà mặt tiền khu trung tâm Quận 5.</li>
+          <li><b>Vị trí:</b> Mặt tiền An Dương Vương – trục thương mại lớn, lưu lượng di chuyển cao.</li>
+          <li><b>Diện tích:</b> 162m², form đất vuông vức, dễ bố trí công năng.</li>
+          <li><b>Ngang:</b> hơn 8m – lợi thế lớn cho nhận diện mặt tiền, bảng hiệu và khai thác kinh doanh.</li>
+          <li><b>Hiện trạng:</b> 7 tầng, phù hợp khai thác ngay hoặc nâng cấp theo mô hình cao cấp hơn.</li>
+          <li><b>Đường trước nhà:</b> trục lớn khoảng 40m, thuận tiện xe hơi, giao thương và tiếp khách.</li>
+          <li><b>Giá bán:</b> 90 tỷ thương lượng cho khách thiện chí.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="accordion">
+      <button class="acc-head" onclick="openOnly('legal')">
+        <span>02. PHÁP LÝ & LÝ DO BÁN</span><span>+</span>
+      </button>
+      <div class="acc-body" id="legal">
+        <ul>
+          <li><b>Pháp lý:</b> Sổ hồng đầy đủ, hoàn công rõ ràng.</li>
+          <li><b>Tình trạng sở hữu:</b> Nhà chính chủ, trước nay chưa qua mua bán.</li>
+          <li><b>Quy hoạch:</b> Diện tích đẹp, thông tin mô tả không lộ giới theo hồ sơ chủ cung cấp.</li>
+          <li><b>Lý do bán:</b> Chủ cần tiền nên bán nhanh với mức giá tốt để gặp khách thật.</li>
+          <li><b>Giao dịch:</b> Ưu tiên khách có năng lực tài chính rõ ràng, làm việc trực tiếp và bảo mật thông tin.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="accordion">
+      <button class="acc-head" onclick="openOnly('value')">
+        <span>03. GIÁ TRỊ CỐT LÕI</span><span>+</span>
+      </button>
+      <div class="acc-body" id="value">
+        <ul>
+          <li><b>Mặt tiền trung tâm:</b> Vị trí có tính thương mại cao, dễ nhận diện và dễ khai thác.</li>
+          <li><b>Ngang hơn 8m:</b> Biên độ hiếm trong khu trung tâm, tạo lợi thế lớn cho nhà đầu tư.</li>
+          <li><b>Hiện trạng 7 tầng:</b> Tiết kiệm thời gian xây dựng, có thể nâng cấp khai thác nhanh.</li>
+          <li><b>Đường lớn:</b> Tạo cảm giác tài sản bề thế, phù hợp nhóm khách cần hình ảnh thương hiệu.</li>
+          <li><b>Giá chào tốt:</b> 90 tỷ thương lượng, phù hợp khách đi tiền nhanh và làm việc quyết đoán.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="accordion">
+      <button class="acc-head" onclick="openOnly('future')">
+        <span>04. ĐỊNH HƯỚNG TƯƠNG LAI</span><span>+</span>
+      </button>
+      <div class="acc-body" id="future">
+        <ul>
+          <li>Khai thác mô hình văn phòng công ty, showroom, spa cao cấp, phòng khám hoặc khách sạn mini.</li>
+          <li>Nâng cấp mặt tiền theo phong cách hoàng gia – sang trọng – tăng nhận diện tài sản.</li>
+          <li>Phù hợp nhóm nhà đầu tư muốn nắm giữ tài sản trung tâm, vừa khai thác dòng tiền vừa tích sản lâu dài.</li>
+          <li>Giá trị lớn nằm ở vị trí, bề ngang, hiện trạng 7 tầng và pháp lý hoàn chỉnh.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section-title">
+      <h2>Hình ảnh tài sản</h2>
+      <p>Ảnh hiện tại và phối cảnh tương lai được trình bày để khách dễ hình dung tiềm năng nâng cấp giá trị.</p>
+    </section>
+
+    <section class="image-grid">
+      <div class="photo-card">
+        <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/C9BAF524-9478-4B19-9D21-2C6538369799.png" alt="Hình ảnh hiện tại mặt tiền An Dương Vương Q5">
+        <div class="photo-caption">Hình ảnh hiện tại • Mặt tiền trung tâm Q.5</div>
+      </div>
+
+      <div class="photo-card">
+        <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/CBC75928-0BEC-487E-BC8A-F2C9BB2FD92A.png" alt="Hình ảnh tương lai mặt tiền An Dương Vương Q5">
+        <div class="photo-caption">Siêu phẩm tương lai • Nâng cấp nhận diện tài sản</div>
+      </div>
+    </section>
+
+    <section class="nda-box" id="nda">
+      <h2>Nhận hồ sơ chi tiết theo NDA</h2>
+      <p>
+        Tài sản mặt tiền trung tâm có giá trị lớn, thông tin chi tiết chỉ cung cấp cho khách hàng nghiêm túc.
+        Vui lòng để lại thông tin để Sơn Bạch xác nhận nhu cầu, năng lực tài chính và gửi hồ sơ phù hợp.
+      </p>
+
+      <form action="https://formspree.io/f/mpqykgzk" method="POST">
+        <input type="hidden" name="san_pham" value="Mat tien An Duong Vuong Q5 - 162m2 - 7 tang - 90 ty" />
+
+        <div class="form-grid">
+          <input type="text" name="ho_ten" placeholder="Họ và tên" required>
+          <input type="tel" name="so_dien_thoai" placeholder="Số điện thoại" required>
+          <input type="email" name="email" placeholder="Email nhận hồ sơ" required>
+          <input type="text" name="nhu_cau" placeholder="Nhu cầu: mua giữ tài sản / khai thác / đầu tư">
+          <textarea name="ghi_chu" placeholder="Ghi chú thêm về nhu cầu, thời gian xem nhà hoặc mức tài chính dự kiến"></textarea>
+        </div>
+
+        <label class="check">
+          <input type="checkbox" required>
+          Tôi xác nhận thông tin cung cấp là nghiêm túc, đồng ý bảo mật hồ sơ tài sản và không sử dụng thông tin sai mục đích.
+        </label>
+
+        <button class="submit-btn" type="submit">GỬI YÊU CẦU NHẬN HỒ SƠ VIP</button>
+      </form>
+    </section>
+
+    <section class="brand-close">
+      <h2>Sơn Bạch VIP PRO</h2>
+      <p>
+        Tài sản mặt tiền trung tâm Quận 5 – ngang lớn, pháp lý đẹp, hiện trạng 7 tầng.
+        Một lựa chọn đáng chú ý cho khách mua tài sản thật, vị trí thật và giá trị khai thác thật.
+      </p>
+      <p><b>Liên hệ Mr. Sơn Bạch: 0858 999 934</b></p>
+    </section>
+
+  </main>
+
+  <div class="floating-cta">
+    <a href="tel:0858999934">GỌI 0858 999 934</a>
+    <a href="https://zalo.me/0858999934">ZALO NGAY</a>
+    <a href="https://www.facebook.com/share/1DAdyHdjze/">FACEBOOK</a>
   </div>
-</div>
 
-<!-- GIÁ TRỊ -->
-<div class="section">
-  <div class="toggle" onclick="toggle('gt')">GIÁ TRỊ CỐT LÕI</div>
-  <div id="gt" class="content">
-    <p>✔ Mặt tiền trung tâm Quận 5</p>
-    <p>✔ Đường lớn ~40m – kinh doanh mạnh</p>
-    <p>✔ Ngang lớn hiếm >8m</p>
-    <p>✔ Nhà chính chủ – chưa qua đầu tư</p>
-  </div>
-</div>
+  <script>
+    function openOnly(id){
+      const bodies = document.querySelectorAll('.acc-body');
+      bodies.forEach(function(body){
+        if(body.id === id){
+          body.style.display = body.style.display === 'block' ? 'none' : 'block';
+        }else{
+          body.style.display = 'none';
+        }
+      });
+    }
 
-<!-- TƯƠNG LAI -->
-<div class="section">
-  <div class="toggle" onclick="toggle('tl')">ĐỊNH HƯỚNG TƯƠNG LAI</div>
-  <div id="tl" class="content">
-    <p>✔ Khai thác khách sạn – văn phòng</p>
-    <p>✔ Giá trị tăng mạnh khu trung tâm</p>
-    <p>✔ Tài sản giữ tiền cho nhà đầu tư lớn</p>
-  </div>
-</div>
-
-<!-- HÌNH -->
-<div class="section img-box">
-  <div class="toggle" onclick="toggle('img')">HÌNH ẢNH</div>
-  <div id="img" class="content">
-    <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/C9BAF524-9478-4B19-9D21-2C6538369799.png">
-    <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/CBC75928-0BEC-487E-BC8A-F2C9BB2FD92A.png">
-  </div>
-</div>
-
-<!-- CTA -->
-<div class="cta">
-  <a href="tel:0858999934">GỌI NGAY</a>
-  <a href="https://zalo.me/0858999934">ZALO</a>
-  <a href="https://www.facebook.com/share/1DAdyHdjze/">FACEBOOK</a>
-</div>
+    function scrollToNDA(){
+      document.getElementById('nda').scrollIntoView({
+        behavior:'smooth',
+        block:'start'
+      });
+    }
+  </script>
 
 </body>
 </html>
