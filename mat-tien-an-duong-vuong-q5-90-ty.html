@@ -1,3 +1,4 @@
+<!-- DÁN THAY TOÀN BỘ CODE CŨ -->
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -7,325 +8,68 @@
 
 <style>
 *{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#050505;
-  color:#fff2c2;
-  padding-bottom:82px;
-}
-.ticker{
-  background:#050505;
-  color:#ffe7a0;
-  font-weight:900;
-  font-size:18px;
-  white-space:nowrap;
-  overflow:hidden;
-  border-bottom:1px solid #6b4a12;
-}
-.ticker span{
-  display:inline-block;
-  padding:16px 0;
-  animation:run 20s linear infinite;
-}
-@keyframes run{
-  from{transform:translateX(100%)}
-  to{transform:translateX(-100%)}
-}
-.hero{
-  padding:38px 20px 34px;
-  text-align:center;
-  background:radial-gradient(circle at top,#3b2807,#080808 58%,#000);
-  border-bottom:1px solid #6b4a12;
-}
-.logo-wrap{
-  width:125px;
-  height:125px;
-  margin:0 auto 46px;
-  border-radius:50%;
-  background:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 0 36px rgba(230,178,60,.75);
-  position:relative;
-}
-.logo-wrap:before{
-  content:"";
-  position:absolute;
-  inset:-20px;
-  border:1px solid rgba(230,178,60,.35);
-  border-radius:50%;
-}
-.logo-wrap:after{
-  content:"";
-  position:absolute;
-  inset:-38px;
-  border:1px solid rgba(230,178,60,.22);
-  border-radius:50%;
-}
-.logo-wrap img{
-  width:82px;
-  position:relative;
-  z-index:2;
-}
-h1{
-  margin:0;
-  font-size:42px;
-  line-height:1.15;
-  color:#fff0b9;
-  text-transform:uppercase;
-  text-shadow:0 0 18px rgba(255,214,100,.35);
-}
-.mini-info{
-  margin:24px auto 20px;
-  max-width:760px;
-  font-size:20px;
-  font-weight:900;
-  color:#ffe9a8;
-  line-height:1.5;
-}
-.shine-box{
-  position:relative;
-  overflow:hidden;
-  display:inline-block;
-}
-.shine-box:after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-75%;
-  width:55%;
-  height:100%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.95),transparent);
-  transform:skewX(-25deg);
-  animation:shine 3s infinite;
-}
-@keyframes shine{
-  0%{left:-75%}
-  55%{left:125%}
-  100%{left:125%}
-}
-.price-box{
-  padding:24px 58px;
-  border:1px solid #9b6d1a;
-  border-radius:34px;
-  color:#ffd15d;
-  font-size:56px;
-  font-weight:900;
-  box-shadow:0 0 36px rgba(255,196,55,.36);
-  background:#070707;
-}
-.trade{
-  margin:28px auto 22px;
-  padding:10px 20px;
-  color:#fff2c2;
-  font-size:34px;
-  font-weight:900;
-  letter-spacing:10px;
-}
-.gold-btn{
-  display:inline-block;
-  background:linear-gradient(135deg,#e2a916,#fff0a7,#d09112);
-  color:#111;
-  padding:17px 52px;
-  border-radius:999px;
-  font-weight:900;
-  font-size:19px;
-  border:none;
-  box-shadow:0 0 26px rgba(255,205,70,.35);
-}
-.wrap{
-  padding:28px 18px;
-  background:radial-gradient(circle at top,#392704,#050505 58%);
-}
-.acc{
-  border:1px solid #6b4a12;
-  border-radius:30px;
-  margin:18px auto;
-  max-width:860px;
-  background:#080808;
-  overflow:hidden;
-  box-shadow:0 0 22px rgba(255,190,50,.08);
-}
-.acc-head{
-  width:100%;
-  padding:28px 30px;
-  background:linear-gradient(90deg,#080808,#111,#080808);
-  color:#fff0b9;
-  border:0;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  font-size:25px;
-  font-weight:900;
-  text-align:left;
-  cursor:pointer;
-}
-.acc-head:hover{
-  background:linear-gradient(90deg,#130d02,#211704,#130d02);
-}
-.dot{
-  width:20px;
-  height:20px;
-  background:#ffd15d;
-  border-radius:50%;
-  box-shadow:0 0 25px #ffd15d;
-  display:inline-block;
-  margin-right:18px;
-}
-.plus{
-  width:54px;
-  height:54px;
-  border-radius:50%;
-  border:1px solid #8a631b;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:38px;
-  color:#ffd15d;
-  box-shadow:0 0 18px rgba(255,205,70,.18);
-}
-.acc.active .plus{
-  transform:rotate(45deg);
-  background:#d69a10;
-  color:#111;
-}
-.acc-body{
-  display:none;
-  padding:0 30px 30px;
-  color:#f7e8bd;
-  font-size:19px;
-  line-height:1.65;
-  animation:drop .25s ease;
-}
-@keyframes drop{
-  from{opacity:0;transform:translateY(-8px)}
-  to{opacity:1;transform:translateY(0)}
-}
-.acc-body ul{margin:0;padding-left:22px}
-.acc-body li{margin:10px 0}
-.photo-section{
-  max-width:860px;
-  margin:28px auto;
-  border:1px solid #6b4a12;
-  border-radius:28px;
-  padding:24px;
-  background:#070707;
-}
-.photo-section h2{
-  font-size:32px;
-  margin:0 0 20px;
-  color:#fff0b9;
-}
-.photo-tag{
-  display:inline-block;
-  background:linear-gradient(135deg,#d69a10,#fff0a2,#d69a10);
-  color:#111;
-  padding:17px 36px;
-  border-radius:999px;
-  font-weight:900;
-  font-size:20px;
-  margin-bottom:24px;
-}
-.photo-section img{
-  width:100%;
-  border-radius:22px;
-  border:1px solid #6b4a12;
-  display:block;
-}
-.quote,.contact{
-  max-width:860px;
-  margin:28px auto;
-  border:1px solid #6b4a12;
-  border-radius:28px;
-  background:#070707;
-  padding:46px 24px;
-  text-align:center;
-}
-.quote h2{
-  font-size:38px;
-  line-height:1.35;
-  margin:0 0 28px;
-}
-.quote p,.contact p{
-  font-size:25px;
-  line-height:1.55;
-  font-weight:800;
-}
-.contact h2{
-  font-size:31px;
-  margin:0 0 24px;
-}
-.phone-line{
-  position:relative;
-  display:inline-block;
-  overflow:hidden;
-  white-space:nowrap;
-  max-width:100%;
-  background:linear-gradient(90deg,#2b1b00,#c99425,#fff0a7,#c99425,#2b1b00);
-  color:#111;
-  font-size:28px;
-  font-weight:900;
-  padding:12px 18px;
-  border-radius:8px;
-  margin-bottom:24px;
-  box-shadow:0 0 26px rgba(255,205,70,.45);
-}
-.phone-line:after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-70%;
-  width:50%;
-  height:100%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.95),transparent);
-  transform:skewX(-25deg);
-  animation:shine 3s infinite;
-}
-.cta{
-  position:fixed;
-  left:0;
-  right:0;
-  bottom:0;
-  display:flex;
-  z-index:999;
-  height:72px;
-}
-.cta a{
-  flex:1;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px;
-  font-weight:900;
-  text-decoration:none;
-}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#050505;color:#fff2c2;padding-bottom:82px}
+.ticker{background:#050505;color:#ffe7a0;font-weight:900;font-size:18px;white-space:nowrap;overflow:hidden;border-bottom:1px solid #6b4a12}
+.ticker span{display:inline-block;padding:16px 0;animation:run 20s linear infinite}
+@keyframes run{from{transform:translateX(100%)}to{transform:translateX(-100%)}}
+
+.hero{padding:38px 20px 40px;text-align:center;background:radial-gradient(circle at top,#4a3208,#080808 58%,#000);border-bottom:1px solid #6b4a12}
+.logo-wrap{width:112px;height:112px;margin:0 auto 42px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 42px rgba(230,178,60,.75);position:relative}
+.logo-wrap:before{content:"";position:absolute;inset:-22px;border:1px solid rgba(230,178,60,.38);border-radius:50%}
+.logo-wrap:after{content:"";position:absolute;inset:-42px;border:1px solid rgba(230,178,60,.22);border-radius:50%}
+.logo-wrap img{width:72px;position:relative;z-index:2}
+h1{margin:0;font-size:36px;line-height:1.15;color:#fff0b9;text-transform:uppercase;text-shadow:0 0 22px rgba(255,214,100,.42)}
+.shine-box{position:relative;overflow:hidden}
+.shine-box:after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.9),transparent);transform:skewX(-25deg);animation:shine 3s infinite}
+@keyframes shine{0%{left:-80%}55%{left:130%}100%{left:130%}}
+.price-box{display:inline-block;margin-top:34px;padding:22px 50px;border:1px solid #9b6d1a;border-radius:34px;color:#ffd15d;font-size:48px;font-weight:900;box-shadow:0 0 35px rgba(255,196,55,.38);background:#070707}
+.trade{display:inline-block;margin:28px 0 24px;padding:8px 18px;color:#fff0b9;font-size:29px;font-weight:900;letter-spacing:9px}
+.gold-btn{display:inline-block;background:linear-gradient(135deg,#e2a916,#fff0a7,#d09112);color:#111;padding:17px 48px;border-radius:999px;font-weight:900;font-size:19px;border:none;box-shadow:0 0 30px rgba(255,205,70,.35);text-decoration:none}
+
+.wrap{padding:28px 18px;background:radial-gradient(circle at top,#392704,#050505 58%)}
+.acc{border:1px solid #6b4a12;border-radius:30px;margin:20px auto;max-width:860px;background:linear-gradient(135deg,#090909,#111,#070707);overflow:hidden;box-shadow:0 0 18px rgba(255,205,70,.08)}
+.acc-head{width:100%;padding:27px 22px;background:transparent;color:#fff0b9;border:0;display:flex;align-items:center;justify-content:space-between;font-size:22px;font-weight:900;text-align:left;cursor:pointer}
+.acc-head span:first-child{display:flex;align-items:center}
+.dot{width:21px;height:21px;background:#ffd15d;border-radius:50%;box-shadow:0 0 30px #ffd15d;display:inline-block;margin-right:18px;animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);box-shadow:0 0 18px #ffd15d}50%{transform:scale(1.18);box-shadow:0 0 36px #ffd15d}}
+.plus{min-width:54px;height:54px;border-radius:50%;border:1px solid #8a631b;display:flex;align-items:center;justify-content:center;font-size:38px;color:#ffd15d;box-shadow:0 0 16px rgba(255,205,70,.22)}
+.acc.active{box-shadow:0 0 30px rgba(255,205,70,.28);border-color:#d39a28}
+.acc.active .plus{background:linear-gradient(135deg,#d69a10,#fff0a2,#d69a10);color:#111}
+.acc-body{display:none;padding:0 30px 30px;color:#f7e8bd;font-size:19px;line-height:1.65}
+.acc-body ul{margin:0;padding-left:22px}.acc-body li{margin:10px 0}
+
+.photo-section,.nda-box,.quote,.contact{max-width:860px;margin:28px auto;border:1px solid #6b4a12;border-radius:28px;background:#070707;padding:24px}
+.photo-section h2,.nda-box h2,.contact h2{font-size:30px;margin:0 0 20px;color:#fff0b9;text-align:center}
+.photo-tag{display:inline-block;background:linear-gradient(135deg,#d69a10,#fff0a2,#d69a10);color:#111;padding:17px 36px;border-radius:999px;font-weight:900;font-size:20px;margin-bottom:24px}
+.photo-section img{width:100%;border-radius:22px;border:1px solid #6b4a12;display:block}
+
+.nda-box{padding:32px 22px;box-shadow:0 0 35px rgba(255,205,70,.16)}
+.nda-box p{font-size:18px;line-height:1.6;text-align:center;color:#f7e8bd}
+.form-row{display:grid;grid-template-columns:1fr;gap:12px;margin-top:18px}
+input,textarea{width:100%;padding:15px;border-radius:14px;border:1px solid #7d5817;background:#050505;color:#fff2c2;font-size:16px;outline:none}
+textarea{min-height:95px}
+.check{display:block;margin:16px 0;font-size:15px;line-height:1.5;color:#f7e8bd}
+.check input{width:auto;margin-right:8px}
+.submit-btn{width:100%;border:0;border-radius:999px;padding:17px;background:linear-gradient(135deg,#e2a916,#fff0a7,#d09112);color:#111;font-size:18px;font-weight:900;box-shadow:0 0 28px rgba(255,205,70,.35)}
+
+.quote{text-align:center;padding:46px 24px}
+.quote h2{font-size:38px;line-height:1.35;margin:0 0 28px}
+.quote p,.contact p{font-size:24px;line-height:1.55;font-weight:800;text-align:center}
+.phone-line{position:relative;display:block;overflow:hidden;white-space:nowrap;max-width:100%;background:linear-gradient(90deg,#2b1b00,#c99425,#fff0a7,#c99425,#2b1b00);color:#111;font-size:20px;font-weight:900;padding:13px 10px;border-radius:8px;margin:0 auto 24px;text-align:center;box-shadow:0 0 28px rgba(255,205,70,.45)}
+.phone-line:after{content:"";position:absolute;top:0;left:-70%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.9),transparent);transform:skewX(-25deg);animation:shine 3s infinite}
+
+.cta{position:fixed;left:0;right:0;bottom:0;display:flex;z-index:999;height:72px}
+.cta a{flex:1;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:900;text-decoration:none}
 .cta a:nth-child(1){background:linear-gradient(90deg,#d99b14,#fff0a0);color:#111}
 .cta a:nth-child(2){background:linear-gradient(90deg,#007bff,#08d9ff);color:#fff}
 .cta a:nth-child(3){background:#0758e8;color:#fff}
-
-@media(max-width:600px){
-  .logo-wrap{width:112px;height:112px;margin-bottom:42px}
-  .logo-wrap img{width:72px}
-  h1{font-size:34px}
-  .mini-info{font-size:19px}
-  .price-box{font-size:48px;padding:22px 48px}
-  .trade{font-size:30px;letter-spacing:9px}
-  .acc-head{font-size:22px;padding:26px 22px}
-  .photo-section h2{font-size:30px}
-  .phone-line{font-size:22px;padding:11px 12px}
-  .cta a{font-size:19px}
-}
 </style>
 </head>
 
 <body>
 
 <div class="ticker">
-  <span>
-    MẶT TIỀN AN DƯƠNG VƯƠNG Q.5 • NGANG HƠN 8M • 162M² • 7 TẦNG • SỔ HỒNG HOÀN CÔNG • GIÁ 90 TỶ THƯƠNG LƯỢNG •
-  </span>
+  <span>MẶT TIỀN AN DƯƠNG VƯƠNG Q.5 • NGANG HƠN 8M • 162M² • HIỆN TRẠNG 7 TẦNG • GIÁ 90 TỶ THƯƠNG LƯỢNG •</span>
 </div>
 
 <section class="hero">
@@ -335,28 +79,16 @@ h1{
 
   <h1>SIÊU PHẨM MẶT TIỀN<br>AN DƯƠNG VƯƠNG</h1>
 
-  <div class="mini-info">
-    Q.5 trung tâm • Ngang hơn 8m • 162m² • 7 tầng • Sổ hồng hoàn công
-  </div>
+  <div class="price-box shine-box">90 TỶ</div><br>
+  <div class="trade shine-box">THƯƠNG LƯỢNG</div><br>
 
-  <div class="shine-box">
-    <div class="price-box">90 TỶ</div>
-  </div>
-
-  <div class="shine-box">
-    <div class="trade">THƯƠNG LƯỢNG</div>
-  </div>
-
-  <br>
-  <button class="gold-btn" onclick="document.getElementById('nda').scrollIntoView({behavior:'smooth'})">NHẬN NDA</button>
+  <a class="gold-btn" href="#nda">NHẬN NDA</a>
 </section>
 
 <div class="wrap">
 
   <div class="acc">
-    <button class="acc-head" onclick="openBox(this,'price')">
-      <span><i class="dot"></i>PHÂN KHÚC GIÁ</span><span class="plus">+</span>
-    </button>
+    <button class="acc-head" onclick="openBox(this,'price')"><span><i class="dot"></i>PHÂN KHÚC GIÁ</span><span class="plus">+</span></button>
     <div class="acc-body" id="price">
       <ul>
         <li>Giá chào: <b>90 tỷ thương lượng</b>.</li>
@@ -367,9 +99,7 @@ h1{
   </div>
 
   <div class="acc">
-    <button class="acc-head" onclick="openBox(this,'spec')">
-      <span><i class="dot"></i>THÔNG SỐ TÀI SẢN</span><span class="plus">+</span>
-    </button>
+    <button class="acc-head" onclick="openBox(this,'spec')"><span><i class="dot"></i>THÔNG SỐ TÀI SẢN</span><span class="plus">+</span></button>
     <div class="acc-body" id="spec">
       <ul>
         <li>Vị trí: <b>Mặt tiền An Dương Vương – trung tâm Quận 5</b>.</li>
@@ -382,36 +112,7 @@ h1{
   </div>
 
   <div class="acc">
-    <button class="acc-head" onclick="openBox(this,'use')">
-      <span><i class="dot"></i>HIỆN TRẠNG KHAI THÁC</span><span class="plus">+</span>
-    </button>
-    <div class="acc-body" id="use">
-      <ul>
-        <li>Nhà hiện trạng 7 tầng, phù hợp khai thác ngay.</li>
-        <li>Phù hợp showroom, văn phòng, spa, phòng khám, khách sạn mini hoặc trụ sở thương hiệu.</li>
-        <li>Bề ngang lớn tạo lợi thế nhận diện mặt tiền rất tốt.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="acc">
-    <button class="acc-head" onclick="openBox(this,'value')">
-      <span><i class="dot"></i>GIÁ TRỊ CỐT LÕI</span><span class="plus">+</span>
-    </button>
-    <div class="acc-body" id="value">
-      <ul>
-        <li>Mặt tiền trung tâm Q.5, khu vực có tính thương mại cao.</li>
-        <li>Ngang hơn 8m là lợi thế hiếm trong phân khúc nhà mặt tiền trung tâm.</li>
-        <li>Diện tích 162m², dễ bố trí công năng.</li>
-        <li>Hiện trạng 7 tầng giúp tiết kiệm thời gian đầu tư ban đầu.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="acc">
-    <button class="acc-head" onclick="openBox(this,'legal')">
-      <span><i class="dot"></i>PHÁP LÝ</span><span class="plus">+</span>
-    </button>
+    <button class="acc-head" onclick="openBox(this,'legal')"><span><i class="dot"></i>PHÁP LÝ</span><span class="plus">+</span></button>
     <div class="acc-body" id="legal">
       <ul>
         <li>Sổ hồng đầy đủ.</li>
@@ -422,29 +123,38 @@ h1{
     </div>
   </div>
 
-  <div class="acc">
-    <button class="acc-head" onclick="openBox(this,'policy')">
-      <span><i class="dot"></i>CHÍNH SÁCH TIẾP KHÁCH</span><span class="plus">+</span>
-    </button>
-    <div class="acc-body" id="policy">
-      <ul>
-        <li>Chỉ tiếp khách thật, có nhu cầu rõ ràng.</li>
-        <li>Ưu tiên khách có năng lực tài chính và làm việc trực tiếp.</li>
-        <li>Thông tin sâu, lịch xem nhà và hồ sơ chi tiết trao đổi theo NDA.</li>
-      </ul>
-    </div>
-  </div>
-
   <section class="photo-section">
     <h2>HÌNH ẢNH HIỆN TẠI</h2>
     <div class="photo-tag">NHÀ HIỆN TẠI</div>
-    <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/C9BAF524-9478-4B19-9D21-2C6538369799.png" alt="Nhà hiện tại An Dương Vương Q5">
+    <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/C9BAF524-9478-4B19-9D21-2C6538369799.png">
   </section>
 
   <section class="photo-section">
     <h2>HÌNH ẢNH TƯƠNG LAI</h2>
     <div class="photo-tag">NHÀ TƯƠNG LAI</div>
-    <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/CBC75928-0BEC-487E-BC8A-F2C9BB2FD92A.png" alt="Nhà tương lai An Dương Vương Q5">
+    <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/CBC75928-0BEC-487E-BC8A-F2C9BB2FD92A.png">
+  </section>
+
+  <section class="nda-box" id="nda">
+    <h2>NHẬN HỒ SƠ NDA</h2>
+    <p>Khách hàng để lại thông tin thật để nhận hồ sơ chi tiết, lịch xem nhà và làm việc trực tiếp với Sơn Bạch.</p>
+
+    <form action="https://formspree.io/f/mpqykgzk" method="POST">
+      <input type="hidden" name="san_pham" value="Mặt tiền An Dương Vương Q5 - 162m2 - 7 tầng - 90 tỷ">
+      <div class="form-row">
+        <input type="text" name="ho_ten" placeholder="Họ và tên" required>
+        <input type="tel" name="so_dien_thoai" placeholder="Số điện thoại" required>
+        <input type="email" name="email" placeholder="Email nhận hồ sơ" required>
+        <textarea name="ghi_chu" placeholder="Nhu cầu của anh/chị: mua giữ tài sản, khai thác, đầu tư, xem nhà..."></textarea>
+      </div>
+
+      <label class="check">
+        <input type="checkbox" required>
+        Tôi xác nhận thông tin là thật, đồng ý bảo mật hồ sơ tài sản và chỉ sử dụng thông tin cho mục đích làm việc nghiêm túc.
+      </label>
+
+      <button class="submit-btn" type="submit">GỬI NDA VỀ SƠN BẠCH</button>
+    </form>
   </section>
 
   <section class="quote">
@@ -452,7 +162,7 @@ h1{
     <p>Sơn Bạch chọn lọc những tài sản đủ giá trị để xứng đáng với những người mua đủ tầm.</p>
   </section>
 
-  <section class="contact" id="nda">
+  <section class="contact">
     <h2>LIÊN HỆ TRỰC TIẾP</h2>
     <div class="phone-line">Mr. Sơn Bạch: 0858 999 934</div>
     <p>Tài sản mặt tiền • NDA • Chỉ tiếp khách thực • Làm việc kín</p>
@@ -469,22 +179,13 @@ h1{
 
 <script>
 function openBox(btn,id){
-  document.querySelectorAll('.acc').forEach(function(box){
-    box.classList.remove('active');
-  });
-
-  document.querySelectorAll('.acc-body').forEach(function(el){
-    if(el.id === id){
-      if(el.style.display === 'block'){
-        el.style.display = 'none';
-        btn.closest('.acc').classList.remove('active');
-      }else{
-        el.style.display = 'block';
-        btn.closest('.acc').classList.add('active');
-      }
-    }else{
-      el.style.display = 'none';
-    }
+  document.querySelectorAll('.acc').forEach(box=>box.classList.remove('active'));
+  document.querySelectorAll('.acc-body').forEach(el=>{
+    if(el.id===id){
+      const open=el.style.display==='block';
+      el.style.display=open?'none':'block';
+      if(!open)btn.closest('.acc').classList.add('active');
+    }else el.style.display='none';
   });
 }
 </script>
