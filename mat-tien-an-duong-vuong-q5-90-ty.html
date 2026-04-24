@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sơn Bạch VIP PRO | Mặt tiền An Dương Vương Q5</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#050505;
+  color:#fff;
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  text-align:center;
+}
+.hero img{
+  width:100%;
+  filter:brightness(0.6);
+}
+
+.hero-content{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+
+.logo{
+  width:120px;
+  opacity:0.9;
+  margin-bottom:10px;
+}
+
+.price{
+  font-size:48px;
+  color:gold;
+  font-weight:bold;
+  text-shadow:0 0 20px gold;
+}
+
+.title{
+  font-size:26px;
+  margin-top:10px;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 25px;
+  background:gold;
+  color:#000;
+  font-weight:bold;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* SECTION */
+.section{
+  padding:20px;
+  border-bottom:1px solid #333;
+}
+
+.toggle{
+  font-size:18px;
+  color:gold;
+  cursor:pointer;
+}
+
+.content{
+  display:none;
+  margin-top:10px;
+}
+
+/* IMAGE */
+.img-box img{
+  width:100%;
+  border-radius:10px;
+  margin-top:10px;
+}
+
+/* CTA */
+.cta{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  display:flex;
+}
+
+.cta a{
+  flex:1;
+  text-align:center;
+  padding:15px;
+  background:gold;
+  color:#000;
+  font-weight:bold;
+  text-decoration:none;
+}
+</style>
+
+<script>
+function toggle(id){
+  var x=document.getElementById(id);
+  x.style.display = (x.style.display === "block") ? "none" : "block";
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/CBC75928-0BEC-487E-BC8A-F2C9BB2FD92A.png">
+  
+  <div class="hero-content">
+    <div class="price">90 TỶ</div>
+    <div class="title">MẶT TIỀN AN DƯƠNG VƯƠNG – Q.5</div>
+    <div class="btn" onclick="toggle('nda')">XEM THÔNG TIN (NDA)</div>
+  </div>
+</div>
+
+<!-- NDA -->
+<div id="nda" class="section content">
+  <h3>Thông tin bảo mật</h3>
+  <p>Đây là tài sản chọn lọc, chỉ cung cấp thông tin chi tiết cho khách hàng nghiêm túc.</p>
+
+  <form action="https://formspree.io/f/mpqykgzk" method="POST">
+    <input type="text" name="name" placeholder="Họ tên" required style="width:100%;padding:10px;margin:5px 0;">
+    <input type="tel" name="phone" placeholder="Số điện thoại" required style="width:100%;padding:10px;margin:5px 0;">
+    <input type="email" name="email" placeholder="Email" required style="width:100%;padding:10px;margin:5px 0;">
+    
+    <label>
+      <input type="checkbox" required> Tôi đồng ý NDA
+    </label>
+
+    <button type="submit" class="btn">GỬI THÔNG TIN</button>
+  </form>
+</div>
+
+<!-- THÔNG SỐ -->
+<div class="section">
+  <div class="toggle" onclick="toggle('ts')">THÔNG SỐ TÀI SẢN</div>
+  <div id="ts" class="content">
+    <p>Diện tích: 162m²</p>
+    <p>Ngang: hơn 8m</p>
+    <p>Kết cấu: 7 tầng</p>
+    <p>Pháp lý: Sổ hồng – hoàn công đầy đủ</p>
+  </div>
+</div>
+
+<!-- GIÁ TRỊ -->
+<div class="section">
+  <div class="toggle" onclick="toggle('gt')">GIÁ TRỊ CỐT LÕI</div>
+  <div id="gt" class="content">
+    <p>✔ Mặt tiền trung tâm Quận 5</p>
+    <p>✔ Đường lớn ~40m – kinh doanh mạnh</p>
+    <p>✔ Ngang lớn hiếm >8m</p>
+    <p>✔ Nhà chính chủ – chưa qua đầu tư</p>
+  </div>
+</div>
+
+<!-- TƯƠNG LAI -->
+<div class="section">
+  <div class="toggle" onclick="toggle('tl')">ĐỊNH HƯỚNG TƯƠNG LAI</div>
+  <div id="tl" class="content">
+    <p>✔ Khai thác khách sạn – văn phòng</p>
+    <p>✔ Giá trị tăng mạnh khu trung tâm</p>
+    <p>✔ Tài sản giữ tiền cho nhà đầu tư lớn</p>
+  </div>
+</div>
+
+<!-- HÌNH -->
+<div class="section img-box">
+  <div class="toggle" onclick="toggle('img')">HÌNH ẢNH</div>
+  <div id="img" class="content">
+    <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/C9BAF524-9478-4B19-9D21-2C6538369799.png">
+    <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/CBC75928-0BEC-487E-BC8A-F2C9BB2FD92A.png">
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+  <a href="tel:0858999934">GỌI NGAY</a>
+  <a href="https://zalo.me/0858999934">ZALO</a>
+  <a href="https://www.facebook.com/share/1DAdyHdjze/">FACEBOOK</a>
+</div>
+
+</body>
+</html>
