@@ -11,23 +11,23 @@ body{
   font-family:Arial,Helvetica,sans-serif;
   background:#050300;
   color:#fff4c8;
-  padding-bottom:86px;
+  padding-bottom:78px;
 }
 a{text-decoration:none;color:inherit}
 .wrap{
   max-width:980px;
   margin:auto;
-  background:radial-gradient(circle at top,#4b3309 0,#0b0700 38%,#000 100%);
+  background:radial-gradient(circle at top,#3a2808 0,#080500 40%,#000 100%);
   min-height:100vh;
 }
 .ticker{
   background:#050505;
   color:#ffe8a8;
   font-weight:900;
-  font-size:18px;
+  font-size:17px;
   white-space:nowrap;
   overflow:hidden;
-  padding:12px 0;
+  padding:10px 0;
   border-bottom:1px solid #8a6420;
 }
 .ticker span{
@@ -39,59 +39,67 @@ a{text-decoration:none;color:inherit}
 
 .hero{
   text-align:center;
-  padding:34px 22px 50px;
+  padding:28px 20px 44px;
   border-bottom:1px solid #8a6420;
-  position:relative;
 }
 .logo-ring{
-  width:170px;height:170px;
-  margin:0 auto 28px;
+  width:118px;
+  height:118px;
+  margin:0 auto 24px;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:#fff;
-  box-shadow:0 0 55px rgba(255,211,92,.7);
+  background:rgba(255,255,255,.96);
+  box-shadow:0 0 30px rgba(255,211,92,.45);
   position:relative;
 }
-.logo-ring:before,.logo-ring:after{
+.logo-ring:before{
   content:"";
   position:absolute;
-  border:2px solid rgba(255,211,92,.35);
+  inset:-22px;
+  border:1.5px solid rgba(255,211,92,.28);
   border-radius:50%;
 }
-.logo-ring:before{inset:-38px}
-.logo-ring:after{inset:-78px}
-.logo-ring img{width:95px}
+.logo-ring:after{
+  content:"";
+  position:absolute;
+  inset:-44px;
+  border:1px solid rgba(255,211,92,.18);
+  border-radius:50%;
+}
+.logo-ring img{width:72px}
 
 h1{
-  font-size:46px;
+  font-size:42px;
   line-height:1.18;
   text-transform:uppercase;
   color:#fff1ba;
-  text-shadow:0 0 26px rgba(255,218,115,.65);
-  margin-bottom:34px;
+  text-shadow:0 0 22px rgba(255,218,115,.58);
+  margin-bottom:32px;
 }
 .price{
   display:inline-block;
-  min-width:360px;
-  padding:26px 35px;
-  border-radius:34px;
-  border:2px solid #a77a24;
+  min-width:340px;
+  padding:24px 34px;
+  border-radius:32px;
+  border:2px solid #b7892d;
   background:#050505;
   color:#ffd568;
-  font-size:58px;
+  font-size:56px;
   font-weight:1000;
-  box-shadow:0 0 42px rgba(255,205,75,.48);
+  box-shadow:0 0 44px rgba(255,205,75,.55);
   position:relative;
   overflow:hidden;
 }
-.shine:after{
+.price:after{
   content:"";
   position:absolute;
-  top:0;left:-90%;
-  width:65%;height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,.85),transparent);
+  top:0;
+  left:-90%;
+  width:60%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.88),transparent);
   transform:skewX(-22deg);
   animation:sweep 3s infinite;
 }
@@ -101,52 +109,50 @@ h1{
   100%{left:130%}
 }
 .deal{
-  margin:28px 0;
-  font-size:38px;
-  letter-spacing:14px;
+  margin:26px 0 28px;
+  font-size:36px;
+  letter-spacing:13px;
   font-weight:1000;
   color:#fff1ba;
 }
 .nda-main{
   display:inline-block;
-  margin-top:6px;
   padding:18px 72px;
   border-radius:999px;
-  background:linear-gradient(90deg,#d6a534,#fff0a8,#d1a031);
+  background:linear-gradient(90deg,#d6a534,#fff2ac,#d1a031);
   color:#111;
   font-size:25px;
   font-weight:1000;
-  box-shadow:0 0 34px rgba(255,217,102,.5);
-  position:relative;
-  overflow:hidden;
+  box-shadow:0 0 34px rgba(255,217,102,.55);
 }
 
 .panel{
   margin:34px 28px;
-  padding:28px;
-  border:1.5px solid rgba(179,128,38,.7);
+  padding:26px;
+  border:1.5px solid rgba(179,128,38,.72);
   border-radius:34px;
   background:#050505;
-  box-shadow:0 0 28px rgba(255,200,80,.09);
+  box-shadow:0 0 28px rgba(255,200,80,.1);
 }
 .acc{
-  margin:26px 0;
+  margin:24px 0;
   border-radius:34px;
-  border:1.5px solid rgba(179,128,38,.7);
+  border:1.5px solid rgba(179,128,38,.75);
   background:linear-gradient(145deg,#111,#050505);
   overflow:hidden;
+  box-shadow:0 0 18px rgba(255,210,90,.08);
 }
 .acc-btn{
   width:100%;
-  min-height:120px;
+  min-height:112px;
   border:0;
   background:transparent;
   color:#fff1ba;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:26px 32px;
-  font-size:30px;
+  padding:24px 28px;
+  font-size:29px;
   font-weight:1000;
   text-align:left;
 }
@@ -158,16 +164,16 @@ h1{
 }
 .acc-title{flex:1;padding:0 24px}
 .plus{
-  width:76px;height:76px;border-radius:50%;
-  border:2px solid #8f6824;
+  width:72px;height:72px;border-radius:50%;
+  border:2px solid #9c7227;
   display:flex;align-items:center;justify-content:center;
-  font-size:50px;
+  font-size:48px;
   color:#ffd568;
   flex:0 0 auto;
 }
 .acc-content{
   display:none;
-  padding:0 34px 32px 84px;
+  padding:0 32px 32px 82px;
   color:#fff5cf;
   font-size:22px;
   line-height:1.6;
@@ -184,7 +190,7 @@ h1{
 }
 .badge{
   display:inline-block;
-  padding:18px 70px;
+  padding:18px 62px;
   border-radius:999px;
   background:linear-gradient(90deg,#d6a534,#fff0a8,#d1a031);
   color:#111;
@@ -199,9 +205,7 @@ h1{
 }
 .photo img{width:100%;display:block}
 
-.nda-box{
-  text-align:center;
-}
+.nda-box{text-align:center}
 .nda-box h2,.quote h2,.contact h2{
   font-size:40px;
   color:#fff1ba;
@@ -211,7 +215,7 @@ h1{
 .nda-box p{
   font-size:24px;
   line-height:1.7;
-  margin-bottom:26px;
+  margin-bottom:24px;
 }
 input,textarea{
   width:100%;
@@ -244,6 +248,7 @@ textarea{min-height:130px}
   font-size:25px;
   font-weight:1000;
 }
+
 .quote{
   text-align:center;
   font-weight:900;
@@ -252,33 +257,36 @@ textarea{min-height:130px}
 }
 .quote small{
   display:block;
-  margin-top:30px;
+  margin-top:28px;
   font-size:28px;
 }
+
 .contact{
   text-align:center;
+  padding-bottom:34px;
 }
 .contact-line{
   display:inline-block;
   white-space:nowrap;
-  background:linear-gradient(90deg,#5f410c,#fff0a8,#5f410c);
-  color:#111;
-  padding:18px 42px;
-  border-radius:16px;
-  font-size:24px;
+  background:linear-gradient(90deg,#5e3b00,#ffd568,#fff2b2,#ffd568,#5e3b00);
+  color:#080808;
+  padding:20px 38px;
+  border-radius:18px;
+  font-size:26px;
   font-weight:1000;
   margin:12px 0 30px;
-  box-shadow:0 0 30px rgba(255,211,90,.35);
+  box-shadow:0 0 42px rgba(255,211,90,.65);
+  border:1px solid rgba(255,240,170,.8);
 }
 .contact p{
-  font-size:31px;
+  font-size:30px;
   font-weight:1000;
   line-height:1.45;
 }
 .call-btn{
   display:inline-block;
   margin-top:34px;
-  padding:20px 86px;
+  padding:20px 88px;
   border-radius:999px;
   background:linear-gradient(90deg,#d6a534,#fff0a8,#d1a031);
   color:#111;
@@ -290,41 +298,55 @@ textarea{min-height:130px}
   position:fixed;
   left:0;right:0;bottom:0;
   z-index:999;
-  display:flex;
-  height:76px;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  height:72px;
   font-weight:1000;
-  font-size:22px;
+  font-size:20px;
 }
 .sticky a{
-  flex:1;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:8px;
+  gap:7px;
+  white-space:nowrap;
 }
 .sticky a:nth-child(1){
-  background:linear-gradient(90deg,#c8962e,#fff0a8);
+  background:linear-gradient(90deg,#c9962e,#fff0a8);
   color:#111;
 }
 .sticky a:nth-child(2){
-  background:linear-gradient(90deg,#248fff,#6ee8ff);
+  background:linear-gradient(90deg,#1598ff,#69e7ff);
   color:#fff;
 }
 .sticky a:nth-child(3){
-  background:#2856df;
+  background:#2457df;
   color:#fff;
 }
 
 @media(max-width:680px){
-  h1{font-size:34px}
+  .ticker{font-size:15px}
+  .hero{padding-top:26px}
+  .logo-ring{width:108px;height:108px}
+  .logo-ring img{width:66px}
+  h1{font-size:33px}
   .price{font-size:42px;min-width:280px}
   .deal{font-size:30px;letter-spacing:10px}
-  .acc-btn{font-size:24px;min-height:100px;padding:22px}
-  .plus{width:60px;height:60px;font-size:40px}
+  .nda-main{font-size:22px;padding:17px 58px}
   .panel{margin:28px 18px;padding:20px}
+  .acc-btn{font-size:24px;min-height:100px;padding:22px}
+  .acc-title{padding:0 18px}
+  .plus{width:60px;height:60px;font-size:40px}
+  .acc-content{font-size:19px;padding:0 24px 28px 70px}
   .img-title{font-size:31px}
   .nda-box h2,.quote h2,.contact h2{font-size:32px}
-  .contact-line{font-size:20px;padding:15px 22px}
+  .contact-line{
+    font-size:20px;
+    padding:16px 20px;
+    max-width:100%;
+  }
+  .contact p{font-size:25px}
+  .sticky{height:66px;font-size:17px}
 }
 </style>
 </head>
@@ -343,11 +365,11 @@ textarea{min-height:130px}
 
     <h1>SIÊU PHẨM Q1<br>TÀI SẢN LÕI TRUNG TÂM SÀI GÒN</h1>
 
-    <div class="price shine">500 TỶ</div>
+    <div class="price">500 TỶ</div>
 
     <div class="deal">THƯƠNG<br>LƯỢNG</div>
 
-    <a href="#nda" class="nda-main shine">NHẬN NDA</a>
+    <a href="#nda" class="nda-main">NHẬN NDA</a>
   </section>
 
   <section class="panel">
@@ -399,7 +421,7 @@ textarea{min-height:130px}
       <div class="acc-content">
         <ul>
           <li>Quỹ đất mặt tiền lớn tại Q1 ngày càng khan hiếm.</li>
-          <li>Phù hợp phát triển cao ốc văn phòng, trụ sở tập đoàn, khách sạn cao cấp.</li>
+          <li>Phù hợp phát triển cao ốc văn phòng, trụ sở tập đoàn, nhà hàng, khách sạn cao cấp.</li>
           <li>Tài sản có giá trị nắm giữ dài hạn, thích hợp khách mua tầm nhìn lớn.</li>
         </ul>
       </div>
@@ -464,7 +486,7 @@ textarea{min-height:130px}
         <span>Tôi xác nhận thông tin là thật, đồng ý bảo mật hồ sơ tài sản và chỉ sử dụng thông tin cho mục đích làm việc nghiêm túc.</span>
       </label>
 
-      <button class="submit shine" type="submit">GỬI NDA VỀ SƠN BẠCH</button>
+      <button class="submit" type="submit">GỬI NDA VỀ SƠN BẠCH</button>
     </form>
   </section>
 
@@ -475,7 +497,7 @@ textarea{min-height:130px}
 
   <section class="panel contact">
     <h2>LIÊN HỆ TRỰC TIẾP</h2>
-    <div class="contact-line shine">Mr. Sơn Bạch: 0858 999 934</div>
+    <div class="contact-line">Mr. Sơn Bạch: 0858 999 934</div>
     <p>Tài sản mặt tiền • NDA • Chỉ tiếp khách thực • Làm việc kín</p>
     <a class="call-btn" href="tel:0858999934">GỌI NGAY</a>
   </section>
@@ -492,10 +514,13 @@ textarea{min-height:130px}
 function toggleAcc(btn){
   const box = btn.nextElementSibling;
   const plus = btn.querySelector('.plus');
+
   document.querySelectorAll('.acc-content').forEach(item=>{
     if(item !== box) item.style.display = 'none';
   });
+
   document.querySelectorAll('.plus').forEach(p=>p.textContent = '+');
+
   if(box.style.display === 'block'){
     box.style.display = 'none';
     plus.textContent = '+';
