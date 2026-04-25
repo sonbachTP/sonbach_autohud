@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siêu Phẩm Q1 500 Tỷ | Sơn Bạch VIP PRO</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#050505;
+  color:#fff;
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+.page{
+  max-width:1180px;
+  margin:auto;
+  min-height:100vh;
+  padding-bottom:90px;
+  background:
+    radial-gradient(circle at top,#4b3100 0,#090909 36%,#000 100%);
+}
+.hero{
+  position:relative;
+  text-align:center;
+  padding:28px 16px 24px;
+  overflow:hidden;
+  border-bottom:1px solid rgba(255,215,120,.25);
+}
+.logo{
+  width:92px;
+  height:92px;
+  margin:0 auto 12px;
+  border-radius:50%;
+  padding:8px;
+  background:rgba(255,215,120,.08);
+  box-shadow:0 0 28px rgba(255,210,90,.45);
+  animation:pulse 2.8s infinite;
+}
+.logo img{width:100%;height:100%;object-fit:contain}
+@keyframes pulse{
+  0%,100%{transform:scale(1);box-shadow:0 0 22px rgba(255,210,90,.35)}
+  50%{transform:scale(1.04);box-shadow:0 0 42px rgba(255,210,90,.75)}
+}
+.brand{
+  color:#ffd978;
+  font-weight:900;
+  letter-spacing:2px;
+  font-size:14px;
+}
+h1{
+  margin:12px auto;
+  max-width:980px;
+  font-size:33px;
+  line-height:1.18;
+  color:#ffe8a8;
+  text-transform:uppercase;
+  text-shadow:0 0 20px rgba(255,196,55,.8);
+}
+.shine{
+  position:relative;
+  overflow:hidden;
+}
+.shine:after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-90%;
+  width:60%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.85),transparent);
+  transform:skewX(-25deg);
+  animation:sweep 3.2s infinite;
+}
+@keyframes sweep{
+  0%{left:-90%}
+  55%{left:130%}
+  100%{left:130%}
+}
+.price{
+  display:inline-block;
+  margin:12px 0 16px;
+  padding:12px 26px;
+  border-radius:999px;
+  border:1px solid rgba(255,222,130,.7);
+  background:linear-gradient(90deg,#5a3600,#d8a323,#fff1a8,#a66f00);
+  color:#130b00;
+  font-size:24px;
+  font-weight:1000;
+  box-shadow:0 0 34px rgba(255,205,70,.45);
+}
+.intro{
+  max-width:860px;
+  margin:auto;
+  color:#eee1c7;
+  font-size:16px;
+}
+.top-actions{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+.btn{
+  padding:12px 18px;
+  border-radius:999px;
+  border:1px solid rgba(255,220,130,.45);
+  background:#111;
+  color:#ffe39b;
+  font-weight:900;
+  box-shadow:0 0 18px rgba(255,200,80,.2);
+}
+.btn.gold{
+  background:linear-gradient(90deg,#9b6900,#ffe08a,#9b6900);
+  color:#111;
+}
+.marquee{
+  overflow:hidden;
+  white-space:nowrap;
+  border-top:1px solid rgba(255,215,120,.18);
+  border-bottom:1px solid rgba(255,215,120,.18);
+  background:#080808;
+  color:#ffd978;
+  padding:9px 0;
+  font-weight:800;
+}
+.marquee span{
+  display:inline-block;
+  padding-left:100%;
+  animation:mar 20s linear infinite;
+}
+@keyframes mar{
+  from{transform:translateX(0)}
+  to{transform:translateX(-100%)}
+}
+.images{
+  padding:18px 14px 4px;
+}
+.image-box{
+  margin:18px auto;
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid rgba(255,215,120,.38);
+  background:#111;
+  box-shadow:0 0 32px rgba(255,190,60,.18);
+}
+.image-box img{
+  width:100%;
+  display:block;
+}
+.caption{
+  text-align:center;
+  padding:12px;
+  background:#080808;
+  color:#ffd978;
+  font-weight:1000;
+  letter-spacing:1px;
+}
+.grid{
+  padding:10px 14px 24px;
+}
+.section{
+  margin:14px 0;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(255,215,120,.28);
+  background:rgba(255,255,255,.035);
+}
+.section button{
+  width:100%;
+  border:0;
+  padding:16px;
+  text-align:left;
+  cursor:pointer;
+  color:#ffe4a4;
+  background:linear-gradient(90deg,#181818,#070707);
+  font-size:16px;
+  font-weight:1000;
+}
+.content{
+  display:none;
+  padding:16px 18px;
+  color:#eee;
+  background:#070707;
+}
+.content ul{padding-left:18px}
+.content li{margin-bottom:8px}
+.nda{
+  margin:12px 14px 26px;
+  padding:24px 18px;
+  border-radius:24px;
+  text-align:center;
+  border:1px solid rgba(255,215,120,.42);
+  background:linear-gradient(145deg,#17110a,#050505);
+  box-shadow:0 0 34px rgba(255,205,70,.2);
+}
+.nda h2{
+  color:#ffe6a8;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+.nda p{
+  color:#e8dcc0;
+  margin-bottom:16px;
+}
+.signature{
+  text-align:center;
+  padding:20px 14px 28px;
+  color:#ffd978;
+  font-weight:900;
+  font-size:18px;
+  text-transform:uppercase;
+}
+.footer{
+  text-align:center;
+  color:#ffe8a8;
+  font-weight:1000;
+  padding:8px 10px 24px;
+  white-space:nowrap;
+}
+.sticky{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:999;
+  display:flex;
+  gap:8px;
+  justify-content:center;
+  background:rgba(0,0,0,.94);
+  border-top:1px solid rgba(255,215,120,.45);
+  padding:10px;
+}
+.sticky a{
+  flex:1;
+  max-width:170px;
+  text-align:center;
+  padding:11px 8px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#8d6100,#ffe08a,#8d6100);
+  color:#111;
+  font-size:14px;
+  font-weight:1000;
+}
+@media(max-width:640px){
+  h1{font-size:24px}
+  .price{font-size:19px;padding:10px 18px}
+  .intro{font-size:15px}
+  .logo{width:78px;height:78px}
+  .footer{font-size:14px}
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <section class="hero">
+    <div class="logo">
+      <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/logo-sb-vip-pro.png" alt="Sơn Bạch VIP PRO">
+    </div>
+
+    <div class="brand">SƠN BẠCH BĐS VIP PRO</div>
+
+    <h1 class="shine">SIÊU PHẨM Q1 – TÀI SẢN LÕI TRUNG TÂM SÀI GÒN</h1>
+
+    <div class="price shine">500 TỶ THƯƠNG LƯỢNG</div>
+
+    <p class="intro">
+      Vị trí siêu đắc địa khu trung tâm Quận 1, gần chợ Bến Thành, đường lớn,
+      vỉa hè rộng, ngang hơn 8.2m, dài khoảng 18m, hiện trạng 3 tầng.
+      Phù hợp phát triển cao ốc văn phòng, trụ sở tập đoàn, nhà hàng, khách sạn
+      hoặc tài sản giữ giá trị dài hạn.
+    </p>
+
+    <div class="top-actions">
+      <a class="btn gold" href="#nda">NHẬN HỒ SƠ VIP</a>
+      <a class="btn" href="#images">XEM HÌNH ẢNH</a>
+      <a class="btn" href="tel:0858999934">GỌI MR. SƠN</a>
+    </div>
+  </section>
+
+  <div class="marquee">
+    <span>CORE Q1 • 500 TỶ THƯƠNG LƯỢNG • GẦN BẾN THÀNH • NGANG HƠN 8.2M • TÀI SẢN PHÙ HỢP NHÀ ĐẦU TƯ LỚN • </span>
+  </div>
+
+  <section id="images" class="images">
+    <div class="image-box">
+      <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/807A70CC-A179-42A6-80FF-A71CF907DEE3.png" alt="Nhà hiện tại">
+      <div class="caption">NHÀ HIỆN TẠI</div>
+    </div>
+
+    <div class="image-box">
+      <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/FD344F59-20AD-44CE-AAE3-7AFF1BB01873.png" alt="Siêu phẩm tương lai">
+      <div class="caption">SIÊU PHẨM TƯƠNG LAI</div>
+    </div>
+  </section>
+
+  <section class="grid">
+
+    <div class="section">
+      <button onclick="toggleBox(this)">✅ PHÂN KHÚC GIÁ</button>
+      <div class="content">
+        <ul>
+          <li>Giá chào: 500 tỷ thương lượng.</li>
+          <li>Phân khúc tài sản lõi trung tâm Q1, phù hợp khách mua chọn lọc.</li>
+          <li>Ưu tiên nhà đầu tư có nhu cầu thật, tài chính rõ ràng, làm việc trực tiếp.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <button onclick="toggleBox(this)">✅ THÔNG SỐ TÀI SẢN</button>
+      <div class="content">
+        <ul>
+          <li>Khu vực: Trung tâm Quận 1, TP.HCM.</li>
+          <li>Ngang hơn 8.2m, dài khoảng 18m.</li>
+          <li>Hiện trạng: nhà 3 tầng.</li>
+          <li>Đường lớn, vỉa hè rộng, nhận diện thương mại tốt.</li>
+          <li>Gần chợ Bến Thành, kết nối mạnh với lõi trung tâm Sài Gòn.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <button onclick="toggleBox(this)">✅ HIỆN TRẠNG KHAI THÁC</button>
+      <div class="content">
+        <ul>
+          <li>Nhà hiện hữu 3 tầng, mặt tiền rộng, dễ nhận diện.</li>
+          <li>Phù hợp khai thác thương mại, văn phòng, showroom, nhà hàng hoặc khách sạn.</li>
+          <li>Lợi thế lớn nằm ở vị trí, mặt tiền và khả năng tái phát triển.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <button onclick="toggleBox(this)">✅ GIÁ TRỊ CỐT LÕI</button>
+      <div class="content">
+        <ul>
+          <li>Tài sản trung tâm Q1, quỹ đất mặt tiền lớn ngày càng khan hiếm.</li>
+          <li>Ngang hơn 8.2m tạo lợi thế mạnh cho thương hiệu, trụ sở và khai thác cao cấp.</li>
+          <li>Khu vực phù hợp định hướng xây dựng cao tầng theo quy hoạch và điều kiện cấp phép.</li>
+          <li>Phù hợp chiến lược nắm giữ tài sản lõi, phát triển dòng tiền và tăng giá dài hạn.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <button onclick="toggleBox(this)">✅ PHÁP LÝ</button>
+      <div class="content">
+        <ul>
+          <li>Sổ hồng rõ ràng.</li>
+          <li>Pháp lý minh bạch.</li>
+          <li>Thông tin hồ sơ sâu trao đổi riêng với khách phù hợp.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <button onclick="toggleBox(this)">✅ CHÍNH SÁCH XEM NHÀ</button>
+      <div class="content">
+        <ul>
+          <li>Ưu tiên khách mua thật, nhà đầu tư lớn, có nhu cầu rõ ràng.</li>
+          <li>Thông tin vị trí chi tiết cung cấp sau khi xác nhận nhu cầu phù hợp.</li>
+          <li>Hỗ trợ tư vấn phương án khai thác, giữ tài sản hoặc phát triển cao tầng.</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="nda" class="nda">
+    <h2 class="shine">HỒ SƠ VIP – TRAO ĐỔI RIÊNG</h2>
+    <p>
+      Tài sản thuộc nhóm chọn lọc tại trung tâm Q1. Hồ sơ sâu, pháp lý,
+      lịch xem thực tế và phương án khai thác sẽ được trao đổi trực tiếp với khách phù hợp.
+    </p>
+    <a class="btn gold" href="tel:0858999934">LIÊN HỆ MR. SƠN BẠCH</a>
+  </section>
+
+  <div class="signature">
+    TÀI SẢN LÕI Q1 – KHÔNG DÀNH CHO SỐ ĐÔNG
+  </div>
+
+  <div class="footer">
+    Mr. Sơn Bạch | 0858 999 934
+  </div>
+
+</div>
+
+<div class="sticky">
+  <a href="tel:0858999934">GỌI NGAY</a>
+  <a href="https://zalo.me/0858999934">ZALO</a>
+  <a href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr">FACEBOOK</a>
+</div>
+
+<script>
+function toggleBox(btn){
+  const current = btn.nextElementSibling;
+  document.querySelectorAll('.content').forEach(box=>{
+    if(box !== current) box.style.display = 'none';
+  });
+  current.style.display = current.style.display === 'block' ? 'none' : 'block';
+}
+</script>
+
+</body>
+</html>
