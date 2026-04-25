@@ -3,407 +3,506 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Siêu Phẩm Q1 500 Tỷ | Sơn Bạch VIP PRO</title>
+<title>Sơn Bạch VIP PRO | Siêu Phẩm Q1 500 Tỷ</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 body{
   font-family:Arial,Helvetica,sans-serif;
-  background:#050505;
-  color:#fff;
-  line-height:1.6;
+  background:#050300;
+  color:#fff4c8;
+  padding-bottom:86px;
 }
 a{text-decoration:none;color:inherit}
-.page{
-  max-width:1180px;
-  margin:auto;
-  min-height:100vh;
-  padding-bottom:90px;
-  background:
-    radial-gradient(circle at top,#4b3100 0,#090909 36%,#000 100%);
-}
-.hero{
-  position:relative;
-  text-align:center;
-  padding:28px 16px 24px;
-  overflow:hidden;
-  border-bottom:1px solid rgba(255,215,120,.25);
-}
-.logo{
-  width:92px;
-  height:92px;
-  margin:0 auto 12px;
-  border-radius:50%;
-  padding:8px;
-  background:rgba(255,215,120,.08);
-  box-shadow:0 0 28px rgba(255,210,90,.45);
-  animation:pulse 2.8s infinite;
-}
-.logo img{width:100%;height:100%;object-fit:contain}
-@keyframes pulse{
-  0%,100%{transform:scale(1);box-shadow:0 0 22px rgba(255,210,90,.35)}
-  50%{transform:scale(1.04);box-shadow:0 0 42px rgba(255,210,90,.75)}
-}
-.brand{
-  color:#ffd978;
-  font-weight:900;
-  letter-spacing:2px;
-  font-size:14px;
-}
-h1{
-  margin:12px auto;
+.wrap{
   max-width:980px;
-  font-size:33px;
-  line-height:1.18;
-  color:#ffe8a8;
-  text-transform:uppercase;
-  text-shadow:0 0 20px rgba(255,196,55,.8);
+  margin:auto;
+  background:radial-gradient(circle at top,#4b3309 0,#0b0700 38%,#000 100%);
+  min-height:100vh;
 }
-.shine{
+.ticker{
+  background:#050505;
+  color:#ffe8a8;
+  font-weight:900;
+  font-size:18px;
+  white-space:nowrap;
+  overflow:hidden;
+  padding:12px 0;
+  border-bottom:1px solid #8a6420;
+}
+.ticker span{
+  display:inline-block;
+  padding-left:100%;
+  animation:run 18s linear infinite;
+}
+@keyframes run{to{transform:translateX(-100%)}}
+
+.hero{
+  text-align:center;
+  padding:34px 22px 50px;
+  border-bottom:1px solid #8a6420;
+  position:relative;
+}
+.logo-ring{
+  width:170px;height:170px;
+  margin:0 auto 28px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  box-shadow:0 0 55px rgba(255,211,92,.7);
+  position:relative;
+}
+.logo-ring:before,.logo-ring:after{
+  content:"";
+  position:absolute;
+  border:2px solid rgba(255,211,92,.35);
+  border-radius:50%;
+}
+.logo-ring:before{inset:-38px}
+.logo-ring:after{inset:-78px}
+.logo-ring img{width:95px}
+
+h1{
+  font-size:46px;
+  line-height:1.18;
+  text-transform:uppercase;
+  color:#fff1ba;
+  text-shadow:0 0 26px rgba(255,218,115,.65);
+  margin-bottom:34px;
+}
+.price{
+  display:inline-block;
+  min-width:360px;
+  padding:26px 35px;
+  border-radius:34px;
+  border:2px solid #a77a24;
+  background:#050505;
+  color:#ffd568;
+  font-size:58px;
+  font-weight:1000;
+  box-shadow:0 0 42px rgba(255,205,75,.48);
   position:relative;
   overflow:hidden;
 }
 .shine:after{
   content:"";
   position:absolute;
-  top:0;
-  left:-90%;
-  width:60%;
-  height:100%;
+  top:0;left:-90%;
+  width:65%;height:100%;
   background:linear-gradient(120deg,transparent,rgba(255,255,255,.85),transparent);
-  transform:skewX(-25deg);
-  animation:sweep 3.2s infinite;
+  transform:skewX(-22deg);
+  animation:sweep 3s infinite;
 }
 @keyframes sweep{
   0%{left:-90%}
   55%{left:130%}
   100%{left:130%}
 }
-.price{
-  display:inline-block;
-  margin:12px 0 16px;
-  padding:12px 26px;
-  border-radius:999px;
-  border:1px solid rgba(255,222,130,.7);
-  background:linear-gradient(90deg,#5a3600,#d8a323,#fff1a8,#a66f00);
-  color:#130b00;
-  font-size:24px;
+.deal{
+  margin:28px 0;
+  font-size:38px;
+  letter-spacing:14px;
   font-weight:1000;
-  box-shadow:0 0 34px rgba(255,205,70,.45);
+  color:#fff1ba;
 }
-.intro{
-  max-width:860px;
-  margin:auto;
-  color:#eee1c7;
-  font-size:16px;
-}
-.top-actions{
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin-top:20px;
-}
-.btn{
-  padding:12px 18px;
+.nda-main{
+  display:inline-block;
+  margin-top:6px;
+  padding:18px 72px;
   border-radius:999px;
-  border:1px solid rgba(255,220,130,.45);
-  background:#111;
-  color:#ffe39b;
-  font-weight:900;
-  box-shadow:0 0 18px rgba(255,200,80,.2);
-}
-.btn.gold{
-  background:linear-gradient(90deg,#9b6900,#ffe08a,#9b6900);
+  background:linear-gradient(90deg,#d6a534,#fff0a8,#d1a031);
   color:#111;
-}
-.marquee{
-  overflow:hidden;
-  white-space:nowrap;
-  border-top:1px solid rgba(255,215,120,.18);
-  border-bottom:1px solid rgba(255,215,120,.18);
-  background:#080808;
-  color:#ffd978;
-  padding:9px 0;
-  font-weight:800;
-}
-.marquee span{
-  display:inline-block;
-  padding-left:100%;
-  animation:mar 20s linear infinite;
-}
-@keyframes mar{
-  from{transform:translateX(0)}
-  to{transform:translateX(-100%)}
-}
-.images{
-  padding:18px 14px 4px;
-}
-.image-box{
-  margin:18px auto;
-  border-radius:24px;
-  overflow:hidden;
-  border:1px solid rgba(255,215,120,.38);
-  background:#111;
-  box-shadow:0 0 32px rgba(255,190,60,.18);
-}
-.image-box img{
-  width:100%;
-  display:block;
-}
-.caption{
-  text-align:center;
-  padding:12px;
-  background:#080808;
-  color:#ffd978;
+  font-size:25px;
   font-weight:1000;
-  letter-spacing:1px;
-}
-.grid{
-  padding:10px 14px 24px;
-}
-.section{
-  margin:14px 0;
-  border-radius:18px;
+  box-shadow:0 0 34px rgba(255,217,102,.5);
+  position:relative;
   overflow:hidden;
-  border:1px solid rgba(255,215,120,.28);
-  background:rgba(255,255,255,.035);
 }
-.section button{
+
+.panel{
+  margin:34px 28px;
+  padding:28px;
+  border:1.5px solid rgba(179,128,38,.7);
+  border-radius:34px;
+  background:#050505;
+  box-shadow:0 0 28px rgba(255,200,80,.09);
+}
+.acc{
+  margin:26px 0;
+  border-radius:34px;
+  border:1.5px solid rgba(179,128,38,.7);
+  background:linear-gradient(145deg,#111,#050505);
+  overflow:hidden;
+}
+.acc-btn{
+  width:100%;
+  min-height:120px;
+  border:0;
+  background:transparent;
+  color:#fff1ba;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:26px 32px;
+  font-size:30px;
+  font-weight:1000;
+  text-align:left;
+}
+.dot{
+  width:28px;height:28px;border-radius:50%;
+  background:#ffd568;
+  box-shadow:0 0 25px rgba(255,213,104,.95);
+  flex:0 0 auto;
+}
+.acc-title{flex:1;padding:0 24px}
+.plus{
+  width:76px;height:76px;border-radius:50%;
+  border:2px solid #8f6824;
+  display:flex;align-items:center;justify-content:center;
+  font-size:50px;
+  color:#ffd568;
+  flex:0 0 auto;
+}
+.acc-content{
+  display:none;
+  padding:0 34px 32px 84px;
+  color:#fff5cf;
+  font-size:22px;
+  line-height:1.6;
+}
+.acc-content li{margin:10px 0}
+
+.img-title{
+  font-size:38px;
+  text-align:center;
+  margin-bottom:24px;
+  font-weight:1000;
+  text-transform:uppercase;
+  color:#fff1ba;
+}
+.badge{
+  display:inline-block;
+  padding:18px 70px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#d6a534,#fff0a8,#d1a031);
+  color:#111;
+  font-size:25px;
+  font-weight:1000;
+  margin:0 0 28px;
+}
+.photo{
+  border-radius:26px;
+  overflow:hidden;
+  border:1.5px solid #9f7426;
+}
+.photo img{width:100%;display:block}
+
+.nda-box{
+  text-align:center;
+}
+.nda-box h2,.quote h2,.contact h2{
+  font-size:40px;
+  color:#fff1ba;
+  text-transform:uppercase;
+  margin-bottom:24px;
+}
+.nda-box p{
+  font-size:24px;
+  line-height:1.7;
+  margin-bottom:26px;
+}
+input,textarea{
+  width:100%;
+  background:#050505;
+  color:#fff;
+  border:1.5px solid #9f7426;
+  border-radius:18px;
+  padding:20px;
+  font-size:22px;
+  margin:12px 0;
+}
+textarea{min-height:130px}
+.check{
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+  text-align:left;
+  margin:24px 0;
+  font-size:21px;
+  line-height:1.5;
+}
+.check input{width:34px;height:34px;margin-top:4px}
+.submit{
   width:100%;
   border:0;
-  padding:16px;
-  text-align:left;
-  cursor:pointer;
-  color:#ffe4a4;
-  background:linear-gradient(90deg,#181818,#070707);
-  font-size:16px;
+  padding:22px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#d6a534,#fff0a8,#d1a031);
+  color:#111;
+  font-size:25px;
   font-weight:1000;
 }
-.content{
-  display:none;
-  padding:16px 18px;
-  color:#eee;
-  background:#070707;
-}
-.content ul{padding-left:18px}
-.content li{margin-bottom:8px}
-.nda{
-  margin:12px 14px 26px;
-  padding:24px 18px;
-  border-radius:24px;
+.quote{
   text-align:center;
-  border:1px solid rgba(255,215,120,.42);
-  background:linear-gradient(145deg,#17110a,#050505);
-  box-shadow:0 0 34px rgba(255,205,70,.2);
-}
-.nda h2{
-  color:#ffe6a8;
-  text-transform:uppercase;
-  margin-bottom:10px;
-}
-.nda p{
-  color:#e8dcc0;
-  margin-bottom:16px;
-}
-.signature{
-  text-align:center;
-  padding:20px 14px 28px;
-  color:#ffd978;
   font-weight:900;
-  font-size:18px;
-  text-transform:uppercase;
+  font-size:32px;
+  line-height:1.55;
 }
-.footer{
+.quote small{
+  display:block;
+  margin-top:30px;
+  font-size:28px;
+}
+.contact{
   text-align:center;
-  color:#ffe8a8;
-  font-weight:1000;
-  padding:8px 10px 24px;
-  white-space:nowrap;
 }
+.contact-line{
+  display:inline-block;
+  white-space:nowrap;
+  background:linear-gradient(90deg,#5f410c,#fff0a8,#5f410c);
+  color:#111;
+  padding:18px 42px;
+  border-radius:16px;
+  font-size:24px;
+  font-weight:1000;
+  margin:12px 0 30px;
+  box-shadow:0 0 30px rgba(255,211,90,.35);
+}
+.contact p{
+  font-size:31px;
+  font-weight:1000;
+  line-height:1.45;
+}
+.call-btn{
+  display:inline-block;
+  margin-top:34px;
+  padding:20px 86px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#d6a534,#fff0a8,#d1a031);
+  color:#111;
+  font-size:25px;
+  font-weight:1000;
+}
+
 .sticky{
   position:fixed;
-  left:0;
-  right:0;
-  bottom:0;
+  left:0;right:0;bottom:0;
   z-index:999;
   display:flex;
-  gap:8px;
-  justify-content:center;
-  background:rgba(0,0,0,.94);
-  border-top:1px solid rgba(255,215,120,.45);
-  padding:10px;
+  height:76px;
+  font-weight:1000;
+  font-size:22px;
 }
 .sticky a{
   flex:1;
-  max-width:170px;
-  text-align:center;
-  padding:11px 8px;
-  border-radius:999px;
-  background:linear-gradient(90deg,#8d6100,#ffe08a,#8d6100);
-  color:#111;
-  font-size:14px;
-  font-weight:1000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
 }
-@media(max-width:640px){
-  h1{font-size:24px}
-  .price{font-size:19px;padding:10px 18px}
-  .intro{font-size:15px}
-  .logo{width:78px;height:78px}
-  .footer{font-size:14px}
+.sticky a:nth-child(1){
+  background:linear-gradient(90deg,#c8962e,#fff0a8);
+  color:#111;
+}
+.sticky a:nth-child(2){
+  background:linear-gradient(90deg,#248fff,#6ee8ff);
+  color:#fff;
+}
+.sticky a:nth-child(3){
+  background:#2856df;
+  color:#fff;
+}
+
+@media(max-width:680px){
+  h1{font-size:34px}
+  .price{font-size:42px;min-width:280px}
+  .deal{font-size:30px;letter-spacing:10px}
+  .acc-btn{font-size:24px;min-height:100px;padding:22px}
+  .plus{width:60px;height:60px;font-size:40px}
+  .panel{margin:28px 18px;padding:20px}
+  .img-title{font-size:31px}
+  .nda-box h2,.quote h2,.contact h2{font-size:32px}
+  .contact-line{font-size:20px;padding:15px 22px}
 }
 </style>
 </head>
 
 <body>
-<div class="page">
+<div class="wrap">
 
-  <section class="hero">
-    <div class="logo">
-      <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/logo-sb-vip-pro.png" alt="Sơn Bạch VIP PRO">
-    </div>
-
-    <div class="brand">SƠN BẠCH BĐS VIP PRO</div>
-
-    <h1 class="shine">SIÊU PHẨM Q1 – TÀI SẢN LÕI TRUNG TÂM SÀI GÒN</h1>
-
-    <div class="price shine">500 TỶ THƯƠNG LƯỢNG</div>
-
-    <p class="intro">
-      Vị trí siêu đắc địa khu trung tâm Quận 1, gần chợ Bến Thành, đường lớn,
-      vỉa hè rộng, ngang hơn 8.2m, dài khoảng 18m, hiện trạng 3 tầng.
-      Phù hợp phát triển cao ốc văn phòng, trụ sở tập đoàn, nhà hàng, khách sạn
-      hoặc tài sản giữ giá trị dài hạn.
-    </p>
-
-    <div class="top-actions">
-      <a class="btn gold" href="#nda">NHẬN HỒ SƠ VIP</a>
-      <a class="btn" href="#images">XEM HÌNH ẢNH</a>
-      <a class="btn" href="tel:0858999934">GỌI MR. SƠN</a>
-    </div>
-  </section>
-
-  <div class="marquee">
-    <span>CORE Q1 • 500 TỶ THƯƠNG LƯỢNG • GẦN BẾN THÀNH • NGANG HƠN 8.2M • TÀI SẢN PHÙ HỢP NHÀ ĐẦU TƯ LỚN • </span>
+  <div class="ticker">
+    <span>NGANG HƠN 8.2M • DÀI 18M • HIỆN TRẠNG 3 TẦNG • TRUNG TÂM Q1 • GẦN CHỢ BẾN THÀNH • GIÁ 500 TỶ THƯƠNG LƯỢNG • </span>
   </div>
 
-  <section id="images" class="images">
-    <div class="image-box">
-      <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/807A70CC-A179-42A6-80FF-A71CF907DEE3.png" alt="Nhà hiện tại">
-      <div class="caption">NHÀ HIỆN TẠI</div>
+  <section class="hero">
+    <div class="logo-ring">
+      <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/logo-sb-vip-pro.png" alt="Logo Sơn Bạch">
     </div>
 
-    <div class="image-box">
-      <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/FD344F59-20AD-44CE-AAE3-7AFF1BB01873.png" alt="Siêu phẩm tương lai">
-      <div class="caption">SIÊU PHẨM TƯƠNG LAI</div>
-    </div>
+    <h1>SIÊU PHẨM Q1<br>TÀI SẢN LÕI TRUNG TÂM SÀI GÒN</h1>
+
+    <div class="price shine">500 TỶ</div>
+
+    <div class="deal">THƯƠNG<br>LƯỢNG</div>
+
+    <a href="#nda" class="nda-main shine">NHẬN NDA</a>
   </section>
 
-  <section class="grid">
+  <section class="panel">
 
-    <div class="section">
-      <button onclick="toggleBox(this)">✅ PHÂN KHÚC GIÁ</button>
-      <div class="content">
+    <div class="acc">
+      <button class="acc-btn" onclick="toggleAcc(this)">
+        <span class="dot"></span><span class="acc-title">PHÂN KHÚC GIÁ</span><span class="plus">+</span>
+      </button>
+      <div class="acc-content">
         <ul>
-          <li>Giá chào: 500 tỷ thương lượng.</li>
-          <li>Phân khúc tài sản lõi trung tâm Q1, phù hợp khách mua chọn lọc.</li>
-          <li>Ưu tiên nhà đầu tư có nhu cầu thật, tài chính rõ ràng, làm việc trực tiếp.</li>
+          <li>Giá chào: <b>500 tỷ thương lượng</b>.</li>
+          <li>Tài sản thuộc nhóm mặt tiền trung tâm Q1, phù hợp nhà đầu tư lớn.</li>
+          <li>Ưu tiên khách mua thật, làm việc kín, trao đổi hồ sơ riêng.</li>
         </ul>
       </div>
     </div>
 
-    <div class="section">
-      <button onclick="toggleBox(this)">✅ THÔNG SỐ TÀI SẢN</button>
-      <div class="content">
+    <div class="acc">
+      <button class="acc-btn" onclick="toggleAcc(this)">
+        <span class="dot"></span><span class="acc-title">THÔNG SỐ TÀI SẢN</span><span class="plus">+</span>
+      </button>
+      <div class="acc-content">
         <ul>
-          <li>Khu vực: Trung tâm Quận 1, TP.HCM.</li>
+          <li>Vị trí: Khu trung tâm Quận 1, TP.HCM.</li>
           <li>Ngang hơn 8.2m, dài khoảng 18m.</li>
           <li>Hiện trạng: nhà 3 tầng.</li>
-          <li>Đường lớn, vỉa hè rộng, nhận diện thương mại tốt.</li>
-          <li>Gần chợ Bến Thành, kết nối mạnh với lõi trung tâm Sài Gòn.</li>
+          <li>Đường lớn, vỉa hè rộng, gần chợ Bến Thành.</li>
         </ul>
       </div>
     </div>
 
-    <div class="section">
-      <button onclick="toggleBox(this)">✅ HIỆN TRẠNG KHAI THÁC</button>
-      <div class="content">
+    <div class="acc">
+      <button class="acc-btn" onclick="toggleAcc(this)">
+        <span class="dot"></span><span class="acc-title">HIỆN TRẠNG KHAI THÁC</span><span class="plus">+</span>
+      </button>
+      <div class="acc-content">
         <ul>
-          <li>Nhà hiện hữu 3 tầng, mặt tiền rộng, dễ nhận diện.</li>
-          <li>Phù hợp khai thác thương mại, văn phòng, showroom, nhà hàng hoặc khách sạn.</li>
-          <li>Lợi thế lớn nằm ở vị trí, mặt tiền và khả năng tái phát triển.</li>
+          <li>Nhà mặt tiền đang hiện hữu, dễ nhận diện thương mại.</li>
+          <li>Phù hợp khai thác văn phòng, showroom, nhà hàng, khách sạn.</li>
+          <li>Lợi thế lớn nằm ở mặt tiền rộng và vị trí lõi Q1.</li>
         </ul>
       </div>
     </div>
 
-    <div class="section">
-      <button onclick="toggleBox(this)">✅ GIÁ TRỊ CỐT LÕI</button>
-      <div class="content">
+    <div class="acc">
+      <button class="acc-btn" onclick="toggleAcc(this)">
+        <span class="dot"></span><span class="acc-title">GIÁ TRỊ CỐT LÕI</span><span class="plus">+</span>
+      </button>
+      <div class="acc-content">
         <ul>
-          <li>Tài sản trung tâm Q1, quỹ đất mặt tiền lớn ngày càng khan hiếm.</li>
-          <li>Ngang hơn 8.2m tạo lợi thế mạnh cho thương hiệu, trụ sở và khai thác cao cấp.</li>
-          <li>Khu vực phù hợp định hướng xây dựng cao tầng theo quy hoạch và điều kiện cấp phép.</li>
-          <li>Phù hợp chiến lược nắm giữ tài sản lõi, phát triển dòng tiền và tăng giá dài hạn.</li>
+          <li>Quỹ đất mặt tiền lớn tại Q1 ngày càng khan hiếm.</li>
+          <li>Phù hợp phát triển cao ốc văn phòng, trụ sở tập đoàn, khách sạn cao cấp.</li>
+          <li>Tài sản có giá trị nắm giữ dài hạn, thích hợp khách mua tầm nhìn lớn.</li>
         </ul>
       </div>
     </div>
 
-    <div class="section">
-      <button onclick="toggleBox(this)">✅ PHÁP LÝ</button>
-      <div class="content">
+    <div class="acc">
+      <button class="acc-btn" onclick="toggleAcc(this)">
+        <span class="dot"></span><span class="acc-title">PHÁP LÝ</span><span class="plus">+</span>
+      </button>
+      <div class="acc-content">
         <ul>
           <li>Sổ hồng rõ ràng.</li>
           <li>Pháp lý minh bạch.</li>
-          <li>Thông tin hồ sơ sâu trao đổi riêng với khách phù hợp.</li>
+          <li>Hồ sơ chi tiết trao đổi khi khách xác nhận nhu cầu thật.</li>
         </ul>
       </div>
     </div>
 
-    <div class="section">
-      <button onclick="toggleBox(this)">✅ CHÍNH SÁCH XEM NHÀ</button>
-      <div class="content">
+    <div class="acc">
+      <button class="acc-btn" onclick="toggleAcc(this)">
+        <span class="dot"></span><span class="acc-title">CHÍNH SÁCH TIẾP KHÁCH</span><span class="plus">+</span>
+      </button>
+      <div class="acc-content">
         <ul>
-          <li>Ưu tiên khách mua thật, nhà đầu tư lớn, có nhu cầu rõ ràng.</li>
-          <li>Thông tin vị trí chi tiết cung cấp sau khi xác nhận nhu cầu phù hợp.</li>
-          <li>Hỗ trợ tư vấn phương án khai thác, giữ tài sản hoặc phát triển cao tầng.</li>
+          <li>Chỉ tiếp khách thật, tài chính rõ, nhu cầu nghiêm túc.</li>
+          <li>Không công khai vị trí chi tiết trên mạng.</li>
+          <li>Làm việc trực tiếp cùng Sơn Bạch để nhận hồ sơ và lịch xem.</li>
         </ul>
       </div>
     </div>
 
   </section>
 
-  <section id="nda" class="nda">
-    <h2 class="shine">HỒ SƠ VIP – TRAO ĐỔI RIÊNG</h2>
-    <p>
-      Tài sản thuộc nhóm chọn lọc tại trung tâm Q1. Hồ sơ sâu, pháp lý,
-      lịch xem thực tế và phương án khai thác sẽ được trao đổi trực tiếp với khách phù hợp.
-    </p>
-    <a class="btn gold" href="tel:0858999934">LIÊN HỆ MR. SƠN BẠCH</a>
+  <section class="panel">
+    <h2 class="img-title">HÌNH ẢNH HIỆN TẠI</h2>
+    <div class="badge">NHÀ HIỆN TẠI</div>
+    <div class="photo">
+      <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/807A70CC-A179-42A6-80FF-A71CF907DEE3.png" alt="Nhà hiện tại">
+    </div>
   </section>
 
-  <div class="signature">
-    TÀI SẢN LÕI Q1 – KHÔNG DÀNH CHO SỐ ĐÔNG
-  </div>
+  <section class="panel">
+    <h2 class="img-title">HÌNH ẢNH TƯƠNG LAI</h2>
+    <div class="badge">SIÊU PHẨM TƯƠNG LAI</div>
+    <div class="photo">
+      <img src="https://raw.githubusercontent.com/sonbachTP/sonbach_autohud/refs/heads/main/FD344F59-20AD-44CE-AAE3-7AFF1BB01873.png" alt="Nhà tương lai">
+    </div>
+  </section>
 
-  <div class="footer">
-    Mr. Sơn Bạch | 0858 999 934
-  </div>
+  <section id="nda" class="panel nda-box">
+    <h2>NHẬN HỒ SƠ NDA</h2>
+    <p>Khách hàng để lại thông tin thật để nhận hồ sơ chi tiết, lịch xem nhà và làm việc trực tiếp với Sơn Bạch.</p>
+
+    <form action="https://formspree.io/f/mpqykgzk" method="POST">
+      <input name="name" placeholder="Họ và tên" required>
+      <input name="phone" placeholder="Số điện thoại" required>
+      <input name="email" type="email" placeholder="Email nhận hồ sơ">
+      <textarea name="message" placeholder="Nhu cầu của anh/chị: mua giữ tài sản, khai thác, đầu tư, xem nhà..."></textarea>
+
+      <label class="check">
+        <input type="checkbox" required>
+        <span>Tôi xác nhận thông tin là thật, đồng ý bảo mật hồ sơ tài sản và chỉ sử dụng thông tin cho mục đích làm việc nghiêm túc.</span>
+      </label>
+
+      <button class="submit shine" type="submit">GỬI NDA VỀ SƠN BẠCH</button>
+    </form>
+  </section>
+
+  <section class="panel quote">
+    <h2>“Sơn Bạch không bán đại trà.”</h2>
+    <small>Sơn Bạch chọn lọc những tài sản đủ giá trị để xứng đáng với những người mua đủ tầm.</small>
+  </section>
+
+  <section class="panel contact">
+    <h2>LIÊN HỆ TRỰC TIẾP</h2>
+    <div class="contact-line shine">Mr. Sơn Bạch: 0858 999 934</div>
+    <p>Tài sản mặt tiền • NDA • Chỉ tiếp khách thực • Làm việc kín</p>
+    <a class="call-btn" href="tel:0858999934">GỌI NGAY</a>
+  </section>
 
 </div>
 
 <div class="sticky">
-  <a href="tel:0858999934">GỌI NGAY</a>
-  <a href="https://zalo.me/0858999934">ZALO</a>
-  <a href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr">FACEBOOK</a>
+  <a href="tel:0858999934">📞 GỌI NGAY</a>
+  <a href="https://zalo.me/0858999934">💬 ZALO</a>
+  <a href="https://www.facebook.com/share/1DAdyHdjze/?mibextid=wwXIfr">📘 FACEBOOK</a>
 </div>
 
 <script>
-function toggleBox(btn){
-  const current = btn.nextElementSibling;
-  document.querySelectorAll('.content').forEach(box=>{
-    if(box !== current) box.style.display = 'none';
+function toggleAcc(btn){
+  const box = btn.nextElementSibling;
+  const plus = btn.querySelector('.plus');
+  document.querySelectorAll('.acc-content').forEach(item=>{
+    if(item !== box) item.style.display = 'none';
   });
-  current.style.display = current.style.display === 'block' ? 'none' : 'block';
+  document.querySelectorAll('.plus').forEach(p=>p.textContent = '+');
+  if(box.style.display === 'block'){
+    box.style.display = 'none';
+    plus.textContent = '+';
+  }else{
+    box.style.display = 'block';
+    plus.textContent = '–';
+  }
 }
 </script>
 
